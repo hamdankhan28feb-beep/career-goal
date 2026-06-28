@@ -1,0 +1,725 @@
+{
+  "metadata": {
+    "dataset_name": "Pakistani University Profiles — v2",
+    "schema_version": "2.0",
+    "generated_on": "2026-06-25",
+    "source_policy": "Official university websites and official admissions portals only. Missing values are null — never fabricated.",
+    "coverage_note": "v2 extends v1 with 25 data categories. NULL fields await official scrape. data_completeness_pct reflects proportion of fields populated.",
+    "total_universities": 18
+  },
+  "universities": [
+    {
+      "university_id": 1,
+      "basic_information": {
+        "name": "Sir Syed University of Engineering & Technology",
+        "short_name": "SSUET",
+        "slug": "ssuet-karachi",
+        "logo_url": null,
+        "official_website": "https://www.ssuet.edu.pk/",
+        "admissions_portal": "https://edusmartz.ssuet.edu.pk/AdmissionPortal/Signin",
+        "phone": null,
+        "email": null,
+        "address": null,
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "postal_code": null,
+        "coordinates": null,
+        "year_established": null,
+        "charter_authority": null,
+        "hec_status": null,
+        "university_type": "Private",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "university_overview": {
+        "history": null,
+        "mission": null,
+        "vision": null,
+        "reputation": null,
+        "national_ranking": null,
+        "major_strengths": ["Electrical & Computer Engineering", "Computing & Applied Sciences", "Civil Engineering & Architecture", "Business Management & Social Science"],
+        "notable_alumni": null,
+        "key_achievements": null
+      },
+      "campuses": [
+        {
+          "campus_name": "Main Campus, Karachi",
+          "campus_type": null,
+          "address": null,
+          "city": "Karachi",
+          "province": "Sindh",
+          "campus_size_acres": null,
+          "virtual_tour_url": null,
+          "facilities": null
+        }
+      ],
+      "programs": null,
+      "admissions": null,
+      "entry_tests": null,
+      "fees": null,
+      "scholarships": null,
+      "academic_policies": null,
+      "faculty_academics": null,
+      "student_life": null,
+      "facilities": null,
+      "hostel": null,
+      "transport": null,
+      "placements": null,
+      "career_paths": null,
+      "rankings": null,
+      "reviews": null,
+      "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://www.ssuet.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "https://edusmartz.ssuet.edu.pk/AdmissionPortal/Signin", "category": "Admissions"},
+        {"label": "About Us", "url": "https://www.ssuet.edu.pk/about-us/", "category": "General"}
+      ],
+      "data_collection": {
+        "data_completeness_pct": 20.0,
+        "scraping_priority_score": 8,
+        "missing_fields": ["logo_url","phone","email","year_established","history","mission","vision","programs","fees","scholarships","academic_policies","faculty","student_life","facilities","hostel","transport","placements","career_paths","rankings","reviews","faqs"]
+      }
+    },
+    {
+      "university_id": 2,
+      "basic_information": {
+        "name": "Habib University",
+        "short_name": "HU",
+        "slug": "habib-university",
+        "logo_url": null,
+        "official_website": "https://habib.edu.pk/",
+        "admissions_portal": "https://eapplication.habib.edu.pk/",
+        "phone": null,
+        "email": null,
+        "address": "Block 18, Gulistan-e-Jauhar",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "postal_code": null,
+        "coordinates": null,
+        "year_established": null,
+        "charter_authority": null,
+        "hec_status": null,
+        "university_type": "Private",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "university_overview": {
+        "history": null,
+        "mission": null,
+        "vision": null,
+        "reputation": null,
+        "national_ranking": null,
+        "major_strengths": ["Liberal Arts and Sciences"],
+        "notable_alumni": null,
+        "key_achievements": null
+      },
+      "campuses": [{"campus_name": "Karachi", "campus_type": "Main", "city": "Karachi", "province": "Sindh", "campus_size_acres": null, "virtual_tour_url": null, "facilities": null}],
+      "programs": null,
+      "admissions": null,
+      "entry_tests": null,
+      "fees": null,
+      "scholarships": null,
+      "academic_policies": null,
+      "faculty_academics": null,
+      "student_life": null,
+      "facilities": null,
+      "hostel": null,
+      "transport": null,
+      "placements": null,
+      "career_paths": null,
+      "rankings": null,
+      "reviews": null,
+      "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://habib.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "https://eapplication.habib.edu.pk/", "category": "Admissions"},
+        {"label": "Admissions Info", "url": "https://habib.edu.pk/admissions/", "category": "Admissions"}
+      ],
+      "data_collection": {
+        "data_completeness_pct": 20.0,
+        "scraping_priority_score": 8,
+        "missing_fields": ["logo_url","phone","email","year_established","history","mission","vision","programs","fees","scholarships","academic_policies","faculty","student_life","facilities","hostel","transport","placements","career_paths","rankings","reviews","faqs"]
+      }
+    },
+    {
+      "university_id": 3,
+      "basic_information": {
+        "name": "Institute of Business Administration, Karachi",
+        "short_name": "IBA Karachi",
+        "slug": "iba-karachi",
+        "logo_url": null,
+        "official_website": "https://iba.edu.pk/",
+        "admissions_portal": "https://onlineadmission.iba.edu.pk/",
+        "phone": null,
+        "email": null,
+        "address": null,
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "postal_code": null,
+        "coordinates": null,
+        "year_established": null,
+        "charter_authority": "Government of Sindh",
+        "hec_status": null,
+        "university_type": "Public",
+        "accreditations": [{"body": "NBEAC", "type": "W Category"}],
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "university_overview": {
+        "history": null,
+        "mission": null,
+        "vision": null,
+        "reputation": null,
+        "national_ranking": null,
+        "major_strengths": ["Business Administration","Economics","Computer Science","Social Sciences","Mathematics"],
+        "notable_alumni": null,
+        "key_achievements": null
+      },
+      "campuses": [{"campus_name": "Main Campus, Karachi", "campus_type": "Main", "city": "Karachi", "province": "Sindh", "campus_size_acres": null, "virtual_tour_url": null, "facilities": null}],
+      "programs": null,
+      "admissions": null,
+      "entry_tests": null,
+      "fees": null,
+      "scholarships": null,
+      "academic_policies": null,
+      "faculty_academics": null,
+      "student_life": null,
+      "facilities": null,
+      "hostel": null,
+      "transport": null,
+      "placements": null,
+      "career_paths": null,
+      "rankings": null,
+      "reviews": null,
+      "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://iba.edu.pk/", "category": "General"},
+        {"label": "Online Admissions", "url": "https://onlineadmission.iba.edu.pk/", "category": "Admissions"},
+        {"label": "Fee Structure", "url": "https://iba.edu.pk/fee-structure.php", "category": "Fees"},
+        {"label": "Financial Assistance", "url": "https://iba.edu.pk/financialassistance/", "category": "Scholarships"}
+      ],
+      "data_collection": {
+        "data_completeness_pct": 30.0,
+        "scraping_priority_score": 10,
+        "missing_fields": ["logo_url","phone","email","year_established","history","mission","vision","programs","fees","scholarships","academic_policies","faculty","student_life","facilities","hostel","transport","placements","career_paths","rankings","reviews","faqs"]
+      }
+    },
+    {
+      "university_id": 4,
+      "basic_information": {
+        "name": "DHA Suffa University",
+        "short_name": "DSU",
+        "slug": "dha-suffa-university",
+        "logo_url": null,
+        "official_website": "https://www.dsu.edu.pk/",
+        "admissions_portal": "https://erp.dsu.edu.pk/web/signin/",
+        "phone": null,
+        "email": null,
+        "address": null,
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": null,
+        "hec_status": null,
+        "university_type": "Private",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": [
+        {"campus_name": "Main Campus, DHA", "campus_type": "Main", "city": "Karachi", "province": "Sindh"},
+        {"campus_name": "DCK Campus", "campus_type": "Satellite", "city": "Karachi", "province": "Sindh"}
+      ],
+      "university_overview": {"major_strengths": ["Engineering","Computing","Management Sciences","Humanities and Social Sciences"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://www.dsu.edu.pk/", "category": "General"},
+        {"label": "Admission Info", "url": "https://www.dsu.edu.pk/admission-info/", "category": "Admissions"},
+        {"label": "ERP Portal", "url": "https://erp.dsu.edu.pk/web/signin/", "category": "Admissions"}
+      ],
+      "data_collection": {"data_completeness_pct": 20.0, "scraping_priority_score": 7,
+        "missing_fields": ["logo_url","phone","email","year_established","all_program_details","fees","scholarships","policies","hostel","transport"]}
+    },
+    {
+      "university_id": 5,
+      "basic_information": {
+        "name": "Iqra University",
+        "short_name": "IU",
+        "slug": "iqra-university",
+        "logo_url": null,
+        "official_website": "https://iqra.edu.pk/",
+        "admissions_portal": "https://admissions.iqra.edu.pk/",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": null,
+        "hec_status": null,
+        "university_type": "Private",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": [
+        {"campus_name": "Main Campus", "city": "Karachi"},
+        {"campus_name": "Gulshan Campus", "city": "Karachi"},
+        {"campus_name": "North Campus", "city": "Karachi"},
+        {"campus_name": "Airport Campus", "city": "Karachi"},
+        {"campus_name": "M9 Campus", "city": "Karachi"},
+        {"campus_name": "Hyderabad Campus", "city": "Hyderabad"},
+        {"campus_name": "Islamabad Campus", "city": "Islamabad"},
+        {"campus_name": "Chak Shahzad Campus", "city": "Islamabad"}
+      ],
+      "university_overview": {"major_strengths": ["40+ Programs","LLB","Animation","Entrepreneurship & Innovation","Cyber Security"]},
+      "rankings": [
+        {"ranking_name": "Times Higher Education", "ranking_category": "THE", "ranking_value": null, "ranking_note": "Referenced on official site"},
+        {"ranking_name": "UI GreenMetric", "ranking_category": "International", "ranking_value": null, "ranking_note": "Referenced on official site"}
+      ],
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://iqra.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "https://admissions.iqra.edu.pk/", "category": "Admissions"},
+        {"label": "Campuses", "url": "https://iqra.edu.pk/campuses/", "category": "Campuses"}
+      ],
+      "data_collection": {"data_completeness_pct": 25.0, "scraping_priority_score": 7, "missing_fields": ["year_established","fees","scholarships","programs_detail","policies","faculty","hostel","transport","reviews"]}
+    },
+    {
+      "university_id": 6,
+      "basic_information": {
+        "name": "Mohammad Ali Jinnah University",
+        "short_name": "MAJU",
+        "slug": "maju-karachi",
+        "logo_url": null,
+        "official_website": "https://jinnah.edu/",
+        "admissions_portal": "https://admissions.jinnah.edu/",
+        "address": "Main Shahrah-e-Faisal, Block-6, PECHS",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": 1998,
+        "charter_authority": "Government of Sindh",
+        "hec_status": "Chartered",
+        "university_type": "Private",
+        "accreditations": [{"body": "HEC", "type": "W Category"}],
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": [{"campus_name": "Karachi", "campus_type": "Main", "city": "Karachi"}],
+      "university_overview": {"major_strengths": ["Engineering","Computing","Business Administration","Social and Basic Sciences","Life Sciences"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://jinnah.edu/", "category": "General"},
+        {"label": "Admissions Portal", "url": "https://admissions.jinnah.edu/", "category": "Admissions"},
+        {"label": "Fee & Scholarship", "url": "https://jinnah.edu/fee-structure-scholarship/", "category": "Fees"}
+      ],
+      "data_collection": {"data_completeness_pct": 30.0, "scraping_priority_score": 8, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","fees","scholarships","policies","faculty","hostel","transport"]}
+    },
+    {
+      "university_id": 7,
+      "basic_information": {
+        "name": "University of Karachi",
+        "short_name": "UoK",
+        "slug": "uok-karachi",
+        "logo_url": null,
+        "official_website": "https://uok.edu.pk/",
+        "admissions_portal": "https://uok.edu.pk/admissions/index.php",
+        "address": "University Road",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": 1951,
+        "charter_authority": "Government of Sindh",
+        "hec_status": null,
+        "university_type": "Public",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": [{"campus_name": "Main Campus", "campus_type": "Main", "city": "Karachi"}],
+      "university_overview": {"major_strengths": ["Broad Faculty Network","Research Institutes","Scholarships"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://uok.edu.pk/", "category": "General"},
+        {"label": "Admissions", "url": "https://uok.edu.pk/admissions/index.php", "category": "Admissions"},
+        {"label": "Scholarships", "url": "https://uok.edu.pk/sfao/scholarships.php", "category": "Scholarships"}
+      ],
+      "data_collection": {"data_completeness_pct": 25.0, "scraping_priority_score": 8, "missing_fields": ["logo_url","phone","email","hec_status","history","mission","vision","programs_detail","fees","academic_policies","hostel","transport"]}
+    },
+    {
+      "university_id": 8,
+      "basic_information": {
+        "name": "NED University of Engineering & Technology",
+        "short_name": "NEDUET",
+        "slug": "neduet-karachi",
+        "logo_url": null,
+        "official_website": "https://www.neduet.edu.pk/",
+        "admissions_portal": "https://ugadmissions.neduet.edu.pk/",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": 1977,
+        "charter_authority": "Government of Sindh",
+        "hec_status": "W Category",
+        "university_type": "Public",
+        "accreditations": [{"body": "QEC", "type": "W Category"}, {"body": "ISO", "type": "ISO 9001:2015"}],
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": [
+        {"campus_name": "Main Campus", "campus_type": "Main", "city": "Karachi"},
+        {"campus_name": "City Campus", "campus_type": "City", "city": "Karachi"},
+        {"campus_name": "LEJ Campus", "campus_type": "Satellite", "city": "Karachi"},
+        {"campus_name": "TIEST Campus", "campus_type": "Satellite", "city": "Karachi"}
+      ],
+      "university_overview": {"major_strengths": ["Engineering","Research Centers","Industrial Liaison"]},
+      "rankings": [
+        {"ranking_name": "HEC National Ranking", "ranking_category": "HEC", "ranking_value": "95.33% score", "ranking_note": "Score shown on official NED website"},
+        {"ranking_name": "QEC Category", "ranking_category": "HEC", "ranking_value": "W Category"}
+      ],
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://www.neduet.edu.pk/", "category": "General"},
+        {"label": "UG Admissions Portal", "url": "https://ugadmissions.neduet.edu.pk/", "category": "Admissions"},
+        {"label": "Scholarships", "url": "https://www.neduet.edu.pk/scholarships-NED", "category": "Scholarships"}
+      ],
+      "data_collection": {"data_completeness_pct": 35.0, "scraping_priority_score": 9, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","fees","academic_policies","student_life","hostel","transport"]}
+    },
+    {
+      "university_id": 9,
+      "basic_information": {
+        "name": "Bahria University Karachi Campus",
+        "short_name": "Bahria Karachi",
+        "slug": "bahria-karachi",
+        "logo_url": null,
+        "official_website": "https://www.bahria.edu.pk/",
+        "admissions_portal": "https://www.bahria.edu.pk/home/index#admissions_page",
+        "address": "13 National Stadium Road",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": 2000,
+        "charter_authority": "Pakistan Navy / Federal Government",
+        "hec_status": "Chartered",
+        "university_type": "Public",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": [
+        {"campus_name": "Karachi Campus", "campus_type": "Main", "city": "Karachi"},
+        {"campus_name": "IPP Karachi", "campus_type": "IPP", "city": "Karachi"},
+        {"campus_name": "Health Sciences Karachi", "campus_type": "Health Sciences", "city": "Karachi"}
+      ],
+      "university_overview": {"major_strengths": ["Undergraduate Programs","Masters","PhD","Lifelong Learning","ODL"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://www.bahria.edu.pk/", "category": "General"},
+        {"label": "Karachi Campus", "url": "https://www.bahria.edu.pk/home/campus?campus=karachi", "category": "Campuses"},
+        {"label": "Admissions", "url": "https://www.bahria.edu.pk/home/index#admissions_page", "category": "Admissions"}
+      ],
+      "data_collection": {"data_completeness_pct": 30.0, "scraping_priority_score": 8, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","fees","scholarships","policies","hostel","transport"]}
+    },
+    {
+      "university_id": 10,
+      "basic_information": {
+        "name": "Hamdard University",
+        "short_name": "Hamdard",
+        "slug": "hamdard-university",
+        "logo_url": null,
+        "official_website": "https://hamdard.edu.pk/",
+        "admissions_portal": null,
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": null,
+        "hec_status": null,
+        "university_type": "Private",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": null,
+      "university_overview": null,
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [{"label": "Official Website", "url": "https://hamdard.edu.pk/", "category": "General"}],
+      "data_collection": {"data_completeness_pct": 10.0, "scraping_priority_score": 6, "missing_fields": ["admissions_portal","year_established","campuses","all_program_details","fees","scholarships","policies","faculty","hostel","transport","placements","career_paths","reviews"]}
+    },
+    {
+      "university_id": 11,
+      "basic_information": {
+        "name": "Ziauddin University",
+        "short_name": "ZU",
+        "slug": "ziauddin-university",
+        "logo_url": null,
+        "official_website": "https://zu.edu.pk/",
+        "admissions_portal": "https://admission.zu.edu.pk/",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": null,
+        "hec_status": "Recognised",
+        "university_type": "Private",
+        "social_media": null,
+        "virtual_tour_url": null
+      },
+      "campuses": [{"campus_name": "Multiple Karachi Campuses", "city": "Karachi"}],
+      "university_overview": {"major_strengths": ["Health Sciences","Allied Health Sciences","Liberal Arts & Human Sciences","Law, Politics & Governance","Nursing & Midwifery","Pharmacy & Pharmaceutical Sciences","Veterinary & Animal Sciences"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://zu.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "https://admission.zu.edu.pk/", "category": "Admissions"},
+        {"label": "Locations", "url": "https://zu.edu.pk/locations/", "category": "Campuses"}
+      ],
+      "data_collection": {"data_completeness_pct": 25.0, "scraping_priority_score": 8, "missing_fields": ["year_established","programs_detail","fees","scholarships","academic_policies","faculty","hostel","transport"]}
+    },
+    {
+      "university_id": 12,
+      "basic_information": {
+        "name": "Indus University",
+        "short_name": "Indus",
+        "slug": "indus-university",
+        "logo_url": null,
+        "official_website": "https://indus.edu.pk/",
+        "admissions_portal": "http://inquiry.induscms.com:81/ords/r/erasoft/a200/login",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": null,
+        "hec_status": null,
+        "university_type": "Private"
+      },
+      "campuses": [
+        {"campus_name": "Gulshan Campus", "campus_type": "Main", "city": "Karachi"},
+        {"campus_name": "North Campus", "campus_type": "Satellite", "city": "Karachi"}
+      ],
+      "university_overview": {"major_strengths": ["Business","IT","Engineering","Fashion"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://indus.edu.pk/", "category": "General"},
+        {"label": "Courses", "url": "https://indus.edu.pk/course.php", "category": "Programs"},
+        {"label": "Fee Structure", "url": "https://indus.edu.pk/fee.php", "category": "Fees"}
+      ],
+      "data_collection": {"data_completeness_pct": 20.0, "scraping_priority_score": 6, "missing_fields": ["year_established","fees_detail","scholarships","policies","faculty","hostel","transport","placements","career_paths","reviews"]}
+    },
+    {
+      "university_id": 13,
+      "basic_information": {
+        "name": "SZABIST University",
+        "short_name": "SZABIST",
+        "slug": "szabist-karachi",
+        "logo_url": null,
+        "official_website": "https://szabist.edu.pk/",
+        "admissions_portal": "http://admissions.szabist.edu.pk/",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": null,
+        "hec_status": null,
+        "university_type": "Private"
+      },
+      "campuses": [{"campus_name": "Karachi", "campus_type": "Main", "city": "Karachi"}],
+      "university_overview": {"major_strengths": ["Programs","Certificate Courses","Publications","Internships & Placements"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://szabist.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "http://admissions.szabist.edu.pk/", "category": "Admissions"},
+        {"label": "Fee Structure", "url": "https://szabist.edu.pk/fee-structure/", "category": "Fees"}
+      ],
+      "data_collection": {"data_completeness_pct": 25.0, "scraping_priority_score": 8, "missing_fields": ["year_established","programs_detail","fees_detail","scholarships","policies","faculty","hostel","transport"]}
+    },
+    {
+      "university_id": 14,
+      "basic_information": {
+        "name": "Institute of Business Management",
+        "short_name": "IoBM",
+        "slug": "iobm-karachi",
+        "logo_url": null,
+        "official_website": "https://iobm.edu.pk/",
+        "admissions_portal": null,
+        "address": "Korangi Creek, Karachi-75190",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": null,
+        "hec_status": null,
+        "university_type": "Private"
+      },
+      "campuses": [{"campus_name": "Main Campus", "campus_type": "Main", "city": "Karachi"}],
+      "university_overview": {"major_strengths": ["30+ Degree Programs","Career Development Centre","Student Societies"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://iobm.edu.pk/", "category": "General"},
+        {"label": "Career Development Centre", "url": "https://iobm.edu.pk/career-development-centre/", "category": "Career"}
+      ],
+      "data_collection": {"data_completeness_pct": 20.0, "scraping_priority_score": 7, "missing_fields": ["admissions_portal","year_established","programs_detail","fees","scholarships","policies","faculty","hostel","transport"]}
+    },
+    {
+      "university_id": 15,
+      "basic_information": {
+        "name": "Dawood University of Engineering & Technology",
+        "short_name": "DUET",
+        "slug": "duet-karachi",
+        "logo_url": null,
+        "official_website": "https://duet.edu.pk/",
+        "admissions_portal": "http://admissions.duet.edu.pk/",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": 2013,
+        "charter_authority": "Government of Sindh",
+        "hec_status": "Chartered",
+        "university_type": "Public",
+        "social_media": null
+      },
+      "campuses": [
+        {"campus_name": "Jinnah Campus", "campus_type": "Main", "city": "Karachi"},
+        {"campus_name": "Iqbal Campus", "campus_type": "Satellite", "city": "Karachi"}
+      ],
+      "university_overview": {"major_strengths": ["Engineering","Technology","Career Counselling","Industrial Liaison"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://duet.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "http://admissions.duet.edu.pk/", "category": "Admissions"},
+        {"label": "Undergraduate Programs", "url": "https://duet.edu.pk/undergrad-programs/", "category": "Programs"}
+      ],
+      "data_collection": {"data_completeness_pct": 30.0, "scraping_priority_score": 7, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","fees","scholarships","policies","faculty","hostel","transport"]}
+    },
+    {
+      "university_id": 16,
+      "basic_information": {
+        "name": "FAST-NUCES Karachi Campus",
+        "short_name": "FAST Karachi",
+        "slug": "fast-nuces-karachi",
+        "logo_url": null,
+        "official_website": "https://nu.edu.pk/",
+        "admissions_portal": "https://admissions.nu.edu.pk/OLAR/Login",
+        "city": "Karachi",
+        "province": "Sindh",
+        "country": "Pakistan",
+        "year_established": 2000,
+        "charter_authority": "Federal Government",
+        "hec_status": "Chartered",
+        "university_type": "Private",
+        "social_media": null
+      },
+      "campuses": [
+        {"campus_name": "Main Campus", "campus_type": "Main", "address": "St-4 Sector 17-D National Highway", "city": "Karachi"},
+        {"campus_name": "City Campus", "campus_type": "City", "address": "22-G Block-6 PECHS", "city": "Karachi"}
+      ],
+      "university_overview": {"major_strengths": ["BS CS","BS AI","BS Data Science","BS Cyber Security","MS and PhD Programs"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "National Website", "url": "https://nu.edu.pk/", "category": "General"},
+        {"label": "Karachi Campus Site", "url": "https://khi.nu.edu.pk/", "category": "Campuses"},
+        {"label": "Admissions Portal", "url": "https://admissions.nu.edu.pk/OLAR/Login", "category": "Admissions"}
+      ],
+      "data_collection": {"data_completeness_pct": 35.0, "scraping_priority_score": 9, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","fees","scholarships","policies","faculty","hostel","transport"]}
+    },
+    {
+      "university_id": 17,
+      "basic_information": {
+        "name": "COMSATS University",
+        "short_name": "COMSATS",
+        "slug": "comsats-university",
+        "logo_url": null,
+        "official_website": "https://comsats.edu.pk/",
+        "admissions_portal": "https://admissions.comsats.edu.pk/",
+        "city": "Islamabad",
+        "province": "Islamabad Capital Territory",
+        "country": "Pakistan",
+        "year_established": 2000,
+        "charter_authority": "Federal Government",
+        "hec_status": "Chartered",
+        "university_type": "Public",
+        "accreditations": [{"body": "QS", "type": "Referenced on official site"}, {"body": "Nature Index", "type": "Referenced on official site"}]
+      },
+      "campuses": [{"campus_name": "Islamabad (Principal Seat)", "campus_type": "Main", "city": "Islamabad"}, {"campus_name": "Multiple campuses across Pakistan", "campus_type": "Satellite"}],
+      "university_overview": {"major_strengths": ["Faculties and Departments","Research Portal","Scholarships","International Students"]},
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
+      "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://comsats.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "https://admissions.comsats.edu.pk/", "category": "Admissions"},
+        {"label": "Fee Structure", "url": "https://comsats.edu.pk/fee-structure.aspx", "category": "Fees"}
+      ],
+      "data_collection": {"data_completeness_pct": 30.0, "scraping_priority_score": 8, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","fees_detail","scholarships","policies","faculty","hostel","transport"]}
+    },
+    {
+      "university_id": 18,
+      "basic_information": {
+        "name": "Pakistan Institute of Engineering and Applied Sciences",
+        "short_name": "PIEAS",
+        "slug": "pieas-islamabad",
+        "logo_url": null,
+        "official_website": "https://www.pieas.edu.pk/",
+        "admissions_portal": "http://admissions.pieas.edu.pk/",
+        "address": "Lehtrar Road",
+        "city": "Islamabad",
+        "province": "Islamabad Capital Territory",
+        "country": "Pakistan",
+        "year_established": null,
+        "charter_authority": "Federal Government / PAEC",
+        "hec_status": "Ranked #1 Engineering & Technology",
+        "university_type": "Public",
+        "social_media": null
+      },
+      "campuses": [
+        {"campus_name": "Main Campus, Islamabad", "campus_type": "Main", "city": "Islamabad"},
+        {"campus_name": "NIAB", "campus_type": "Research", "city": "Faisalabad"},
+        {"campus_name": "NIBGE", "campus_type": "Research", "city": "Faisalabad"},
+        {"campus_name": "KINPOE", "campus_type": "Research", "city": "Karachi"},
+        {"campus_name": "NILOP", "campus_type": "Research", "city": "Nilore"}
+      ],
+      "university_overview": {
+        "major_strengths": ["Engineering & Technology","Nuclear Sciences","Applied Sciences","Research Culture"],
+        "national_ranking": "Ranked #1 for Engineering & Technology by HEC (stated on official site)"
+      },
+      "rankings": [{"ranking_name": "HEC Engineering & Technology", "ranking_category": "HEC", "ranking_value": "Ranked #1", "ranking_note": "Stated as No. 1 for Engineering & Technology on official site"}],
+      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
+      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
+      "hostel": null, "transport": null, "placements": null, "career_paths": null, "reviews": null, "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://www.pieas.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "http://admissions.pieas.edu.pk/", "category": "Admissions"},
+        {"label": "Scholarships", "url": "https://www.pieas.edu.pk/scholarships/", "category": "Scholarships"}
+      ],
+      "data_collection": {"data_completeness_pct": 35.0, "scraping_priority_score": 10, "missing_fields": ["logo_url","phone","email","year_established","history","mission","vision","programs_detail","fees","scholarships","policies","faculty","hostel","transport"]}
+    }
+  ]
+}

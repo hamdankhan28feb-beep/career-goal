@@ -1,0 +1,10 @@
+{
+  "/api/counselor/route": "app/api/counselor/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/page": "app/page.js",
+  "/universities/page": "app/universities/page.js",
+  "/universities/[slug]/page": "app/universities/[slug]/page.js",
+  "/scholarships/page": "app/scholarships/page.js",
+  "/counselor/page": "app/counselor/page.js",
+  "/auth/login/page": "app/auth/login/page.js"
+}
