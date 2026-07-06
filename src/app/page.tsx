@@ -15,11 +15,11 @@ const FEATURES = [
   { icon: Target, title: 'Side-by-Side Compare', desc: 'Compare universities on 8 dimensions: fees, merit, scholarships & more', href: '/compare' },
 ];
 
-export default function HomePage() {
-  const universities = getFeaturedUniversities(12);
-  const featuredUniversities = getFeaturedUniversities(6);
+export default async function HomePage() {
+  const universities = await getFeaturedUniversities(12);
+  const featuredUniversities = await getFeaturedUniversities(6);
   const fields = getFields();
-  const allUniversities = getUniversities();
+  const allUniversities = await getUniversities();
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">

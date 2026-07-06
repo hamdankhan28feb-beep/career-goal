@@ -6,7 +6,7 @@ export const metadata = {
   description: 'Predict your admission chances at Pakistani universities based on your academic aggregate and budget.',
 };
 
-export default function PredictorPage() {
-  const universities = getUniversities();
+export default async function PredictorPage() {
+  const universities = await getUniversities();
   return <PredictorClient universities={universities} />;
 }

@@ -6,7 +6,7 @@ export const metadata = {
   description: 'Compare Pakistani universities side-by-side on fees, merit, scholarships, and more.',
 };
 
-export default function ComparePage() {
-  const universities = getUniversities();
+export default async function ComparePage() {
+  const universities = await getUniversities();
   return <CompareClient universities={universities} />;
 }

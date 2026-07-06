@@ -16,9 +16,9 @@ function StarRating({ value }: { value: number | null | undefined }) {
   );
 }
 
-export default function AdminReviewsPage() {
-  const universities = getUniversities();
-  const pendingReviews = getPendingReviews();
+export default async function AdminReviewsPage() {
+  const universities = await getUniversities();
+  const pendingReviews = await getPendingReviews();
   const allReviews = universities.flatMap((u) =>
     u.reviews.map((r) => ({ ...r, universityName: u.shortName, universitySlug: u.slug }))
   );

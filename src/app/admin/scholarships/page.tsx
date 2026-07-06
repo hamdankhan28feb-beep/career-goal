@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getUniversities } from '@/lib/data';
 import { Award, ArrowLeft } from 'lucide-react';
 
-export default function AdminScholarshipsPage() {
-  const universities = getUniversities();
+export default async function AdminScholarshipsPage() {
+  const universities = await getUniversities();
   const allScholarships = universities.flatMap((u) =>
     u.scholarships.map((s) => ({ ...s, universityName: u.shortName, universitySlug: u.slug }))
   );

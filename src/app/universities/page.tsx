@@ -6,7 +6,7 @@ export const metadata = {
   description: 'Browse Pakistani universities with source-verified profiles. Filter by city, type, and more.',
 };
 
-export default function UniversitiesPage() {
-  const universities = getUniversities();
+export default async function UniversitiesPage() {
+  const universities = await getUniversities();
   return <UniversitiesClient universities={universities} />;
 }

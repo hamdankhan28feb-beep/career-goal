@@ -4,8 +4,8 @@ import { getFields } from '@/lib/fields-data';
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://futurepath.pk';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const universities = getUniversities();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const universities = await getUniversities();
   const fields = getFields();
   const now = new Date();
 

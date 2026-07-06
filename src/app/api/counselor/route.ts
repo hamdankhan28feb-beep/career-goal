@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getUniversities } from '@/lib/data';
 
-function buildContext(): string {
-  const universities = getUniversities().slice(0, 10); // Limit context size
+async function buildContext(): Promise<string> {
+  const universities = (await getUniversities()).slice(0, 10); // Limit context size
   return universities
     .map((u) => {
       const scholarships = u.scholarships.map((s) => s.scholarship_name).filter(Boolean).join(', ');
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json() as { message: string; history?: { role: string; content: string }[] };
     const { message, history = [] } = body;
 
-    const context = buildContext();
+    const context = await buildContext();
     const systemPrompt = `You are FuturePath AI Counselor, an expert on Pakistani universities and career guidance for Pakistani students. 
 
 Here is the verified university database context:

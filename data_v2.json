@@ -117,30 +117,173 @@
       },
       "campuses": [{"campus_name": "Karachi", "campus_type": "Main", "city": "Karachi", "province": "Sindh", "campus_size_acres": null, "virtual_tour_url": null, "facilities": null}],
       "programs": null,
-      "admissions": null,
-      "entry_tests": null,
-      "fees": null,
-      "scholarships": null,
+      "admissions": {
+        "admission_cycle": "Fall 2026",
+        "admission_months": null,
+        "application_start": null,
+        "application_deadline": null,
+        "result_date": null,
+        "eligibility_criteria": "Applicants must have completed (or be completing) Intermediate/A-Levels/High School Diploma/IB or an equivalent qualification by around June 2026, and must meet program-specific grade/subject requirements listed on HU's Admissions Criteria page.",
+        "required_documents": [
+          "Personal Information",
+          "Entrance Exam Details",
+          "Educational Background",
+          "Meta-curricular Experience Form",
+          "Required Document Uploads"
+        ],
+        "admission_process": "Register online → Complete e-application → Submit before deadline → Pay application fee → Appear for entrance exam → Shortlisted applicants attend interview → Complete Meta-curricular Experience Form as part of the compulsory application section.",
+        "merit_calculation_method": "Based on entrance exam performance, interview evaluation, and application review.",
+        "interview_requirement": "Required for shortlisted applicants after the entrance exam",
+        "entry_test_required": true,
+        "application_fee_pkr": null,
+        "online_application_url": "https://eapplication.habib.edu.pk/"
+      },
+      "entry_tests": [
+        {
+          "test_name": "HU Entrance Examination",
+          "test_type": "Own",
+          "test_mode": "Computer-Based",
+          "subjects_included": ["English (Reading)", "English (Writing)", "English (Essay)", "Mathematics"],
+          "marks_distribution": null,
+          "total_marks": null,
+          "passing_criteria": "No negative marking. Test is adaptive — adjusts difficulty based on performance.",
+          "passing_marks": null,
+          "test_duration_min": 210,
+          "test_fee_pkr": null,
+          "test_website_url": null,
+          "registration_deadline": null,
+          "sample_pattern": "DSSE (engineering/sciences) applicants: Advanced Level Mathematics with ~20-25 questions covering equations, functions, geometry, and trigonometry. AHSS (humanities/social sciences) applicants: Arithmetic — basic operations, fractions, decimals, percentages, and estimation.",
+          "preparation_tips": "The exam is a standardized test developed by the College Board, assessing English proficiency and Math competence. DSSE applicants face advanced math; AHSS applicants face arithmetic-level math. All applicants may qualify for exemption based on SAT I scores or high grades. Registering early can earn a discount on the enrollment fee and eligibility for the HU Summer Program. Applicants from Sindh test in Karachi; those outside Sindh can use test centers elsewhere."
+        }
+      ],
+      "fees": {
+        "fee_year": 2026,
+        "admission_fee": null,
+        "semester_fee": 450000,
+        "credit_hour_fee": null,
+        "lab_fee": null,
+        "exam_fee": null,
+        "hostel_fee_monthly": null,
+        "transport_fee_monthly": null,
+        "security_deposit": null,
+        "alumni_fee": null,
+        "approx_total_degree_cost": null,
+        "fee_notes": "Full tuition is approximately PKR 450,000/semester (Class of 2030, 2026-27). Most students receive some scholarship/aid. Approximate third-party estimates by program: SAHSS ~PKR 285,000-315,000/semester, Engineering ~PKR 350,000-395,000/semester, Computer Science ~PKR 335,000-370,000/semester. Fees payable in two installments per semester. A 5% prepayment discount is available if paid annually upfront without scholarship/aid. Refund policy: 100% refund before classes begin or within first 7 days; 50% refund days 8-15; no refund after day 15."
+      },
+      "scholarships": [
+        {
+          "scholarship_name": "HU TOPS",
+          "scholarship_type": "Merit",
+          "eligibility": "Based on secondary school grades and entrance exam/SAT performance — not grades alone.",
+          "coverage_percentage": 100.00,
+          "coverage_type": "100% financial support for all four years",
+          "annual_value_pkr": null,
+          "renewable": true,
+          "renewable_conditions": "Renews automatically each semester for up to four years, subject to conditions.",
+          "seats_available": null,
+          "external_body": null,
+          "application_url": null
+        },
+        {
+          "scholarship_name": "HU EOP (Equal Opportunity Program)",
+          "scholarship_type": "Need-Based",
+          "eligibility": "Based on secondary school grades and entrance exam/SAT performance — not grades alone. Financial aid amount is need-based and personalized per admitted student.",
+          "coverage_percentage": 80.00,
+          "coverage_type": "Up to 80% financial support",
+          "annual_value_pkr": null,
+          "renewable": true,
+          "renewable_conditions": "Renews automatically each semester for up to four years, subject to conditions.",
+          "seats_available": null,
+          "external_body": null,
+          "application_url": null
+        },
+        {
+          "scholarship_name": "HU Other Scholarships",
+          "scholarship_type": "Merit",
+          "eligibility": "Based on secondary school grades and entrance exam/SAT performance. Around 80-85% of students receive some form of scholarship or financial aid.",
+          "coverage_percentage": 50.00,
+          "coverage_type": "Up to 50% of tuition and lab/studio fees",
+          "annual_value_pkr": null,
+          "renewable": true,
+          "renewable_conditions": "Renews automatically each semester for up to four years, subject to conditions.",
+          "seats_available": null,
+          "external_body": null,
+          "application_url": null
+        }
+      ],
       "academic_policies": null,
       "faculty_academics": null,
       "student_life": null,
       "facilities": null,
       "hostel": null,
       "transport": null,
-      "placements": null,
+      "placements": {
+        "career_services_office": null,
+        "placement_office_url": null,
+        "internship_opportunities": null,
+        "placement_support": "Students can work on campus via the Student Employment Portal (TA, peer tutor, library assistant, etc.) from Semester II onward, given a minimum CGPA.",
+        "placement_rate_pct": null,
+        "avg_starting_salary_pkr": null,
+        "industry_partnerships": null,
+        "alumni_network": null,
+        "alumni_count": null,
+        "linkedin_alumni_url": null,
+        "top_recruiters": null
+      },
       "career_paths": null,
       "rankings": null,
       "reviews": null,
-      "faqs": null,
+      "faqs": [
+        {
+          "question": "What qualifications do I need to apply to Habib University?",
+          "answer": "Applicants must have completed (or be completing) Intermediate/A-Levels/High School Diploma/IB or an equivalent qualification by around June 2026, and must meet program-specific grade/subject requirements listed on HU's Admissions Criteria page.",
+          "category": "Admissions"
+        },
+        {
+          "question": "What does the HU entrance exam look like?",
+          "answer": "The exam is computer-based, approximately 3.5 hours long, testing English (Reading, Writing, Essay) plus Math, with no negative marking. The test is adaptive — it adjusts question difficulty based on your performance. DSSE applicants are tested on Advanced Level Mathematics (~20-25 questions), while AHSS applicants are tested on Arithmetic.",
+          "category": "Entry Test"
+        },
+        {
+          "question": "Can I be exempted from the entrance exam?",
+          "answer": "Yes, applicants may qualify for exemption based on SAT I scores or high grades. Check the official admissions page for specific exemption criteria.",
+          "category": "Entry Test"
+        },
+        {
+          "question": "What percentage of students receive scholarships?",
+          "answer": "Around 80-85% of students receive some form of scholarship or financial aid. Key programs include HU TOPS (100% support), HU EOP (up to 80%), and other scholarships covering up to 50% of tuition and lab/studio fees.",
+          "category": "Scholarships"
+        },
+        {
+          "question": "What is the fee structure for 2026-27?",
+          "answer": "Full tuition is approximately PKR 450,000 per semester (most students are on some scholarship/aid). Fees are payable in two installments per semester, and a 5% prepayment discount is available if you pay annually upfront without scholarship/aid.",
+          "category": "Fees"
+        },
+        {
+          "question": "What is the refund policy?",
+          "answer": "100% refund if requested before classes begin or within the first 7 days; 50% refund from day 8-15; no refund after day 15.",
+          "category": "Fees"
+        },
+        {
+          "question": "Can I work on campus as a student?",
+          "answer": "Yes, students can work on campus via the Student Employment Portal (TA, peer tutor, library assistant, etc.) from Semester II onward, given a minimum CGPA.",
+          "category": "Student Life"
+        },
+        {
+          "question": "Are student loans available?",
+          "answer": "Yes, financial aid amount is need-based and personalized per admitted student, with student loan facilitation also available.",
+          "category": "Financial Aid"
+        }
+      ],
       "important_links": [
         {"label": "Official Website", "url": "https://habib.edu.pk/", "category": "General"},
         {"label": "Admissions Portal", "url": "https://eapplication.habib.edu.pk/", "category": "Admissions"},
         {"label": "Admissions Info", "url": "https://habib.edu.pk/admissions/", "category": "Admissions"}
       ],
       "data_collection": {
-        "data_completeness_pct": 20.0,
-        "scraping_priority_score": 8,
-        "missing_fields": ["logo_url","phone","email","year_established","history","mission","vision","programs","fees","scholarships","academic_policies","faculty","student_life","facilities","hostel","transport","placements","career_paths","rankings","reviews","faqs"]
+        "data_completeness_pct": 65.0,
+        "scraping_priority_score": 5,
+        "missing_fields": ["logo_url","phone","email","year_established","history","mission","vision","programs","academic_policies","student_life","facilities","hostel","transport","career_paths","rankings","reviews"]
       }
     },
     {

@@ -1,54 +1,81 @@
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import path from 'node:path';
-
+import { query } from '@/lib/db';
 import type { SessionUser } from '@/lib/auth';
 
-type UsersFile = {
-  users: SessionUser[];
-  passwords: Record<string, string>;
-};
+// Helper to ensure the users table exists.
+async function ensureUsersTableExists() {
+  await query(`
+    CREATE TABLE IF NOT EXISTS users (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE NOT NULL,
+      role TEXT NOT NULL,
+      city TEXT,
+      password TEXT NOT NULL,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+    )
+  `);
+}
 
-const USERS_PATH = path.join(process.cwd(), 'users.json');
-
-function readUsersFile(): UsersFile {
-  if (!existsSync(USERS_PATH)) {
-    return { users: [], passwords: {} };
-  }
+export async function getRegisteredUsers(): Promise<SessionUser[]> {
   try {
-    const parsed = JSON.parse(readFileSync(USERS_PATH, 'utf8')) as Partial<UsersFile>;
-    return {
-      users: Array.isArray(parsed.users) ? parsed.users : [],
-      passwords: parsed.passwords ?? {},
-    };
-  } catch {
-    return { users: [], passwords: {} };
+    await ensureUsersTableExists();
+    const res = await query('SELECT id, name, email, role, city FROM users');
+    return res.rows.map(row => ({
+      id: row.id,
+      name: row.name,
+      email: row.email,
+      role: row.role,
+      city: row.city || undefined
+    }));
+  } catch (err) {
+    console.error('Failed to get registered users:', err);
+    return [];
   }
 }
 
-function writeUsersFile(data: UsersFile): void {
-  writeFileSync(USERS_PATH, JSON.stringify(data, null, 2), 'utf8');
-}
-
-export function getRegisteredUsers(): SessionUser[] {
-  return readUsersFile().users;
-}
-
-export function getRegisteredPassword(email: string): string | null {
-  const { passwords } = readUsersFile();
-  return passwords[email.toLowerCase()] ?? null;
-}
-
-export function registerUser(user: SessionUser, password: string): { ok: true; user: SessionUser } | { ok: false; error: string } {
-  const data = readUsersFile();
-  const email = user.email.toLowerCase();
-
-  if (data.users.some((u) => u.email.toLowerCase() === email)) {
-    return { ok: false, error: 'An account with this email already exists.' };
+export async function getRegisteredPassword(email: string): Promise<string | null> {
+  try {
+    await ensureUsersTableExists();
+    const res = await query('SELECT password FROM users WHERE LOWER(email) = $1', [email.toLowerCase()]);
+    if (res.rows.length === 0) return null;
+    return res.rows[0].password;
+  } catch (err) {
+    console.error('Failed to get registered password:', err);
+    return null;
   }
+}
 
-  const saved = { ...user, email };
-  data.users.push(saved);
-  data.passwords[email] = password;
-  writeUsersFile(data);
-  return { ok: true, user: saved };
+export async function registerUser(
+  user: SessionUser, 
+  password: string
+): Promise<{ ok: true; user: SessionUser } | { ok: false; error: string }> {
+  try {
+    await ensureUsersTableExists();
+    const email = user.email.toLowerCase();
+
+    // Check if user already exists
+    const checkRes = await query('SELECT id FROM users WHERE LOWER(email) = $1', [email]);
+    if (checkRes.rows.length > 0) {
+      return { ok: false, error: 'An account with this email already exists.' };
+    }
+
+    const saved = { ...user, email };
+    await query(
+      `INSERT INTO users (id, name, email, role, city, password) 
+       VALUES ($1, $2, $3, $4, $5, $6)`,
+      [
+        saved.id,
+        saved.name,
+        saved.email,
+        saved.role,
+        saved.city || null,
+        password
+      ]
+    );
+
+    return { ok: true, user: saved };
+  } catch (err: any) {
+    console.error('Failed to register user:', err);
+    return { ok: false, error: err.message || 'Registration failed.' };
+  }
 }

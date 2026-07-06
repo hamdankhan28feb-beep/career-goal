@@ -12,13 +12,13 @@ import { getUniversities, getUniversityBySlug } from '@/lib/data';
 import { ReviewForm } from '@/components/review-form';
 
 export async function generateStaticParams() {
-  const universities = getUniversities();
+  const universities = await getUniversities();
   return universities.map((u) => ({ slug: u.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const university = getUniversityBySlug(slug);
+  const university = await getUniversityBySlug(slug);
   if (!university) return { title: 'University Not Found' };
   return {
     title: university.name,
@@ -108,7 +108,7 @@ const NAV_SECTIONS = [
 
 export default async function UniversityProfilePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const u = getUniversityBySlug(slug);
+  const u = await getUniversityBySlug(slug);
   if (!u) notFound();
 
   const avgRating = u.reviews.length > 0

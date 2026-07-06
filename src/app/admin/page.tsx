@@ -3,8 +3,8 @@ import { getUniversities, getFields } from '@/lib/data';
 import { AdminLogoutButton } from '@/components/admin-logout-button';
 import { BarChart2, Building2, GraduationCap, Award, Star, ArrowRight, BookOpen } from 'lucide-react';
 
-export default function AdminPage() {
-  const universities = getUniversities();
+export default async function AdminPage() {
+  const universities = await getUniversities();
   const fields = getFields();
 
   const totalPrograms = universities.reduce((a, u) => a + u.programsCount, 0);
