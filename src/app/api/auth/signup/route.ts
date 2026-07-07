@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Password must be at least 8 characters.' }, { status: 400 });
     }
 
-    const result = registerUser(
+    const result = await registerUser(
       {
         id: randomUUID(),
         name: name.trim(),

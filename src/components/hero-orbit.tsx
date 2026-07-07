@@ -49,6 +49,8 @@ function UniversityOrb({
   const rad = (angle * Math.PI) / 180;
   const x = Math.cos(rad) * radius;
   const y = Math.sin(rad) * radius;
+  const xOffset = x.toFixed(3);
+  const yOffset = y.toFixed(3);
   const counterRad = (-angle * Math.PI) / 180;
   const cos = Math.cos(counterRad);
   const sin = Math.sin(counterRad);
@@ -58,8 +60,8 @@ function UniversityOrb({
       href={`/universities/${university.slug}`}
       className="absolute flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-border/70 bg-card/90 text-xs font-bold uppercase shadow-card backdrop-blur transition hover:-translate-y-[calc(50%+4px)] hover:border-primary/50 hover:shadow-glow-primary hover:z-10 cursor-pointer"
       style={{
-        left: `calc(50% + ${x}px)`,
-        top: `calc(50% + ${y}px)`,
+        left: `calc(50% + ${xOffset}px)`,
+        top: `calc(50% + ${yOffset}px)`,
         transform: `translate(-50%, -50%) rotate(${-angle}deg)`,
       }}
       title={university.name}

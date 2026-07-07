@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
 import { decodeSessionToken, isAdmin, SESSION_COOKIE } from '@/lib/auth';
-import { getUniversityBySlug, loadRawUniversitiesV2, saveRawUniversitiesV2 } from '@/lib/data';
+import { getUniversityBySlug } from '@/lib/data';
 import { addPendingReview, getAllStoredReviews, updateReviewStatus } from '@/lib/reviews-store';
 import type { ReviewInput } from '@/lib/types';
 
