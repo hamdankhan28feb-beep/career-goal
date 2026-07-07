@@ -1,10 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
+import { readFile, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 
 import { decodeSessionToken, isAdmin, SESSION_COOKIE } from '@/lib/auth';
 import { getUniversityBySlug } from '@/lib/data';
 import { addPendingReview, getAllStoredReviews, updateReviewStatus } from '@/lib/reviews-store';
-import type { ReviewInput } from '@/lib/types';
+import type { RawUniversityV2, ReviewInput } from '@/lib/types';
+
+const DATA_FILE_PATH = resolve(process.cwd(), 'data_v2.json');
+
+async function loadRawUniversitiesV2(): Promise<RawUniversityV2[]> {
+  const rawContent = await readFile(DATA_FILE_PATH, 'utf8');
+  const parsed = JSON.parse(rawContent) as { universities?: RawUniversityV2[] } | RawUniversityV2[];
+
+  if (Array.isArray(parsed)) {
+    return parsed;
+  }
+
+  return parsed.universities ?? [];
+}
+
+async function saveRawUniversitiesV2(universities: RawUniversityV2[]): Promise<void> {
+  await writeFile(DATA_FILE_PATH, `${JSON.stringify({ universities }, null, 2)}\n`, 'utf8');
+}
 
 async function requireAdmin() {
   const cookieStore = await cookies();
@@ -29,7 +48,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'University and overall rating are required.' }, { status: 400 });
     }
 
-    const university = getUniversityBySlug(body.universitySlug);
+    const university = await getUniversityBySlug(body.universitySlug);
     if (!university) {
       return NextResponse.json({ error: 'University not found.' }, { status: 404 });
     }
@@ -72,7 +91,7 @@ export async function PATCH(req: NextRequest) {
 
     // Publish to data_v2.json if approved
     if (body.status === 'approved') {
-      const rawUnis = loadRawUniversitiesV2();
+      const rawUnis = await loadRawUniversitiesV2();
       const uniIndex = rawUnis.findIndex(
         (u) =>
           u.basic_information.slug === updated.universitySlug ||
@@ -97,7 +116,7 @@ export async function PATCH(req: NextRequest) {
           pros: updated.pros,
           cons: updated.cons,
         });
-        saveRawUniversitiesV2(rawUnis);
+        await saveRawUniversitiesV2(rawUnis);
       }
     }
 
