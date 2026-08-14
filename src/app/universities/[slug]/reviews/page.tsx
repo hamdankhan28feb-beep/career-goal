@@ -8,7 +8,7 @@ import { getUniversityBySlug } from '@/lib/data';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const university = getUniversityBySlug(slug);
+  const university = await getUniversityBySlug(slug);
   if (!university) return { title: 'Review Not Found' };
   return {
     title: `Review ${university.shortName}`,
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function UniversityReviewPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const university = getUniversityBySlug(slug);
+  const university = await getUniversityBySlug(slug);
   if (!university) notFound();
 
   return (

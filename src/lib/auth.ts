@@ -1,9 +1,9 @@
-// ─── Lightweight session management (cookie-based, no next-auth needed) ───────
-// Edge-safe utilities — no Node.js fs imports (used by middleware).
+import { SignJWT, jwtVerify } from 'jose';
 
 export const SESSION_COOKIE = 'fp_session';
+export const SESSION_MAX_AGE_SECONDS = 60 * 60 * 8;
 
-export type UserRole = 'student' | 'admin' | 'parent' | 'counselor';
+export type UserRole = 'user' | 'admin';
 
 export type SessionUser = {
   id: string;
@@ -13,27 +13,58 @@ export type SessionUser = {
   city?: string;
 };
 
-/** Check if a user has admin privileges */
-export function isAdmin(user: SessionUser | null): boolean {
+function getJwtSecret(): Uint8Array {
+  const secret = process.env.AUTH_JWT_SECRET;
+  if (!secret || secret.length < 32) {
+    throw new Error('AUTH_JWT_SECRET must be set to a random value of at least 32 characters.');
+  }
+
+  return new TextEncoder().encode(secret);
+}
+
+export function isAdmin(user: SessionUser | null): user is SessionUser & { role: 'admin' } {
   return user?.role === 'admin';
 }
 
-/** Generates a simple session token string (demo only — not cryptographically secure) */
-export function createSessionToken(user: SessionUser): string {
-  const payload = { ...user, iat: Date.now() };
-  return Buffer.from(JSON.stringify(payload)).toString('base64');
+export async function createSessionToken(user: SessionUser): Promise<string> {
+  return new SignJWT({
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    city: user.city,
+  })
+    .setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
+    .setSubject(user.id)
+    .setIssuedAt()
+    .setExpirationTime(`${SESSION_MAX_AGE_SECONDS}s`)
+    .setIssuer('futurepath')
+    .setAudience('futurepath-web')
+    .sign(getJwtSecret());
 }
 
-/** Decodes a session token (demo only — no signature verification) */
-export function decodeSessionToken(token: string): SessionUser | null {
+export async function verifySessionToken(token: string): Promise<SessionUser | null> {
   try {
-    const json =
-      typeof atob === 'function'
-        ? atob(token)
-        : Buffer.from(token, 'base64').toString('utf-8');
-    const payload = JSON.parse(json) as SessionUser & { iat: number };
-    const { iat: _iat, ...user } = payload;
-    return user as SessionUser;
+    const { payload } = await jwtVerify(token, getJwtSecret(), {
+      issuer: 'futurepath',
+      audience: 'futurepath-web',
+    });
+
+    if (
+      typeof payload.sub !== 'string' ||
+      typeof payload.name !== 'string' ||
+      typeof payload.email !== 'string' ||
+      (payload.role !== 'user' && payload.role !== 'admin')
+    ) {
+      return null;
+    }
+
+    return {
+      id: payload.sub,
+      name: payload.name,
+      email: payload.email,
+      role: payload.role,
+      city: typeof payload.city === 'string' ? payload.city : undefined,
+    };
   } catch {
     return null;
   }

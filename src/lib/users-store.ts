@@ -1,81 +1,84 @@
-import { query } from '@/lib/db';
+import { hash } from 'bcryptjs';
+
 import type { SessionUser } from '@/lib/auth';
+import { query } from '@/lib/db';
 
-// Helper to ensure the users table exists.
-async function ensureUsersTableExists() {
-  await query(`
-    CREATE TABLE IF NOT EXISTS users (
-      id TEXT PRIMARY KEY,
-      name TEXT NOT NULL,
-      email TEXT UNIQUE NOT NULL,
-      role TEXT NOT NULL,
-      city TEXT,
-      password TEXT NOT NULL,
-      created_at TIMESTAMPTZ DEFAULT NOW()
-    )
-  `);
+type UserRow = {
+  id: string;
+  name: string | null;
+  email: string;
+  role: 'user' | 'admin';
+  city: string | null;
+  password_hash: string;
+  is_active: boolean;
+};
+
+export type StoredUser = {
+  id: string;
+  name: string;
+  email: string;
+  role: 'user' | 'admin';
+  city?: string;
+  passwordHash: string;
+  isActive: boolean;
+};
+
+export type CreateUserInput = {
+  name: string;
+  email: string;
+  password: string;
+  city?: string;
+};
+
+function toStoredUser(row: UserRow): StoredUser {
+  return {
+    id: row.id,
+    name: row.name ?? 'FuturePath User',
+    email: row.email,
+    role: row.role,
+    city: row.city ?? undefined,
+    passwordHash: row.password_hash,
+    isActive: row.is_active,
+  };
 }
 
-export async function getRegisteredUsers(): Promise<SessionUser[]> {
-  try {
-    await ensureUsersTableExists();
-    const res = await query('SELECT id, name, email, role, city FROM users');
-    return res.rows.map(row => ({
-      id: row.id,
-      name: row.name,
-      email: row.email,
-      role: row.role,
-      city: row.city || undefined
-    }));
-  } catch (err) {
-    console.error('Failed to get registered users:', err);
-    return [];
-  }
+export async function findUserByEmail(email: string): Promise<StoredUser | null> {
+  const result = await query(
+    `SELECT id, name, email, role, city, password_hash, is_active
+     FROM users
+     WHERE email = $1
+     LIMIT 1`,
+    [email.trim().toLowerCase()],
+  );
+  const row = result.rows[0] as UserRow | undefined;
+
+  return row ? toStoredUser(row) : null;
 }
 
-export async function getRegisteredPassword(email: string): Promise<string | null> {
+export async function registerUser(input: CreateUserInput): Promise<SessionUser> {
+  const email = input.email.trim().toLowerCase();
+  const passwordHash = await hash(input.password, 12);
+
   try {
-    await ensureUsersTableExists();
-    const res = await query('SELECT password FROM users WHERE LOWER(email) = $1', [email.toLowerCase()]);
-    if (res.rows.length === 0) return null;
-    return res.rows[0].password;
-  } catch (err) {
-    console.error('Failed to get registered password:', err);
-    return null;
-  }
-}
-
-export async function registerUser(
-  user: SessionUser, 
-  password: string
-): Promise<{ ok: true; user: SessionUser } | { ok: false; error: string }> {
-  try {
-    await ensureUsersTableExists();
-    const email = user.email.toLowerCase();
-
-    // Check if user already exists
-    const checkRes = await query('SELECT id FROM users WHERE LOWER(email) = $1', [email]);
-    if (checkRes.rows.length > 0) {
-      return { ok: false, error: 'An account with this email already exists.' };
-    }
-
-    const saved = { ...user, email };
-    await query(
-      `INSERT INTO users (id, name, email, role, city, password) 
-       VALUES ($1, $2, $3, $4, $5, $6)`,
-      [
-        saved.id,
-        saved.name,
-        saved.email,
-        saved.role,
-        saved.city || null,
-        password
-      ]
+    const result = await query(
+      `INSERT INTO users (name, email, password_hash, role, city)
+       VALUES ($1, $2, $3, 'user', $4)
+       RETURNING id, name, email, role, city, password_hash, is_active`,
+      [input.name.trim(), email, passwordHash, input.city?.trim() || null],
     );
+    const user = toStoredUser(result.rows[0] as UserRow);
 
-    return { ok: true, user: saved };
-  } catch (err: any) {
-    console.error('Failed to register user:', err);
-    return { ok: false, error: err.message || 'Registration failed.' };
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      city: user.city,
+    };
+  } catch (error: unknown) {
+    if (typeof error === 'object' && error !== null && 'code' in error && error.code === '23505') {
+      throw new Error('EMAIL_ALREADY_EXISTS');
+    }
+    throw error;
   }
 }

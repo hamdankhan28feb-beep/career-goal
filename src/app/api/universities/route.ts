@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
-import { decodeSessionToken, isAdmin, SESSION_COOKIE } from '@/lib/auth';
+import { isAdmin, SESSION_COOKIE, verifySessionToken } from '@/lib/auth';
 import { getUniversities, clearUniversitiesCache } from '@/lib/data';
 import { query } from '@/lib/db';
 import type { RawUniversityV2 } from '@/lib/types';
@@ -9,7 +9,7 @@ import type { RawUniversityV2 } from '@/lib/types';
 async function requireAdmin() {
   const cookieStore = await cookies();
   const token = cookieStore.get(SESSION_COOKIE)?.value;
-  const user = token ? decodeSessionToken(token) : null;
+  const user = token ? await verifySessionToken(token) : null;
   if (!isAdmin(user)) return null;
   return user;
 }

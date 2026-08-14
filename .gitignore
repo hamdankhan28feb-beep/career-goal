@@ -1,1 +1,40 @@
-node_modules
+# Dependencies (Dependencies aur libraries kahi aur store karna, aapki repo mein nahi)
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs (Build hone ke baad jo files banti hain, unhein commit nahi karna)
+.next/
+out/
+build/
+dist/
+
+# Environment variables (SAB SE ZAROORI - ismein aapka DB password hai)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database files (Agar koi local .db file ban jaye to use bhi ignore karo)
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Logs (Log files commit nahi hoti)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS generated files (Windows/Mac ki extra files)
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files (VS Code ya WebStorm ki settings)
+.vscode/
+.idea/
+
+# Next.js specific auto-generated types (Har build par change hoti hai, isliye ignore)
+next-env.d.ts

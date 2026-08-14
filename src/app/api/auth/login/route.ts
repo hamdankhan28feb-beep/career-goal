@@ -1,38 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
 
-import { createSessionToken, SESSION_COOKIE } from '@/lib/auth';
+import { createSessionToken, SESSION_COOKIE, SESSION_MAX_AGE_SECONDS } from '@/lib/auth';
 import { authenticateUser } from '@/lib/auth-server';
 
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
-    const body = await req.json() as { email?: string; password?: string; role?: string };
-    const { email = '', password = '', role } = body;
+    const body = await request.json() as { email?: unknown; password?: unknown };
+    const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
+    const password = typeof body.password === 'string' ? body.password : '';
 
-    if (!email || !password) {
+    if (!email || !password || email.length > 254 || password.length > 128) {
       return NextResponse.json({ error: 'Email and password are required.' }, { status: 400 });
     }
 
-    const user = authenticateUser(email, password);
+    const user = await authenticateUser(email, password);
     if (!user) {
-      return NextResponse.json({ error: 'Invalid credentials.' }, { status: 401 });
+      return NextResponse.json({ error: 'Invalid email or password.' }, { status: 401 });
     }
 
-    if (role === 'admin' && user.role !== 'admin') {
-      return NextResponse.json({ error: 'Admin access required.' }, { status: 403 });
-    }
+    const token = await createSessionToken(user);
+    const response = NextResponse.json({
+      user,
+      redirect: user.role === 'admin' ? '/admin' : '/',
+    });
 
-    const token = createSessionToken(user);
-    const cookieStore = await cookies();
-    cookieStore.set(SESSION_COOKIE, token, {
+    response.cookies.set(SESSION_COOKIE, token, {
       httpOnly: true,
       sameSite: 'lax',
       secure: process.env.NODE_ENV === 'production',
       path: '/',
-      maxAge: 60 * 60 * 24 * 7,
+      maxAge: SESSION_MAX_AGE_SECONDS,
+      priority: 'high',
     });
 
-    return NextResponse.json({ user, redirect: user.role === 'admin' ? '/admin' : '/' });
+    return response;
   } catch {
     return NextResponse.json({ error: 'Login failed.' }, { status: 500 });
   }

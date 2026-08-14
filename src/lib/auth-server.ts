@@ -1,25 +1,24 @@
-import { getRegisteredPassword, getRegisteredUsers } from '@/lib/users-store';
+import { compare } from 'bcryptjs';
+
 import type { SessionUser } from '@/lib/auth';
+import { findUserByEmail } from '@/lib/users-store';
 
-const DEMO_USERS: SessionUser[] = [
-  { id: 'admin-1', name: 'Admin', email: 'admin@futurepath.pk', role: 'admin' },
-  { id: 'student-1', name: 'Demo Student', email: 'student@futurepath.pk', role: 'student', city: 'Karachi' },
-];
-
-const DEMO_PASSWORDS: Record<string, string> = {
-  'admin@futurepath.pk': 'admin123',
-  'student@futurepath.pk': 'student123',
-};
-
-/** Server-only auth — checks demo accounts and users.json registrations. */
-export function authenticateUser(email: string, password: string): SessionUser | null {
-  const normalized = email.toLowerCase();
-  const demoPassword = DEMO_PASSWORDS[normalized];
-  if (demoPassword && demoPassword === password) {
-    return DEMO_USERS.find((u) => u.email === normalized) ?? null;
+export async function authenticateUser(email: string, password: string): Promise<SessionUser | null> {
+  const user = await findUserByEmail(email);
+  if (!user || !user.isActive || user.passwordHash === '__RESET_REQUIRED__') {
+    return null;
   }
 
-  const registeredPassword = getRegisteredPassword(normalized);
-  if (!registeredPassword || registeredPassword !== password) return null;
-  return getRegisteredUsers().find((u) => u.email.toLowerCase() === normalized) ?? null;
+  const passwordMatches = await compare(password, user.passwordHash);
+  if (!passwordMatches) {
+    return null;
+  }
+
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    city: user.city,
+  };
 }

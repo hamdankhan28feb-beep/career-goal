@@ -19,7 +19,7 @@ export default function SignupPage() {
     setError('');
     if (!form.name || !form.email || !form.password) { setError('Please fill all required fields.'); return; }
     if (form.password !== form.confirm) { setError('Passwords do not match.'); return; }
-    if (form.password.length < 8) { setError('Password must be at least 8 characters.'); return; }
+    if (form.password.length < 12) { setError('Password must be at least 12 characters.'); return; }
     setLoading(true);
     try {
       const res = await fetch('/api/auth/signup', {
@@ -29,7 +29,6 @@ export default function SignupPage() {
           name: form.name,
           email: form.email,
           password: form.password,
-          role: form.role,
           city: form.city,
         }),
       });
@@ -113,7 +112,7 @@ export default function SignupPage() {
           <div>
             <label className="mb-2 block text-sm font-medium">Password *</label>
             <div className="relative">
-              <input type={showPw ? 'text' : 'password'} value={form.password} onChange={f('password')} placeholder="Min 8 characters" className="input-field pr-10" />
+              <input type={showPw ? 'text' : 'password'} value={form.password} onChange={f('password')} placeholder="Min 12 characters" className="input-field pr-10" />
               <button type="button" onClick={() => setShowPw(!showPw)} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
                 {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </button>

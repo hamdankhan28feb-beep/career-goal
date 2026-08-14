@@ -21,14 +21,14 @@ export default function LoginPage() {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, role }),
+        body: JSON.stringify({ email, password }),
       });
       const data = await res.json() as { error?: string; redirect?: string };
       if (!res.ok) {
         setError(data.error ?? 'Invalid credentials.');
         return;
       }
-      window.location.href = data.redirect ?? (role === 'admin' ? '/admin' : '/');
+      window.location.href = data.redirect ?? '/';
     } catch {
       setError('Login failed. Please try again.');
     } finally {
@@ -50,22 +50,12 @@ export default function LoginPage() {
           <p className="mt-2 text-sm text-muted-foreground">Sign in to your FuturePath account</p>
         </div>
 
-        {/* Role selector */}
-        <div className="mb-6 flex rounded-2xl border border-border/70 bg-muted/50 p-1">
-          {(['student', 'admin'] as const).map((r) => (
-            <button key={r} onClick={() => setRole(r)}
-              className={`flex-1 rounded-xl py-2 text-sm font-medium transition capitalize ${role === r ? 'bg-card shadow-sm text-foreground' : 'text-muted-foreground hover:text-foreground'}`}>
-              {r === 'student' ? '🎓 Student' : '⚙️ Admin'}
-            </button>
-          ))}
-        </div>
-
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-border/70 bg-card/80 p-6 shadow-sm">
           <div>
             <label className="mb-2 block text-sm font-medium">Email</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder={role === 'admin' ? 'admin@futurepath.pk' : 'student@email.com'}
+              placeholder="student@email.com"
               className="input-field" />
           </div>
           <div>
@@ -86,12 +76,6 @@ export default function LoginPage() {
             {loading ? 'Signing in…' : 'Sign In'} {!loading && <ArrowRight className="h-4 w-4" />}
           </button>
         </form>
-
-        {role === 'admin' && (
-          <div className="mt-4 rounded-2xl bg-amber-500/8 border border-amber-500/20 p-3 text-xs text-center text-amber-700 dark:text-amber-300">
-            Demo admin: admin@futurepath.pk / admin123
-          </div>
-        )}
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
           Don&apos;t have an account?{' '}

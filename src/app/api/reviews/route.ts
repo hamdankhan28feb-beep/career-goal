@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-import { decodeSessionToken, isAdmin, SESSION_COOKIE } from '@/lib/auth';
+import { isAdmin, SESSION_COOKIE, verifySessionToken } from '@/lib/auth';
 import { getUniversityBySlug } from '@/lib/data';
 import { addPendingReview, getAllStoredReviews, updateReviewStatus } from '@/lib/reviews-store';
 import type { RawUniversityV2, ReviewInput } from '@/lib/types';
@@ -28,7 +28,7 @@ async function saveRawUniversitiesV2(universities: RawUniversityV2[]): Promise<v
 async function requireAdmin() {
   const cookieStore = await cookies();
   const token = cookieStore.get(SESSION_COOKIE)?.value;
-  const user = token ? decodeSessionToken(token) : null;
+  const user = token ? await verifySessionToken(token) : null;
   if (!isAdmin(user)) return null;
   return user;
 }
@@ -37,7 +37,7 @@ export async function GET() {
   if (!(await requireAdmin())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
-  return NextResponse.json({ reviews: getAllStoredReviews() });
+  return NextResponse.json({ reviews: await getAllStoredReviews() });
 }
 
 export async function POST(req: NextRequest) {
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'University not found.' }, { status: 404 });
     }
 
-    const review = addPendingReview({
+    const review = await addPendingReview({
       universitySlug: body.universitySlug,
       universityName: body.universityName ?? university.name,
       reviewerType: body.reviewerType ?? 'Current Student',
@@ -84,7 +84,7 @@ export async function PATCH(req: NextRequest) {
       return NextResponse.json({ error: 'Review id and status are required.' }, { status: 400 });
     }
 
-    const updated = updateReviewStatus(body.id, body.status);
+    const updated = await updateReviewStatus(body.id, body.status);
     if (!updated) {
       return NextResponse.json({ error: 'Review not found.' }, { status: 404 });
     }
