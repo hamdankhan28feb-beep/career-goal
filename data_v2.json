@@ -778,19 +778,167 @@
       },
       "campuses": [
         {"campus_name": "Main Campus", "campus_type": "Main", "address": "St-4 Sector 17-D National Highway", "city": "Karachi"},
-        {"campus_name": "City Campus", "campus_type": "City", "address": "22-G Block-6 PECHS", "city": "Karachi"}
+        {"campus_name": "City Campus", "campus_type": "City", "address": "22-G Block-6 PECHS", "city": "Karachi"},
+        {"campus_name": "Islamabad Campus (Founding)", "campus_type": "Main", "address": "H-11/4", "city": "Islamabad", "province": "Islamabad Capital Territory"},
+        {"campus_name": "Lahore Campus", "campus_type": "Satellite", "address": "Block-B, Faisal Town", "city": "Lahore", "province": "Punjab"},
+        {"campus_name": "Peshawar Campus", "campus_type": "Satellite", "address": "Hayatabad Industrial Estate", "city": "Peshawar", "province": "Khyber Pakhtunkhwa"},
+        {"campus_name": "Chiniot-Faisalabad Campus (CFD)", "campus_type": "Satellite", "city": "Chiniot-Faisalabad", "province": "Punjab"},
+        {"campus_name": "Multan Campus", "campus_type": "Satellite", "city": "Multan", "province": "Punjab"}
       ],
       "university_overview": {"major_strengths": ["BS CS","BS AI","BS Data Science","BS Cyber Security","MS and PhD Programs"]},
-      "programs": null, "admissions": null, "entry_tests": null, "fees": null, "scholarships": null,
-      "academic_policies": null, "faculty_academics": null, "student_life": null, "facilities": null,
-      "hostel": null, "transport": null, "placements": null, "career_paths": null, "rankings": null,
-      "reviews": null, "faqs": null,
-      "important_links": [
-        {"label": "National Website", "url": "https://nu.edu.pk/", "category": "General"},
-        {"label": "Karachi Campus Site", "url": "https://khi.nu.edu.pk/", "category": "Campuses"},
-        {"label": "Admissions Portal", "url": "https://admissions.nu.edu.pk/OLAR/Login", "category": "Admissions"}
+      "programs": null,
+      "admissions": {
+        "admission_cycle": "Fall (larger intake) and Spring",
+        "admission_months": "Two intakes per year: Fall and Spring",
+        "application_start": null,
+        "application_deadline": "Fall 2026: application window ran through late June 2026",
+        "result_date": "Merit lists (1st, 2nd, 3rd, and final) published on the result portal",
+        "eligibility_criteria": "Admission is strictly merit-based; FAST does not accept ECAT or NTS scores for undergraduate admissions — every applicant must sit FAST's own NU Entry Test (unless exempted via a qualifying SAT-I/GRE score). Candidates with a qualifying SAT-I (Reasoning) score can skip the entry test, subject to cut-off thresholds; if both scores exist, the better one is used. GRE is accepted as an alternative for MS/PhD applicants (subject to percentile thresholds).",
+        "required_documents": [
+          "Valid CNIC or B-form",
+          "Academic information (SSC/HSSC or equivalent)",
+          "Entry test fee challan (~Rs. 1,500) payment",
+          "Roll number slip (downloaded before the test date)"
+        ],
+        "admission_process": "Create an account on the admissions portal using a valid CNIC/B-form → Select program level (BS or PG/Postgraduate) → Fill in academic information → Generate and pay the test fee challan (~Rs. 1,500) via bank or online payment → Download your roll number slip → Sit the NU Entry Test (or submit qualifying SAT-I/GRE scores in lieu of it) → Check merit lists (1st, 2nd, 3rd, and final). Applicants may apply to multiple campuses and programs simultaneously.",
+        "merit_calculation_method": "50% FAST Entry Test score + 40% HSSC/FSc (or equivalent) marks + 10% SSC marks",
+        "interview_requirement": null,
+        "entry_test_required": true,
+        "application_fee_pkr": null,
+        "online_application_url": "https://admissions.nu.edu.pk/OLAR/Login"
+      },
+      "entry_tests": [
+        {
+          "test_name": "FAST NU Entry Test",
+          "test_type": "Own",
+          "test_mode": "Computer-Based",
+          "subjects_included": ["Advanced Mathematics", "Basic Mathematics / Quantitative", "IQ & Analytical Reasoning", "English Comprehension & Grammar"],
+          "total_marks": 120,
+          "passing_criteria": "~120 MCQs (Adv. Math 50, Basic Math 20, IQ 20, English 30) with negative marking of -0.25 per wrong answer — confirm the current marking scheme on the official sample paper before test day. Each of the four sections is individually timed; once a section's timer ends (or it's submitted), you cannot return to it.",
+          "passing_marks": null,
+          "test_duration_min": 120,
+          "test_fee_pkr": 1500,
+          "test_website_url": "https://nu.edu.pk/admissions",
+          "sample_pattern": "BSCS / BS Engineering format: Advanced Mathematics 50%, Basic Mathematics/Quantitative 20%, IQ & Analytical Reasoning 20%, English Comprehension & Grammar 10%. Business programs (BBA etc.) use the same MCQ, timed format but weight more toward English, Basic Mathematics, and Analytical/Logical Reasoning rather than advanced/engineering math.",
+          "preparation_tips": "Official sample papers on nu.edu.pk are the primary reference; third-party past-paper compilations (Wondar, QuizWing, Dogar Brothers, Maqsad, Parhlai) vary in accuracy/currency."
+        },
+        {
+          "test_name": "MBA / MS (AF) Entry Test",
+          "test_type": "Own",
+          "test_mode": "Computer-Based",
+          "subjects_included": ["English", "Basic Mathematics", "Analytical / Logical Reasoning"],
+          "total_marks": null,
+          "passing_criteria": null,
+          "passing_marks": null,
+          "test_duration_min": null,
+          "test_fee_pkr": null,
+          "test_website_url": null,
+          "sample_pattern": "MBA/MS (AF) test windows are typically scheduled separately from the BS cycle (e.g., one recent cycle ran 7–18 July). Same MCQ, timed format, weighted toward English, Basic Mathematics, and Analytical/Logical Reasoning.",
+          "preparation_tips": null
+        }
       ],
-      "data_collection": {"data_completeness_pct": 35.0, "scraping_priority_score": 9, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","fees","scholarships","policies","faculty","hostel","transport"]}
+      "fees": {
+        "fee_year": 2026,
+        "admission_fee": null,
+        "semester_fee": null,
+        "credit_hour_fee": null,
+        "lab_fee": null,
+        "exam_fee": null,
+        "hostel_fee_monthly": null,
+        "transport_fee_monthly": null,
+        "security_deposit": null,
+        "alumni_fee": null,
+        "approx_total_degree_cost": null,
+        "fee_notes": "Estimates vary significantly by source, campus, and year — verify directly with the admissions office before depositing any challan. Tuition per credit hour cited as: Rs. 8,500 (Source A, uniform across BS/MS/PhD for 2026); ~Rs. 10,000 (Source B, ~Rs. 150,000–180,000/semester for 5–6 courses); ~Rs. 9,500 (Source C, lab-intensive courses may cost extra); Rs. 7,500 at the Lahore campus (plus Rs. 1,000/credit hour lab fee). Other one-time/recurring charges commonly cited: one-time Admission Fee ~Rs. 15,000–30,000; Refundable Security Deposit ~Rs. 20,000; Student Activity Fee ~Rs. 1,000/semester; Examination Fee ~Rs. 3,000/semester; Miscellaneous fee (transcript, rechecking, campus transfer, retake, late registration — non-refundable) ~Rs. 2,500/semester; Hostel fee ~Rs. 25,000/semester; Transport fee ~Rs. 8,000/semester; PhD monthly fellowship stipend ~Rs. 60,000 (where applicable). A typical BS degree (130 credit hours over 8 semesters) is often estimated in the Rs. 1.6 million+ total range, though this varies widely by campus and year. Confirm current figures directly with FAST via nu.edu.pk before treating them as final."
+      },
+      "scholarships": [
+        {
+          "scholarship_name": "Need-Based Financial Aid",
+          "scholarship_type": "Need-Based",
+          "eligibility": "Partial to full tuition fee waivers for students who can demonstrate genuine financial need. Can be applied for during admission or later via the student portal. Eligibility considers both academic performance in prior qualifications (SSC/HSSC) and admission test score.",
+          "coverage_percentage": null,
+          "coverage_type": "Partial to full tuition fee waiver",
+          "annual_value_pkr": null,
+          "renewable": null,
+          "renewable_conditions": "Applying simultaneously with your application (not after) is recommended.",
+          "seats_available": null,
+          "external_body": null,
+          "application_url": null
+        },
+        {
+          "scholarship_name": "Merit-Based Scholarships",
+          "scholarship_type": "Merit",
+          "eligibility": "Awarded to top-ranked students on the merit list; described by some sources as limited in availability. Eligibility considers both academic performance in prior qualifications (SSC/HSSC) and admission test score.",
+          "coverage_percentage": null,
+          "coverage_type": "Merit award for top-ranked students on the merit list",
+          "annual_value_pkr": null,
+          "renewable": null,
+          "renewable_conditions": null,
+          "seats_available": null,
+          "external_body": null,
+          "application_url": null
+        }
+      ],
+      "academic_policies": [
+        {
+          "policy_category": "Admissions",
+          "policy_name": "Merit Formula",
+          "policy_value": "50% FAST Entry Test score + 40% HSSC/FSc (or equivalent) marks + 10% SSC marks."
+        },
+        {
+          "policy_category": "Admissions",
+          "policy_name": "Age Limit",
+          "policy_value": "No upper age limit found for BS admissions in available sources."
+        },
+        {
+          "policy_category": "Academic",
+          "policy_name": "Detailed Policy Documents",
+          "policy_value": "Detailed academic policy documents (grading, probation, credit load rules, etc.) were not found in this pass — pull directly from nu.edu.pk for authoritative detail."
+        }
+      ],
+      "faculty_academics": null,
+      "student_life": null,
+      "facilities": [
+        {"facility_category": "Academic", "facility_name": "Modern Classrooms & Labs", "description": "Mentioned by third-party sources; treat as indicative until confirmed officially.", "is_available": true},
+        {"facility_category": "Academic", "facility_name": "Library", "description": "Mentioned by third-party sources; treat as indicative until confirmed officially.", "is_available": true},
+        {"facility_category": "Recreation", "facility_name": "Sports Facilities", "description": "Mentioned by third-party sources; treat as indicative until confirmed officially.", "is_available": true},
+        {"facility_category": "General", "facility_name": "Cafeteria", "description": "Mentioned by third-party sources; treat as indicative until confirmed officially.", "is_available": true},
+        {"facility_category": "Career", "facility_name": "Career Services / Placement Office", "description": "Mentioned by third-party sources; treat as indicative until confirmed officially.", "is_available": true}
+      ],
+      "hostel": {
+        "hostel_availability": true,
+        "hostel_quality": "Available at some campuses; indicative fee ~Rs. 25,000/semester (unverified against official current rates).",
+        "gender": null,
+        "monthly_fee_pkr": null,
+        "meals_included": null,
+        "ac_available": null
+      },
+      "transport": {
+        "transport_available": true,
+        "bus_count": null,
+        "routes": [],
+        "monthly_fee_pkr": null
+      },
+      "placements": null,
+      "career_paths": null,
+      "rankings": [
+        {
+          "ranking_name": "HEC W-Category (Computer Science)",
+          "ranking_category": "HEC",
+          "ranking_value": "W-Category (highest)",
+          "ranking_note": "FAST reportedly holds the HEC W-Category (highest) ranking in Computer Science and ranks consistently among Pakistan's top engineering universities in HEC's general rankings (per available sources)."
+        }
+      ],
+      "reviews": null,
+      "faqs": null,
+      "important_links": [
+        {"label": "Official Website", "url": "https://nu.edu.pk/", "category": "General"},
+        {"label": "Admissions Portal", "url": "https://admissions.nu.edu.pk/OLAR/Login", "category": "Admissions"},
+        {"label": "Karachi Campus Site", "url": "https://khi.nu.edu.pk/", "category": "Campuses"},
+        {"label": "FAST Timetable", "url": "https://fasttimetable.vercel.app", "category": "Student Tools", "description": "Find class schedules, teacher emails and offices, and free/available classrooms across weekdays. Built by FAST student Saad Najam.", "is_unofficial": true},
+        {"label": "Campus Ride", "url": "https://campusrides.vercel.app", "category": "Student Tools", "description": "Find safe, affordable carpools/ride-sharing for university commutes — covers FAST, NED, and Sir Syed University routes in Karachi. Built by a FAST student.", "is_unofficial": true}
+      ],
+      "data_collection": {"data_completeness_pct": 60.0, "scraping_priority_score": 9, "missing_fields": ["logo_url","phone","email","history","mission","vision","programs_detail","faculty","student_life","placements","career_paths","reviews"]}
     },
     {
       "university_id": 17,

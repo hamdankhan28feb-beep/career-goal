@@ -36,8 +36,15 @@ let cachedBundledUniversities: University[] | null = null;
 let cacheTimestamp = 0;
 const CACHE_TTL = 30000; // 30 seconds
 
+// Single-flight: concurrent callers (e.g. generateMetadata + the page component
+// both call getUniversityBySlug) share one in-flight DB fetch instead of each
+// firing 20 parallel queries against the pool, which exhausted it and caused
+// connection timeouts.
+let inFlightFetch: Promise<University[]> | null = null;
+
 export function clearUniversitiesCache() {
   cachedUniversities = null;
+  inFlightFetch = null;
 }
 
 function getBundledUniversities(): University[] {
@@ -138,12 +145,22 @@ function mapBundledUniversity(raw: RawUniversityV2): University {
   };
 }
 
-export async function getUniversities(): Promise<University[]> {
+export function getUniversities(): Promise<University[]> {
   const now = Date.now();
   if (cachedUniversities && (now - cacheTimestamp < CACHE_TTL)) {
-    return cachedUniversities;
+    return Promise.resolve(cachedUniversities);
   }
+  if (inFlightFetch) {
+    return inFlightFetch;
+  }
+  inFlightFetch = fetchUniversities().finally(() => {
+    inFlightFetch = null;
+  });
+  return inFlightFetch;
+}
 
+async function fetchUniversities(): Promise<University[]> {
+  const now = Date.now();
   if (!process.env.DATABASE_URL) {
     const bundled = getBundledUniversities();
     cachedUniversities = bundled;
@@ -318,10 +335,10 @@ export async function getUniversities(): Promise<University[]> {
       })) as RawCareerPath[];
 
       const mappedRankings = (rankingsByUni.get(uniIdStr) || []).map(r => ({
-        ranking_name: r.ranking_name,
+        ranking_name: r.ranking_organization,
         ranking_category: r.ranking_category,
         ranking_value: r.ranking_value,
-        ranking_note: r.ranking_note
+        ranking_note: r.ranking_note || null
       })) as RawRanking[];
 
       const mappedReviews = (reviewsByUni.get(uniIdStr) || []).map(r => ({
@@ -343,9 +360,11 @@ export async function getUniversities(): Promise<University[]> {
       })) as RawFaq[];
 
       const mappedLinks = (linksByUni.get(uniIdStr) || []).map(l => ({
-        label: l.link_label,
+        label: l.label,
         url: l.url,
-        category: l.link_category
+        category: l.link_category,
+        description: l.description || null,
+        is_unofficial: l.is_unofficial ?? false
       })) as RawImportantLink[];
 
       return {
@@ -419,34 +438,44 @@ export async function getUniversities(): Promise<University[]> {
           fyp_culture: fac.fyp_culture
         } as RawFacultyAcademics : null,
         studentLife: sl ? {
-          clubs: sl.clubs || [],
-          societies: sl.societies || [],
-          annual_events: sl.annual_events || [],
-          sports_available: sl.sports_available || [],
-          student_council: sl.student_council,
-          cultural_activities: sl.cultural_activities
+          clubs: sl.clubs_and_societies || [],
+          societies: [],
+          annual_events: sl.events_and_festivals || [],
+          sports_available: sl.sports_facilities || [],
+          student_council: sl.campus_culture || null,
+          cultural_activities: null
         } as RawStudentLife : null,
         facilities: mappedFacilities,
         hostel: host ? {
-          hostel_availability: host.hostel_availability,
-          hostel_quality: host.hostel_quality,
-          gender: host.gender,
+          hostel_availability: host.availability != null
+            ? /^(yes|available|true|y)$/i.test(String(host.availability))
+            : null,
+          hostel_quality: host.hostel_rules || null,
+          gender: host.male_hostel_available == null && host.female_hostel_available == null
+            ? null
+            : host.male_hostel_available && host.female_hostel_available
+            ? 'Both'
+            : host.male_hostel_available
+            ? 'Male'
+            : host.female_hostel_available
+            ? 'Female'
+            : null,
           monthly_fee_pkr: host.monthly_fee_pkr ? Number(host.monthly_fee_pkr) : null,
-          meals_included: host.meals_included,
-          ac_available: host.ac_available
+          meals_included: host.mess_available ?? null,
+          ac_available: null
         } as RawHostel : null,
         transport: tr ? {
-          transport_available: tr.transport_available,
-          bus_count: tr.bus_count,
+          transport_available: tr.service_available ?? null,
+          bus_count: null,
           routes: tr.routes || [],
           monthly_fee_pkr: tr.monthly_fee_pkr ? Number(tr.monthly_fee_pkr) : null
         } as RawTransport : null,
         placements: plc ? {
-          career_services_office: plc.career_services_office,
-          placement_support: plc.placement_support,
+          career_services_office: plc.placement_office_url || null,
+          placement_support: plc.placement_notes || null,
           placement_rate_pct: plc.placement_rate_pct ? Number(plc.placement_rate_pct) : null,
           industry_partnerships: plc.industry_partnerships || [],
-          alumni_network: plc.alumni_network,
+          alumni_network: null,
           alumni_count: plc.alumni_count,
           top_recruiters: plc.top_recruiters || []
         } as RawPlacement : null,

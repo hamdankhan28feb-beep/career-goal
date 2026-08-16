@@ -1,4 +1,5 @@
 import { hash } from 'bcryptjs';
+import { randomUUID } from 'node:crypto';
 
 import type { SessionUser } from '@/lib/auth';
 import { query } from '@/lib/db';
@@ -53,6 +54,36 @@ export async function findUserByEmail(email: string): Promise<StoredUser | null>
   const row = result.rows[0] as UserRow | undefined;
 
   return row ? toStoredUser(row) : null;
+}
+
+export type GoogleProfile = {
+  sub: string;
+  email: string;
+  email_verified?: boolean;
+  name?: string;
+  picture?: string;
+};
+
+/**
+ * Finds a user by email, or creates one from a verified Google profile.
+ * OAuth users get an unguessable placeholder password hash so they can
+ * never sign in with a password. Existing users keep their role.
+ */
+export async function findOrCreateGoogleUser(profile: GoogleProfile): Promise<StoredUser> {
+  const email = profile.email.trim().toLowerCase();
+  const name = profile.name?.trim() || email.split('@')[0] || 'FuturePath User';
+  const passwordHash = `__GOOGLE_OAUTH__${randomUUID()}`;
+
+  const result = await query(
+    `INSERT INTO users (name, email, password_hash, role)
+     VALUES ($1, $2, $3, 'user')
+     ON CONFLICT (email)
+     DO UPDATE SET name = EXCLUDED.name, updated_at = NOW()
+     RETURNING id, name, email, role, city, password_hash, is_active`,
+    [name, email, passwordHash],
+  );
+
+  return toStoredUser(result.rows[0] as UserRow);
 }
 
 export async function registerUser(input: CreateUserInput): Promise<SessionUser> {

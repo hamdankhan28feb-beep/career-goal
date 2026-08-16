@@ -10,7 +10,10 @@ export const pool = new Pool({
   connectionString: connectionString || 'postgresql://postgres:postgres@localhost:5432/career_goal',
   max: 20,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  // Generous connect timeout: on a cold start the pool opens many clients at
+  // once (getUniversities fires 20 parallel queries) and Windows auth/TLS
+  // handshakes can take several seconds. 2s caused spurious timeouts.
+  connectionTimeoutMillis: 10000,
 });
 
 export async function query(text: string, params?: any[]) {

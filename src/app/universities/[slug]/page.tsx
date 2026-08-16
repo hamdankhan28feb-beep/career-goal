@@ -783,20 +783,60 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         {/* 15. Important Links */}
         {u.importantLinks.length > 0 && (
           <Section id="links" title="Important Links" icon={Globe}>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {u.importantLinks.map((link, i) => (
-                <a
-                  key={i}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-3 rounded-2xl border border-border/70 bg-card/80 px-4 py-3 text-sm text-foreground transition hover:border-primary/30 hover:text-primary"
-                >
-                  <span className="font-medium">{link.label}</span>
-                  <ExternalLink className="h-4 w-4 shrink-0" />
-                </a>
-              ))}
-            </div>
+            {(() => {
+              const officialLinks = u.importantLinks.filter((l) => !l.is_unofficial);
+              const studentTools = u.importantLinks.filter((l) => l.is_unofficial);
+              return (
+                <div className="space-y-8">
+                  {officialLinks.length > 0 && (
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                      {officialLinks.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between gap-3 rounded-2xl border border-border/70 bg-card/80 px-4 py-3 text-sm text-foreground transition hover:border-primary/30 hover:text-primary"
+                        >
+                          <span className="font-medium">{link.label}</span>
+                          <ExternalLink className="h-4 w-4 shrink-0" />
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  {studentTools.length > 0 && (
+                    <div>
+                      <h3 className="mb-4 text-sm font-semibold">Student Tools</h3>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {studentTools.map((link, i) => (
+                          <a
+                            key={i}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col gap-2 rounded-2xl border border-amber-500/30 bg-amber-500/5 px-4 py-3 text-sm text-foreground transition hover:border-amber-500/60"
+                          >
+                            <div className="flex items-center justify-between gap-3">
+                              <span className="font-medium">{link.label}</span>
+                              <ExternalLink className="h-4 w-4 shrink-0" />
+                            </div>
+                            {link.description && (
+                              <p className="text-xs leading-5 text-muted-foreground">{link.description}</p>
+                            )}
+                            <div>
+                              <Tag text="Unofficial — Made by FAST Students" color="amber" />
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                      <p className="mt-4 text-xs text-muted-foreground">
+                        These tools are independent resources built and maintained by FAST students — they are not official FAST-NUCES services.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
           </Section>
         )}
       </div>

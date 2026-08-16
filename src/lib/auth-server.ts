@@ -5,7 +5,12 @@ import { findUserByEmail } from '@/lib/users-store';
 
 export async function authenticateUser(email: string, password: string): Promise<SessionUser | null> {
   const user = await findUserByEmail(email);
-  if (!user || !user.isActive || user.passwordHash === '__RESET_REQUIRED__') {
+  if (
+    !user ||
+    !user.isActive ||
+    user.passwordHash.startsWith('__GOOGLE_OAUTH__') ||
+    user.passwordHash === '__RESET_REQUIRED__'
+  ) {
     return null;
   }
 

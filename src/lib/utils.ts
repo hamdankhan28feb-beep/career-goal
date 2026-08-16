@@ -32,3 +32,14 @@ export function truncate(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength).trim() + '…';
 }
+
+/**
+ * Validates a post-login redirect target. Only accepts local, same-origin
+ * paths (single leading slash) to prevent open redirects.
+ */
+export function sanitizeRedirectPath(path: string | null | undefined): string | null {
+  if (!path || path.length > 2048) return null;
+  if (!path.startsWith('/') || path.startsWith('//')) return null;
+  if (/[\\:]/.test(path)) return null;
+  return path;
+}

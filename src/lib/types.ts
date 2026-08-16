@@ -27,6 +27,8 @@ export type RawImportantLink = {
   label: string;
   url: string;
   category?: string | null;
+  description?: string | null;
+  is_unofficial?: boolean | null;
 };
 
 export type RawUniversityOverview = {

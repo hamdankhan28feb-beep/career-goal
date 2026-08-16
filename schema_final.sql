@@ -724,6 +724,8 @@ CREATE TABLE important_links (
   link_category           TEXT,
   label                   TEXT NOT NULL,
   url                     TEXT NOT NULL,
+  description             TEXT,
+  is_unofficial           BOOLEAN NOT NULL DEFAULT FALSE,
   sort_order              INTEGER NOT NULL DEFAULT 0,
   source_urls             JSONB NOT NULL DEFAULT '[]'::JSONB,
   is_active               BOOLEAN NOT NULL DEFAULT TRUE,
