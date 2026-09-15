@@ -38,5 +38,9 @@ Thumbs.db
 
 # Next.js specific auto-generated types (Har build par change hoti hai, isliye ignore)
 next-env.d.ts
+tsconfig.tsbuildinfo
 
-.freebuff
+# IDE / tooling cache
+.qoder/
+
+.freebuff/
