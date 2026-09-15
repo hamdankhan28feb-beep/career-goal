@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Manrope } from 'next/font/google';
 
-import { SiteHeader } from '@/components/site-header';
+import { SiteHeader } from '@/components/site-header-server';
 import { SiteFooter } from '@/components/site-footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import '@/app/globals.css';

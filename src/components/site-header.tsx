@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X, GraduationCap, ChevronDown } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { Menu, X, GraduationCap, ChevronDown, LogOut, Shield, User } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/theme-toggle';
+import type { SessionUser } from '@/lib/auth';
 
 const navItems = [
   { href: '/universities', label: 'Universities' },
@@ -22,7 +24,123 @@ const navItems = [
   { href: '/counselor', label: 'AI Counselor' },
 ];
 
-export function SiteHeader() {
+// ─── User Avatar + Dropdown ──────────────────────────────────────────────────
+
+function UserMenu({ user }: { user: SessionUser }) {
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  // Close on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [open]);
+
+  const initials = user.name
+    .split(' ')
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
+
+  async function handleLogout() {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    router.push('/auth/login');
+    router.refresh();
+  }
+
+  return (
+    <div className="relative" ref={menuRef}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-2 rounded-full border border-border/60 py-1.5 pl-1.5 pr-3 transition hover:border-primary/40 hover:bg-muted"
+        aria-label="User menu"
+      >
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-emerald-400 text-[11px] font-bold text-white">
+          {initials}
+        </span>
+        <span className="max-w-[100px] truncate text-sm font-medium text-foreground">
+          {user.name}
+        </span>
+        <ChevronDown className={`h-3 w-3 text-muted-foreground transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full mt-1.5 w-52 rounded-2xl border border-border/70 bg-card p-2 shadow-glow animate-slide-down">
+          <div className="mb-1 border-b border-border/50 px-3 py-2">
+            <div className="truncate text-sm font-medium text-foreground">{user.name}</div>
+            <div className="truncate text-xs text-muted-foreground">{user.email}</div>
+          </div>
+
+          {user.role === 'admin' && (
+            <Link
+              href="/admin"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+            >
+              <Shield className="h-3.5 w-3.5" />
+              Admin Dashboard
+            </Link>
+          )}
+
+          <button
+            onClick={handleLogout}
+            className="flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition"
+          >
+            <LogOut className="h-3.5 w-3.5" />
+            Logout
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Guest Actions (Login / Sign Up) ────────────────────────────────────────
+
+function GuestActions({ mobile = false }: { mobile?: boolean }) {
+  if (mobile) {
+    return (
+      <div className="mt-4 flex gap-3 border-t border-border/50 pt-4">
+        <Link
+          href="/auth/login"
+          className="flex-1 rounded-full border border-border/60 py-2.5 text-center text-sm transition hover:border-primary/40"
+        >
+          Login
+        </Link>
+        <Link href="/auth/signup" className="flex-1 btn-primary py-2.5 text-center text-sm">
+          Sign Up
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Link
+        href="/auth/login"
+        className="rounded-full border border-border/60 px-4 py-2 text-sm text-foreground transition hover:border-primary/40 hover:text-primary"
+      >
+        Login
+      </Link>
+      <Link href="/auth/signup" className="btn-primary py-2 text-xs">
+        Get Started
+      </Link>
+    </>
+  );
+}
+
+// ─── Main Header Navigation ─────────────────────────────────────────────────
+
+export function HeaderNav({ user }: { user?: SessionUser | null }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
 
@@ -82,15 +200,11 @@ export function SiteHeader() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-2 lg:flex">
-          <Link
-            href="/auth/login"
-            className="rounded-full border border-border/60 px-4 py-2 text-sm text-foreground transition hover:border-primary/40 hover:text-primary"
-          >
-            Login
-          </Link>
-          <Link href="/auth/signup" className="btn-primary py-2 text-xs">
-            Get Started
-          </Link>
+          {user ? (
+            <UserMenu user={user} />
+          ) : (
+            <GuestActions />
+          )}
           <ThemeToggle />
         </div>
 
@@ -137,10 +251,42 @@ export function SiteHeader() {
                 </Link>
               )
             )}
-            <div className="mt-4 flex gap-3 border-t border-border/50 pt-4">
-              <Link href="/auth/login" className="flex-1 rounded-full border border-border/60 py-2.5 text-center text-sm transition hover:border-primary/40" onClick={() => setMobileOpen(false)}>Login</Link>
-              <Link href="/auth/signup" className="flex-1 btn-primary py-2.5 text-center text-sm" onClick={() => setMobileOpen(false)}>Sign Up</Link>
-            </div>
+            {user ? (
+              <div className="mt-4 border-t border-border/50 pt-4 space-y-1">
+                <div className="flex items-center gap-2 px-3 py-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-emerald-400 text-[11px] font-bold text-white">
+                    {user.name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase()}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="truncate text-sm font-medium text-foreground">{user.name}</div>
+                    <div className="truncate text-xs text-muted-foreground">{user.email}</div>
+                  </div>
+                </div>
+                {user.role === 'admin' && (
+                  <Link
+                    href="/admin"
+                    className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <Shield className="h-3.5 w-3.5" />
+                    Admin Dashboard
+                  </Link>
+                )}
+                <button
+                  onClick={async () => {
+                    setMobileOpen(false);
+                    await fetch('/api/auth/logout', { method: 'POST' });
+                    window.location.href = '/auth/login';
+                  }}
+                  className="flex w-full items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition"
+                >
+                  <LogOut className="h-3.5 w-3.5" />
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <GuestActions mobile />
+            )}
           </div>
         </div>
       )}

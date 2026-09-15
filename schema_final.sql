@@ -657,8 +657,10 @@ CREATE TABLE reviews (
   reviewer_name            TEXT,
   reviewer_type            TEXT,
   graduation_year          INTEGER,
-  title                    TEXT NOT NULL,
-  body                     TEXT NOT NULL,
+  title                    TEXT DEFAULT '',
+  body                     TEXT DEFAULT '',
+  positive_experiences     TEXT,
+  common_complaints        TEXT,
   rating_overall           NUMERIC(2,1) NOT NULL,
   rating_faculty           NUMERIC(2,1),
   rating_facilities        NUMERIC(2,1),
@@ -673,8 +675,7 @@ CREATE TABLE reviews (
   created_at               TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at               TIMESTAMPTZ NOT NULL DEFAULT NOW(),
 
-  CONSTRAINT reviews_title_not_blank CHECK (length(trim(title)) > 1),
-  CONSTRAINT reviews_body_not_blank CHECK (length(trim(body)) > 5),
+  -- title and body are optional (defaults to ''); see migration 002.
   CONSTRAINT reviews_rating_overall_valid CHECK (rating_overall BETWEEN 1 AND 5),
   CONSTRAINT reviews_rating_faculty_valid CHECK (
     rating_faculty IS NULL OR rating_faculty BETWEEN 1 AND 5

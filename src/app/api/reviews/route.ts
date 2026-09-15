@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 
 import { isAdmin, SESSION_COOKIE, verifySessionToken } from '@/lib/auth';
 import { getUniversityBySlug } from '@/lib/data';
+import { checkRateLimit } from '@/lib/rate-limit';
 import { addPendingReview, getAllStoredReviews, updateReviewStatus } from '@/lib/reviews-store';
 import type { RawUniversityV2, ReviewInput } from '@/lib/types';
 
@@ -41,6 +42,9 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
+  const limited = checkRateLimit(req, 'review');
+  if (limited) return limited;
+
   try {
     const body = await req.json() as Partial<ReviewInput & { universityName?: string }>;
 

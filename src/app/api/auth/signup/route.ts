@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { createSessionToken, SESSION_COOKIE, SESSION_MAX_AGE_SECONDS } from '@/lib/auth';
 import { registerUser } from '@/lib/users-store';
+import { checkRateLimit } from '@/lib/rate-limit';
 
 const EMAIL_PATTERN = /^\S+@\S+\.\S+$/;
 
 export async function POST(request: NextRequest) {
+  const limited = checkRateLimit(request, 'auth');
+  if (limited) return limited;
+
   try {
     const body = await request.json() as {
       name?: unknown;
