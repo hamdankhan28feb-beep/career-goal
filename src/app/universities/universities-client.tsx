@@ -1,17 +1,21 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { Search, Filter, X } from 'lucide-react';
+import { useState, useMemo, useCallback } from 'react';
+import { Search, Filter, X, Loader2 } from 'lucide-react';
 import { UniversityCard } from '@/components/university-card';
 import type { University } from '@/lib/types';
 
 const CITIES = ['All Cities', 'Karachi', 'Islamabad', 'Lahore', 'Hyderabad'];
 const TYPES = ['All Types', 'Public', 'Private'];
 
-export function UniversitiesClient({ universities }: { universities: University[] }) {
+export function UniversitiesClient({ universities: initialUniversities }: { universities: University[] }) {
+  const [universities, setUniversities] = useState(initialUniversities);
   const [query, setQuery] = useState('');
   const [city, setCity] = useState('All Cities');
   const [type, setType] = useState('All Types');
+  const [nextCursor, setNextCursor] = useState<string | null>(null);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
 
   const filtered = useMemo(() => {
     const q = query.toLowerCase();
@@ -22,6 +26,26 @@ export function UniversitiesClient({ universities }: { universities: University[
       return matchQ && matchCity && matchType;
     });
   }, [universities, query, city, type]);
+
+  const loadMore = useCallback(async () => {
+    if (loadingMore) return;
+    setLoadingMore(true);
+    try {
+      // Use the last university ID as cursor
+      const lastId = universities.length > 0 ? universities[universities.length - 1].id : 0;
+      const res = await fetch(`/api/universities?cursor=${lastId}&limit=20`);
+      if (res.ok) {
+        const data = await res.json();
+        setUniversities(prev => [...prev, ...data.universities]);
+        setNextCursor(data.nextCursor);
+        setHasAttemptedLoad(true);
+      }
+    } catch (err) {
+      console.error('Failed to load more universities:', err);
+    } finally {
+      setLoadingMore(false);
+    }
+  }, [loadingMore, universities]);
 
   const hasFilters = query || city !== 'All Cities' || type !== 'All Types';
 
@@ -102,6 +126,28 @@ export function UniversitiesClient({ universities }: { universities: University[
           <p className="mt-2 text-muted-foreground">Try adjusting your search or filters</p>
           <button onClick={() => { setQuery(''); setCity('All Cities'); setType('All Types'); }} className="btn-secondary mt-4">
             Clear filters
+          </button>
+        </div>
+      )}
+
+      {/* Load More */}
+      {filtered.length > 0 && (
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={loadMore}
+            disabled={loadingMore || (hasAttemptedLoad && nextCursor === null)}
+            className="btn-secondary inline-flex items-center gap-2 disabled:opacity-50"
+          >
+            {loadingMore ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Loading…
+              </>
+            ) : hasAttemptedLoad && nextCursor === null ? (
+              'All universities loaded'
+            ) : (
+              'Load more universities'
+            )}
           </button>
         </div>
       )}

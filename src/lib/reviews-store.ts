@@ -1,6 +1,8 @@
 import { query } from '@/lib/db';
 import { clearUniversitiesCache } from '@/lib/data';
 import type { ReviewInput } from '@/lib/types';
+import { DEFAULT_PAGE_LIMIT } from '@/lib/pagination';
+import type { PaginatedResult } from '@/lib/pagination';
 
 export type PendingReview = ReviewInput & {
   id: string;
@@ -64,6 +66,80 @@ export async function getAllStoredReviews(): Promise<PendingReview[]> {
   } catch (err) {
     console.error('Failed to get all reviews:', err);
     return [];
+  }
+}
+
+/**
+ * Paginated query for all reviews (admin view).
+ */
+export async function getStoredReviewsPage(
+  cursor: number = 0,
+  limit: number = DEFAULT_PAGE_LIMIT
+): Promise<PaginatedResult<PendingReview>> {
+  try {
+    const res = await query(
+      `SELECT r.*, u.name, u.slug
+       FROM reviews r
+       JOIN universities u ON r.university_id = u.university_id
+       WHERE r.review_id > $1
+       ORDER BY r.created_at DESC
+       LIMIT $2`,
+      [cursor, limit + 1]
+    );
+    const rows = res.rows;
+    const hasMore = rows.length > limit;
+    const data = (hasMore ? rows.slice(0, limit) : rows).map(mapRowToPendingReview);
+    const nextCursor = hasMore && data.length > 0
+      ? String(rows[limit - 1].review_id)
+      : null;
+
+    const countRes = await query(
+      'SELECT COUNT(*) FROM reviews WHERE review_id > $1',
+      [cursor]
+    );
+    const total = Number(countRes.rows[0].count);
+
+    return { data, nextCursor, total, limit };
+  } catch (err) {
+    console.error('Failed to get reviews page:', err);
+    return { data: [], nextCursor: null, total: 0, limit };
+  }
+}
+
+/**
+ * Paginated query for pending (unverified) reviews.
+ */
+export async function getPendingReviewsPage(
+  cursor: number = 0,
+  limit: number = DEFAULT_PAGE_LIMIT
+): Promise<PaginatedResult<PendingReview>> {
+  try {
+    const res = await query(
+      `SELECT r.*, u.name, u.slug
+       FROM reviews r
+       JOIN universities u ON r.university_id = u.university_id
+       WHERE r.verified = false AND r.is_active = true AND r.review_id > $1
+       ORDER BY r.created_at DESC
+       LIMIT $2`,
+      [cursor, limit + 1]
+    );
+    const rows = res.rows;
+    const hasMore = rows.length > limit;
+    const data = (hasMore ? rows.slice(0, limit) : rows).map(mapRowToPendingReview);
+    const nextCursor = hasMore && data.length > 0
+      ? String(rows[limit - 1].review_id)
+      : null;
+
+    const countRes = await query(
+      'SELECT COUNT(*) FROM reviews WHERE verified = false AND is_active = true AND review_id > $1',
+      [cursor]
+    );
+    const total = Number(countRes.rows[0].count);
+
+    return { data, nextCursor, total, limit };
+  } catch (err) {
+    console.error('Failed to get pending reviews page:', err);
+    return { data: [], nextCursor: null, total: 0, limit };
   }
 }
 

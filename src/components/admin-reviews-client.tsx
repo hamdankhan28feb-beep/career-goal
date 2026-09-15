@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Link from 'next/link';
-import { Star, CheckCircle2, XCircle } from 'lucide-react';
+import { Star, CheckCircle2, XCircle, Loader2 } from 'lucide-react';
 
 import type { PendingReview } from '@/lib/reviews-store';
 
@@ -18,9 +18,12 @@ function StarRating({ value }: { value: number | null | undefined }) {
   );
 }
 
-export function AdminReviewsClient({ pendingReviews }: { pendingReviews: PendingReview[] }) {
-  const [reviews, setReviews] = useState(pendingReviews);
+export function AdminReviewsClient({ pendingReviews: initialReviews }: { pendingReviews: PendingReview[] }) {
+  const [reviews, setReviews] = useState(initialReviews);
   const [loadingId, setLoadingId] = useState<string | null>(null);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [nextCursor, setNextCursor] = useState<string | null>(null);
+  const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
 
   async function updateStatus(id: string, status: 'approved' | 'removed') {
     setLoadingId(id);
@@ -37,6 +40,30 @@ export function AdminReviewsClient({ pendingReviews }: { pendingReviews: Pending
       setLoadingId(null);
     }
   }
+
+  const loadMore = useCallback(async () => {
+    if (loadingMore) return;
+    setLoadingMore(true);
+    try {
+      const lastId = reviews.length > 0 ? reviews[reviews.length - 1].id : '0';
+      const res = await fetch(`/api/reviews?cursor=${lastId}&limit=20`);
+      if (res.ok) {
+        const data = await res.json();
+        // Only add reviews that aren't already in the list
+        setReviews(prev => {
+          const existingIds = new Set(prev.map(r => r.id));
+          const newReviews = data.reviews.filter((r: PendingReview) => !existingIds.has(r.id));
+          return [...prev, ...newReviews];
+        });
+        setNextCursor(data.nextCursor);
+        setHasAttemptedLoad(true);
+      }
+    } catch (err) {
+      console.error('Failed to load more reviews:', err);
+    } finally {
+      setLoadingMore(false);
+    }
+  }, [loadingMore, reviews]);
 
   if (reviews.length === 0) return null;
 
@@ -92,6 +119,26 @@ export function AdminReviewsClient({ pendingReviews }: { pendingReviews: Pending
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Load More */}
+      <div className="mt-4 flex justify-center">
+        <button
+          onClick={loadMore}
+          disabled={loadingMore || (hasAttemptedLoad && nextCursor === null)}
+          className="btn-secondary inline-flex items-center gap-2 text-xs disabled:opacity-50"
+        >
+          {loadingMore ? (
+            <>
+              <Loader2 className="h-3 w-3 animate-spin" />
+              Loading…
+            </>
+          ) : hasAttemptedLoad && nextCursor === null ? (
+            'All reviews loaded'
+          ) : (
+            'Load more reviews'
+          )}
+        </button>
       </div>
     </div>
   );

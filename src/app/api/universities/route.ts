@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 
 import { isAdmin, SESSION_COOKIE, verifySessionToken } from '@/lib/auth';
-import { getUniversities, clearUniversitiesCache } from '@/lib/data';
+import { getUniversities, getUniversitiesPage, clearUniversitiesCache } from '@/lib/data';
+import { parsePagination } from '@/lib/pagination';
 import { query } from '@/lib/db';
 import type { RawUniversityV2 } from '@/lib/types';
 
@@ -14,10 +15,23 @@ async function requireAdmin() {
   return user;
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
-    const list = await getUniversities();
-    return NextResponse.json({ universities: list });
+    const { cursor, limit } = parsePagination(req);
+
+    // If no cursor specified, return all (backward compatible for existing pages)
+    if (cursor === 0 && !new URL(req.url).searchParams.has('cursor')) {
+      const list = await getUniversities();
+      return NextResponse.json({ universities: list });
+    }
+
+    const page = await getUniversitiesPage(cursor, limit);
+    return NextResponse.json({
+      universities: page.data,
+      nextCursor: page.nextCursor,
+      total: page.total,
+      limit: page.limit
+    });
   } catch (error: any) {
     return NextResponse.json({ error: 'Failed to fetch universities.' }, { status: 500 });
   }

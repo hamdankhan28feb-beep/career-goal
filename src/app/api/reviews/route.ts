@@ -6,7 +6,8 @@ import { resolve } from 'node:path';
 import { isAdmin, SESSION_COOKIE, verifySessionToken } from '@/lib/auth';
 import { getUniversityBySlug } from '@/lib/data';
 import { checkRateLimit } from '@/lib/rate-limit';
-import { addPendingReview, getAllStoredReviews, updateReviewStatus } from '@/lib/reviews-store';
+import { parsePagination } from '@/lib/pagination';
+import { addPendingReview, getAllStoredReviews, getStoredReviewsPage, updateReviewStatus } from '@/lib/reviews-store';
 import type { RawUniversityV2, ReviewInput } from '@/lib/types';
 
 const DATA_FILE_PATH = resolve(process.cwd(), 'data_v2.json');
@@ -34,11 +35,25 @@ async function requireAdmin() {
   return user;
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   if (!(await requireAdmin())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
-  return NextResponse.json({ reviews: await getAllStoredReviews() });
+
+  const { cursor, limit } = parsePagination(req);
+
+  // Backward compatible: no cursor = return all
+  if (cursor === 0 && !new URL(req.url).searchParams.has('cursor')) {
+    return NextResponse.json({ reviews: await getAllStoredReviews() });
+  }
+
+  const page = await getStoredReviewsPage(cursor, limit);
+  return NextResponse.json({
+    reviews: page.data,
+    nextCursor: page.nextCursor,
+    total: page.total,
+    limit: page.limit
+  });
 }
 
 export async function POST(req: NextRequest) {

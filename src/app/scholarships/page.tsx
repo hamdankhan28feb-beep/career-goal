@@ -1,9 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { Award, Search, HelpCircle, ArrowRight, ShieldCheck, Flame, BookOpen, GraduationCap } from 'lucide-react';
-import type { University } from '@/lib/types';
+import { Award, Search, HelpCircle, ArrowRight, ShieldCheck, Flame, BookOpen, GraduationCap, Loader2 } from 'lucide-react';
 
 type EnrichedScholarship = {
   scholarship_name: string;
@@ -26,6 +25,9 @@ type EnrichedScholarship = {
 export default function ScholarshipFinderPage() {
   const [scholarships, setScholarships] = useState<EnrichedScholarship[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [nextCursor, setNextCursor] = useState<string | null>(null);
+  const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
   
   // Filter states
   const [search, setSearch] = useState('');
@@ -36,36 +38,11 @@ export default function ScholarshipFinderPage() {
   useEffect(() => {
     async function loadData() {
       try {
-        const res = await fetch('/api/universities');
+        const res = await fetch('/api/scholarships?cursor=0&limit=20');
         if (res.ok) {
-          const data = await res.json() as { universities: University[] };
-          
-          // Flatten scholarships
-          const list: EnrichedScholarship[] = [];
-          data.universities.forEach((u) => {
-            if (u.scholarships && Array.isArray(u.scholarships)) {
-              u.scholarships.forEach((s) => {
-                list.push({
-                  scholarship_name: s.scholarship_name ?? 'Unnamed Scholarship',
-                  scholarship_type: s.scholarship_type ?? 'General',
-                  eligibility: s.eligibility ?? 'Contact admissions for details.',
-                  coverage_percentage: s.coverage_percentage ?? null,
-                  coverage_type: s.coverage_type ?? 'Tuition Fee Waiver',
-                  annual_value_pkr: s.annual_value_pkr ?? null,
-                  renewable: !!s.renewable,
-                  renewable_conditions: s.renewable_conditions ?? '',
-                  seats_available: s.seats_available ?? null,
-                  external_body: s.external_body ?? '',
-                  application_url: s.application_url ?? '',
-                  universityName: u.name,
-                  universityShortName: u.shortName,
-                  universitySlug: u.slug,
-                  universityCity: u.city,
-                });
-              });
-            }
-          });
-          setScholarships(list);
+          const data = await res.json();
+          setScholarships(data.scholarships);
+          setNextCursor(data.nextCursor);
         }
       } catch (err) {
         console.error(err);
@@ -75,6 +52,24 @@ export default function ScholarshipFinderPage() {
     }
     loadData();
   }, []);
+
+  const loadMore = useCallback(async () => {
+    if (loadingMore || nextCursor === null) return;
+    setLoadingMore(true);
+    try {
+      const res = await fetch(`/api/scholarships?cursor=${nextCursor}&limit=20`);
+      if (res.ok) {
+        const data = await res.json();
+        setScholarships(prev => [...prev, ...data.scholarships]);
+        setNextCursor(data.nextCursor);
+        setHasAttemptedLoad(true);
+      }
+    } catch (err) {
+      console.error('Failed to load more scholarships:', err);
+    } finally {
+      setLoadingMore(false);
+    }
+  }, [loadingMore, nextCursor]);
 
   // Filter logic
   const filtered = scholarships.filter((s) => {
@@ -247,6 +242,28 @@ export default function ScholarshipFinderPage() {
           <HelpCircle className="mx-auto h-16 w-16 text-muted-foreground/30" />
           <h3 className="mt-6 text-xl font-semibold">No scholarships found</h3>
           <p className="mt-3 text-muted-foreground">Try adjusting your filters or search query to find matching options.</p>
+        </div>
+      )}
+
+      {/* Load More */}
+      {!loading && filtered.length > 0 && (
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={loadMore}
+            disabled={loadingMore || (hasAttemptedLoad && nextCursor === null)}
+            className="btn-secondary inline-flex items-center gap-2 disabled:opacity-50"
+          >
+            {loadingMore ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Loading more…
+              </>
+            ) : hasAttemptedLoad && nextCursor === null ? (
+              'All scholarships loaded'
+            ) : (
+              'Load more scholarships'
+            )}
+          </button>
         </div>
       )}
     </div>
