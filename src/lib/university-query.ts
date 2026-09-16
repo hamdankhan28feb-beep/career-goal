@@ -55,6 +55,7 @@ const UNIVERSITY_QUERY = `
     ov.notable_alumni,
     ov.key_achievements,
     -- One-to-one: admissions
+    adm.admission_id,
     adm.admission_cycle,
     adm.admission_months,
     adm.application_start,
@@ -69,6 +70,7 @@ const UNIVERSITY_QUERY = `
     adm.application_fee_pkr,
     adm.online_application_url,
     -- One-to-one: fees
+    fee.fee_id,
     fee.fee_year,
     fee.admission_fee,
     fee.semester_fee,
@@ -79,6 +81,7 @@ const UNIVERSITY_QUERY = `
     fee.approx_total_degree_cost,
     fee.fee_notes,
     -- One-to-one: faculty_academics
+    fac.faculty_acad_id,
     fac.total_faculty_count,
     fac.phd_faculty_count,
     fac.student_faculty_ratio,
@@ -88,11 +91,13 @@ const UNIVERSITY_QUERY = `
     fac.internship_support,
     fac.fyp_culture,
     -- One-to-one: student_life
+    sl.student_life_id,
     sl.clubs_and_societies,
     sl.events_and_festivals,
     sl.sports_facilities,
     sl.campus_culture,
     -- One-to-one: hostels
+    host.hostel_id,
     host.availability AS hostel_availability,
     host.male_hostel_available,
     host.female_hostel_available,
@@ -100,24 +105,28 @@ const UNIVERSITY_QUERY = `
     host.mess_available,
     host.hostel_rules,
     -- One-to-one: transport
+    tr.transport_id,
     tr.service_available,
     tr.routes,
     tr.monthly_fee_pkr AS transport_monthly_fee,
     -- One-to-one: placements
+    plc.placement_id,
     plc.placement_office_url,
     plc.placement_rate_pct,
     plc.industry_partnerships,
     plc.alumni_count,
     plc.top_recruiters,
     plc.placement_notes,
-    -- One-to-one: career_paths (UNIQUE constraint = one row per uni)
+    -- One-to-one: career_paths (UNIQUE constraint = one row per uni).
+    -- NOTE: schema has private_opportunities / higher_education_paths —
+    -- there are no freelancing_opportunities / expected_salary_range_pkr
+    -- columns (the old JS referenced those names but got undefined).
+    cp.career_path_id,
     cp.career_paths,
     cp.industries,
     cp.government_opportunities,
     cp.private_opportunities,
     cp.higher_education_paths,
-    cp.freelancing_opportunities,
-    cp.expected_salary_range_pkr,
     -- One-to-many: aggregated as JSON arrays
     COALESCE((
       SELECT json_agg(json_build_object(
@@ -218,7 +227,10 @@ const UNIVERSITY_QUERY = `
       SELECT json_agg(json_build_object(
         'ranking_name', r.ranking_organization,
         'ranking_category', r.ranking_category,
-        'ranking_value', r.ranking_value
+        'ranking_value', r.ranking_value,
+        -- No ranking_note column exists in the schema; the old code read
+        -- r.ranking_note || null which silently produced null.
+        'ranking_note', NULL
       ))
       FROM rankings r
       WHERE r.university_id = u.university_id AND r.is_active = true
@@ -305,7 +317,7 @@ function mapRow(r: any): University {
   const faqs = json<RawFaq[]>(r.faqs_json, []);
   const links = json<RawImportantLink[]>(r.links_json, []);
 
-  const admissions: RawAdmission | null = r.admission_cycle ? {
+  const admissions: RawAdmission | null = r.admission_id != null ? {
     admission_cycle: r.admission_cycle,
     admission_months: r.admission_months,
     application_start: r.application_start ? new Date(r.application_start).toISOString().split('T')[0] : null,
@@ -321,7 +333,7 @@ function mapRow(r: any): University {
     online_application_url: r.online_application_url
   } : null;
 
-  const fees: RawFee | null = r.fee_year ? {
+  const fees: RawFee | null = r.fee_id != null ? {
     fee_year: num(r.fee_year),
     admission_fee: num(r.admission_fee),
     semester_fee: num(r.semester_fee),
@@ -333,7 +345,7 @@ function mapRow(r: any): University {
     fee_notes: r.fee_notes
   } : null;
 
-  const facultyAcademics: RawFacultyAcademics | null = r.total_faculty_count ? {
+  const facultyAcademics: RawFacultyAcademics | null = r.faculty_acad_id != null ? {
     total_faculty_count: num(r.total_faculty_count),
     phd_faculty_count: num(r.phd_faculty_count),
     student_faculty_ratio: r.student_faculty_ratio,
@@ -344,7 +356,7 @@ function mapRow(r: any): University {
     fyp_culture: r.fyp_culture
   } : null;
 
-  const studentLife: RawStudentLife | null = r.clubs_and_societies ? {
+  const studentLife: RawStudentLife | null = r.student_life_id != null ? {
     clubs: r.clubs_and_societies || [],
     societies: [],
     annual_events: r.events_and_festivals || [],
@@ -353,7 +365,7 @@ function mapRow(r: any): University {
     cultural_activities: null
   } : null;
 
-  const hostel: RawHostel | null = r.hostel_availability != null ? {
+  const hostel: RawHostel | null = r.hostel_id != null ? {
     hostel_availability: /^(yes|available|true|y)$/i.test(String(r.hostel_availability)),
     hostel_quality: r.hostel_rules || null,
     gender: r.male_hostel_available == null && r.female_hostel_available == null
@@ -368,14 +380,14 @@ function mapRow(r: any): University {
     ac_available: null
   } : null;
 
-  const transport: RawTransport | null = r.service_available != null ? {
+  const transport: RawTransport | null = r.transport_id != null ? {
     transport_available: r.service_available,
     bus_count: null,
     routes: r.routes || [],
     monthly_fee_pkr: num(r.transport_monthly_fee)
   } : null;
 
-  const placements: RawPlacement | null = r.placement_office_url ? {
+  const placements: RawPlacement | null = r.placement_id != null ? {
     career_services_office: r.placement_office_url || null,
     placement_support: r.placement_notes || null,
     placement_rate_pct: num(r.placement_rate_pct),
@@ -385,14 +397,12 @@ function mapRow(r: any): University {
     top_recruiters: r.top_recruiters || []
   } : null;
 
-  const careerPaths: RawCareerPath[] = r.career_paths ? [{
+  const careerPaths: RawCareerPath[] = r.career_path_id != null ? [{
     career_paths: r.career_paths || [],
     industries: r.industries || [],
     government_opportunities: r.government_opportunities || [],
     private_sector_opportunities: r.private_opportunities || [],
-    freelancing_opportunities: r.freelancing_opportunities,
-    higher_education_options: r.higher_education_paths || [],
-    expected_salary_range_pkr: r.expected_salary_range_pkr
+    higher_education_options: r.higher_education_paths || []
   }] : [];
 
   // Calculate data completeness dynamically
