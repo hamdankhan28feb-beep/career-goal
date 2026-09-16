@@ -49,7 +49,9 @@ export async function getPendingReviews(): Promise<PendingReview[]> {
     );
     return res.rows.map(mapRowToPendingReview);
   } catch (err) {
-    console.error('Failed to get pending reviews:', err);
+    // Warn, not error: handled fallback (empty list). console.error during a
+    // server render is surfaced by the Next.js dev overlay as a page error.
+    console.warn('Failed to get pending reviews:', err);
     return [];
   }
 }

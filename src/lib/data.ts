@@ -176,7 +176,10 @@ async function fetchUniversities(): Promise<University[]> {
     cacheTimestamp = now;
     return result;
   } catch (err) {
-    console.error('Failed to fetch universities from DB:', err);
+    // Warn, not error: handled fallback to the bundled dataset (e.g. when
+    // PostgreSQL is not running). console.error during a Server Components
+    // render is surfaced by the Next.js dev overlay as a page error.
+    console.warn('Failed to fetch universities from DB, falling back to bundled data:', err);
     const bundled = getBundledUniversities();
     cachedUniversities = bundled;
     cacheTimestamp = now;
