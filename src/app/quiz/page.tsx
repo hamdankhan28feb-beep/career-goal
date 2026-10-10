@@ -53,41 +53,58 @@ const RESULT_COLORS = ['from-primary to-cyan-500', 'from-purple-500 to-pink-500'
 
 type Answers = Record<string, number>;
 
-function computeResults(answers: Answers) {
+type QuizResult = { slug: string; band: 'Strong' | 'Good' | 'Possible'; relative: number };
+type QuizOutcome = { flat: boolean; results: QuizResult[] };
+
+function computeResults(answers: Answers): QuizOutcome {
+  const values = QUIZ_QUESTIONS.map((q) => answers[q.id]).filter((v): v is number => v !== undefined);
+  const mean = values.length ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+  const isFlat =
+    values.length === QUIZ_QUESTIONS.length && values.every((v) => v === values[0]);
+
+  if (isFlat) {
+    return { flat: true, results: [] };
+  }
+
   const fields = Object.keys(QUIZ_QUESTIONS[0].field_weights);
   const scores: Record<string, number> = {};
   fields.forEach((f) => { scores[f] = 0; });
 
   QUIZ_QUESTIONS.forEach((q) => {
     const ans = answers[q.id] ?? 0;
+    const centered = ans - mean;
     const weights = q.field_weights as Record<string, number>;
     Object.entries(weights).forEach(([field, weight]) => {
-      scores[field] = (scores[field] ?? 0) + ans * weight;
+      scores[field] = (scores[field] ?? 0) + centered * weight;
     });
   });
 
-  const maxPossible: Record<string, number> = {};
-  QUIZ_QUESTIONS.forEach((q) => {
-    const weights = q.field_weights as Record<string, number>;
-    Object.entries(weights).forEach(([field, weight]) => {
-      maxPossible[field] = (maxPossible[field] ?? 0) + 4 * weight;
-    });
+  const ranked = Object.entries(scores)
+    .map(([slug, raw]) => ({ slug, raw }))
+    .sort((a, b) => b.raw - a.raw);
+
+  const top = ranked[0]?.raw ?? 0;
+  const scale = Math.max(Math.abs(top), 1);
+  const results: QuizResult[] = ranked.slice(0, 5).map((r, i) => {
+    const gap = (top - r.raw) / scale;
+    let band: QuizResult['band'] = 'Possible';
+    if (i === 0 || gap < 0.08) band = 'Strong';
+    else if (gap < 0.25) band = 'Good';
+    return {
+      slug: r.slug,
+      band,
+      relative: Math.max(5, Math.min(100, Math.round(55 + (r.raw / scale) * 40))),
+    };
   });
 
-  return Object.entries(scores)
-    .map(([slug, score]) => ({
-      slug,
-      score: Math.round((score / (maxPossible[slug] || 1)) * 100),
-    }))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 5);
+  return { flat: false, results };
 }
 
 export default function QuizPage() {
   const [started, setStarted] = useState(false);
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
-  const [results, setResults] = useState<{ slug: string; score: number }[] | null>(null);
+  const [outcome, setOutcome] = useState<QuizOutcome | null>(null);
 
   const allFields = getFields();
   const fieldMap = Object.fromEntries(allFields.map((f) => [f.slug, f]));
@@ -104,7 +121,7 @@ export default function QuizPage() {
     if (current < QUIZ_QUESTIONS.length - 1) {
       setCurrent((c) => c + 1);
     } else {
-      setResults(computeResults(answers));
+      setOutcome(computeResults(answers));
     }
   }
 
@@ -116,26 +133,32 @@ export default function QuizPage() {
     setStarted(false);
     setCurrent(0);
     setAnswers({});
-    setResults(null);
+    setOutcome(null);
   }
 
-  if (results) {
+  if (outcome) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <div className="text-center mb-10">
           <div className="text-5xl mb-4">🎉</div>
           <h1 className="text-3xl font-semibold tracking-tight">Your Career Match Results</h1>
-          <p className="mt-3 text-muted-foreground">Based on your {QUIZ_QUESTIONS.length} answers, here are your top field matches</p>
+          <p className="mt-3 text-muted-foreground">Based on your {QUIZ_QUESTIONS.length} answers. Matches use relative interest bands (not scientific accuracy percentages).</p>
         </div>
         <div className="space-y-4">
-          {results.map((r, i) => {
+          {outcome.flat ? (
+            <div className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-6 text-sm text-foreground">
+              Your answers were nearly identical across every question, so no field stands out yet.
+              Retake the quiz with more varied answers, or ask the AI Counselor for guidance.
+            </div>
+          ) : null}
+          {outcome.results.map((r, i) => {
             const field = fieldMap[r.slug];
             if (!field) return null;
             return (
               <div key={r.slug} className={`relative overflow-hidden rounded-3xl border border-border/70 bg-card/80 p-5 ${i === 0 ? 'ring-2 ring-primary' : ''}`}>
-                {i === 0 && (
+                {r.band === 'Strong' && (
                   <div className="absolute right-4 top-4 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                    Best Match 🏆
+                    Strong fit 🏆
                   </div>
                 )}
                 <div className="flex items-center gap-4">
@@ -148,12 +171,12 @@ export default function QuizPage() {
                     <div className="progress-track mb-1.5">
                       <div
                         className={`h-full rounded-full bg-gradient-to-r ${RESULT_COLORS[i % RESULT_COLORS.length]} transition-all duration-1000`}
-                        style={{ width: `${r.score}%` }}
+                        style={{ width: `${r.relative}%` }}
                       />
                     </div>
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <span>{field.category} · {field.difficultyLevel}</span>
-                      <span className="font-semibold text-foreground">{r.score}% match</span>
+                      <span className="font-semibold text-foreground">{r.band} fit</span>
                     </div>
                   </div>
                 </div>

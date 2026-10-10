@@ -16,7 +16,7 @@ const QUICK_PROMPTS = [
 ];
 
 const DEMO_RESPONSES: Record<string, string> = {
-  default: `I'm the FuturePath AI Counselor, trained on Pakistani university data. Here's what I can help you with:
+  default: `I'm the FuturePath AI Counselor in **demo mode** (no API key configured). Replies below are canned examples — verify everything on official university sites. Here's what I can help you with:
 
 📚 **University Information** — Programs, fees, merit, campuses, accreditations
 🎓 **Admission Guidance** — Merit requirements, entry tests, deadlines

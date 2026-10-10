@@ -16,7 +16,6 @@ const footerLinks = {
   account: [
     { href: '/auth/login', label: 'Login' },
     { href: '/auth/signup', label: 'Sign Up' },
-    { href: '/admin', label: 'Admin Dashboard' },
   ],
 };
 

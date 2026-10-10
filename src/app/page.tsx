@@ -9,8 +9,8 @@ import { getFields, getFeaturedUniversities, getUniversities } from '@/lib/data'
 const FEATURES = [
   { icon: BookOpen, title: 'University Explorer', desc: 'Browse 18+ verified Karachi universities with real data from official sources', href: '/universities' },
   { icon: TrendingUp, title: 'Admission Predictor', desc: 'Enter your marks and get instant High/Medium/Low admission chance predictions', href: '/predictor' },
-  { icon: Award, title: 'Scholarship Finder', desc: 'Discover merit, need-based, sports and external scholarships available', href: '/universities' },
-  { icon: Brain, title: 'AI Counselor', desc: 'Chat with our AI counselor trained on your university database', href: '/counselor' },
+  { icon: Award, title: 'Scholarship Finder', desc: 'Discover merit, need-based, sports and external scholarships available', href: '/scholarships' },
+  { icon: Brain, title: 'AI Counselor', desc: 'Ask questions about Pakistani universities — answers grounded in our database when AI keys are configured', href: '/counselor' },
   { icon: Users, title: 'Career Quiz', desc: 'Take a 24-question assessment to find your perfect field match', href: '/quiz' },
   { icon: Target, title: 'Side-by-Side Compare', desc: 'Compare universities on 8 dimensions: fees, merit, scholarships & more', href: '/compare' },
 ];

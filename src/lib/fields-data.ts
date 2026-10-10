@@ -1,3 +1,4 @@
+/** NOTE: salaryRange values are illustrative placeholders — PBS/P@SHA do not publish role-level entry salaries for PK tech. Do not present as verified. */
 import type { FieldDefinition } from '@/lib/types';
 
 export const FIELDS_DATA: FieldDefinition[] = [

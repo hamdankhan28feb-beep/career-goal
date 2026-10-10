@@ -42,7 +42,7 @@ export function FeaturedFields({ fields }: { fields: FieldDefinition[] }) {
               {field.difficultyLevel}
             </span>
             <div className="text-xs font-semibold text-foreground">
-              {Math.round(field.salaryRange.min / 1000)}K–{Math.round(field.salaryRange.max / 1000)}K/mo
+              {Math.round(field.salaryRange.min / 1000)}K-{Math.round(field.salaryRange.max / 1000)}K/mo (illustrative)
             </div>
           </div>
           <div className="flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition group-hover:opacity-100">

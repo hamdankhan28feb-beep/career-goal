@@ -20,6 +20,9 @@ type EnrichedScholarship = {
   universityShortName: string;
   universitySlug: string;
   universityCity: string;
+  status?: string;
+  source_url?: string;
+  last_verified_at?: string;
 };
 
 export default function ScholarshipFinderPage() {
@@ -28,6 +31,8 @@ export default function ScholarshipFinderPage() {
   const [loadingMore, setLoadingMore] = useState(false);
   const [nextCursor, setNextCursor] = useState<string | null>(null);
   const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
+  const [dataSource, setDataSource] = useState<string | null>(null);
+  const [disclaimer, setDisclaimer] = useState<string | null>(null);
   
   // Filter states
   const [search, setSearch] = useState('');
@@ -43,6 +48,8 @@ export default function ScholarshipFinderPage() {
           const data = await res.json();
           setScholarships(data.scholarships);
           setNextCursor(data.nextCursor);
+          setDataSource(data.source ?? null);
+          setDisclaimer(data.disclaimer ?? null);
         }
       } catch (err) {
         console.error(err);
@@ -124,6 +131,13 @@ export default function ScholarshipFinderPage() {
           Explore and filter merit-based, need-based, and external HEC scholarships offered by top Pakistani universities.
         </p>
       </div>
+
+      {disclaimer ? (
+        <div className="mb-6 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
+          {disclaimer}
+          {dataSource === 'research_csv' ? ' Showing research CSV fallback (no active DB rows).' : ''}
+        </div>
+      ) : null}
 
       {/* Stats row */}
       <div className="mb-8 grid gap-4 grid-cols-2 md:grid-cols-4">
