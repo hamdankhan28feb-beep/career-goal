@@ -1,281 +1,402 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
-import { Send, Bot, User, Sparkles, ArrowRight, RotateCcw, BookOpen } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  AlertTriangle,
+  Bot,
+  BookOpen,
+  Eye,
+  EyeOff,
+  Info,
+  Loader2,
+  Send,
+  Settings,
+  Sparkles,
+  User,
+} from 'lucide-react';
 
-type Message = { role: 'user' | 'assistant'; content: string };
+import { CitationChip, SourceDrawer, type SourceCitation } from '@/components/source-drawer';
 
-const QUICK_PROMPTS = [
-  'Which universities in Karachi are best for Computer Science?',
-  'I have 75% in FSc Pre-Engineering, where can I apply?',
-  'What is the difference between CS and Software Engineering?',
-  'Which university has the best scholarships in Karachi?',
-  'What entry tests do I need to give for medical?',
-  'Is FAST better than NEDUET for CS?',
-];
+type Mode = 'checking' | 'live' | 'unconfigured' | 'error';
 
-const DEMO_RESPONSES: Record<string, string> = {
-  default: `I'm the FuturePath AI Counselor in **demo mode** (no API key configured). Replies below are canned examples — verify everything on official university sites. Here's what I can help you with:
+type ApiCitation = SourceCitation & { ref: string; cited?: boolean; sourceId?: string };
 
-📚 **University Information** — Programs, fees, merit, campuses, accreditations
-🎓 **Admission Guidance** — Merit requirements, entry tests, deadlines
-💰 **Scholarships** — Merit-based, need-based, external scholarships
-🗺️ **Career Paths** — What you can do after graduation
-📊 **University Comparisons** — Side-by-side analysis
-🔮 **Admission Chances** — Based on your marks
-
-Ask me anything about Pakistani universities and careers! For example: *"Which university is best for CS in Karachi?"*`,
-
-  cs: `Great question! Here are the **top CS universities in Karachi**:
-
-**1. FAST-NUCES Karachi** 🥇
-- Pakistan's top CS university
-- ABET-accredited programs
-- Typical merit: 75-80% aggregate
-- Strong industry links with tech companies
-
-**2. IBA Karachi** 🥈
-- Excellent CS + Business programs
-- Most selective (80%+ aggregate)
-- Best campus culture and alumni network
-
-**3. Habib University** 🥉
-- US-style liberal arts + CS
-- Small classes, personalized attention
-- Strong research culture
-
-**4. NED University (NEDUET)**
-- Excellent public university, affordable fees
-- Strong engineering tradition
-- Merit: typically 72-78%
-
-**5. MAJU / SZABIST / PAF-KIET**
-- Good alternatives with lower entry barriers
-- Decent industry connections
-
-**My recommendation**: If your marks are 80%+, target FAST or IBA. 70-79% → NEDUET or Habib. Below 70% → MAJU, SZABIST, or Iqra.
-
-Want me to compare any two of these?`,
-
-  scholarship: `Here's a summary of **scholarships available at Karachi universities**:
-
-**HEC Need-Based Scholarships**
-- Available at: All HEC-recognized universities
-- Coverage: 100% tuition + stipend
-- Eligibility: Family income < PKR 45,000/month
-
-**Merit-Based University Scholarships**
-- FAST: Top 5% students get 50-100% fee waiver
-- IBA: Endowment scholarships for top merit
-- Habib University: Up to 100% merit scholarships
-
-**External Scholarships**
-- Ehsaas Undergraduate Scholarship (BISP)
-- KRL Scholarship
-- Sindh Talent Scholarship Program
-- USAID/Fulbright (for postgrad)
-
-**How to maximize chances:**
-1. Apply early (most have limited seats)
-2. Keep CGPA above 3.5/4.0
-3. Apply to multiple scholarships simultaneously
-
-Want details on any specific scholarship?`,
-
-  merit: `Here are the **typical merit requirements** for top Karachi universities:
-
-| University | Merit Range | Entry Test |
-|---|---|---|
-| IBA Karachi | 80-90% | IBA SAT-style test |
-| FAST Karachi | 75-85% | NU Entry Test |
-| Habib University | 75-88% | HU Entrance Test |
-| NEDUET | 70-80% | University Entry Test |
-| MAJU | 60-70% | University Test |
-| SZABIST | 55-70% | Own test (some waivers) |
-| Iqra University | 50-65% | Own test |
-
-**Merit Formula (standard)**:
-- 60% weight = Intermediate/A-levels percentage
-- 40% weight = Matric/O-levels percentage
-- Entry test adds bonus points at most universities
-
-Use our **Admission Predictor** to calculate your exact chances!`,
+type ChatMessage = {
+  id: string;
+  role: 'user' | 'assistant' | 'notice';
+  content: string;
+  citations?: ApiCitation[];
+  uncited?: boolean;
+  noticeKind?: 'unconfigured' | 'error';
 };
 
-function getDemoResponse(message: string): string {
-  const lower = message.toLowerCase();
-  if (lower.includes('cs') || lower.includes('computer science') || lower.includes('software')) return DEMO_RESPONSES.cs;
-  if (lower.includes('scholarship') || lower.includes('financial')) return DEMO_RESPONSES.scholarship;
-  if (lower.includes('merit') || lower.includes('percentage') || lower.includes('%')) return DEMO_RESPONSES.merit;
-  return DEMO_RESPONSES.default;
+const QUICK_PROMPTS = [
+  'Which Karachi universities offer BS Artificial Intelligence?',
+  'What need-based scholarships exist for public universities?',
+  'Free resources to start learning Python and web development',
+  'How should I compare FAST, NED and IBA for computer science?',
+  'Is the HEC Need Based Scholarship open right now?',
+  'Mujhe software engineering ke liye kaun si university choose karni chahiye?',
+];
+
+/**
+ * Example answers — illustrate the *style* of a grounded answer only.
+ * Hidden by default; never shown as a live reply; contain no fees, deadlines or merit numbers.
+ */
+const EXAMPLE_ANSWERS: Array<{ q: string; a: string }> = [
+  {
+    q: 'Is the HEC Need Based Scholarship open right now?',
+    a: 'A live answer would check the scholarship record first. If its status is "Unknown", the counselor says it could not confirm an open window, links the official HEC page [S1], and suggests contacting your university\'s financial aid office. It never invents a deadline.',
+  },
+  {
+    q: 'Which Karachi universities offer BS AI?',
+    a: 'A live answer lists only universities whose research record shows a BS AI programme, cites each one ([S1], [S2] …), and notes when a record is only partially verified.',
+  },
+  {
+    q: 'What will my fee be at a private university?',
+    a: 'If FuturePath has no verified fee for that university, a live answer says so plainly and points to the official fee page instead of estimating a number.',
+  },
+];
+
+function uid() {
+  return Math.random().toString(36).slice(2, 10);
 }
 
-function formatMessage(text: string) {
-  return text
-    .split('\n')
-    .map((line, i) => {
-      if (line.startsWith('**') && line.endsWith('**')) {
-        return <p key={i} className="font-semibold text-foreground mb-1">{line.replace(/\*\*/g, '')}</p>;
-      }
-      if (line.startsWith('- ') || line.startsWith('* ')) {
-        return <li key={i} className="ml-4 text-muted-foreground">{line.slice(2).replace(/\*\*(.*?)\*\*/g, '$1')}</li>;
-      }
-      if (line.startsWith('**') ) {
-        return <p key={i} className="mb-1" dangerouslySetInnerHTML={{ __html: line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />;
-      }
-      if (line.trim() === '') return <br key={i} />;
-      return <p key={i} className="text-muted-foreground mb-1">{line.replace(/\*\*(.*?)\*\*/g, '$1').replace(/\*(.*?)\*/g, '$1')}</p>;
-    });
+/** Renders [S1]-style markers as small superscript chips that open the source drawer. */
+function AnswerText({
+  text,
+  citations,
+  onOpen,
+}: {
+  text: string;
+  citations: ApiCitation[];
+  onOpen: (c: SourceCitation) => void;
+}) {
+  const byRef = new Map(citations.map((c) => [c.ref, c]));
+  const parts = text.split(/(\[S\d+\])/g);
+  return (
+    <p className="whitespace-pre-wrap text-sm leading-relaxed">
+      {parts.map((part, i) => {
+        const m = part.match(/^\[(S\d+)\]$/);
+        const c = m ? byRef.get(m[1]) : undefined;
+        if (m && c) {
+          return (
+            <button
+              key={i}
+              type="button"
+              onClick={() => onOpen(c)}
+              className="mx-0.5 inline-flex -translate-y-0.5 items-center rounded-md border border-primary/40 bg-primary/10 px-1 text-[10px] font-semibold text-primary hover:bg-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              aria-label={`Source ${c.ref}: ${c.title}`}
+            >
+              {c.ref}
+            </button>
+          );
+        }
+        return <span key={i}>{part}</span>;
+      })}
+    </p>
+  );
 }
 
 export default function CounselorPage() {
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: DEMO_RESPONSES.default },
-  ]);
+  const [mode, setMode] = useState<Mode>('checking');
+  const [provider, setProvider] = useState<string | null>(null);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [showExamples, setShowExamples] = useState(false);
+  const [drawer, setDrawer] = useState<SourceCitation | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+    let cancelled = false;
+    fetch('/api/counselor', { cache: 'no-store' })
+      .then((r) => r.json())
+      .then((d: { mode?: string; provider?: string | null }) => {
+        if (cancelled) return;
+        setMode(d.mode === 'live' ? 'live' : 'unconfigured');
+        setProvider(d.provider ?? null);
+      })
+      .catch(() => {
+        if (!cancelled) setMode('error');
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
-  async function sendMessage(text?: string) {
-    const msg = (text ?? input).trim();
-    if (!msg || loading) return;
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }, [messages, sending]);
 
+  const closeDrawer = useCallback(() => setDrawer(null), []);
+
+  async function send(text: string) {
+    const content = text.trim();
+    if (!content || sending) return;
+    const userMsg: ChatMessage = { id: uid(), role: 'user', content };
+    const history = [...messages, userMsg];
+    setMessages(history);
     setInput('');
-    setMessages((p) => [...p, { role: 'user', content: msg }]);
-    setLoading(true);
+    setSending(true);
 
-    // Try API first, fallback to demo
     try {
       const res = await fetch('/api/counselor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg, history: messages }),
+        body: JSON.stringify({
+          messages: history
+            .filter((m) => m.role === 'user' || m.role === 'assistant')
+            .map((m) => ({ role: m.role, content: m.content })),
+        }),
       });
-      if (res.ok) {
-        const data = await res.json() as { reply: string };
-        setMessages((p) => [...p, { role: 'assistant', content: data.reply }]);
-      } else {
-        throw new Error('API error');
+      const data = (await res.json().catch(() => ({}))) as {
+        reply?: string;
+        error?: string;
+        mode?: string;
+        citations?: ApiCitation[];
+        validation?: { uncited?: boolean };
+      };
+
+      if (res.status === 503 || data.mode === 'unconfigured') {
+        setMode('unconfigured');
+        setMessages((m) => [
+          ...m,
+          {
+            id: uid(),
+            role: 'notice',
+            noticeKind: 'unconfigured',
+            content:
+              'No answer was generated: the AI Counselor is not configured on this server. Browse Universities and Scholarships for verified data, or ask the site owner to add an API key.',
+          },
+        ]);
+        return;
       }
+      if (!res.ok || !data.reply) {
+        setMessages((m) => [
+          ...m,
+          {
+            id: uid(),
+            role: 'notice',
+            noticeKind: 'error',
+            content: data.error || 'Something went wrong. No answer was generated — please try again.',
+          },
+        ]);
+        return;
+      }
+      setMode('live');
+      setMessages((m) => [
+        ...m,
+        {
+          id: uid(),
+          role: 'assistant',
+          content: data.reply as string,
+          citations: data.citations ?? [],
+          uncited: !!data.validation?.uncited,
+        },
+      ]);
     } catch {
-      // Demo fallback with simulated delay
-      await new Promise((r) => setTimeout(r, 800 + Math.random() * 600));
-      setMessages((p) => [...p, { role: 'assistant', content: getDemoResponse(msg) }]);
+      setMessages((m) => [
+        ...m,
+        {
+          id: uid(),
+          role: 'notice',
+          noticeKind: 'error',
+          content: 'Network error. No answer was generated — please try again.',
+        },
+      ]);
+    } finally {
+      setSending(false);
     }
-    setLoading(false);
   }
 
-  function reset() {
-    setMessages([{ role: 'assistant', content: DEMO_RESPONSES.default }]);
-    setInput('');
-  }
+  const disabled = sending || mode === 'unconfigured' || mode === 'checking';
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-col" style={{ height: 'calc(100vh - 80px)' }}>
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-border/50 bg-background/80 backdrop-blur px-4 py-4 sm:px-6">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-emerald-400 text-white shadow-glow-primary">
-            <Bot className="h-5 w-5" />
-          </div>
+    <div className="mx-auto flex max-w-4xl flex-col px-4 py-10 sm:px-6">
+      <header className="mb-6">
+        <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-3 py-1 text-xs text-muted-foreground">
+          <Bot className="h-3.5 w-3.5" aria-hidden /> AI Counselor
+        </div>
+        <h1 className="mt-4 text-3xl font-semibold tracking-tight">Ask about universities, scholarships &amp; learning</h1>
+        <p className="mt-2 text-muted-foreground">
+          Answers are drawn from FuturePath&rsquo;s research dataset and cite their sources. Always confirm fees, deadlines
+          and merit on official websites.
+        </p>
+      </header>
+
+      {mode === 'unconfigured' ? (
+        <div role="status" className="mb-6 flex gap-3 rounded-3xl border border-amber-500/30 bg-amber-500/10 p-5 text-sm">
+          <Settings className="mt-0.5 h-5 w-5 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden />
           <div>
-            <div className="font-semibold">FuturePath AI Counselor</div>
-            <div className="flex items-center gap-1.5 text-xs text-emerald-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Online — trained on your university database
-            </div>
+            <p className="font-medium text-foreground">The AI Counselor isn&rsquo;t set up on this server yet.</p>
+            <p className="mt-1 text-muted-foreground">
+              No live answers can be generated, and we won&rsquo;t show made-up ones. To enable it, add{' '}
+              <code className="rounded bg-muted px-1">OPENAI_API_KEY</code> or{' '}
+              <code className="rounded bg-muted px-1">GEMINI_API_KEY</code> to <code className="rounded bg-muted px-1">.env.local</code>{' '}
+              and restart the server. Meanwhile, the Universities and Scholarships pages show verified data with sources.
+            </p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <Link href="/universities" className="hidden rounded-full border border-border/60 px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground transition sm:flex items-center gap-1">
-            <BookOpen className="h-3.5 w-3.5" /> Universities
-          </Link>
-          <button onClick={reset} className="rounded-full border border-border/60 p-2 text-muted-foreground hover:text-foreground transition" title="Reset chat">
-            <RotateCcw className="h-4 w-4" />
-          </button>
+      ) : mode === 'live' ? (
+        <div className="mb-6 flex items-center gap-2 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-xs text-emerald-800 dark:text-emerald-300">
+          <Sparkles className="h-4 w-4" aria-hidden />
+          Live{provider ? ` (${provider})` : ''} · answers cite FuturePath research sources — tap a marker like{' '}
+          <span className="rounded-md border border-primary/40 bg-primary/10 px-1 font-semibold text-primary">S1</span> to see it.
         </div>
-      </div>
+      ) : mode === 'error' ? (
+        <div role="alert" className="mb-6 rounded-3xl border border-rose-500/30 bg-rose-500/10 p-4 text-sm">
+          Couldn&rsquo;t reach the counselor service. Please refresh the page.
+        </div>
+      ) : null}
 
-      {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 space-y-4">
-        {messages.map((msg, i) => (
-          <div key={i} className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
-            <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-2xl text-sm font-bold ${
-              msg.role === 'assistant' ? 'bg-gradient-to-br from-primary to-emerald-400 text-white' : 'bg-muted text-foreground'
-            }`}>
-              {msg.role === 'assistant' ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
-            </div>
-            <div className={`max-w-[80%] rounded-3xl px-5 py-3.5 text-sm leading-7 ${
-              msg.role === 'assistant' ? 'bg-card/80 border border-border/70' : 'bg-primary text-primary-foreground'
-            }`}>
-              {msg.role === 'assistant' ? (
-                <div className="space-y-0.5">{formatMessage(msg.content)}</div>
-              ) : (
-                msg.content
-              )}
-            </div>
+      <section
+        aria-label="Conversation"
+        aria-live="polite"
+        className="min-h-[320px] space-y-4 rounded-3xl border border-border/70 bg-card/80 p-4 sm:p-6"
+      >
+        {messages.length === 0 ? (
+          <div className="py-6 text-center text-sm text-muted-foreground">
+            <Bot className="mx-auto mb-3 h-8 w-8" aria-hidden />
+            Try one of these questions:
           </div>
-        ))}
-        {loading && (
-          <div className="flex gap-3">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-emerald-400 text-white">
-              <Bot className="h-4 w-4" />
-            </div>
-            <div className="flex items-center gap-2 rounded-3xl border border-border/70 bg-card/80 px-5 py-3.5">
-              <div className="flex gap-1">
-                {[0, 150, 300].map((delay) => (
-                  <span key={delay} className="h-2 w-2 rounded-full bg-primary animate-bounce" style={{ animationDelay: `${delay}ms` }} />
-                ))}
+        ) : null}
+
+        {messages.map((m) =>
+          m.role === 'user' ? (
+            <div key={m.id} className="flex justify-end gap-2">
+              <div className="max-w-[85%] rounded-3xl rounded-br-md bg-primary px-4 py-2.5 text-sm text-primary-foreground">
+                {m.content}
               </div>
-              <span className="text-xs text-muted-foreground">Thinking…</span>
+              <User className="mt-1 h-5 w-5 shrink-0 text-muted-foreground" aria-hidden />
             </div>
-          </div>
-        )}
-        <div ref={bottomRef} />
-      </div>
-
-      {/* Quick prompts */}
-      <div className="border-t border-border/50 bg-background/80 backdrop-blur px-4 pt-3 sm:px-6">
-        <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
-          {QUICK_PROMPTS.map((p) => (
-            <button
-              key={p}
-              onClick={() => sendMessage(p)}
-              className="shrink-0 rounded-full border border-border/60 bg-muted/50 px-3 py-1.5 text-xs text-muted-foreground hover:border-primary/30 hover:text-foreground transition"
+          ) : m.role === 'assistant' ? (
+            <div key={m.id} className="flex gap-2">
+              <Bot className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden />
+              <div className="max-w-[85%] rounded-3xl rounded-bl-md border border-border/70 bg-background px-4 py-3">
+                <AnswerText text={m.content} citations={m.citations ?? []} onOpen={setDrawer} />
+                {m.uncited ? (
+                  <p className="mt-2 flex items-center gap-1.5 text-xs text-amber-700 dark:text-amber-400">
+                    <AlertTriangle className="h-3.5 w-3.5" aria-hidden />
+                    This answer did not cite a source — treat it as general guidance only.
+                  </p>
+                ) : null}
+                {m.citations && m.citations.length ? (
+                  <div className="mt-3 border-t border-border/60 pt-3">
+                    <div className="mb-1.5 flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <BookOpen className="h-3.5 w-3.5" aria-hidden /> Sources retrieved
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {m.citations.map((c) => (
+                        <CitationChip key={c.ref} citation={c} onOpen={setDrawer} dimmed={!c.cited} />
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    No matching FuturePath sources were found for this question.
+                  </p>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div
+              key={m.id}
+              role="status"
+              className={`flex gap-2 rounded-2xl border px-4 py-3 text-sm ${
+                m.noticeKind === 'unconfigured'
+                  ? 'border-amber-500/30 bg-amber-500/10'
+                  : 'border-rose-500/30 bg-rose-500/10'
+              }`}
             >
-              {p}
-            </button>
-          ))}
-        </div>
+              <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+              {m.content}
+            </div>
+          )
+        )}
 
-        {/* Input */}
-        <form onSubmit={(e) => { e.preventDefault(); sendMessage(); }} className="flex gap-3 pb-4">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about universities, admissions, careers, scholarships…"
-            className="input-field flex-1"
-            disabled={loading}
-          />
+        {sending ? (
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" role="status">
+            <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> Searching sources and drafting an answer…
+          </div>
+        ) : null}
+        <div ref={bottomRef} />
+      </section>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {QUICK_PROMPTS.map((p) => (
           <button
-            type="submit"
-            disabled={!input.trim() || loading}
-            className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition hover:opacity-90 disabled:opacity-40"
+            key={p}
+            type="button"
+            disabled={disabled}
+            onClick={() => send(p)}
+            className="rounded-full border border-border bg-card px-3 py-1.5 text-xs text-foreground transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
           >
-            <Send className="h-4 w-4" />
+            {p}
           </button>
-        </form>
-        <div className="pb-3 text-center text-xs text-muted-foreground">
-          <Sparkles className="inline h-3 w-3 mr-1 text-primary" />
-          Demo mode — add OPENAI_API_KEY or GEMINI_API_KEY to enable full AI responses
-        </div>
+        ))}
       </div>
+
+      <form
+        className="mt-4 flex gap-2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          send(input);
+        }}
+      >
+        <label htmlFor="counselor-input" className="sr-only">
+          Your question
+        </label>
+        <input
+          id="counselor-input"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          disabled={disabled}
+          maxLength={2000}
+          placeholder={
+            mode === 'unconfigured' ? 'Counselor not configured on this server' : 'Ask about a university, scholarship or skill…'
+          }
+          className="input-field flex-1"
+        />
+        <button type="submit" disabled={disabled || !input.trim()} className="btn-primary inline-flex items-center gap-1.5 disabled:opacity-50">
+          {sending ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Send className="h-4 w-4" aria-hidden />}
+          Send
+        </button>
+      </form>
+
+      <section className="mt-8">
+        <button
+          type="button"
+          aria-expanded={showExamples}
+          aria-controls="counselor-examples"
+          onClick={() => setShowExamples((v) => !v)}
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+        >
+          {showExamples ? <EyeOff className="h-4 w-4" aria-hidden /> : <Eye className="h-4 w-4" aria-hidden />}
+          {showExamples ? 'Hide example answers' : 'Show example answers'}
+        </button>
+        {showExamples ? (
+          <div id="counselor-examples" className="mt-3 space-y-3">
+            <p className="text-xs text-amber-700 dark:text-amber-400">
+              Examples only — these illustrate how a grounded answer behaves. They are not live answers and contain no
+              verified facts.
+            </p>
+            {EXAMPLE_ANSWERS.map((ex) => (
+              <div key={ex.q} className="rounded-3xl border border-dashed border-border p-4 text-sm">
+                <div className="font-medium text-foreground">Q: {ex.q}</div>
+                <div className="mt-1.5 text-muted-foreground">
+                  <span className="mr-1.5 rounded-full border border-border px-2 py-0.5 text-[10px] uppercase tracking-wide">
+                    Example
+                  </span>
+                  {ex.a}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </section>
+
+      <SourceDrawer open={!!drawer} citation={drawer} onClose={closeDrawer} />
     </div>
   );
 }

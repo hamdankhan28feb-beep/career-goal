@@ -27,7 +27,12 @@ function DataBar({ pct }: { pct: number }) {
 export function UniversityCard({ university }: { university: University }) {
   const strengths = university.overview.majorStrengths.slice(0, 2);
   const accred = university.accreditations[0];
-  const verifyStatus = verificationForName(university.name);
+  const dbStatus = (university as { verification_status?: string }).verification_status;
+  const verifyStatus =
+    dbStatus === 'verified' ? 'verified' :
+    dbStatus === 'partial' ? 'approximate' :
+    dbStatus === 'unverified' ? 'unverified' :
+    verificationForName(university.name);
 
   return (
     <article className="group flex h-full flex-col rounded-3xl border border-border/70 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow">
@@ -38,6 +43,7 @@ export function UniversityCard({ university }: { university: University }) {
             <div className="mb-2 flex items-center gap-2 flex-wrap">
               <TypeBadge type={university.universityType} />
               <VerificationBadge status={verifyStatus} />
+              <span className="sr-only">Verification reflects matched research fields, not every fact on this profile.</span>
               {accred && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
                   <ShieldCheck className="h-3 w-3" />
