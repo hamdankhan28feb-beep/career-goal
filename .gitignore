@@ -46,3 +46,12 @@ tsconfig.tsbuildinfo
 .freebuff/
 
 .env.local.bak*
+
+build-log.txt
+
+# QA artifacts
+qa-report.json
+qa-report.txt
+qa-e2e.mjs
+qa-build.txt
+build-log.txt
