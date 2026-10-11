@@ -34,3 +34,13 @@ npm run build
 
 ## Secrets
 Never commit `.env.local`. Backups like `.env.local.bak*` are gitignored.
+
+## Regression checks
+
+- `npm run test:predictor` - pure unit checks for `src/lib/predictor.ts` (aggregate formula, 0-100 validation, chance bands, no invented default cutoff). Needs Node >= 22.18 (native TypeScript type stripping).
+- `npm run qa:regression` - Playwright browser suite against a running server (default `http://127.0.0.1:3000`, override with `QA_BASE`). Uses system Chrome (`channel: 'chrome'`, override with `QA_CHANNEL`). Run selected suites with `node scripts/qa-regression.mjs nav quiz predictor pages mobile`. Exits 1 on any FAIL.
+  - `nav`: homepage "Scholarship Finder" card must navigate to `/scholarships` (waits for the URL; never a fixed sleep - the dev server compiles routes on demand and soft navigation can take several seconds).
+  - `quiz`: 24x "Very much", 24x "Not at all" (flat warning, no ranking) and a varied 5-option cycle (Strong/Good/Possible bands, distinct fields, no "% match").
+  - `predictor`: valid, boundary (0, 100, decimals), missing and invalid (letters, negative, >100, bad budget) inputs.
+  - `pages` / `mobile`: university search, compare, scholarship status filters, iPhone 12 overflow and navigation.
+- Stable selectors: `data-testid="home-feature-scholarships"` (feature cards use `home-feature-<route>`), quiz option buttons carry `aria-label`/`aria-pressed`, plus `quiz-start`, `quiz-next`, `quiz-flat-warning`, `quiz-result`, `predictor-*` test ids.

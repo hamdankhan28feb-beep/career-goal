@@ -11,7 +11,7 @@ import { FreshnessLabel } from '@/components/freshness-label';
 
 const FEATURES = [
   { icon: BookOpen, title: 'University Explorer', desc: 'Browse Karachi universities with verification badges and official-source citations', href: '/universities' },
-  { icon: TrendingUp, title: 'Admission Predictor', desc: 'Enter your marks and get instant High/Medium/Low admission chance predictions', href: '/predictor' },
+  { icon: TrendingUp, title: 'Admission Predictor', desc: 'Enter your marks for a rough High/Medium/Low indication against benchmark estimates (not official cutoffs)', href: '/predictor' },
   { icon: Award, title: 'Scholarship Finder', desc: 'Discover merit, need-based, sports and external scholarships available', href: '/scholarships' },
   { icon: Brain, title: 'AI Counselor', desc: 'Ask questions about Pakistani universities — answers grounded in our database when AI keys are configured', href: '/counselor' },
   { icon: Users, title: 'Career Quiz', desc: 'Take a 24-question assessment to find your perfect field match', href: '/quiz' },
@@ -104,6 +104,7 @@ export default async function HomePage() {
             <Link
               key={href + title}
               href={href}
+              data-testid={`home-feature${href.replace(/\//g, '-')}`}
               className="group rounded-3xl border border-border/70 bg-card/80 p-6 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
@@ -218,13 +219,14 @@ export default async function HomePage() {
           <div className="section-label">Admission Predictor</div>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight">Know your chances before you apply</h2>
           <p className="mt-3 text-muted-foreground text-sm leading-7">
-            Enter your Matric %, Intermediate %, city, and budget. Our algorithm analyzes university merit data to predict your admission chances at each institution.
+            Enter your Matric %, Intermediate %, city, and budget. We compare your aggregate with rough benchmark estimates (not official merit lists) for a High / Medium / Low indication. Admission is never guaranteed.
           </p>
           <Link href="/predictor" className="btn-primary mt-6 inline-flex">
             Try Predictor <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
         <div className="grid gap-3">
+          <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Illustrative example only</div>
           {[
             { label: 'FAST Karachi', chance: 'High', color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-500/10' },
             { label: 'NED University', chance: 'Medium', color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-500/10' },

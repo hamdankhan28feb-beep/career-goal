@@ -146,7 +146,7 @@ export default function QuizPage() {
         </div>
         <div className="space-y-4">
           {outcome.flat ? (
-            <div className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-6 text-sm text-foreground">
+            <div role="status" data-testid="quiz-flat-warning" className="rounded-3xl border border-amber-500/30 bg-amber-500/10 p-6 text-sm text-foreground">
               Your answers were nearly identical across every question, so no field stands out yet.
               Retake the quiz with more varied answers, or ask the AI Counselor for guidance.
             </div>
@@ -155,7 +155,7 @@ export default function QuizPage() {
             const field = fieldMap[r.slug];
             if (!field) return null;
             return (
-              <div key={r.slug} className={`relative overflow-hidden rounded-3xl border border-border/70 bg-card/80 p-5 ${i === 0 ? 'ring-2 ring-primary' : ''}`}>
+              <div key={r.slug} data-testid="quiz-result" data-band={r.band} className={`relative overflow-hidden rounded-3xl border border-border/70 bg-card/80 p-5 ${i === 0 ? 'ring-2 ring-primary' : ''}`}>
                 {r.band === 'Strong' && (
                   <div className="absolute right-4 top-4 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
                     Strong fit 🏆
@@ -214,7 +214,7 @@ export default function QuizPage() {
           {[
             { emoji: '⏱️', label: '~10 minutes', desc: 'Quick and focused' },
             { emoji: '🎯', label: '8 categories', desc: 'Math, Coding, Biology, Business, Design, Communication, Research, Security' },
-            { emoji: '📊', label: 'Top 5 fields', desc: 'Personalized compatibility scores' },
+            { emoji: '📊', label: 'Top 5 fields', desc: 'Relative interest bands (Strong / Good / Possible)' },
             { emoji: '🔄', label: 'Retakeable', desc: 'Try as many times as you like' },
           ].map(({ emoji, label, desc }) => (
             <div key={label} className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card/80 p-4">
@@ -226,7 +226,7 @@ export default function QuizPage() {
             </div>
           ))}
         </div>
-        <button onClick={() => setStarted(true)} className="btn-primary mt-8 text-base px-8 py-4">
+        <button type="button" data-testid="quiz-start" onClick={() => setStarted(true)} className="btn-primary mt-8 text-base px-8 py-4">
           Start Quiz <ArrowRight className="h-5 w-5" />
         </button>
       </div>
@@ -256,6 +256,10 @@ export default function QuizPage() {
           {OPTIONS.map((opt) => (
             <button
               key={opt.value}
+              type="button"
+              aria-label={opt.label}
+              aria-pressed={answers[q.id] === opt.value}
+              data-testid={`quiz-option-${opt.value}`}
               onClick={() => handleAnswer(opt.value)}
               className={`flex w-full items-center gap-4 rounded-2xl border p-4 text-left transition ${
                 answers[q.id] === opt.value
@@ -284,6 +288,8 @@ export default function QuizPage() {
           <ArrowLeft className="h-4 w-4" /> Previous
         </button>
         <button
+          type="button"
+          data-testid="quiz-next"
           onClick={next}
           disabled={!answered}
           className="btn-primary disabled:opacity-40"

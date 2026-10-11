@@ -73,7 +73,7 @@ export function CompareClient({ universities }: { universities: University[] }) 
             )}
           </div>
           <input type="text" placeholder="Search universities..." value={searchQ} onChange={(e) => setSearchQ(e.target.value)} className="input-field mb-6 max-w-md" />
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((u) => {
               const sel = isSelected(u);
               const disabled = !sel && selected.length >= COMPARE_LIMIT;

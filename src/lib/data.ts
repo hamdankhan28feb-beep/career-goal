@@ -2,6 +2,7 @@ import rawUniversityData from '../../data_v2.json';
 import { query } from '@/lib/db';
 import { getFields } from '@/lib/fields-data';
 import { slugify } from '@/lib/slug';
+import { computeAggregate, computeChance, getBenchmark } from '@/lib/predictor';
 import { fetchAllFromDb, fetchPageFromDb } from '@/lib/university-query';
 import type { PaginatedResult } from '@/lib/pagination';
 import type {
@@ -275,49 +276,27 @@ export async function predictAdmissions(input: PredictorInput): Promise<Predicto
     });
   }
 
+  const combinedScore = computeAggregate(input.matricPct, input.interPct);
+
+  // Universities without a benchmark are skipped rather than scored against an
+  // invented default cutoff. Benchmarks are rough estimates, not official merit.
   return universities
-    .map((u) => {
-      const combinedScore = input.interPct * 0.6 + input.matricPct * 0.4;
+    .flatMap((u): PredictorResult[] => {
+      const benchmark = getBenchmark(u.shortName);
+      const chance = computeChance(combinedScore, u.shortName);
+      if (benchmark === null || chance === null) return [];
+      const diff = combinedScore - benchmark;
 
-      const toughness: Record<string, number> = {
-        'IBA Karachi': 88,
-        PIEAS: 92,
-        'FAST Karachi': 82,
-        NEDUET: 80,
-        'Habib University': 85,
-        'Bahria Karachi': 70,
-        MAJU: 68,
-        SZABIST: 70,
-        DSU: 72,
-        DUET: 65,
-        'UoK': 60,
-        SSUET: 62,
-        IoBM: 70,
-        'Iqra University': 60,
-        'COMSATS': 72,
-        'Ziauddin University': 65,
-        'Indus University': 55,
-        'Hamdard University': 60,
-      };
-
-      const requiredScore = toughness[u.shortName] ?? 65;
-      const diff = combinedScore - requiredScore;
-
-      let chance: 'High' | 'Medium' | 'Low';
       let reason: string;
-
-      if (diff >= 10) {
-        chance = 'High';
-        reason = `Your aggregate (${combinedScore.toFixed(0)}%) exceeds the typical merit by ${diff.toFixed(0)}%.`;
-      } else if (diff >= 0) {
-        chance = 'Medium';
-        reason = `Your aggregate (${combinedScore.toFixed(0)}%) is near the typical merit cutoff.`;
+      if (chance === 'High') {
+        reason = `Your aggregate (${combinedScore.toFixed(1)}%) is ${diff.toFixed(1)} points above our rough benchmark estimate (not an official cutoff).`;
+      } else if (chance === 'Medium') {
+        reason = `Your aggregate (${combinedScore.toFixed(1)}%) is near our rough benchmark estimate (not an official cutoff).`;
       } else {
-        chance = 'Low';
-        reason = `Your aggregate (${combinedScore.toFixed(0)}%) is below the typical cutoff by ${Math.abs(diff).toFixed(0)}%.`;
+        reason = `Your aggregate (${combinedScore.toFixed(1)}%) is ${Math.abs(diff).toFixed(1)} points below our rough benchmark estimate (not an official cutoff).`;
       }
 
-      return {
+      return [{
         universitySlug: u.slug,
         universityName: u.name,
         universityType: u.universityType,
@@ -325,7 +304,7 @@ export async function predictAdmissions(input: PredictorInput): Promise<Predicto
         chance,
         score: combinedScore,
         reason,
-      };
+      }];
     })
     .sort((a, b) => {
       const order = { High: 0, Medium: 1, Low: 2 };
