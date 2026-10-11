@@ -7,7 +7,7 @@ if (!connectionString && process.env.NODE_ENV === 'production') {
 }
 
 export const pool = new Pool({
-  connectionString: connectionString || 'postgresql://postgres:postgres@localhost:5432/career_goal',
+  connectionString: connectionString || 'postgresql://postgres:postgres@localhost:5434/career_goals',
   max: 20,
   idleTimeoutMillis: 30000,
   // Generous connect timeout: on a cold start the pool opens many clients at
