@@ -143,7 +143,23 @@ export default async function HomePage() {
       </section>
 
       {/* ── Field Explorer ────────────────────────────────────────── */}
-      <section className="mt-24">
+      
+      <section className="mt-24 rounded-4xl border border-border/70 bg-card/80 p-8 shadow-sm">
+        <div className="section-label">Evidence Atlas</div>
+        <h2 className="section-title">How we verify data</h2>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
+          Every university and scholarship fact is labelled Verified, Approximate, Unverified, or Not available yet.
+          We prefer HEC and official university pages. Missing fees or deadlines stay blank — we never invent them.
+          Scholarship Finder currently shows tracked programmes with honest status (many are unknown or closed until a dated window reopens).
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3 text-xs">
+          <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-600 dark:text-emerald-400">Verified = official page checked</span>
+          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-amber-700 dark:text-amber-400">Approximate = partial official data</span>
+          <span className="rounded-full border border-border px-3 py-1 text-muted-foreground">Unverified = HEC listing only so far</span>
+        </div>
+      </section>
+
+<section className="mt-24">
         <div className="flex items-end justify-between gap-4">
           <div>
             <div className="section-label">Field Explorer</div>
