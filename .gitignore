@@ -55,3 +55,9 @@ qa-report.txt
 qa-e2e.mjs
 qa-build.txt
 build-log.txt
+
+qa-interactive*.mjs
+qa-quiz*.mjs
+qa-*-out.txt
+fallback-test.mjs
+qa-e2e.mjs
