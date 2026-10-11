@@ -5,9 +5,12 @@ import { FeaturedFields } from '@/components/featured-fields';
 import { HeroOrbit } from '@/components/hero-orbit';
 import { UniversityCard } from '@/components/university-card';
 import { getFields, getFeaturedUniversities, getUniversities } from '@/lib/data';
+import { researchStats } from '@/lib/research-meta';
+import { LiveStats } from '@/components/live-stats';
+import { FreshnessLabel } from '@/components/freshness-label';
 
 const FEATURES = [
-  { icon: BookOpen, title: 'University Explorer', desc: 'Browse 18+ verified Karachi universities with real data from official sources', href: '/universities' },
+  { icon: BookOpen, title: 'University Explorer', desc: 'Browse Karachi universities with verification badges and official-source citations', href: '/universities' },
   { icon: TrendingUp, title: 'Admission Predictor', desc: 'Enter your marks and get instant High/Medium/Low admission chance predictions', href: '/predictor' },
   { icon: Award, title: 'Scholarship Finder', desc: 'Discover merit, need-based, sports and external scholarships available', href: '/scholarships' },
   { icon: Brain, title: 'AI Counselor', desc: 'Ask questions about Pakistani universities — answers grounded in our database when AI keys are configured', href: '/counselor' },
@@ -20,6 +23,7 @@ export default async function HomePage() {
   const featuredUniversities = await getFeaturedUniversities(6);
   const fields = getFields();
   const allUniversities = await getUniversities();
+  const stats = researchStats();
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
@@ -49,21 +53,43 @@ export default async function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="mt-10 grid grid-cols-3 gap-4">
-            {[
-              { label: 'Universities', value: allUniversities.length },
-              { label: 'Fields Mapped', value: fields.length },
-              { label: 'Career Paths', value: '100+' },
-            ].map(({ label, value }) => (
-              <div key={label} className="stat-card">
-                <div className="text-xs text-muted-foreground">{label}</div>
-                <div className="mt-1.5 text-2xl font-semibold text-foreground">{value}</div>
-              </div>
-            ))}
+          <div>
+            <LiveStats
+              stats={[
+                {
+                  label: 'Karachi unis (research)',
+                  value: stats.universitiesTotal,
+                  hint:
+                    String(stats.universitiesVerified) +
+                    ' verified / ' +
+                    String(stats.universitiesPartial) +
+                    ' partial',
+                },
+                {
+                  label: 'Verified profiles',
+                  value: stats.universitiesVerified,
+                  hint: 'Official pages checked 11 Oct 2026',
+                },
+                {
+                  label: 'Scholarships tracked',
+                  value: stats.scholarshipsTotal,
+                  hint:
+                    String(stats.scholarshipsActive) +
+                    ' open / ' +
+                    String(stats.scholarshipsClosed) +
+                    ' closed / ' +
+                    String(stats.scholarshipsUnknown) +
+                    ' unknown',
+                },
+              ]}
+            />
+            <div className="mt-3">
+              <FreshnessLabel checkedAt={stats.checkedAt} />
+            </div>
           </div>
         </div>
 
-        <HeroOrbit universities={universities} />
+                <HeroOrbit universities={universities} />
       </section>
 
       {/* ── Features Grid ─────────────────────────────────────────── */}

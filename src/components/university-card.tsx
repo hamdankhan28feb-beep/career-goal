@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { ArrowRight, Building2, GraduationCap, Landmark, ShieldCheck, Award, MapPin } from 'lucide-react';
 import type { University } from '@/lib/types';
+import { VerificationBadge } from '@/components/verification-badge';
+import { verificationForName } from '@/lib/research-meta';
 
 function TypeBadge({ type }: { type: string }) {
   const cls = type === 'Public'
@@ -25,6 +27,7 @@ function DataBar({ pct }: { pct: number }) {
 export function UniversityCard({ university }: { university: University }) {
   const strengths = university.overview.majorStrengths.slice(0, 2);
   const accred = university.accreditations[0];
+  const verifyStatus = verificationForName(university.name);
 
   return (
     <article className="group flex h-full flex-col rounded-3xl border border-border/70 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow">
@@ -34,6 +37,7 @@ export function UniversityCard({ university }: { university: University }) {
           <div className="flex-1 min-w-0">
             <div className="mb-2 flex items-center gap-2 flex-wrap">
               <TypeBadge type={university.universityType} />
+              <VerificationBadge status={verifyStatus} />
               {accred && (
                 <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
                   <ShieldCheck className="h-3 w-3" />

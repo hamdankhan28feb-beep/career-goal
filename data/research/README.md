@@ -1,10 +1,12 @@
-# Research datasets (read-only seeds)
+# Research datasets (Evidence Atlas)
 
-Imported from FuturePath evidence pack (2026-10-10).
+Updated 2026-10-11 from FuturePath evidence pack.
 
-- `universities_karachi.csv` — 65 rows (3 verified / 18 partial / 44 unverified)
-- `scholarships.csv` — 29 rows (0 active, 5 closed, 24 unknown)
-- `learning_resources.csv` — 64 verified URLs
+| Dataset | Count | Notes |
+|---|---|---|
+| universities_karachi | 65 | 6 verified / 19 partial / 40 unverified |
+| scholarships | 38 | 0 active / 8 closed / 30 unknown |
+| learning_resources | 67 | HTTP 200 checked |
 
-Scholarship Finder falls back to `scholarships.csv` when the DB has no active rows.
-Do not invent active deadlines from these files.
+JSON mirrors are imported by src/lib/research-meta.ts for live stats and verification badges.
+Never invent fees, deadlines, or salaries from these files.
