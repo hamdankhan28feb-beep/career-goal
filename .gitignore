@@ -44,3 +44,5 @@ tsconfig.tsbuildinfo
 .qoder/
 
 .freebuff/
+
+.env.local.bak*
