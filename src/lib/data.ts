@@ -2,6 +2,8 @@ import rawUniversityData from '../../data_v2.json';
 import { query } from '@/lib/db';
 import { getFields } from '@/lib/fields-data';
 import { slugify } from '@/lib/slug';
+import { getBundledProfile } from '@/lib/university-profiles';
+import { profileSearchText } from '@/lib/profile-utils';
 import { computeAggregate, computeChance, getBenchmark } from '@/lib/predictor';
 import { fetchAllFromDb, fetchPageFromDb } from '@/lib/university-query';
 import type { PaginatedResult } from '@/lib/pagination';
@@ -144,7 +146,8 @@ function mapBundledUniversity(raw: RawUniversityV2): University {
     faqs: raw.faqs || [],
     importantLinks: raw.important_links || [],
     programsCount: programs.length,
-    dataCompleteness: raw.data_collection?.data_completeness_pct ?? 0
+    dataCompleteness: raw.data_collection?.data_completeness_pct ?? 0,
+    profile: getBundledProfile(bi.slug || slugify(bi.name))
   };
 }
 
@@ -238,7 +241,8 @@ export async function searchUniversities(queryText: string): Promise<University[
       u.name.toLowerCase().includes(q) ||
       u.shortName.toLowerCase().includes(q) ||
       u.city.toLowerCase().includes(q) ||
-      u.overview.majorStrengths.some((s) => s.toLowerCase().includes(q))
+      u.overview.majorStrengths.some((s) => s.toLowerCase().includes(q)) ||
+      profileSearchText(u.profile).includes(q)
   );
 }
 

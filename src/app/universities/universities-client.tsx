@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react';
 import { Search, Filter, X, Loader2 } from 'lucide-react';
 import { UniversityCard } from '@/components/university-card';
 import type { University } from '@/lib/types';
+import { profileSearchText } from '@/lib/profile-utils';
 
 const CITIES = ['All Cities', 'Karachi', 'Islamabad', 'Lahore', 'Hyderabad'];
 const TYPES = ['All Types', 'Public', 'Private'];
@@ -20,7 +21,7 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
   const filtered = useMemo(() => {
     const q = query.toLowerCase();
     return universities.filter((u) => {
-      const matchQ = !q || u.name.toLowerCase().includes(q) || u.shortName.toLowerCase().includes(q) || u.city.toLowerCase().includes(q);
+      const matchQ = !q || u.name.toLowerCase().includes(q) || u.shortName.toLowerCase().includes(q) || u.city.toLowerCase().includes(q) || profileSearchText(u.profile).includes(q);
       const matchCity = city === 'All Cities' || u.city === city;
       const matchType = type === 'All Types' || u.universityType === type;
       return matchQ && matchCity && matchType;

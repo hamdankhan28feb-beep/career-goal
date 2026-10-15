@@ -330,7 +330,7 @@ export default function CounselorPage() {
             type="button"
             disabled={disabled}
             onClick={() => send(p)}
-            className="rounded-full border border-border bg-card px-3 py-1.5 text-xs text-foreground transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
+            className="min-h-10 lg:min-h-0 rounded-full border border-border bg-card px-3 py-1.5 text-xs text-foreground transition hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
           >
             {p}
           </button>
@@ -370,7 +370,7 @@ export default function CounselorPage() {
           aria-expanded={showExamples}
           aria-controls="counselor-examples"
           onClick={() => setShowExamples((v) => !v)}
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
+          className="inline-flex min-h-10 lg:min-h-0 items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
         >
           {showExamples ? <EyeOff className="h-4 w-4" aria-hidden /> : <Eye className="h-4 w-4" aria-hidden />}
           {showExamples ? 'Hide example answers' : 'Show example answers'}

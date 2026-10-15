@@ -61,3 +61,14 @@ qa-quiz*.mjs
 qa-*-out.txt
 fallback-test.mjs
 qa-e2e.mjs
+
+# Profile page screenshots (Batch QA)
+qa-profile-shots/
+
+# UI audit screenshots
+qa-ui-audit/
+qa-ui-audit.mjs
+qa-ui-mobile.mjs
+
+# Local data backups
+*.bak-*

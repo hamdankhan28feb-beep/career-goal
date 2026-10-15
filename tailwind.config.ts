@@ -75,10 +75,6 @@ const config: Config = {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
         },
-        orbit: {
-          from: { transform: 'rotate(0deg) translateX(160px) rotate(0deg)' },
-          to: { transform: 'rotate(360deg) translateX(160px) rotate(-360deg)' },
-        },
         slideDown: {
           from: { opacity: '0', transform: 'translateY(-8px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
@@ -94,7 +90,6 @@ const config: Config = {
         'fade-in': 'fadeIn 0.4s ease forwards',
         'scale-in': 'scaleIn 0.3s ease forwards',
         shimmer: 'shimmer 1.5s infinite',
-        orbit: 'orbit 20s linear infinite',
         'slide-down': 'slideDown 0.3s ease forwards',
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
       },

@@ -22,6 +22,7 @@ import type {
   RawFee
 } from '@/lib/types';
 import { DEFAULT_PAGE_LIMIT } from '@/lib/pagination';
+import { getBundledProfile, isUniversityProfile } from '@/lib/university-profiles';
 import type { PaginatedResult } from '@/lib/pagination';
 
 // ─── Single Query with JOINs ──────────────────────────────────────────────
@@ -45,6 +46,8 @@ const UNIVERSITY_QUERY = `
     u.charter_authority,
     u.hec_status,
     u.university_type,
+    u.research_id,
+    u.profile_details,
     -- One-to-one: university_overview
     ov.history,
     ov.mission,
@@ -474,7 +477,9 @@ function mapRow(r: any): University {
     faqs,
     importantLinks: links,
     programsCount: programs.length,
-    dataCompleteness: completeness
+    dataCompleteness: completeness,
+    // DB copy wins; bundled JSON is the fallback for rows not yet seeded
+    profile: isUniversityProfile(r.profile_details) ? r.profile_details : getBundledProfile(r.slug, r.research_id)
   };
 }
 

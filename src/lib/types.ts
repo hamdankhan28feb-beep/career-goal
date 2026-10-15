@@ -324,6 +324,8 @@ export type University = {
   reviews: RawReview[];
   faqs: RawFaq[];
   importantLinks: RawImportantLink[];
+  // Detailed, field-level sourced profile (Batch 1+); null when not researched yet
+  profile?: UniversityProfile | null;
   // Computed
   programsCount: number;
   dataCompleteness: number;
@@ -423,4 +425,31 @@ export type ReviewInput = {
   commonComplaints: string;
   pros: string[];
   cons: string[];
+};
+// Detailed university profile (data/research/university_profiles_batch*.json, universities.profile_details)
+export type ProfileFieldStatus = 'verified' | 'partial' | 'unavailable' | 'needs_verification';
+export type ProfileField = {
+  label: string;
+  value: string | null;
+  status: ProfileFieldStatus;
+  source?: string;
+  note?: string;
+};
+export type ProfileSource = { id: string; title: string; url: string; checked: string; note?: string };
+export type UniversityProfile = {
+  research_id: string;
+  slug: string;
+  official_name: string;
+  profile_status: 'complete' | 'partial';
+  last_checked: string;
+  sources: ProfileSource[];
+  sections: {
+    overview: ProfileField[];
+    programs: ProfileField[];
+    admissions: ProfileField[];
+    fees: ProfileField[];
+    scholarships: ProfileField[];
+    facilities: ProfileField[];
+  };
+  field_counts: { sourced: number; verified: number; partial: number; unavailable: number; needs_verification: number };
 };

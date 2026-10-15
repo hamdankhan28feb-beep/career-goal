@@ -10,6 +10,9 @@ import {
 
 import { getUniversities, getUniversityBySlug } from '@/lib/data';
 import { ReviewForm } from '@/components/review-form';
+import { UniversityProfileSections } from '@/components/university-profile-sections';
+import { PROFILE_NAV } from '@/lib/profile-utils';
+import { initialsSize, logoInitials } from '@/lib/display-utils';
 
 export async function generateStaticParams() {
   const universities = await getUniversities();
@@ -40,6 +43,24 @@ function Section({ id, title, icon: Icon, children }: { id: string; title: strin
       </div>
       <div className="mt-5">{children}</div>
     </section>
+  );
+}
+
+function LegacyNotes({ enabled, children }: { enabled: boolean; children: React.ReactNode }) {
+  if (!enabled) return <>{children}</>;
+  return (
+    <details id="legacy-notes" className="group scroll-mt-32 rounded-3xl border border-dashed border-border/70 bg-card/40" data-testid="legacy-notes">
+      <summary className="flex min-h-10 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-sm hover:bg-muted/30">
+        <span>
+          <span className="font-semibold text-foreground">Older catalogue notes</span>
+          <span className="mt-0.5 block text-xs text-muted-foreground">
+            Earlier FuturePath catalogue entries (history, quick facts and any older listings), not re-verified. The sourced profile above takes precedence.
+          </span>
+        </span>
+        <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition group-open:rotate-180" />
+      </summary>
+      <div className="space-y-12 border-t border-border/50 px-4 py-8 sm:px-5">{children}</div>
+    </details>
   );
 }
 
@@ -115,20 +136,23 @@ export default async function UniversityProfilePage({ params }: { params: Promis
     ? u.reviews.reduce((a, r) => a + (r.rating_overall ?? 0), 0) / u.reviews.length
     : null;
 
+  const hasProfile = !!u.profile;
+  const hasSourcedFees = !!u.profile?.sections.fees.some((f) => f.value && f.status !== 'unavailable');
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
 
       {/* ── Breadcrumb ── */}
       <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href="/" className="hover:text-foreground transition">Home</Link>
+        <Link href="/" className="inline-flex min-h-10 items-center lg:min-h-0 hover:text-foreground transition">Home</Link>
         <span>/</span>
-        <Link href="/universities" className="hover:text-foreground transition">Universities</Link>
+        <Link href="/universities" className="inline-flex min-h-10 items-center lg:min-h-0 hover:text-foreground transition">Universities</Link>
         <span>/</span>
         <span className="text-foreground font-medium">{u.shortName}</span>
       </nav>
 
       {/* ── Hero Banner ── */}
-      <div className="overflow-hidden rounded-4xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white lg:p-12">
+      <div className="overflow-hidden rounded-4xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6 sm:p-8 text-white lg:p-12">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -175,20 +199,20 @@ export default async function UniversityProfilePage({ params }: { params: Promis
             </div>
           </div>
           {/* Logo box */}
-          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-white/10 text-2xl font-black text-white border border-white/10 backdrop-blur">
-            {u.shortName.slice(0, 4)}
+          <div className={`hidden h-24 w-24 shrink-0 items-center justify-center rounded-3xl border border-white/10 bg-white/10 font-black text-white backdrop-blur lg:flex ${initialsSize(logoInitials(u.shortName, u.name, u.city), 'lg')}`} aria-hidden>
+            {logoInitials(u.shortName, u.name, u.city)}
           </div>
         </div>
       </div>
 
       {/* ── Sticky Section Nav ── */}
-      <div className="sticky top-16 z-30 mt-6 overflow-x-auto rounded-2xl border border-border/50 bg-background/90 backdrop-blur shadow-sm">
+      <div className="sticky top-16 z-30 mt-6 overflow-x-auto rounded-2xl border border-border/50 bg-background/90 backdrop-blur shadow-sm [mask-image:linear-gradient(to_right,black_80%,transparent)] lg:[mask-image:none]">
         <div className="flex min-w-max gap-1 p-2">
-          {NAV_SECTIONS.map(({ id, label }) => (
+          {(u.profile ? [...PROFILE_NAV, ...NAV_SECTIONS.filter((s) => !['overview', 'campuses', 'programs', 'admissions', 'entry-tests', 'scholarships', 'fees', 'facilities'].includes(s.id)), { id: 'legacy-notes', label: 'Older notes' }] : NAV_SECTIONS).map(({ id, label }) => (
             <a
               key={id}
               href={`#${id}`}
-              className="rounded-xl px-4 py-2 text-sm text-muted-foreground whitespace-nowrap transition hover:bg-muted hover:text-foreground"
+              className="rounded-xl px-4 py-2.5 lg:py-2 text-sm text-muted-foreground whitespace-nowrap transition hover:bg-muted hover:text-foreground"
             >
               {label}
             </a>
@@ -196,9 +220,23 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         </div>
       </div>
 
+      {/* ── Detailed sourced profile (Batch 1+) ── */}
+
+      {u.profile && (
+
+        <div className="mt-8">
+
+          <UniversityProfileSections profile={u.profile} />
+
+        </div>
+
+      )}
+
+
       {/* ── Content ── */}
       <div className="mt-8 space-y-12">
 
+        <LegacyNotes enabled={hasProfile}>
         {/* 1. Overview */}
         <Section id="overview" title="University Overview" icon={Landmark}>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -273,7 +311,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         </Section>
 
         {/* 2. Campuses */}
-        <Section id="campuses" title="Campuses" icon={Building2}>
+        {(!hasProfile || u.campuses.length > 0) && <Section id="campuses" title="Campuses" icon={Building2}>
           {u.campuses.length > 0 ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {u.campuses.map((c, i) => (
@@ -308,10 +346,10 @@ export default async function UniversityProfilePage({ params }: { params: Promis
               Campus details not yet verified from official sources.
             </div>
           )}
-        </Section>
+        </Section>}
 
         {/* 3. Programs */}
-        <Section id="programs" title="Programs" icon={GraduationCap}>
+        {(!hasProfile || u.programs.length > 0) && <Section id="programs" title="Programs" icon={GraduationCap}>
           {u.programs.length > 0 ? (
             <div className="overflow-hidden rounded-3xl border border-border/70">
               <table className="w-full text-sm">
@@ -342,16 +380,16 @@ export default async function UniversityProfilePage({ params }: { params: Promis
               <GraduationCap className="mx-auto h-12 w-12 text-muted-foreground/40" />
               <p className="mt-4 text-sm text-muted-foreground">Program details not yet verified from official sources.</p>
               {u.officialWebsite && (
-                <a href={u.officialWebsite} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:underline">
+                <a href={u.officialWebsite} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-10 lg:min-h-0 items-center gap-2 text-sm text-primary hover:underline">
                   Check official website <ExternalLink className="h-3 w-3" />
                 </a>
               )}
             </div>
           )}
-        </Section>
+        </Section>}
 
         {/* 4. Admissions */}
-        <Section id="admissions" title="Admission Information" icon={BookOpen}>
+        {(!hasProfile || !!u.admissions) && <Section id="admissions" title="Admission Information" icon={BookOpen}>
           {u.admissions ? (
             <div className="grid gap-6 lg:grid-cols-2">
               <div className="rounded-3xl border border-border/70 bg-card/80 p-5">
@@ -396,16 +434,16 @@ export default async function UniversityProfilePage({ params }: { params: Promis
               <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/40" />
               <p className="mt-4 text-sm text-muted-foreground">Admission details not yet verified. Check the official portal.</p>
               {u.admissionsPortal && (
-                <a href={u.admissionsPortal} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:underline">
+                <a href={u.admissionsPortal} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-10 lg:min-h-0 items-center gap-2 text-sm text-primary hover:underline">
                   Open admissions portal <ExternalLink className="h-3 w-3" />
                 </a>
               )}
             </div>
           )}
-        </Section>
+        </Section>}
 
         {/* 5. Entry Tests */}
-        <Section id="entry-tests" title="Entry Test Information" icon={BookOpen}>
+        {(!hasProfile || u.entryTests.length > 0) && <Section id="entry-tests" title="Entry Test Information" icon={BookOpen}>
           {u.entryTests.length > 0 ? (
             <div className="grid gap-4 lg:grid-cols-2">
               {u.entryTests.map((t, i) => (
@@ -441,10 +479,10 @@ export default async function UniversityProfilePage({ params }: { params: Promis
               Entry test details not yet collected. Please verify on the official portal.
             </div>
           )}
-        </Section>
+        </Section>}
 
         {/* 6. Scholarships */}
-        <Section id="scholarships" title="Scholarships" icon={Award}>
+        {(!hasProfile || u.scholarships.length > 0) && <Section id="scholarships" title="Scholarships" icon={Award}>
           {u.scholarships.length > 0 ? (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {u.scholarships.map((s, i) => {
@@ -482,39 +520,55 @@ export default async function UniversityProfilePage({ params }: { params: Promis
               Scholarship details not yet verified from official sources. Check the official website for financial assistance.
             </div>
           )}
-        </Section>
+        </Section>}
 
         {/* 7. Fees */}
-        <Section id="fees" title="Fee Structure" icon={DollarSign}>
-          {u.fees ? (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { label: 'Admission Fee', value: u.fees.admission_fee, icon: '📝' },
-                { label: 'Semester Fee', value: u.fees.semester_fee, icon: '📚' },
-                { label: 'Hostel (Monthly)', value: u.fees.hostel_fee_monthly, icon: '🏠' },
-                { label: 'Transport (Monthly)', value: u.fees.transport_fee_monthly, icon: '🚌' },
-                { label: 'Security Deposit', value: u.fees.security_deposit, icon: '🔒' },
-                { label: 'Credit Hour Fee', value: u.fees.credit_hour_fee, icon: '⏱️' },
-                { label: 'Approx Degree Cost', value: u.fees.approx_total_degree_cost, icon: '🎓' },
-              ].filter(f => f.value).map(({ label, value, icon }) => (
-                <div key={label} className="rounded-3xl border border-border/70 bg-card/80 p-5 text-center">
-                  <div className="text-3xl mb-2">{icon}</div>
-                  <div className="text-xs text-muted-foreground mb-1">{label}</div>
-                  <div className="text-lg font-bold text-foreground">PKR {value!.toLocaleString()}</div>
-                </div>
-              ))}
-              {u.fees.fee_notes && (
-                <div className="sm:col-span-2 lg:col-span-4 rounded-2xl bg-amber-500/8 border border-amber-500/20 p-4 text-sm text-amber-700 dark:text-amber-300">
-                  <strong>Note:</strong> {u.fees.fee_notes}
-                </div>
-              )}
-            </div>
-          ) : (
+        {(!hasProfile || (!!u.fees && !hasSourcedFees)) && <Section id="fees" title="Fee Structure" icon={DollarSign}>
+          {u.fees ? ((fees) => {
+            const rows = ([
+              ['Admission fee', fees.admission_fee],
+              ['Semester fee', fees.semester_fee],
+              ['Credit hour fee', fees.credit_hour_fee],
+              ['Security deposit', fees.security_deposit],
+              ['Hostel (monthly)', fees.hostel_fee_monthly],
+              ['Transport (monthly)', fees.transport_fee_monthly],
+              ['Approx. total degree cost', fees.approx_total_degree_cost],
+            ] as [string, number | null | undefined][]).filter((r): r is [string, number] => typeof r[1] === 'number' && r[1] > 0);
+            return (
+              <div className="overflow-hidden rounded-3xl border border-border/70 bg-card/80" data-testid="legacy-fee-table">
+                {rows.length > 0 && (
+                  <table className="w-full text-sm">
+                    <thead className="bg-muted/50">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-muted-foreground sm:px-5">Item</th>
+                        <th className="px-4 py-3 text-right text-xs font-semibold text-muted-foreground sm:px-5">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border/40">
+                      {rows.map(([label, value]) => (
+                        <tr key={label}>
+                          <td className="px-4 py-3 text-muted-foreground sm:px-5">{label}</td>
+                          <td className="px-4 py-3 text-right font-semibold tabular-nums text-foreground sm:px-5">PKR {value.toLocaleString()}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+                {fees.fee_notes && (
+                  <div className={`px-4 py-3 text-xs leading-6 text-muted-foreground sm:px-5 ${rows.length ? 'border-t border-border/50' : ''}`}>
+                    <span className="font-semibold text-foreground">Catalogue note: </span>
+                    {fees.fee_notes}
+                  </div>
+                )}
+              </div>
+            );
+          })(u.fees) : (
             <div className="rounded-3xl border border-border/70 bg-muted/30 p-6 text-center text-sm text-muted-foreground">
               Fee structure not yet verified. Please check the official website.
             </div>
           )}
-        </Section>
+        </Section>}
+        </LegacyNotes>
 
         {/* 8. Academic Policies */}
         <Section id="policies" title="Academic System & Policies" icon={BookOpen}>
@@ -581,8 +635,8 @@ export default async function UniversityProfilePage({ params }: { params: Promis
           )}
         </Section>
 
-        {/* 10. Facilities */}
-        <Section id="facilities" title="Facilities" icon={Building2}>
+        {/* 10. Facilities (the sourced profile has its own Facilities section) */}
+        {!hasProfile && <Section id="facilities" title="Facilities" icon={Building2}>
           <div className="grid gap-4 lg:grid-cols-2">
             <div>
               {u.facilities.length > 0 ? (
@@ -641,7 +695,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
               </div>
             </div>
           </div>
-        </Section>
+        </Section>}
 
         {/* 11. Faculty */}
         <Section id="faculty" title="Faculty & Academics" icon={Users}>

@@ -328,17 +328,31 @@ export function ScholarshipFinder() {
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1.5">
             <Filter className="h-3.5 w-3.5" aria-hidden />
-            Showing {filtered.length} of {rows.length}
+            {loading ? 'Loading scholarships…' : `Showing ${filtered.length} of ${rows.length}`}
           </span>
-          <span>
-            Data source: {isResearch ? 'FuturePath research dataset (official pages)' : source === 'database' ? 'FuturePath database' : source}
-          </span>
+          {!loading && source !== 'unknown' && (
+            <span>
+              Data source: {isResearch ? 'FuturePath research dataset (official pages)' : source === 'database' ? 'FuturePath database' : source}
+            </span>
+          )}
         </div>
       </section>
 
       {loading ? (
-        <div className="flex items-center justify-center gap-2 py-20 text-muted-foreground" role="status">
-          <Loader2 className="h-5 w-5 animate-spin" aria-hidden /> Loading scholarships…
+        <div className="grid gap-5 lg:grid-cols-2" role="status" aria-busy="true" data-testid="scholarships-skeleton">
+          <span className="sr-only">Loading scholarships…</span>
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="h-52 animate-pulse rounded-3xl border border-border/70 bg-card/60 p-6" aria-hidden>
+              <div className="flex items-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin text-muted-foreground/60" />
+                <div className="h-4 w-2/3 rounded-full bg-muted" />
+              </div>
+              <div className="mt-3 h-3 w-1/3 rounded-full bg-muted" />
+              <div className="mt-6 h-3 w-full rounded-full bg-muted/80" />
+              <div className="mt-2 h-3 w-5/6 rounded-full bg-muted/80" />
+              <div className="mt-2 h-3 w-2/3 rounded-full bg-muted/80" />
+            </div>
+          ))}
         </div>
       ) : error ? (
         <div className="rounded-3xl border border-rose-500/30 bg-rose-500/10 p-6 text-sm" role="alert">
@@ -407,7 +421,7 @@ export function ScholarshipFinder() {
                     <button
                       type="button"
                       onClick={() => openSources(r)}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:border-primary hover:text-primary"
+                      className="inline-flex min-h-10 lg:min-h-0 items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:border-primary hover:text-primary"
                     >
                       <FileText className="h-3.5 w-3.5" aria-hidden />
                       Sources{sourceUrls.length ? ` (${sourceUrls.length})` : ''}

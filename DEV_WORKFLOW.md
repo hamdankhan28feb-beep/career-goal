@@ -44,3 +44,11 @@ Never commit `.env.local`. Backups like `.env.local.bak*` are gitignored.
   - `predictor`: valid, boundary (0, 100, decimals), missing and invalid (letters, negative, >100, bad budget) inputs.
   - `pages` / `mobile`: university search, compare, scholarship status filters, iPhone 12 overflow and navigation.
 - Stable selectors: `data-testid="home-feature-scholarships"` (feature cards use `home-feature-<route>`), quiz option buttons carry `aria-label`/`aria-pressed`, plus `quiz-start`, `quiz-next`, `quiz-flat-warning`, `quiz-result`, `predictor-*` test ids.
+
+## Detailed university profiles
+- Data: `data/research/university_profiles_batch1.json` (per-field value/status/source, sources with checked date).
+- DB: migration `db/migrations/004_university_profiles.sql` adds `profile_details` JSONB, `profile_status`, `profile_checked_at`.
+- Sync: `npm run db:seed:profiles` (applies 004 idempotently, upserts by research_id then slug; never changes verification_status). `--dry-run` rolls back the upsert.
+- Bundled fallback: `src/lib/university-profiles.ts` (used when DB is down or the row has no profile_details).
+- Screenshots: `node scripts/qa-profiles.mjs` -> `qa-profile-shots/` (gitignored).
+

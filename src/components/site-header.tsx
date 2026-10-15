@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X, GraduationCap, ChevronDown, LogOut, Shield, User } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -12,10 +12,10 @@ const navItems = [
   { href: '/universities', label: 'Universities' },
   { href: '/scholarships', label: 'Scholarships' },
   { href: '/fields', label: 'Fields' },
+  { href: '/compare', label: 'Compare' },
   {
     label: 'Tools',
     children: [
-      { href: '/compare', label: 'Compare Universities' },
       { href: '/compare/fields', label: 'Compare Fields' },
       { href: '/quiz', label: 'Career Quiz' },
       { href: '/predictor', label: 'Admission Predictor' },
@@ -143,6 +143,9 @@ function GuestActions({ mobile = false }: { mobile?: boolean }) {
 export function HeaderNav({ user }: { user?: SessionUser | null }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
+  const pathname = usePathname() ?? '';
+  const isActive = (href: string) => pathname === href || (href !== '/' && pathname.startsWith(href + '/') && !(href === '/compare' && pathname.startsWith('/compare/fields')));
+  const toolsActive = navItems.some((i) => i.children?.some((c) => isActive(c.href)));
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
@@ -166,7 +169,8 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
                 <button
                   onClick={() => setToolsOpen(!toolsOpen)}
                   onBlur={() => setTimeout(() => setToolsOpen(false), 150)}
-                  className="flex items-center gap-1 nav-link rounded-full px-4 py-2 hover:bg-muted"
+                  aria-current={toolsActive ? 'page' : undefined}
+                  className={`relative flex items-center gap-1 nav-link rounded-full px-3 py-2 hover:bg-muted xl:px-4 ${toolsActive ? 'text-foreground after:absolute after:inset-x-3 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-cyan-400' : ''}`}
                 >
                   {item.label}
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${toolsOpen ? 'rotate-180' : ''}`} />
@@ -190,7 +194,8 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
               <Link
                 key={item.href}
                 href={item.href!}
-                className="nav-link rounded-full px-4 py-2 hover:bg-muted"
+                aria-current={isActive(item.href!) ? 'page' : undefined}
+                className={`relative nav-link rounded-full px-3 py-2 hover:bg-muted xl:px-4 ${isActive(item.href!) ? 'text-foreground after:absolute after:inset-x-3 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-cyan-400' : ''}`}
               >
                 {item.label}
               </Link>
@@ -213,7 +218,7 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-xl border border-border/60 p-2 text-muted-foreground hover:bg-muted transition"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 text-muted-foreground hover:bg-muted transition"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -233,7 +238,8 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="block rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+                      aria-current={isActive(child.href) ? 'page' : undefined}
+                      className={`block rounded-xl px-4 py-2.5 text-sm hover:bg-muted hover:text-foreground transition ${isActive(child.href) ? 'border-l-2 border-cyan-400 text-foreground' : 'text-muted-foreground'}`}
                       onClick={() => setMobileOpen(false)}
                     >
                       {child.label}
@@ -244,7 +250,8 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
                 <Link
                   key={item.href}
                   href={item.href!}
-                  className="block rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+                  aria-current={isActive(item.href!) ? 'page' : undefined}
+                  className={`block rounded-xl px-4 py-2.5 text-sm hover:bg-muted hover:text-foreground transition ${isActive(item.href!) ? 'border-l-2 border-cyan-400 text-foreground' : 'text-muted-foreground'}`}
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}

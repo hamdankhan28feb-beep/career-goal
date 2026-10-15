@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { ArrowRight, Sparkles, Target, BookOpen, Award, TrendingUp, Users, Brain } from 'lucide-react';
 
 import { FeaturedFields } from '@/components/featured-fields';
-import { HeroOrbit } from '@/components/hero-orbit';
 import { UniversityCard } from '@/components/university-card';
 import { getFields, getFeaturedUniversities, getUniversities } from '@/lib/data';
 import { researchStats } from '@/lib/research-meta';
 import { LiveStats } from '@/components/live-stats';
 import { FreshnessLabel } from '@/components/freshness-label';
+import { initialsSize, logoInitials } from '@/lib/display-utils';
 
 const FEATURES = [
   { icon: BookOpen, title: 'University Explorer', desc: 'Browse Karachi universities with verification badges and official-source citations', href: '/universities' },
@@ -19,17 +19,26 @@ const FEATURES = [
 ];
 
 export default async function HomePage() {
-  const universities = await getFeaturedUniversities(12);
   const featuredUniversities = await getFeaturedUniversities(6);
   const fields = getFields();
   const allUniversities = await getUniversities();
   const stats = researchStats();
 
+  // Detailed (sourced) profiles drive the hero panel and the stats; nothing here is hard-coded.
+  const profiled = allUniversities.filter((u) => u.profile);
+  const checkDates = profiled.map((u) => u.profile!.last_checked).sort();
+  const latestCheck = checkDates.length ? checkDates[checkDates.length - 1] : null;
+  const sourcedTotal = profiled.reduce((a, u) => a + u.profile!.field_counts.sourced, 0);
+  const recent = [...profiled]
+    .sort((a, b) => b.profile!.last_checked.localeCompare(a.profile!.last_checked) || b.profile!.field_counts.verified - a.profile!.field_counts.verified)
+    .slice(0, 3);
+  const freshest = [stats.checkedAt, latestCheck].filter(Boolean).sort().pop() ?? null;
+
   return (
     <div className="mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section className="lg:grid lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center lg:gap-12">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
             <Sparkles className="h-4 w-4" />
@@ -66,9 +75,11 @@ export default async function HomePage() {
                     ' partial',
                 },
                 {
-                  label: 'Verified profiles',
-                  value: stats.universitiesVerified,
-                  hint: 'Official pages checked 11 Oct 2026',
+                  label: 'Detailed profiles',
+                  value: profiled.length,
+                  hint: latestCheck
+                    ? String(sourcedTotal) + ' sourced fields · checked ' + latestCheck
+                    : 'Sourced from official pages',
                 },
                 {
                   label: 'Scholarships tracked',
@@ -84,12 +95,50 @@ export default async function HomePage() {
               ]}
             />
             <div className="mt-3">
-              <FreshnessLabel checkedAt={stats.checkedAt} />
+              <FreshnessLabel checkedAt={freshest} />
             </div>
           </div>
         </div>
 
-                <HeroOrbit universities={universities} />
+        {/* Recently verified (real profile data) */}
+        {recent.length > 0 && (
+          <aside className="mt-10 rounded-3xl border border-border/70 bg-card/80 p-5 shadow-sm lg:mt-0" data-testid="home-recently-verified">
+            <div className="flex items-center justify-between gap-3">
+              <div className="text-sm font-semibold text-foreground">Recently verified</div>
+              {latestCheck && <span className="text-xs text-muted-foreground">checked {latestCheck}</span>}
+            </div>
+            <ul className="mt-4 space-y-3">
+              {recent.map((u) => {
+                const p = u.profile!;
+                const c = p.field_counts;
+                const ini = logoInitials(u.shortName, u.name, u.city);
+                return (
+                  <li key={u.slug}>
+                    <Link
+                      href={`/universities/${u.slug}`}
+                      className="flex items-center gap-3 rounded-2xl border border-border/60 bg-background/40 p-3 transition hover:border-primary/40"
+                    >
+                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-muted font-bold text-foreground ${initialsSize(ini)}`} aria-hidden>
+                        {ini}
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-sm font-medium text-foreground">{p.official_name || u.name}</span>
+                        <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-muted-foreground">
+                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-emerald-500" />{c.verified} verified</span>
+                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-amber-500" />{c.partial} partial</span>
+                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-slate-400/60" />{c.unavailable} unavailable</span>
+                        </span>
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <Link href="/universities" className="mt-4 inline-flex min-h-10 items-center gap-1.5 text-sm font-medium text-primary hover:underline lg:min-h-0">
+              All {profiled.length} detailed profiles <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </aside>
+        )}
       </section>
 
       {/* ── Features Grid ─────────────────────────────────────────── */}

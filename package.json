@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "db:seed": "node db/seed.js",
+    "db:seed:profiles": "node db/seed-university-profiles.js",
     "qa:regression": "node scripts/qa-regression.mjs",
     "test:predictor": "node scripts/predictor-unit.mjs"
   },

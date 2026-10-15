@@ -181,7 +181,7 @@ export function CitationChip({
       type="button"
       onClick={() => onOpen(citation)}
       title={`${citation.title}${citation.retrievedAt ? ` · checked ${citation.retrievedAt}` : ''}`}
-      className={`inline-flex max-w-full items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs transition hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+      className={`inline-flex min-h-10 lg:min-h-0 max-w-full items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs transition hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
         dimmed ? 'border-dashed border-border text-muted-foreground' : 'border-border bg-card text-foreground'
       }`}
     >

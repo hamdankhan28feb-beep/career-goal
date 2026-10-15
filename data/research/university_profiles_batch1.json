@@ -1,0 +1,1624 @@
+{
+  "batch": 1,
+  "generated": "2026-10-14",
+  "status_legend": {
+    "verified": "Matches the cited official source on the checked date",
+    "partial": "Sourced but incomplete, unlabelled year/period, or older check",
+    "unavailable": "Not published / not found on official sources",
+    "needs_verification": "Exists in an official source but not yet extracted/confirmed"
+  },
+  "profiles": [
+    {
+      "research_id": "khi-fast-nuces",
+      "slug": "fast-nuces-karachi",
+      "official_name": "National University of Computer & Emerging Sciences (FAST-NUCES), Karachi Campus",
+      "profile_status": "complete",
+      "last_checked": "2026-10-13",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "FAST-NUCES Karachi campus homepage",
+          "url": "https://khi.nu.edu.pk/",
+          "checked": "2026-10-13",
+          "note": "Page also contains unrelated injected spam text; only campus/address facts were used."
+        },
+        {
+          "id": "S2",
+          "title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+          "url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S3",
+          "title": "NU Admission Schedule (Tentative 2026, updated 13-Oct-2026)",
+          "url": "https://www.nu.edu.pk/Admissions/Schedule",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S4",
+          "title": "NU Fee Structure (w.e.f. Fall 2026)",
+          "url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S5",
+          "title": "NU Scholarships",
+          "url": "https://www.nu.edu.pk/Admissions/Scholarship",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S6",
+          "title": "NU Admissions FAQ",
+          "url": "https://www.nu.edu.pk/Admissions/FAQ",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S7",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/National-University-of-Computer-and-Emerging-Sciences.aspx",
+          "checked": "2026-10-11"
+        },
+        {
+          "id": "S8",
+          "title": "NU Test Pattern",
+          "url": "https://www.nu.edu.pk/Admissions/TestPattern",
+          "checked": "2026-10-11"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "National University of Computer & Emerging Sciences (FAST-NUCES)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": "Federally chartered (Ordinance No. XXIII of 2000) multi-campus private-sector university; campuses in Karachi, Lahore, Islamabad, Peshawar and Chiniot-Faisalabad.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://khi.nu.edu.pk/",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Main campus address",
+            "value": "St-4, Sector 17-D, National Highway, Karachi",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "City campus address",
+            "value": "22-G, Block-6, PECHS, Karachi",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private (chartered by Government of Pakistan)",
+            "status": "verified",
+            "source": "S7"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Listed on HEC university profiles; Karachi campus on HEC Recognized Campuses list (checked 2026-10-10/11).",
+            "status": "verified",
+            "source": "S7"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Offered (Computing domain)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (Computing domain)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Offered (Computing domain)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Offered (Computing domain)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Cyber Security",
+            "value": "Offered (Computing domain)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Other UG at Karachi",
+            "value": "BS Electrical Engineering, BS Business Analytics, BS FinTech listed on Karachi homepage (2026-10-10); BBA/BS A&F listed university-wide.",
+            "status": "partial",
+            "source": "S1",
+            "note": "Karachi-specific availability of business programmes not re-confirmed on 2026-10-13."
+          },
+          {
+            "label": "Duration",
+            "value": "4 years, 8 semesters",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS Computing)",
+            "value": "SSC 60% minimum; HSSC 50% minimum; Mathematics required at HSSC. Pre-Medical students who passed additional Mathematics are eligible.",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Merit formula (BS Computing)",
+            "value": "Admission test 50% + HSSC 40% + SSC 10%",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admission test options",
+            "value": "One of: FAST-NUCES admission test, SAT, or NTS NAT-IE / NAT-ICS",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Test pattern (computing)",
+            "value": "Advanced Maths 50%, Analytical/IQ 20%, Essay 20%, English 10%; negative marking",
+            "status": "partial",
+            "source": "S8",
+            "note": "Checked 2026-10-11 only."
+          },
+          {
+            "label": "Latest schedule (2026 intake, tentative)",
+            "value": "Applications 20 May - 30 Jun 2026; tests 29 Jun - 10 Jul 2026; merit list 22 Jul 2026; classes 17 Aug 2026",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Fall 2027 deadlines",
+            "value": null,
+            "status": "unavailable",
+            "source": "S3",
+            "note": "Schedule page (updated 13-Oct-2026) still shows the 2026 tentative schedule."
+          },
+          {
+            "label": "Applicant (application) fee",
+            "value": "PKR 3,000",
+            "status": "verified",
+            "source": "S4"
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition (2026-27, BS)",
+            "value": "PKR 12,000 per credit hour",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Admission fee (one-time)",
+            "value": "PKR 30,000",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Security deposit (refundable)",
+            "value": "PKR 20,000",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Student activities fund",
+            "value": "PKR 2,500 per semester",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Hostel fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "No Karachi hostel listed by NU."
+          },
+          {
+            "label": "Transport fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not published on pages read."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Merit scholarship",
+            "value": "Top three board position holders and top three on each campus admission merit list; full tuition; continuation requires semester GPA >= 3.0",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Interest-free study loan",
+            "value": "For bright indigent students; repay within 4 years after graduation",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Sindh Government Endowment Board",
+            "value": "Need-cum-merit, full tuition, renewable yearly (60% rural / 40% urban quota)",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "External / alumni aid",
+            "value": "PM National ICT scholarships (Ignite), BEEF, PEEF, OSAF, FANA, Ihsan Trust, community scholarships",
+            "status": "verified",
+            "source": "S5"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": "No in-campus hostel at Karachi: NU FAQ lists hostels only at Chiniot-Faisalabad, Multan and Peshawar.",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "Transport",
+            "value": "Transport facility available at all campuses (NU FAQ).",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "Campus hours / parking",
+            "value": "Main Campus 8am-4pm, five days; City Campus (PECHS) open till 9pm, six days; parking at both.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Library / labs / sports",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not itemised on Karachi pages read."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 32,
+        "verified": 30,
+        "partial": 2,
+        "unavailable": 4,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-ned",
+      "slug": "neduet-karachi",
+      "official_name": "NED University of Engineering & Technology",
+      "profile_status": "complete",
+      "last_checked": "2026-10-13",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "NED Undergraduate Admissions 2026 page",
+          "url": "https://www.neduet.edu.pk/admission",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S2",
+          "title": "NED UG Prospectus 2026 (image PDF)",
+          "url": "https://www.neduet.edu.pk/sites/default/files/Admissions-2026/UGProspectus2026.pdf",
+          "checked": "2026-10-11"
+        },
+        {
+          "id": "S3",
+          "title": "NED Academic Programmes",
+          "url": "https://www.neduet.edu.pk/academic_programmes",
+          "checked": "2026-10-10"
+        },
+        {
+          "id": "S4",
+          "title": "NED Contact Us",
+          "url": "https://www.neduet.edu.pk/contact-us",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S5",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/NED-University-of-Engineering--Technology.aspx",
+          "checked": "2026-10-11"
+        },
+        {
+          "id": "S6",
+          "title": "NED Student Handbook 2026 (scholarships)",
+          "url": "https://www.neduet.edu.pk/sites/default/files/users/student_affairs/Student_Hand_Book_2026.pdf",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S7",
+          "title": "NED CSA notices (Financial Assistance 2026-27)",
+          "url": "https://pl.neduet.edu.pk/notices/CSA_Notices.jsp",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S8",
+          "title": "NED Transportation & Shuttle Service",
+          "url": "https://www.neduet.edu.pk/transportation-facilities",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S9",
+          "title": "NED Shuttle routes 2025-26 (PDF)",
+          "url": "https://www.neduet.edu.pk/sites/default/files/users/student_affairs/Shuttle%20Roots%202025_0.pdf",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S10",
+          "title": "NED Department of Student Affairs",
+          "url": "https://www.neduet.edu.pk/students_affairs",
+          "checked": "2026-10-13"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "NED University of Engineering & Technology",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Overview",
+            "value": "Public engineering university in Karachi with Main, City and LEJ campuses; HEC-recognised sub-campus TIEST (Mithi, Tharparkar).",
+            "status": "partial",
+            "source": "S2",
+            "note": "Campus list from prospectus/notices; not a single official overview statement."
+          },
+          {
+            "label": "Website",
+            "value": "https://www.neduet.edu.pk/",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://www.neduet.edu.pk/admission",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Main campus address",
+            "value": "University Road, Karachi-75270",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Ownership",
+            "value": "Public (chartered by Government of Sindh)",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Listed on HEC university profiles (sector Public).",
+            "status": "verified",
+            "source": "S5"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science & IT",
+            "value": "Offered (Dept of CS&SE)",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "BE/BS Software Engineering",
+            "value": "Offered (Dept of CS&SE)",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Artificial Intelligence",
+            "value": "CS specialisation track (50 seats), allocated on university second-year merit - not direct first-year entry",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Data Science",
+            "value": "CS specialisation track (50 seats), allocated on second-year merit",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Cyber Security / Gaming & Animation",
+            "value": "CS specialisation tracks (50 seats each)",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Minimum HSC marks",
+            "value": "Admission cancelled if HSC below 50% (BS) / 60% (BE) per Batch-2026 refund notice",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admission test",
+            "value": "NED Pre-Admission Entry Test; 2026 ran in phases (Phase 3 self-finance 28-08-2026, Phase 4 04-09-2026; TIEST 27-08-2026)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Seat categories",
+            "value": "Regular (R-*) and self-finance (SF-1..SF-11) categories; Karachi-board and other-board call lists",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Full eligibility & required subjects",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S2",
+            "note": "In image-only prospectus; not text-extracted."
+          },
+          {
+            "label": "2027 admission schedule",
+            "value": null,
+            "status": "unavailable",
+            "source": "S1",
+            "note": "Not published as of 2026-10-13 (page still shows 2026 cycle)."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Admission fee (once, locals)",
+            "value": "Rs 57,000 (most BE/BS/B.Arch); Rs 62,000 for BS(CT), BE(SE), BE(CS)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Semester tuition & exam fee",
+            "value": "Rs 56,600; Rs 62,600 for local BS(CT), BE(SE), BE(CS)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Students facilitation charges",
+            "value": "Rs 10,100 per semester",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Self-finance seat fee",
+            "value": "SF-1..SF-5 Rs 890,000 + 3% tax; SF-6..SF-11 Rs 1,100,000 + 3% tax",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Security deposit",
+            "value": "Rs 16,500 (included in admission fee)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Fee group for BS CS&IT / AI / DS",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S2",
+            "note": "Prospectus does not map these programmes to fee groups."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Need-cum-merit scholarships (DSA)",
+            "value": "Funded by alumni, Govt of Sindh, private donors, HEC, SHEC; apply via Dept of Student Affairs when announced",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "Financial Assistance / Scholarship 2026-27 (first year)",
+            "value": "Notice and application form posted 24-Aug-2026",
+            "status": "verified",
+            "source": "S7"
+          },
+          {
+            "label": "HEC Need-Based Scholarship",
+            "value": "Tuition + monthly stipend (2024-25 notice: Rs 6,000/month); self-finance admits not eligible",
+            "status": "partial",
+            "source": "S6",
+            "note": "Amount from 2024-25 notice; current cycle not confirmed."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": "Online Hostel Accommodation for Batch 2026 announced on admissions page",
+            "status": "partial",
+            "source": "S1",
+            "note": "Capacity/fees not published on pages read."
+          },
+          {
+            "label": "Transport",
+            "value": "University shuttle on specified Karachi routes (16 shuttles, 2025-26 route list); bus passes via DSA",
+            "status": "verified",
+            "source": "S9"
+          },
+          {
+            "label": "Other student services",
+            "value": "Canteens on Main/City/LEJ campuses, common rooms, sports section",
+            "status": "verified",
+            "source": "S10"
+          },
+          {
+            "label": "Hostel fee",
+            "value": null,
+            "status": "unavailable"
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 26,
+        "verified": 23,
+        "partial": 3,
+        "unavailable": 2,
+        "needs_verification": 2
+      }
+    },
+    {
+      "research_id": "khi-iba",
+      "slug": "iba-karachi",
+      "official_name": "Institute of Business Administration (IBA), Karachi",
+      "profile_status": "complete",
+      "last_checked": "2026-10-13",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "IBA Programs Offered",
+          "url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S2",
+          "title": "IBA Admission Schedule Fall 2027",
+          "url": "https://admissions.iba.edu.pk/admissions_schedule.php",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S3",
+          "title": "IBA Fee Structure 2026-27 (Fall 2026 admission)",
+          "url": "https://www.iba.edu.pk/fee-structure.php",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S4",
+          "title": "IBA Need-Based Financial Assistance",
+          "url": "https://www.iba.edu.pk/financialassistance/needbased.php",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S5",
+          "title": "IBA National Talent Hunt Program FAQs",
+          "url": "https://nthp.iba.edu.pk/faqs.php",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S6",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Institute-of-Business-Administration.aspx",
+          "checked": "2026-10-11"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Institute of Business Administration, Karachi",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "Overview",
+            "value": "Public degree-awarding institute with Main and City campuses; schools of Business Studies, Mathematics & Computer Science, and Economics & Social Sciences.",
+            "status": "partial",
+            "source": "S2",
+            "note": "Composed from schedule/programs pages; no single overview statement used."
+          },
+          {
+            "label": "Website",
+            "value": "https://www.iba.edu.pk/",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://admissions.iba.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Main campus address",
+            "value": "IBA Main Campus, KU Circular Road, Karachi",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Ownership",
+            "value": "Public (chartered by Government of Sindh)",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Listed on HEC university profiles (sector Public).",
+            "status": "verified",
+            "source": "S6"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered; 128 credit hours, 40 courses; main campus",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Economics & Data Science",
+            "value": "Offered (BSEDS)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Business Analytics",
+            "value": "Offered (SBS); main/city campus",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Other UG",
+            "value": "BBA, BS Accounting & Finance, BS Economics, BS Economics & Mathematics, BS Mathematics, BS Social Sciences & Liberal Arts",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS AI / BS Software Engineering",
+            "value": "Not offered at UG level (MS Artificial Intelligence exists)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Duration",
+            "value": "4 years full time; classes start August",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BSCS / Math / EDS / EM)",
+            "value": "HSSC 60% [Pre-Engineering / General Science (Computer Science)] or A Level avg 1B+2C incl. Mathematics, or US HS diploma 80%, or IB 24/45",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Eligibility (BBA / BSAF / BSBA)",
+            "value": "HSSC 65% or A Level 2B+1C, US HS diploma 80%, or IB 25/45",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admission test",
+            "value": "IBA Aptitude Test (English + Maths MCQs, SAT level), in person only; SAT/ACT exemption route (top SAT scorers only)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Fall 2027 Round 1 (UG)",
+            "value": "Forms 01-Oct-2026 to 09-Dec-2026; test Sun 20-Dec-2026; result 30-Dec-2026",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Fall 2027 Round 2 / 3 (UG)",
+            "value": "R2 deadline 08-Mar-2027, test 21-Mar-2027; R3 deadline 09-Jun-2027, test 20-Jun-2027",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Interviews",
+            "value": "Not applicable for BSCS",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Classes commence",
+            "value": "Monday 23-Aug-2027",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Application fee amount",
+            "value": null,
+            "status": "unavailable",
+            "source": "S2",
+            "note": "Separate fee per school; amount not stated on schedule page."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition (2026-27, all UG incl. BSCS)",
+            "value": "PKR 31,500 per credit hour",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Student activity charges",
+            "value": "PKR 7,000",
+            "status": "partial",
+            "source": "S3",
+            "note": "Billing period not labelled on fee page."
+          },
+          {
+            "label": "Admission charges (one-time)",
+            "value": "PKR 125,000",
+            "status": "verified",
+            "source": "S3",
+            "note": "Fee page re-read 2026-10-13 shows 125,000; an earlier FuturePath record (2026-10-11) noted 65,000."
+          },
+          {
+            "label": "Hostel (per semester)",
+            "value": "PKR 126,400 - 147,000 depending on room type/AC",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Transport (per semester)",
+            "value": "PKR 54,000 (0-20 km); PKR 78,000 (21 km+)",
+            "status": "partial",
+            "source": "S3",
+            "note": "Period not explicitly labelled."
+          },
+          {
+            "label": "Tax",
+            "value": "3% Sindh Sales Tax on Services where applicable",
+            "status": "verified",
+            "source": "S3"
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Need-based financial assistance",
+            "value": "Bridge financing 25%-90% of tuition, tuition only, up to 8 semesters; min CGPA 2.5 to retain",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Fee instalments / Qarz-e-Hasna",
+            "value": "Listed financial assistance options",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "National Talent Hunt Program (NTHP)",
+            "value": "Fully funded 3-week orientation for financially deserving students (80%+ SSC-II); scholarship not guaranteed",
+            "status": "verified",
+            "source": "S5"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": "Available - single/double/multi occupancy, AC and non-AC rooms",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Transport",
+            "value": "Available - distance-based fee",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Library / labs / sports",
+            "value": null,
+            "status": "unavailable"
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 31,
+        "verified": 28,
+        "partial": 3,
+        "unavailable": 2,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-habib",
+      "slug": "habib-university",
+      "official_name": "Habib University",
+      "profile_status": "complete",
+      "last_checked": "2026-10-13",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Habib University Admissions 2027",
+          "url": "https://habib.edu.pk/admissions/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S2",
+          "title": "Tuition, Scholarships & Financial Aid",
+          "url": "https://habib.edu.pk/admissions/student-finance/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S3",
+          "title": "HU TOPS (national boards) dates",
+          "url": "https://habib.edu.pk/admissions/national-examination-boards/hutops/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S4",
+          "title": "International Examination Board admissions",
+          "url": "https://habib.edu.pk/admissions/international-examination-board/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S5",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Habib-University.aspx",
+          "checked": "2026-10-11"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Habib University",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Overview",
+            "value": "Private liberal arts & sciences university with two schools: Dhanani School of Science & Engineering (DSSE) and School of Arts, Humanities & Social Sciences (AHSS).",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://habib.edu.pk/",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://habib.edu.pk/admissions/",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Campus address",
+            "value": "Block 18, Gulistan-e-Jauhar, University Avenue, Off Shahrah-e-Faisal, Karachi 75290",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private (chartered by Government of Sindh)",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Listed on HEC university profiles (sector Private).",
+            "status": "verified",
+            "source": "S5"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (DSSE); NCEAC accredited per HU",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Computer Engineering",
+            "value": "Offered (DSSE); PEC accredited per HU",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Electrical Engineering",
+            "value": "Offered (DSSE); PEC accredited per HU",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "AHSS programmes",
+            "value": "BA (Hons) Comparative Humanities, BSc (Hons) Social Development & Policy, BA (Hons) Communications & Design",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS AI / Data Science / Software Engineering",
+            "value": "Not listed as separate degrees (AI/ML are CS areas)",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "General eligibility (Fall 2027)",
+            "value": "Intermediate / A Level / HS Diploma / IB or equivalent taken by June 2027, plus programme grade & subject requirements",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Programme-specific grade/subject requirements",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S1",
+            "note": "On Admissions Criteria page; not extracted."
+          },
+          {
+            "label": "Admission test",
+            "value": "Habib University Entrance Test (computer-based, prepared by College Board: English + Maths); SAT I / high-grade exemption",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Process",
+            "value": "Online e-application, fee, entrance test, interview (shortlisted), meta-curricular form",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HU TOPS (national boards) Fall 2027 dates",
+            "value": "Application deadlines 21-Oct-2026, 20-Nov-2026, 23-Dec-2026, 21-Jan-2027, 16-Feb-2027 (Karachi series); rolling decisions",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "International boards Fall 2027 schedule",
+            "value": null,
+            "status": "unavailable",
+            "source": "S4",
+            "note": "Schedule page still shows the Fall 2026 cycle."
+          },
+          {
+            "label": "Application fee",
+            "value": "PKR 7,500 (non-refundable)",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition (2026-27, per semester)",
+            "value": "PKR 780,000 (DSSE and AHSS)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Laboratory fee DSSE (per semester)",
+            "value": "PKR 215,000",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Studio & lab fee AHSS (per semester)",
+            "value": "PKR 160,000",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Enrolment fee (one-time)",
+            "value": "Round 1 PKR 70,000; Round 2 PKR 110,000",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Security deposit (refundable)",
+            "value": "PKR 30,000",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Semester registration fee",
+            "value": "PKR 32,000 from 2nd semester",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "2027-28 fees",
+            "value": null,
+            "status": "unavailable",
+            "source": "S2",
+            "note": "To be published once finalised."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "HU TOPS",
+            "value": "100% financial support for 4 years (national boards)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "HU EOP",
+            "value": "Up to 80% financial support (national boards)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Habib YOHSIN Scholarship",
+            "value": "100% of tuition & lab/studio fees (international boards); CGPA 3.5 to retain",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Habib Excellence / Merit",
+            "value": "60-80% / up to 50% of tuition & lab/studio fees; CGPA 3.0 / 2.75 to retain",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Need-based grants & loans",
+            "value": "Grants (non-repayable) and student-loan facilitation; min CGPA 2.33",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          },
+          {
+            "label": "Student employment",
+            "value": "On-campus paid roles from Semester II (CGPA 2.33; TA/peer tutor 3.0)",
+            "status": "verified",
+            "source": "S2"
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 29,
+        "verified": 29,
+        "partial": 0,
+        "unavailable": 4,
+        "needs_verification": 1
+      }
+    },
+    {
+      "research_id": "khi-dsu",
+      "slug": "dha-suffa-university",
+      "official_name": "DHA Suffa University",
+      "profile_status": "complete",
+      "last_checked": "2026-10-13",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "DSU Admission Info",
+          "url": "https://www.dsu.edu.pk/admission-info/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S2",
+          "title": "DSU Admission Merit Criteria",
+          "url": "https://www.dsu.edu.pk/admission-merit-criteria/",
+          "checked": "2026-10-11"
+        },
+        {
+          "id": "S3",
+          "title": "DSU Fee Structure",
+          "url": "https://www.dsu.edu.pk/fee-structure/",
+          "checked": "2026-10-11"
+        },
+        {
+          "id": "S4",
+          "title": "DSU Financial Assistance",
+          "url": "https://www.dsu.edu.pk/financial-assistance/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S5",
+          "title": "Facilities at DSU",
+          "url": "https://www.dsu.edu.pk/facilities-at-dsu/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S6",
+          "title": "DCK Hostel Facilities",
+          "url": "https://www.dsu.edu.pk/dck-hostel-facilities/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S7",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/DHA-Suffa-University.aspx",
+          "checked": "2026-10-11"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "DHA Suffa University",
+            "status": "verified",
+            "source": "S7"
+          },
+          {
+            "label": "Overview",
+            "value": "Private university with Main Campus (DHA Phase VII Ext.) and DHA City Karachi (DCK) campus.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.dsu.edu.pk/",
+            "status": "verified",
+            "source": "S7"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://www.dsu.edu.pk/admission-info/",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Main campus address",
+            "value": "DG-78, Off Khayaban-e-Tufail, Phase VII Ext., DHA, Karachi 75500",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "DCK campus address",
+            "value": "Main Road, Central Business District, DHA City, Karachi",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private (chartered by Government of Sindh)",
+            "status": "verified",
+            "source": "S7"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Main campus listed on HEC profiles. DCK campus HEC approval window (to 31-Dec-2025) not re-confirmed.",
+            "status": "partial",
+            "source": "S7"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Main and DCK campuses",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Main and DCK campuses (DCK HEC status unconfirmed)",
+            "status": "partial",
+            "source": "S1"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Main campus",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Main campus",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Other computing UG",
+            "value": "BS Cyber Security, BS Computer Engineering, BS Computer Engineering Technology, BS Multimedia & Gaming, BS Business Analytics & Programming, BS FinTech",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS CS/DS/SE/AI/Cyber)",
+            "value": "At least 50% in HSSC (Pre-Engg, Pre-Med, Computer Science) or O/A Level with Mathematics, or IBCC equivalent",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Eligibility (Engineering)",
+            "value": "At least 60% (per PEC) in HSSC Pre-Engg/Pre-Med/CS, O/A Level (Physics, Maths, Chem/CS) or DAE",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Merit formula (EAS & CIT)",
+            "value": "Matric 10% + Inter 40% + DSU test/interview 50%",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-11."
+          },
+          {
+            "label": "Admission test",
+            "value": "DSU walk-in test series (on campus / online); online takers may be called for interview",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Alternative tests accepted",
+            "value": "MDCAT >= 50%, or NED / UoK / NUST NET / MUET test >= 50%",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Processing fee",
+            "value": "Rs 1,500 on campus; Rs 2,500 online (UG)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Application deadline (current cycle)",
+            "value": null,
+            "status": "unavailable",
+            "source": "S1",
+            "note": "Deadline field blank on admission-info page."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition (computing BS, main campus)",
+            "value": "PKR 6,270 per credit hour",
+            "status": "partial",
+            "source": "S3",
+            "note": "Table under \"Admission Fall 2026\" nav; not year-labelled."
+          },
+          {
+            "label": "Lab charges",
+            "value": "PKR 10,000 per lab credit hour",
+            "status": "partial",
+            "source": "S3"
+          },
+          {
+            "label": "Admission + caution money (one-time)",
+            "value": "PKR 15,000 + PKR 10,000",
+            "status": "partial",
+            "source": "S3"
+          },
+          {
+            "label": "First-semester totals",
+            "value": "BS CS PKR 144,510; BS SE/DS/AI/Cyber PKR 163,320",
+            "status": "partial",
+            "source": "S3"
+          },
+          {
+            "label": "Per-semester charges",
+            "value": "IT PKR 6,000 + misc PKR 7,000; exam PKR 1,000 per course",
+            "status": "partial",
+            "source": "S3"
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Board position holders",
+            "value": "90% merit scholarship for 1st/2nd/3rd position in Intermediate board exams",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Need-based",
+            "value": "Up to 90% of tuition",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Semester merit",
+            "value": "Top 5% of intake from second semester",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "DCK campus waiver",
+            "value": "25% tuition waiver for all DCK programmes",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Fee waivers & instalments",
+            "value": "Sibling 20%; DHA/DSU employee 50%; DHACSS 10% + admission-fee waiver; up to 3 instalments/semester",
+            "status": "verified",
+            "source": "S4"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Transport",
+            "value": "Available for students coming from remote areas",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Hostel",
+            "value": "DCK campus hostel (contacts published); main campus hostel not stated",
+            "status": "partial",
+            "source": "S6"
+          },
+          {
+            "label": "Campus facilities",
+            "value": "Library, cafeteria, auditorium, sports (basketball, volleyball, table tennis), counseling centre, medical room",
+            "status": "verified",
+            "source": "S5"
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 32,
+        "verified": 23,
+        "partial": 9,
+        "unavailable": 1,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-iqra",
+      "slug": "iqra-university",
+      "official_name": "Iqra University",
+      "profile_status": "partial",
+      "last_checked": "2026-10-14",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Iqra University Admission Hub",
+          "url": "https://iqra.edu.pk/admission-hub/",
+          "checked": "2026-10-13"
+        },
+        {
+          "id": "S2",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Iqra-University.aspx",
+          "checked": "2026-10-11"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Iqra University",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": "Private multi-campus university (Sindh and Federal Capital); HEC-recognised Karachi campuses include Gulshan, North, Malir/Airport Road and M-9 Scheme 33; Bahria Town campus closed w.e.f. 08-08-2024.",
+            "status": "partial",
+            "source": "S2",
+            "note": "Campus list from HEC Recognized Campuses page (2026-10-10)."
+          },
+          {
+            "label": "Website",
+            "value": "https://iqra.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://iqra.edu.pk/admission-hub/",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Main campus address",
+            "value": "Iqra University Main Campus, Defence View, Karachi",
+            "status": "partial",
+            "source": "S1",
+            "note": "Street-level address not given on page."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private (chartered by Government of Sindh)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Listed on HEC university profiles (sector Private).",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (Engineering Sciences & Technology)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Offered",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Offered",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Telecommunication",
+            "value": "Offered",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Data Science",
+            "value": null,
+            "status": "unavailable",
+            "source": "S1",
+            "note": "Not listed on admission criteria page."
+          },
+          {
+            "label": "Campus-wise availability",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S2",
+            "note": "Programme availability differs by campus."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS CS/SE/AI/Telecom)",
+            "value": "At least 50% HSSC (Pre-Engineering) or Physics-Maths-CS combination; A Level Maths/Physics/Chemistry with IBCC >= 50%; or DAE 50% with Maths & Physics",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admission test",
+            "value": "Computer-based MCQ test: English, Mathematics, General Knowledge, IQ; plus interview",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Processing fee",
+            "value": "PKR 1,000 (non-refundable)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Intake timing",
+            "value": "Fall admissions start August; Spring November; Summer April; rolling deadlines",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Specific deadline dates",
+            "value": null,
+            "status": "unavailable",
+            "source": "S1",
+            "note": "Rolling; no dated deadline published."
+          },
+          {
+            "label": "Eligibility (BS CS/SE/AI)",
+            "value": "At least 50% in HSSC Pre-Engineering; or Physics/Maths/Computer Science combination; or A-Levels Maths/Physics/Chemistry with IBCC equivalence (50%); or 50% DAE with Maths & Physics",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Intake pattern",
+            "value": "Spring (Mar-Jun) admissions start Nov; Summer (Jul-Sep) start Apr; Fall (Oct-Feb) start Aug; rolling deadlines",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition (Karachi)",
+            "value": null,
+            "status": "unavailable",
+            "note": "Karachi fee schedule not published on iqra.edu.pk (checked 2026-10-14). Islamabad campus publishes Fall 2026 BS CS 1st-sem PKR 177,020 (iuisl.iqra.edu.pk/fee-structure/) — different campus, NOT used. Aggregator figures conflict, not used."
+          },
+          {
+            "label": "Refund policy",
+            "value": "100% up to 10th day of classes, 80% to 15th, 60% to 20th, 50% to 30th, none after",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Merit at admission",
+            "value": "Up to 35% of 1st-semester tuition based on Intermediate % and IU test score",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Semester performance",
+            "value": "20%-60% tuition for GPA 3.5-4.0",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Need-based",
+            "value": "Tuition waiver up to 100% via Financial Assistance Committee",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Qarz-e-Hasana",
+            "value": "Interest-free loan; repay within one year of graduation",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Other",
+            "value": "Talent (sports) up to 100%, sibling 10-15%, alumni 15-30%, differently-abled 100% tuition",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admission-stage merit scholarship",
+            "value": "Up to 35% of 1st-semester tuition combining Inter % (5-30%) and IU test (5-25%); need-based waiver up to 100%; Qarz-e-Hasana interest-free; sibling 10-15%",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable"
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable"
+          },
+          {
+            "label": "Campus facilities",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not read from official pages."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 24,
+        "verified": 22,
+        "partial": 2,
+        "unavailable": 6,
+        "needs_verification": 1
+      }
+    }
+  ]
+}
