@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { SearchInput } from '@/components/search-input';
-import { Search, Filter, X, Loader2 } from 'lucide-react';
+import { Filter, X, Loader2 } from 'lucide-react';
 import { UniversityCard } from '@/components/university-card';
 import type { University } from '@/lib/types';
 import { profileSearchText } from '@/lib/profile-utils';
@@ -12,22 +13,38 @@ const TYPES = ['All Types', 'Public', 'Private'];
 
 export function UniversitiesClient({ universities: initialUniversities }: { universities: University[] }) {
   const [universities, setUniversities] = useState(initialUniversities);
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
   const [city, setCity] = useState('All Cities');
   const [type, setType] = useState('All Types');
+  const [field, setField] = useState('');
   const [nextCursor, setNextCursor] = useState<string | null>(null);
   const [loadingMore, setLoadingMore] = useState(false);
   const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
 
+  useEffect(() => {
+    const q = searchParams.get('q') ?? '';
+    const nextCity = searchParams.get('city');
+    const nextType = searchParams.get('type');
+    const nextField = searchParams.get('field') ?? '';
+    if (q) setQuery(q);
+    if (nextCity) setCity(nextCity);
+    if (nextType) setType(nextType);
+    setField(nextField);
+  }, [searchParams]);
+
   const filtered = useMemo(() => {
     const q = query.toLowerCase();
+    const fieldQ = field.toLowerCase().replace(/-/g, ' ');
     return universities.filter((u) => {
-      const matchQ = !q || u.name.toLowerCase().includes(q) || u.shortName.toLowerCase().includes(q) || u.city.toLowerCase().includes(q) || profileSearchText(u.profile).includes(q);
+      const blob = `${u.name} ${u.shortName} ${profileSearchText(u.profile)}`.toLowerCase();
+      const matchQ = !q || blob.includes(q) || u.city.toLowerCase().includes(q);
       const matchCity = city === 'All Cities' || u.city === city;
       const matchType = type === 'All Types' || u.universityType === type;
-      return matchQ && matchCity && matchType;
+      const matchField = !fieldQ || blob.includes(fieldQ) || u.programs.some((p) => (p.program_name || '').toLowerCase().includes(fieldQ));
+      return matchQ && matchCity && matchType && matchField;
     });
-  }, [universities, query, city, type]);
+  }, [universities, query, city, type, field]);
 
   const loadMore = useCallback(async () => {
     if (loadingMore) return;
@@ -137,7 +154,7 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
             {loadingMore ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Loading…
+                Please wait
               </>
             ) : hasAttemptedLoad && nextCursor === null ? (
               'All universities loaded'

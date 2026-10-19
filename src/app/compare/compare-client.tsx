@@ -3,35 +3,13 @@
 import { useState } from 'react';
 import { SearchInput } from '@/components/search-input';
 import Link from 'next/link';
-import { X, BarChart2, ArrowRight, CheckCircle2, Search } from 'lucide-react';
-import { initialsSize, logoInitials, profileCompleteness } from '@/lib/display-utils';
+import { X, BarChart2, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { initialsSize, logoInitials } from '@/lib/display-utils';
 import type { University } from '@/lib/types';
-import { findProfileField, profileSearchText } from '@/lib/profile-utils';
+import { profileSearchText } from '@/lib/profile-utils';
+import { COMPARISON_ROWS } from '@/lib/compare-rows';
 
 const COMPARE_LIMIT = 3;
-
-const COMPARISON_ROWS = [
-  { key: 'city', label: 'City', format: (u: University) => u.city },
-  { key: 'type', label: 'Type', format: (u: University) => u.universityType },
-  { key: 'established', label: 'Established', format: (u: University) => u.yearEstablished ? String(u.yearEstablished) : '—' },
-  { key: 'hec', label: 'HEC Status', format: (u: University) => u.hecStatus ?? '—' },
-  { key: 'campuses', label: 'Campuses', format: (u: University) => String(u.campuses.length || 1) },
-  { key: 'programs', label: 'Programs', format: (u: University) => String(u.programsCount || '—') },
-  { key: 'scholarships', label: 'Scholarships', format: (u: University) => String(u.scholarships.length || 0) },
-  { key: 'accreditations', label: 'Accreditations', format: (u: University) => String(u.accreditations.length || 0) },
-  { key: 'semester_fee', label: 'Semester Fee', format: (u: University) => u.fees?.semester_fee ? `PKR ${u.fees.semester_fee.toLocaleString()}` : '—' },
-  { key: 'admission_fee', label: 'Admission Fee', format: (u: University) => u.fees?.admission_fee ? `PKR ${u.fees.admission_fee.toLocaleString()}` : '—' },
-  { key: 'hostel', label: 'Hostel', format: (u: University) => u.hostel?.hostel_availability === true ? '✅ Available' : u.hostel?.hostel_availability === false ? '❌ N/A' : '—' },
-  { key: 'transport', label: 'Transport', format: (u: University) => u.transport?.transport_available === true ? '✅ Available' : u.transport?.transport_available === false ? '❌ N/A' : '—' },
-  { key: 'phd_faculty', label: 'PhD Faculty', format: (u: University) => u.facultyAcademics?.phd_faculty_count ? String(u.facultyAcademics.phd_faculty_count) : '—' },
-  { key: 'ratio', label: 'Student:Faculty', format: (u: University) => u.facultyAcademics?.student_faculty_ratio ?? '—' },
-  { key: 'placement', label: 'Placement Rate', format: (u: University) => u.placements?.placement_rate_pct ? `${u.placements.placement_rate_pct}%` : '—' },
-  { key: 'profile', label: 'Detailed Profile', format: (u: University) => u.profile ? `${u.profile.profile_status === 'complete' ? 'Complete' : 'Partial'} (${u.profile.field_counts.sourced} sourced, checked ${u.profile.last_checked})` : '-' },
-  { key: 'tuition', label: 'Tuition (official, sourced)', format: (u: University) => findProfileField(u.profile?.sections.fees ?? [], /^Tuition/)?.value ?? '-' },
-  { key: 'computing', label: 'CS / AI / DS / SE (UG)', format: (u: University) => (u.profile?.sections.programs ?? []).filter((f) => f.value && /computer science|artificial intelligence|data science|software engineering/i.test(f.label) && !/not offered|not listed/i.test(f.value)).map((f) => f.label.replace(/^(BS|BE\/BS) /, '')).join(', ') || '-' },
-  { key: 'test', label: 'Admission Test', format: (u: University) => findProfileField(u.profile?.sections.admissions ?? [], /admission test/i)?.value ?? '-' },
-  { key: 'data', label: 'Data Completeness', format: (u: University) => `${profileCompleteness(u.profile) ?? u.dataCompleteness}%` },
-];
 
 export function CompareClient({ universities }: { universities: University[] }) {
   const [selected, setSelected] = useState<University[]>([]);
@@ -63,7 +41,7 @@ export function CompareClient({ universities }: { universities: University[] }) 
           <BarChart2 className="h-4 w-4" /> Side-by-side comparison
         </div>
         <h1 className="text-4xl font-semibold tracking-tight">Compare Universities</h1>
-        <p className="mt-3 text-muted-foreground">Search and pick up to 3 universities, then compare them side by side.</p>
+        <p className="mt-3 text-muted-foreground">Search and pick up to 3 universities, then compare them on {COMPARISON_ROWS.length} rows. A missing figure is shown as Not available.</p>
       </div>
 
       {!comparing ? (

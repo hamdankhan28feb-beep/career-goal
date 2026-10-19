@@ -63,7 +63,7 @@ async function main() {
            LIMIT 1
          )
          RETURNING slug, research_id, verification_status, profile_status`,
-        [p.research_id, p.slug, JSON.stringify(p), p.profile_status, p.last_checked, address]
+        [p.research_id, p.slug, JSON.stringify(p), null, null, address]
       );
       if (res.rowCount) {
         summary.updated += 1;

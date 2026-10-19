@@ -19,20 +19,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-const DIFFICULTY_COLOR: Record<string, string> = {
-  Easy: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
-  Medium: 'bg-amber-500/10 text-amber-600 dark:text-amber-400',
-  Hard: 'bg-orange-500/10 text-orange-600 dark:text-orange-400',
-  'Very Hard': 'bg-red-500/10 text-red-600 dark:text-red-400',
-};
-
-const DEMAND_COLOR: Record<string, string> = {
-  Low: 'bg-slate-500/10 text-slate-500',
-  Medium: 'bg-blue-500/10 text-blue-600 dark:text-blue-400',
-  High: 'bg-teal-500/10 text-teal-600 dark:text-teal-400',
-  'Very High': 'bg-primary/10 text-primary',
-};
-
 function Tag({ text, color }: { text: string; color?: string }) {
   return (
     <span className={`rounded-full px-3 py-1 text-xs font-medium ${color ?? 'bg-muted text-muted-foreground'}`}>
@@ -64,15 +50,15 @@ export default async function FieldProfilePage({ params }: { params: Promise<{ s
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-slate-200">{field.category}</span>
-              <span className={`rounded-full px-3 py-1 text-xs font-medium ${DIFFICULTY_COLOR[field.difficultyLevel]}`}>{field.difficultyLevel}</span>
-              <span className={`rounded-full px-3 py-1 text-xs font-medium ${DEMAND_COLOR[field.industryDemand]}`}>{field.industryDemand} demand</span>
+              <span className="rounded-full border border-white/20 px-3 py-1 text-xs text-slate-200">Difficulty not available</span>
+              <span className="rounded-full border border-white/20 px-3 py-1 text-xs text-slate-200">Demand not available</span>
             </div>
             <h1 className="text-3xl font-semibold tracking-tight lg:text-4xl">{field.name}</h1>
             <p className="mt-3 max-w-3xl text-slate-300 leading-7">{field.overview}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               {[
                 { icon: Clock, label: field.degreeDuration },
-                { icon: TrendingUp, label: `PKR ${Math.round(field.salaryRange.min / 1000)}K–${Math.round(field.salaryRange.max / 1000)}K/month` },
+                { icon: TrendingUp, label: 'Salary not available' },
                 { icon: Briefcase, label: `${field.careerPaths.length} career paths` },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-slate-200">
@@ -228,22 +214,8 @@ export default async function FieldProfilePage({ params }: { params: Promise<{ s
         <div className="space-y-6">
           {/* Salary Range */}
           <div className="rounded-3xl border border-border/70 bg-card/80 p-5">
-            <h3 className="mb-4 text-sm font-semibold">💰 Salary Range</h3>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-foreground">
-                PKR {Math.round(field.salaryRange.min / 1000)}K
-                <span className="text-xl font-normal text-muted-foreground mx-2">–</span>
-                {Math.round(field.salaryRange.max / 1000)}K
-              </div>
-              <div className="mt-1 text-xs text-muted-foreground">{field.salaryRange.currency}</div>
-            </div>
-            <div className="mt-4 progress-track">
-              <div className="progress-fill" style={{ width: '100%' }} />
-            </div>
-            <div className="mt-2 flex justify-between text-xs text-muted-foreground">
-              <span>Entry Level</span>
-              <span>Senior Level</span>
-            </div>
+            <h3 className="mb-4 text-sm font-semibold">Salary</h3>
+            <p className="text-sm text-muted-foreground">Not available. No authority and year are on file.</p>
           </div>
 
           {/* Quick Stats */}
@@ -256,11 +228,11 @@ export default async function FieldProfilePage({ params }: { params: Promise<{ s
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Difficulty</span>
-                <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${DIFFICULTY_COLOR[field.difficultyLevel]}`}>{field.difficultyLevel}</span>
+                <span className="text-sm">Not available</span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Demand</span>
-                <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${DEMAND_COLOR[field.industryDemand]}`}>{field.industryDemand}</span>
+                <span className="text-sm">Not available</span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Semesters</span>
@@ -289,7 +261,7 @@ export default async function FieldProfilePage({ params }: { params: Promise<{ s
             <Link href="/compare/fields" className="btn-secondary w-full justify-center">
               Compare with other fields
             </Link>
-            <Link href="/universities" className="btn-ghost w-full justify-center">
+            <Link href={`/universities?field=${field.slug}`} className="btn-ghost w-full justify-center">
               Find universities for {field.name}
             </Link>
           </div>

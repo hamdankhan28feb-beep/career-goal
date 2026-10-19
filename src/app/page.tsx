@@ -9,14 +9,19 @@ import { LiveStats } from '@/components/live-stats';
 import { UniversityLogoSlider } from '@/components/university-logo-slider';
 import { FreshnessLabel } from '@/components/freshness-label';
 import { initialsSize, logoInitials } from '@/lib/display-utils';
+import { latestVerificationDate, profileHeadline } from '@/lib/evidence';
+import { COMPARISON_ROWS } from '@/lib/compare-rows';
+import { QUIZ_QUESTIONS, quizCategories } from '@/lib/quiz-questions';
+import { countBundledProfiles } from '@/lib/university-profiles';
+import { universityLogos } from '@/data/university-logos';
 
 const FEATURES = [
-  { icon: BookOpen, title: 'University Explorer', desc: 'Browse Karachi universities with verification badges and official-source citations', href: '/universities' },
-  { icon: TrendingUp, title: 'Admission Predictor', desc: 'Enter your marks for a rough High/Medium/Low indication against benchmark estimates (not official cutoffs)', href: '/predictor' },
-  { icon: Award, title: 'Scholarship Finder', desc: 'Discover merit, need-based, sports and external scholarships available', href: '/scholarships' },
-  { icon: Brain, title: 'AI Counselor', desc: 'Ask questions about Pakistani universities — answers grounded in our database when AI keys are configured', href: '/counselor' },
-  { icon: Users, title: 'Career Quiz', desc: 'Take a 24-question assessment to find your perfect field match', href: '/quiz' },
-  { icon: Target, title: 'Side-by-Side Compare', desc: 'Compare universities on 8 dimensions: fees, merit, scholarships & more', href: '/compare' },
+  { icon: BookOpen, title: 'University Explorer', desc: 'Browse universities with badges derived from field evidence, plus links to the cited pages', href: '/universities' },
+  { icon: TrendingUp, title: 'Admission Predictor', desc: 'A chance label appears only when a sourced closing aggregate is on file. Otherwise the page says insufficient verified data.', href: '/predictor' },
+  { icon: Award, title: 'Scholarship Finder', desc: 'Search tracked scholarships by status. Nothing is described as open unless the record says so.', href: '/scholarships' },
+  { icon: Brain, title: 'AI Counselor', desc: 'Unavailable / Beta until a provider is configured. It does not invent citations.', href: '/counselor' },
+  { icon: Users, title: 'Career Quiz', desc: `Discover suggested career and field matches. ${QUIZ_QUESTIONS.length} questions across ${quizCategories().length} categories.`, href: '/quiz' },
+  { icon: Target, title: 'Side-by-Side Compare', desc: `Compare universities on ${COMPARISON_ROWS.length} rows. Missing figures show as Not available.`, href: '/compare' },
 ];
 
 export default async function HomePage() {
@@ -27,13 +32,12 @@ export default async function HomePage() {
 
   // Detailed (sourced) profiles drive the hero panel and the stats; nothing here is hard-coded.
   const profiled = allUniversities.filter((u) => u.profile);
-  const checkDates = profiled.map((u) => u.profile!.last_checked).sort();
-  const latestCheck = checkDates.length ? checkDates[checkDates.length - 1] : null;
   const sourcedTotal = profiled.reduce((a, u) => a + u.profile!.field_counts.sourced, 0);
   const recent = [...profiled]
-    .sort((a, b) => b.profile!.last_checked.localeCompare(a.profile!.last_checked) || b.profile!.field_counts.verified - a.profile!.field_counts.verified)
+    .sort((a, b) => (b.profile!.last_checked || '').localeCompare(a.profile!.last_checked || '') || b.profile!.field_counts.verified - a.profile!.field_counts.verified)
     .slice(0, 3);
-  const freshest = [stats.checkedAt, latestCheck].filter(Boolean).sort().pop() ?? null;
+  const freshest = latestVerificationDate();
+  const profileFiles = countBundledProfiles();
 
   return (
     <div>
@@ -44,15 +48,13 @@ export default async function HomePage() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
             <Sparkles className="h-4 w-4" />
-            AI-powered guidance for Pakistani students
+            Evidence-labelled guidance for Pakistani students
           </div>
-          <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
-            Discover Your{' '}
-            <span className="gradient-text">Future</span>{' '}
-            With Confidence
+          <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            A growing university and career guide for Pakistan, starting with Karachi.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-            Explore universities, careers, scholarships and admission opportunities all in one place. Built for Pakistani students, starting with Karachi.
+            Discover suggested career and field matches. Counts below are generated from the records in this build, and each label says which file or list it comes from.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/universities" className="btn-primary">
@@ -68,27 +70,23 @@ export default async function HomePage() {
             <LiveStats
               stats={[
                 {
-                  label: 'Karachi unis (research)',
+                  label: 'Research catalogue rows',
                   value: stats.universitiesTotal,
-                  hint:
-                    String(stats.universitiesVerified) +
-                    ' verified / ' +
-                    String(stats.universitiesPartial) +
-                    ' partial',
+                  hint: 'universities_karachi.json',
                 },
                 {
-                  label: 'Detailed profiles',
-                  value: profiled.length,
-                  hint: latestCheck
-                    ? String(sourcedTotal) + ' sourced fields · checked ' + latestCheck
-                    : 'Sourced from official pages',
+                  label: 'Loaded university records',
+                  value: allUniversities.length,
+                  hint: `${profiled.length} of ${profileFiles} profile files attached · ${universityLogos.length} logo tiles`,
                 },
                 {
-                  label: 'Scholarships tracked',
+                  label: 'Scholarship catalogue rows',
                   value: stats.scholarshipsTotal,
                   hint:
                     String(stats.scholarshipsActive) +
                     ' open / ' +
+                    String(stats.scholarshipsUpcoming) +
+                    ' upcoming / ' +
                     String(stats.scholarshipsClosed) +
                     ' closed / ' +
                     String(stats.scholarshipsUnknown) +
@@ -106,8 +104,8 @@ export default async function HomePage() {
         {recent.length > 0 && (
           <aside className="mt-10 rounded-3xl border border-border/70 bg-card/80 p-5 shadow-sm lg:mt-0" data-testid="home-recently-verified">
             <div className="flex items-center justify-between gap-3">
-              <div className="text-sm font-semibold text-foreground">Recently verified</div>
-              {latestCheck && <span className="text-xs text-muted-foreground">checked {latestCheck}</span>}
+              <div className="text-sm font-semibold text-foreground">Profile files</div>
+              {freshest && <span className="text-xs text-muted-foreground">verification log {freshest}</span>}
             </div>
             <ul className="mt-4 space-y-3">
               {recent.map((u) => {
@@ -126,9 +124,9 @@ export default async function HomePage() {
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-sm font-medium text-foreground">{p.official_name || u.name}</span>
                         <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-xs text-muted-foreground">
-                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-emerald-500" />{c.verified} verified</span>
-                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-amber-500" />{c.partial} partial</span>
-                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-slate-400/60" />{c.unavailable} unavailable</span>
+                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-success" />{c.verified} verified</span>
+                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-warning" />{c.partial} partial</span>
+                          <span className="inline-flex items-center gap-1"><span className="h-2.5 w-[3px] rounded-full bg-muted-foreground/50" />{profileHeadline(p)}</span>
                         </span>
                       </span>
                     </Link>
@@ -137,7 +135,7 @@ export default async function HomePage() {
               })}
             </ul>
             <Link href="/universities" className="mt-4 inline-flex min-h-10 items-center gap-1.5 text-sm font-medium text-primary hover:underline lg:min-h-0">
-              All {profiled.length} detailed profiles <ArrowRight className="h-3.5 w-3.5" />
+              All {allUniversities.length} loaded records <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </aside>
         )}
@@ -153,7 +151,7 @@ export default async function HomePage() {
         <div className="text-center">
           <div className="section-label">What We Offer</div>
           <h2 className="section-title">Everything a Pakistani student needs</h2>
-          <p className="mt-3 text-muted-foreground">One platform. Zero guesswork.</p>
+          <p className="mt-3 text-muted-foreground">Each tool says what it can and cannot show.</p>
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map(({ icon: Icon, title, desc, href }) => (
@@ -181,7 +179,7 @@ export default async function HomePage() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <div className="section-label">Featured Universities</div>
-            <h2 className="section-title">Karachi-focused, verified, and comparison-ready</h2>
+            <h2 className="section-title">Karachi-focused university records</h2>
           </div>
           <Link href="/universities" className="hidden items-center gap-2 text-sm font-medium text-primary sm:inline-flex">
             View all <ArrowRight className="h-4 w-4" />
@@ -205,14 +203,15 @@ export default async function HomePage() {
         <div className="section-label">Evidence Atlas</div>
         <h2 className="section-title">How we verify data</h2>
         <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
-          Every university and scholarship fact is labelled Verified, Approximate, Unverified, or Not available yet.
-          We prefer HEC and official university pages. Missing fees or deadlines stay blank — we never invent them.
-          Scholarship Finder currently shows tracked programmes with honest status (many are unknown or closed until a dated window reopens).
+          Every fact is labelled from its own evidence. Verified means a reliable source supports that field for the stated period.
+          Approximate means an explicit estimate with a disclosed basis. Unverified means the evidence is not sufficient.
+          Fees, deadlines and merit figures stay blank when they are unverified. Scholarship rows keep their recorded status; none are called open unless the record says so.
+          {sourcedTotal} profile fields currently remain sourced after the verification gate.
         </p>
         <div className="mt-6 flex flex-wrap gap-3 text-xs">
-          <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-600 dark:text-emerald-400">Verified = official page checked</span>
-          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-amber-700 dark:text-amber-400">Approximate = partial official data</span>
-          <span className="rounded-full border border-border px-3 py-1 text-muted-foreground">Unverified = HEC listing only so far</span>
+          <span className="rounded-full border border-success/30 bg-success/10 px-3 py-1 text-success">Verified = source supports that field for the period</span>
+          <span className="rounded-full border border-warning/30 bg-warning/10 px-3 py-1 text-warning">Approximate = estimate with a disclosed basis</span>
+          <span className="rounded-full border border-border px-3 py-1 text-muted-foreground">Unverified = insufficient evidence</span>
         </div>
       </section>
 
@@ -236,13 +235,13 @@ export default async function HomePage() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-cyan-100">
             <Brain className="h-4 w-4" />
-            Powered by AI + your database
+            Unavailable / Beta
           </div>
           <h2 className="mt-6 text-3xl font-semibold tracking-tight">
-            Ask the AI Counselor anything about Pakistani universities
+            AI Counselor
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">
-            &ldquo;Which university is best for CS in Karachi?&rdquo; &bull; &ldquo;I have 75% in ICS, where can I apply?&rdquo; &bull; &ldquo;What is the difference between CS and AI?&rdquo;
+            When a provider is configured, answers stay inside verified records and say they are not official advice. Until then the counselor is unavailable and does not invent an answer.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/counselor" className="btn-primary bg-white text-slate-900 hover:bg-white/90">
@@ -255,12 +254,10 @@ export default async function HomePage() {
         </div>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:mt-0 lg:grid-cols-1">
           {[
-            '✅ University admission requirements',
-            '✅ Scholarship opportunities',
-            '✅ Career path guidance',
-            '✅ Merit predictions',
-            '✅ Field comparisons',
-            '✅ Entry test preparation tips',
+            'Universities, with source links',
+            'Scholarship records and their status',
+            'Suggested field matches from the quiz',
+            'Not official admissions advice',
           ].map((item) => (
             <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 backdrop-blur">
               {item}
@@ -273,26 +270,18 @@ export default async function HomePage() {
       <section className="mt-12 grid gap-6 rounded-4xl border border-border/70 bg-card/80 p-5 shadow-sm sm:p-8 md:grid-cols-2">
         <div>
           <div className="section-label">Admission Predictor</div>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight">Know your chances before you apply</h2>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight">Chances only where a sourced aggregate exists</h2>
           <p className="mt-3 text-muted-foreground text-sm leading-7">
-            Enter your Matric %, Intermediate %, city, and budget. We compare your aggregate with rough benchmark estimates (not official merit lists) for a High / Medium / Low indication. Admission is never guaranteed.
+            The predictor lists every university in the loaded set. If that university has no sourced closing aggregate (programme, year and URL), it says insufficient verified data. It does not show High, Medium or Low, and it does not call any figure an official cutoff.
           </p>
           <Link href="/predictor" className="btn-primary mt-6 inline-flex">
-            Try Predictor <ArrowRight className="h-4 w-4" />
+            Open predictor <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
         <div className="grid gap-3">
-          <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Illustrative example only</div>
-          {[
-            { label: 'FAST Karachi', chance: 'High', color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-500/10' },
-            { label: 'NED University', chance: 'Medium', color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-500/10' },
-            { label: 'IBA Karachi', chance: 'Low', color: 'text-red-600 dark:text-red-400', bg: 'bg-red-500/10' },
-          ].map(({ label, chance, color, bg }) => (
-            <div key={label} className="flex items-center justify-between rounded-2xl border border-border/70 bg-muted/50 px-4 py-3">
-              <span className="text-sm font-medium text-foreground">{label}</span>
-              <span className={`rounded-full ${bg} ${color} px-3 py-1 text-xs font-semibold`}>{chance} Chance</span>
-            </div>
-          ))}
+          <div className="rounded-2xl border border-border/70 bg-muted/50 px-4 py-4 text-sm text-muted-foreground">
+            Marks and budget stay in the browser for that visit. They are not stored and are not sent to an API. The privacy page describes this.
+          </div>
         </div>
       </section>
     </div>

@@ -1,0 +1,25 @@
+{
+  "note": "Written by scripts/record-verification.mjs. Render code must not append to this file or default a date to now.",
+  "events": [
+    {
+      "entity_type": "rating",
+      "entity_id": "hec-oric-fy2024-25",
+      "field_key": "oric-category",
+      "source_url": "https://www.hec.gov.pk/english/services/universities/ORICs/Documents/Annual%20ORIC%20Validation%20Report%20FY%2024-25.pdf",
+      "source_title": "HEC Annual ORIC Self-Assessment Evaluation Report FY 2024-2025",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Opened the HEC PDF text on 2026-10-19. W/X/Y categories below are copied from that report only. This is a research-office evaluation, not an overall university ranking."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iqra-university",
+      "field_key": "campuses",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/DAIs/HEC-recognized-Campuses.aspx",
+      "source_title": "HEC recognized Campuses",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Direct HTTP from this environment to hec.gov.pk timed out. The same official URL was retrieved via a search fetch on 2026-10-19 and the Iqra University, Karachi row was copied from that page. A second HEC page (Sindh/Iqra-University.aspx) was retrieved the same way and disagrees on the campus list; see field_conflicts.json."
+    }
+  ]
+}

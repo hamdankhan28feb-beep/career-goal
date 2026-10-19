@@ -1,31 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import { readFile, writeFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
 
 import { isAdmin, SESSION_COOKIE, verifySessionToken } from '@/lib/auth';
 import { getUniversityBySlug } from '@/lib/data';
 import { checkRateLimit } from '@/lib/rate-limit';
 import { parsePagination } from '@/lib/pagination';
 import { addPendingReview, getAllStoredReviews, getStoredReviewsPage, updateReviewStatus } from '@/lib/reviews-store';
-import type { RawUniversityV2, ReviewInput } from '@/lib/types';
-
-const DATA_FILE_PATH = resolve(process.cwd(), 'data_v2.json');
-
-async function loadRawUniversitiesV2(): Promise<RawUniversityV2[]> {
-  const rawContent = await readFile(DATA_FILE_PATH, 'utf8');
-  const parsed = JSON.parse(rawContent) as { universities?: RawUniversityV2[] } | RawUniversityV2[];
-
-  if (Array.isArray(parsed)) {
-    return parsed;
-  }
-
-  return parsed.universities ?? [];
-}
-
-async function saveRawUniversitiesV2(universities: RawUniversityV2[]): Promise<void> {
-  await writeFile(DATA_FILE_PATH, `${JSON.stringify({ universities }, null, 2)}\n`, 'utf8');
-}
+import type { ReviewInput } from '@/lib/types';
 
 async function requireAdmin() {
   const cookieStore = await cookies();
@@ -106,37 +87,6 @@ export async function PATCH(req: NextRequest) {
     const updated = await updateReviewStatus(body.id, body.status);
     if (!updated) {
       return NextResponse.json({ error: 'Review not found.' }, { status: 404 });
-    }
-
-    // Publish to data_v2.json if approved
-    if (body.status === 'approved') {
-      const rawUnis = await loadRawUniversitiesV2();
-      const uniIndex = rawUnis.findIndex(
-        (u) =>
-          u.basic_information.slug === updated.universitySlug ||
-          (u.basic_information.short_name || u.basic_information.name)
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-|-$/g, '') === updated.universitySlug
-      );
-
-      if (uniIndex !== -1) {
-        if (!rawUnis[uniIndex].reviews) {
-          rawUnis[uniIndex].reviews = [];
-        }
-        rawUnis[uniIndex].reviews!.push({
-          reviewer_type: updated.reviewerType,
-          rating_overall: updated.ratingOverall,
-          rating_faculty: updated.ratingFaculty,
-          rating_facilities: updated.ratingFacilities,
-          rating_value_for_money: updated.ratingValueForMoney,
-          positive_experiences: updated.positiveExperiences,
-          common_complaints: updated.commonComplaints,
-          pros: updated.pros,
-          cons: updated.cons,
-        });
-        await saveRawUniversitiesV2(rawUnis);
-      }
     }
 
     return NextResponse.json({ review: updated });

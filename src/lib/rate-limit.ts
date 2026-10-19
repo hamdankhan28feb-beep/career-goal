@@ -63,6 +63,7 @@ export const RATE_LIMITS: Record<string, RateLimitConfig> = {
   auth: { maxTokens: 5, refillCount: 5, refillWindowMs: 60_000 },
   api: { maxTokens: 10, refillCount: 30, refillWindowMs: 60_000 },
   review: { maxTokens: 3, refillCount: 10, refillWindowMs: 60_000 },
+  report: { maxTokens: 5, refillCount: 5, refillWindowMs: 60_000 },
 };
 
 function getClientKey(request: NextRequest): string {

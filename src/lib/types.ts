@@ -329,6 +329,8 @@ export type University = {
   // Computed
   programsCount: number;
   dataCompleteness: number;
+  /** Count of campuses backed by a verified conflict/primary list. Null means not available. */
+  sourcedCampusCount?: number | null;
 };
 
 // ─── Field Definition ────────────────────────────────────────────────────────
@@ -349,15 +351,15 @@ export type FieldDefinition = {
   degreeDuration: string;
   coreCourses: string[];
   electives: string[];
-  difficultyLevel: 'Easy' | 'Medium' | 'Hard' | 'Very Hard';
-  industryDemand: 'Low' | 'Medium' | 'High' | 'Very High';
+  difficultyLevel: 'Easy' | 'Medium' | 'Hard' | 'Very Hard' | null;
+  industryDemand: 'Low' | 'Medium' | 'High' | 'Very High' | null;
   futureScope: string;
   careerPaths: string[];
   governmentJobs: string[];
   privateSectorJobs: string[];
   freelancingOpportunities: string[];
   higherEducationOptions: string[];
-  salaryRange: { min: number; max: number; currency: string };
+  salaryRange: { min: number; max: number; currency: string } | null;
   roadmap: FieldSemester[];
 };
 
@@ -435,7 +437,14 @@ export type ProfileField = {
   source?: string;
   note?: string;
 };
-export type ProfileSource = { id: string; title: string; url: string; checked: string; note?: string };
+export type ProfileSource = {
+  id: string;
+  title: string;
+  url: string;
+  checked: string;
+  note?: string;
+  source_type?: string;
+};
 export type UniversityProfile = {
   research_id: string;
   slug: string;

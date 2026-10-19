@@ -5,12 +5,14 @@ import {
   Globe, ExternalLink, MapPin, Calendar, Award, ShieldCheck,
   GraduationCap, Building2, BookOpen, DollarSign, Users,
   Wifi, Bus, Home, Dumbbell, FlaskConical, Star, CheckCircle2,
-  XCircle, ChevronDown, ArrowRight, Landmark, TrendingUp
+  XCircle, ChevronDown, Landmark, TrendingUp
 } from 'lucide-react';
 
 import { getUniversities, getUniversityBySlug } from '@/lib/data';
 import { ReviewForm } from '@/components/review-form';
 import { UniversityProfileSections } from '@/components/university-profile-sections';
+import { EvidenceNotes } from '@/components/evidence-notes';
+import { campusCountLabel } from '@/lib/evidence';
 import { PROFILE_NAV } from '@/lib/profile-utils';
 import { initialsSize, logoInitials } from '@/lib/display-utils';
 
@@ -176,7 +178,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
             <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-slate-300">
               <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" />{u.city}, {u.province}</span>
               {u.yearEstablished && <span className="flex items-center gap-1.5"><Calendar className="h-4 w-4" />Est. {u.yearEstablished}</span>}
-              <span className="flex items-center gap-1.5"><Building2 className="h-4 w-4" />{u.campuses.length} Campus{u.campuses.length !== 1 ? 'es' : ''}</span>
+              <span className="flex items-center gap-1.5"><Building2 className="h-4 w-4" />Campuses: {campusCountLabel(u.sourcedCampusCount)}</span>
             </div>
             {u.overview.majorStrengths.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
@@ -231,6 +233,8 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         </div>
 
       )}
+
+      <EvidenceNotes slug={u.slug} />
 
 
       {/* ── Content ── */}
@@ -664,7 +668,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
                 </div>
                 {u.hostel ? (
                   <>
-                    <InfoRow label="Available" value={u.hostel.hostel_availability ? 'Yes' : 'No'} />
+                    <InfoRow label="Available" value={u.hostel.hostel_availability === true ? 'Yes' : u.hostel.hostel_availability === false ? 'No' : 'Not available'} />
                     <InfoRow label="Gender" value={u.hostel.gender} />
                     <InfoRow label="Monthly Fee" value={u.hostel.monthly_fee_pkr ? `PKR ${u.hostel.monthly_fee_pkr}` : null} />
                     <InfoRow label="Quality" value={u.hostel.hostel_quality} />
@@ -679,7 +683,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
                 </div>
                 {u.transport ? (
                   <>
-                    <InfoRow label="Available" value={u.transport.transport_available ? 'Yes' : 'No'} />
+                    <InfoRow label="Available" value={u.transport.transport_available === true ? 'Yes' : u.transport.transport_available === false ? 'No' : 'Not available'} />
                     <InfoRow label="Bus Count" value={u.transport.bus_count ? String(u.transport.bus_count) : null} />
                     <InfoRow label="Monthly Fee" value={u.transport.monthly_fee_pkr ? `PKR ${u.transport.monthly_fee_pkr.toLocaleString()}` : null} />
                     {u.transport.routes && u.transport.routes.length > 0 && (

@@ -3,6 +3,7 @@ import { readFile } from 'fs/promises';
 import path from 'path';
 
 import { query } from '@/lib/db';
+import { deriveScholarshipKind, normalizeScholarshipWindow } from '@/lib/evidence';
 import { parsePagination } from '@/lib/pagination';
 
 type ScholarshipRow = {
@@ -71,16 +72,8 @@ function parseCsv(text: string): Record<string, string>[] {
   });
 }
 
-function mapProviderType(t: string): string {
-  if (t === 'federal' || t === 'provincial') return 'HEC';
-  if (t === 'private_foundation') return 'External';
-  if (t === 'university') return 'Need-Based';
-  return 'General';
-}
-
 function normStatus(s?: string): string {
-  const v = (s || '').toLowerCase();
-  return v === 'active' || v === 'closed' ? v : 'unknown';
+  return normalizeScholarshipWindow(s);
 }
 
 async function loadResearchRaw(): Promise<{ rows: Record<string, string>[]; source: string }> {
@@ -103,7 +96,11 @@ async function loadResearchScholarships(): Promise<{ rows: ScholarshipRow[]; sou
     rows: rows.map((r, idx) => ({
       scholarship_id: idx + 1,
       scholarship_name: r.name || 'Unnamed Scholarship',
-      scholarship_type: mapProviderType(r.provider_type || ''),
+      scholarship_type: deriveScholarshipKind({
+        name: r.name,
+        eligibility: [r.academic_eligibility, r.financial_eligibility].filter(Boolean).join(' '),
+        notes: r.notes,
+      }),
       eligibility: [r.academic_eligibility, r.financial_eligibility].filter(Boolean).join(' | ') || 'See official source.',
       coverage_percentage: null,
       coverage_type: r.award_coverage || 'See official source',
@@ -119,7 +116,7 @@ async function loadResearchScholarships(): Promise<{ rows: ScholarshipRow[]; sou
       universityCity: r.eligible_locations || 'Pakistan',
       status: normStatus(r.status),
       source_url: r.source_url || '',
-      last_verified_at: r.last_verified_at || '',
+      last_verified_at: '',
       notes: r.notes || '',
       research_id: r.id || '',
       provider_type: r.provider_type || 'unknown',
@@ -151,7 +148,11 @@ export async function GET(req: NextRequest) {
         return {
           scholarship_id: idx + 1,
           scholarship_name: row.name ?? 'Unnamed Scholarship',
-          scholarship_type: mapProviderType(row.provider_type ?? ''),
+          scholarship_type: deriveScholarshipKind({
+            name: row.name,
+            eligibility: [academic, financial].filter(Boolean).join(' '),
+            notes: row.notes,
+          }),
           eligibility,
           coverage_percentage: null,
           coverage_type: row.award_coverage ?? 'See official source',
@@ -167,7 +168,7 @@ export async function GET(req: NextRequest) {
           universityCity: row.eligible_locations || 'Pakistan',
           status: normStatus(row.status),
           source_url: row.source_url ?? '',
-          last_verified_at: row.last_verified_at ? String(row.last_verified_at).slice(0, 10) : '',
+          last_verified_at: '',
           notes: row.notes ?? '',
           research_id: row.id,
           provider_type: row.provider_type ?? '',
@@ -180,7 +181,8 @@ export async function GET(req: NextRequest) {
       const nextCursor = start + limit < all.length ? String(start + limit) : null;
       const stats = {
         total: all.length,
-        active: all.filter((s) => s.status === 'active').length,
+        open: all.filter((s) => s.status === 'open').length,
+        upcoming: all.filter((s) => s.status === 'upcoming').length,
         closed: all.filter((s) => s.status === 'closed').length,
         unknown: all.filter((s) => (s.status || 'unknown') === 'unknown').length,
       };
@@ -192,7 +194,7 @@ export async function GET(req: NextRequest) {
         source: 'research_db',
         stats,
         disclaimer:
-          'Statuses are from official pages. None were confirmed currently open unless status is Active.',
+          'Statuses are the recorded catalogue values. Open is used only when the record says so.',
       });
     }
   } catch (error) {
@@ -233,14 +235,17 @@ export async function GET(req: NextRequest) {
       const data: ScholarshipRow[] = (hasMore ? rows.slice(0, limit) : rows).map((r) => ({
         scholarship_id: Number(r.scholarship_id),
         scholarship_name: r.scholarship_name ?? 'Unnamed Scholarship',
-        scholarship_type: r.scholarship_type ?? 'General',
-        eligibility: r.eligibility ?? 'Contact admissions for details.',
-        coverage_percentage: r.coverage_percentage ? Number(r.coverage_percentage) : null,
-        coverage_type: r.coverage_type ?? 'Tuition Fee Waiver',
-        annual_value_pkr: r.annual_value_pkr ? Number(r.annual_value_pkr) : null,
-        renewable: !!r.renewable,
-        renewable_conditions: r.renewable_conditions ?? '',
-        seats_available: r.seats_available ?? null,
+        scholarship_type: deriveScholarshipKind({
+          name: r.scholarship_name,
+          eligibility: r.eligibility,
+        }),
+        eligibility: 'Not available',
+        coverage_percentage: null,
+        coverage_type: 'Not available',
+        annual_value_pkr: null,
+        renewable: false,
+        renewable_conditions: '',
+        seats_available: null,
         external_body: r.external_body ?? '',
         application_url: r.application_url ?? '',
         universityName: r.universityName,
@@ -263,11 +268,11 @@ export async function GET(req: NextRequest) {
     const nextCursor = start + limit < all.length ? String(start + limit) : null;
     const stats = {
       total: all.length,
-      active: all.filter((s) => s.status === 'active').length,
+      open: all.filter((s) => s.status === 'open').length,
+      upcoming: all.filter((s) => s.status === 'upcoming').length,
       closed: all.filter((s) => s.status === 'closed').length,
       unknown: all.filter((s) => s.status === 'unknown').length,
     };
-    const checked = all.map((s) => s.last_verified_at).filter(Boolean).sort().pop() || 'unknown date';
     return NextResponse.json({
       scholarships: page,
       nextCursor,
@@ -275,9 +280,7 @@ export async function GET(req: NextRequest) {
       limit,
       source,
       stats,
-      disclaimer: `Statuses come from official pages last checked ${checked}. ${
-        stats.active === 0 ? 'None were confirmed currently open. ' : ''
-      }"Unknown" means no current dated window was published.`,
+      disclaimer: stats.open === 0 ? 'No scholarship in this catalogue is recorded as open.' : 'Open means the catalogue record says open.',
     });
   } catch (error) {
     console.error('Failed to load research scholarships:', error);

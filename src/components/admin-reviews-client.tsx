@@ -131,7 +131,7 @@ export function AdminReviewsClient({ pendingReviews: initialReviews }: { pending
           {loadingMore ? (
             <>
               <Loader2 className="h-3 w-3 animate-spin" />
-              Loading…
+              Please wait
             </>
           ) : hasAttemptedLoad && nextCursor === null ? (
             'All reviews loaded'

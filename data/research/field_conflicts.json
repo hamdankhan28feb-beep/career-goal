@@ -1,0 +1,69 @@
+{
+  "conflicts": [
+    {
+      "entity_type": "university",
+      "entity_id": "iqra-university",
+      "field_key": "campuses",
+      "primary": {
+        "status": "verified",
+        "label": "HEC-recognised Karachi campuses not marked closed on the HEC recognised-campuses page",
+        "values": [
+          "Karachi (Gulshan Campus)",
+          "Karachi (North Campus) — programmes allowed: Computer Science and Management Sciences",
+          "Malir (Airport Road), Karachi — programmes allowed: BBA, MBA, BSCS, Media Studies and Artificial Intelligence",
+          "M-9 (8-B, Scheme 33, Deh Songal Tappo Gujro, East Karachi) — programmes allowed: BBA, BSCS and BSSE, subject to permission of the relevant council"
+        ],
+        "source_url": "https://www.hec.gov.pk/english/universities/Pages/DAIs/HEC-recognized-Campuses.aspx",
+        "source_title": "HEC recognized Campuses — private sector, IQRA University, Karachi",
+        "last_verified_at": "2026-10-19",
+        "note": "Primary Karachi list only. Other locations and closed campuses are listed as conflicts, not folded into this count."
+      },
+      "alternatives": [
+        {
+          "label": "Same HEC recognised-campuses row — other locations and closures",
+          "values": [
+            "Islamabad (Sector H-9, Islamabad)",
+            "Chak Shahzad, Islamabad",
+            "Hyderabad — programmes allowed: BBA, BSCS and BSSE, subject to permission of the relevant council",
+            "Quetta (Operations Stopped)",
+            "Karachi (Bahria Town) — campus closed w.e.f. 08-08-2024"
+          ],
+          "source_url": "https://www.hec.gov.pk/english/universities/Pages/DAIs/HEC-recognized-Campuses.aspx",
+          "source_title": "HEC recognized Campuses",
+          "note": "These are on the same official row. They are not part of the primary Karachi operating list."
+        },
+        {
+          "label": "HEC university information page",
+          "values": [
+            "Campuses line: Islamabad; Karachi; Quetta",
+            "Contact address: Defence View, Shaheed-e-Millat Road (Ext), Karachi",
+            "Recognised University: Yes",
+            "Sector: Private",
+            "Chartered by: Government of Sindh",
+            "Established since: 6/21/2000",
+            "Website: http://www.iqra.edu.pk"
+          ],
+          "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Iqra-University.aspx",
+          "source_title": "HEC — Iqra University",
+          "note": "This page does not name Gulshan, North, Malir or M-9. It still lists Quetta, which the recognised-campuses page marks Operations Stopped. Defence View is the postal address on this page, not a campus name on the recognised-campuses table. No single campus list is shown as the only value."
+        },
+        {
+          "label": "Iqra University website",
+          "values": [
+            "A page on iqra.edu.pk still describes Karachi campuses as Main, Gulshan, North, Bahria Town and Airport, and also names Islamabad and Chak Shahzad"
+          ],
+          "source_url": "https://iqra.edu.pk/academics-hub/faculty-of-arts-design-education-social-sciences/",
+          "source_title": "Iqra University — Faculty of Arts, Design, Education & Social Sciences",
+          "note": "Conflicts with the HEC closure of the Bahria Town campus (08-08-2024). The site text was retrieved on 2026-10-19. It is not used as the primary campus list."
+        },
+        {
+          "label": "Legacy bundled catalogue",
+          "values": [
+            "An older bundled campus list had no source URLs. Those names are not shown as a count."
+          ],
+          "note": "Unverified. No figure is displayed from data_v2.json."
+        }
+      ]
+    }
+  ]
+}
