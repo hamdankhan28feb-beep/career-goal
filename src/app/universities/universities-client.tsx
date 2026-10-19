@@ -3,7 +3,7 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { SearchInput } from '@/components/search-input';
-import { Filter, X, Loader2 } from 'lucide-react';
+import { Filter, Loader2, Search } from 'lucide-react';
 import { UniversityCard } from '@/components/university-card';
 import type { University } from '@/lib/types';
 import { profileSearchText } from '@/lib/profile-utils';
@@ -74,11 +74,11 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
       <div className="flex flex-col gap-4">
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
           <Search className="h-4 w-4" />
-          Real data — verified from official university sources
+          Evidence labels, not a single verified badge
         </div>
         <h1 className="text-4xl font-semibold tracking-tight">University Explorer</h1>
         <p className="max-w-2xl text-muted-foreground">
-          Browse {universities.length} Pakistani universities with source-verified profiles. Filter by city, type, and more.
+          Browse {universities.length} loaded university records. A profile is not called detailed unless its fields have sources. Filter by city, type, or field.
         </p>
       </div>
 

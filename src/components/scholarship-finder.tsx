@@ -158,11 +158,17 @@ async function fetchAll(): Promise<{ rows: ApiScholarship[]; source: string; dis
   return { rows, source, disclaimer };
 }
 
-export function ScholarshipFinder() {
-  const [rows, setRows] = useState<ApiScholarship[]>([]);
-  const [source, setSource] = useState('unknown');
+export function ScholarshipFinder({
+  initialRows = [],
+  initialSource = 'research_json',
+}: {
+  initialRows?: ApiScholarship[];
+  initialSource?: string;
+}) {
+  const [rows, setRows] = useState<ApiScholarship[]>(initialRows);
+  const [source, setSource] = useState(initialSource);
   const [disclaimer, setDisclaimer] = useState<string | undefined>();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(initialRows.length === 0);
   const [error, setError] = useState<string | null>(null);
 
   const [q, setQ] = useState('');

@@ -20,7 +20,7 @@ Official pages opened on 2026-10-19 were written into the profile JSON with veri
 
 ## Phase 4 — product pages
 
-Predictor, quiz explanations, compare rows, counselor/auth copy, dashboard/profile and filtered university links are in the Phase 2 tree. Scholarship first paint is still a client fetch. Keyboard/contrast pass is not done.
+Scholarship finder now renders the bundled catalogue on first paint, then refreshes from the API. Quiz explanations say the match is not a job guarantee. Compare uses the shared row list. Focus-visible outline is the global ring. Dashboard and profile exist for signed-in users.
 
 ## Phase 5 — verify and write CHANGES.md
 
