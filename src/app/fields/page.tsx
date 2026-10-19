@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { SearchInput } from '@/components/search-input';
 import Link from 'next/link';
 import { Search, ArrowRight, Filter } from 'lucide-react';
 
@@ -36,7 +37,7 @@ export default function FieldsPage() {
   }, [allFields, query, category]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container-page py-12">
       {/* Header */}
       <div>
         <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
@@ -50,23 +51,22 @@ export default function FieldsPage() {
 
       {/* Search and Filter */}
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Search fields..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="input-field pl-10"
-          />
-        </div>
+        <SearchInput
+          wrapperClassName="flex-1"
+          type="text"
+          placeholder="Search fields..."
+          aria-label="Search fields"
+          value={query}
+          onValueChange={setQuery}
+          clearable
+        />
         <div className="flex items-center gap-2 flex-wrap">
           <Filter className="h-4 w-4 text-muted-foreground" />
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setCategory(cat)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+              className={`min-h-10 rounded-full px-4 py-2 text-sm font-medium transition ${
                 category === cat
                   ? 'bg-primary text-primary-foreground'
                   : 'border border-border/70 text-muted-foreground hover:border-primary/30 hover:text-foreground'

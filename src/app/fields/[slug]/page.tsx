@@ -47,12 +47,12 @@ export default async function FieldProfilePage({ params }: { params: Promise<{ s
   if (!field) notFound();
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="container-page py-8">
       {/* Breadcrumb */}
       <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href="/" className="hover:text-foreground transition">Home</Link>
+        <Link href="/" className="tap-target hover:text-foreground transition">Home</Link>
         <span>/</span>
-        <Link href="/fields" className="hover:text-foreground transition">Fields</Link>
+        <Link href="/fields" className="tap-target hover:text-foreground transition">Fields</Link>
         <span>/</span>
         <span className="text-foreground font-medium">{field.name}</span>
       </nav>
@@ -85,7 +85,7 @@ export default async function FieldProfilePage({ params }: { params: Promise<{ s
         </div>
       </div>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[2fr_1fr]">
+      <div className="mt-8 grid gap-8 md:grid-cols-[3fr_2fr] lg:grid-cols-[2fr_1fr]">
         {/* Left Column */}
         <div className="space-y-8">
 

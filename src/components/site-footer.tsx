@@ -24,7 +24,7 @@ const universities = ['NED University', 'FAST Karachi', 'IBA Karachi', 'Habib Un
 export function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-border/50 bg-card/40">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="container-page py-12">
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div>
@@ -136,6 +136,10 @@ export function SiteFooter() {
             Data sourced from official university websites and admissions portals only.
           </p>
         </div>
+        <p className="mt-4 text-center text-xs leading-relaxed text-muted-foreground sm:text-left" data-testid="trademark-notice">
+          University names and logos are trademarks of their respective institutions and are shown only to link to
+          FuturePath&rsquo;s independent profiles. No endorsement is implied.
+        </p>
       </div>
     </footer>
   );

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Building2, ArrowLeft, ExternalLink, ShieldCheck, Pencil, Trash2, X, Plus, Sparkles } from 'lucide-react';
 import type { University } from '@/lib/types';
+import { Dialog } from '@/components/dialog';
 
 export default function AdminUniversitiesPage() {
   const [universities, setUniversities] = useState<University[]>([]);
@@ -183,7 +184,7 @@ export default function AdminUniversitiesPage() {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="container-page py-10">
       <div className="mb-8 flex items-center justify-between">
         <div>
           <Link href="/admin" className="mb-3 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition">
@@ -202,8 +203,8 @@ export default function AdminUniversitiesPage() {
           <span className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
         </div>
       ) : (
-        <div className="rounded-3xl border border-border/70 bg-card/80 overflow-hidden shadow-sm">
-          <table className="w-full text-sm">
+        <div className="table-wrap bg-card/80 shadow-sm">
+          <table className="w-full min-w-[36rem] text-sm">
             <thead className="bg-muted/50">
               <tr>
                 <th className="px-5 py-3.5 text-left text-xs font-semibold text-muted-foreground">Name</th>
@@ -268,16 +269,16 @@ export default function AdminUniversitiesPage() {
       )}
 
       {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-          <div className="relative w-full max-w-2xl rounded-3xl border border-border bg-card p-6 shadow-glow overflow-y-auto max-h-[90vh]">
-            <button onClick={() => setIsModalOpen(false)} className="absolute right-4 top-4 rounded-full border border-border p-1.5 text-muted-foreground hover:text-foreground transition">
-              <X className="h-4 w-4" />
-            </button>
-            <h2 className="text-2xl font-bold tracking-tight mb-4 flex items-center gap-2">
+      <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)} labelledBy="admin-university-dialog-title">
+            <div className="mb-4 flex items-start justify-between gap-3">
+            <h2 id="admin-university-dialog-title" className="flex items-center gap-2 text-xl font-bold tracking-tight sm:text-2xl">
               <Sparkles className="h-5 w-5 text-primary" />
               {editingUni ? 'Edit University' : 'Add University'}
             </h2>
+            <button type="button" onClick={() => setIsModalOpen(false)} aria-label="Close" className="btn-icon -mr-2 -mt-1 border border-border">
+              <X className="h-4 w-4" />
+            </button>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
@@ -330,9 +331,7 @@ export default function AdminUniversitiesPage() {
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-      )}
+      </Dialog>
     </div>
   );
 }

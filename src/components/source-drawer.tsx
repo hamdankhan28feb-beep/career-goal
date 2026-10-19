@@ -1,7 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { ExternalLink, FileText, X } from 'lucide-react';
+
+import { Dialog } from '@/components/dialog';
 
 /**
  * Source drawer for citations (Evidence Atlas).
@@ -51,26 +53,6 @@ export function SourceDrawer({
   onClose: () => void;
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
-  const lastFocused = useRef<HTMLElement | null>(null);
-  const onCloseRef = useRef(onClose);
-  onCloseRef.current = onClose;
-
-  useEffect(() => {
-    if (!open) return;
-    lastFocused.current = document.activeElement as HTMLElement | null;
-    closeRef.current?.focus();
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onCloseRef.current();
-    };
-    document.addEventListener('keydown', onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
-      lastFocused.current?.focus?.();
-    };
-  }, [open]);
 
   if (!open || !citation) return null;
 
@@ -78,20 +60,7 @@ export function SourceDrawer({
   const statusKey = (citation.status || '').toLowerCase();
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end">
-      <button
-        type="button"
-        aria-label="Close source details"
-        tabIndex={-1}
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-        onClick={onClose}
-      />
-      <aside
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="source-drawer-title"
-        className="relative z-10 flex h-full w-full max-w-md flex-col overflow-y-auto border-l border-border bg-background p-6 shadow-2xl"
-      >
+    <Dialog open={open} onClose={onClose} variant="sheet" labelledBy="source-drawer-title" initialFocusRef={closeRef} overlayLabel="Close source details">
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
             <FileText className="h-4 w-4" aria-hidden />
@@ -101,7 +70,7 @@ export function SourceDrawer({
             ref={closeRef}
             type="button"
             onClick={onClose}
-            className="rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="btn-icon -mr-2 -mt-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label="Close"
           >
             <X className="h-5 w-5" />
@@ -158,11 +127,10 @@ export function SourceDrawer({
           ) : null}
         </dl>
 
-        <p className="mt-6 rounded-2xl border border-amber-500/30 bg-amber-500/10 p-3 text-xs leading-relaxed text-amber-800 dark:text-amber-300">
+        <p className="mt-6 rounded-2xl border border-warning/30 bg-warning/10 p-3 text-xs leading-relaxed text-foreground">
           {VERIFICATION_SCOPE_NOTE}
         </p>
-      </aside>
-    </div>
+    </Dialog>
   );
 }
 

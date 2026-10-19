@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { SearchInput } from '@/components/search-input';
 import {
   AlertTriangle,
   Award,
@@ -92,13 +93,13 @@ function StatusBadge({ status }: { status: Status }) {
     active: {
       label: 'Active',
       Icon: CheckCircle2,
-      cls: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
+      cls: 'border-success/30 bg-success/10 text-success',
       title: 'An open application window was confirmed on the official source on the checked date.',
     },
     closed: {
       label: 'Closed',
       Icon: XCircle,
-      cls: 'border-rose-500/30 bg-rose-500/10 text-rose-700 dark:text-rose-400',
+      cls: 'border-destructive/30 bg-destructive/10 text-destructive',
       title: 'The most recent application window on the official source has ended.',
     },
     unknown: {
@@ -246,7 +247,7 @@ export function ScholarshipFinder() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+    <div className="container-page py-12">
       <header className="mb-8">
         <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-3 py-1 text-xs text-muted-foreground">
           <Award className="h-3.5 w-3.5" aria-hidden />
@@ -262,9 +263,9 @@ export function ScholarshipFinder() {
       {!loading && !error && counts.active === 0 && rows.length > 0 ? (
         <div
           role="status"
-          className="mb-6 flex gap-3 rounded-3xl border border-amber-500/30 bg-amber-500/10 p-5 text-sm text-foreground"
+          className="notice-warning mb-6 flex gap-3 p-5 text-sm"
         >
-          <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden />
+          <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-warning" aria-hidden />
           <div>
             <p className="font-medium">No scholarship is currently verified as open.</p>
             <p className="mt-1 text-muted-foreground">
@@ -277,18 +278,14 @@ export function ScholarshipFinder() {
       ) : null}
 
       <section aria-label="Filters" className="mb-6 rounded-3xl border border-border/70 bg-card/80 p-4 sm:p-5">
-        <div className="grid gap-3 md:grid-cols-[2fr_1fr_1fr_1fr]">
-          <label className="relative block">
-            <span className="sr-only">Search scholarships</span>
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
-            <input
-              type="search"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder="Search name, provider, university, eligibility…"
-              className="input-field w-full pl-9"
-            />
-          </label>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+          <SearchInput
+            type="search"
+            aria-label="Search scholarships"
+            value={q}
+            onValueChange={setQ}
+            placeholder="Search name, provider, university, eligibility…"
+          />
           <label className="block">
             <span className="sr-only">Status</span>
             <select
@@ -339,7 +336,7 @@ export function ScholarshipFinder() {
       </section>
 
       {loading ? (
-        <div className="grid gap-5 lg:grid-cols-2" role="status" aria-busy="true" data-testid="scholarships-skeleton">
+        <div className="grid gap-5 md:grid-cols-2" role="status" aria-busy="true" data-testid="scholarships-skeleton">
           <span className="sr-only">Loading scholarships…</span>
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="h-52 animate-pulse rounded-3xl border border-border/70 bg-card/60 p-6" aria-hidden>
@@ -355,7 +352,7 @@ export function ScholarshipFinder() {
           ))}
         </div>
       ) : error ? (
-        <div className="rounded-3xl border border-rose-500/30 bg-rose-500/10 p-6 text-sm" role="alert">
+        <div className="notice-danger p-6 text-sm" role="alert">
           Could not load scholarships: {error}
         </div>
       ) : filtered.length === 0 ? (
@@ -364,7 +361,7 @@ export function ScholarshipFinder() {
           No scholarships match these filters.
         </div>
       ) : (
-        <ul className="grid gap-5 lg:grid-cols-2">
+        <ul className="grid gap-5 md:grid-cols-2">
           {filtered.map((r) => {
             const status = normStatus(r.status);
             const pType = providerTypeOf(r, source);

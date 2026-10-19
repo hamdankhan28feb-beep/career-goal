@@ -29,7 +29,7 @@ export default async function AdminPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container-page py-12">
       {/* Header */}
       <div className="mb-10 flex items-center justify-between">
         <div>
@@ -77,8 +77,8 @@ export default async function AdminPage() {
       {/* Data Completeness Overview */}
       <div>
         <h2 className="mb-4 text-lg font-semibold">Data Completeness by University</h2>
-        <div className="rounded-3xl border border-border/70 bg-card/80 overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="table-wrap bg-card/80">
+          <table className="w-full min-w-[36rem] text-sm">
             <thead className="bg-muted/50">
               <tr>
                 <th className="px-5 py-3 text-left text-xs font-semibold text-muted-foreground">University</th>

@@ -17,7 +17,7 @@ const REVIEWER_TYPES = ['Current Student', 'Alumni', 'Prospective Student', 'Par
 function StarPicker({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   const [hovered, setHovered] = useState(0);
   return (
-    <div className="flex gap-1">
+    <div className="flex">
       {[1, 2, 3, 4, 5].map((i) => (
         <button
           key={i}
@@ -25,10 +25,11 @@ function StarPicker({ value, onChange }: { value: number; onChange: (v: number) 
           onClick={() => onChange(i)}
           onMouseEnter={() => setHovered(i)}
           onMouseLeave={() => setHovered(0)}
-          className="transition-transform hover:scale-110"
+          aria-label={`${i} star${i > 1 ? 's' : ''}`}
+          className="flex h-10 w-9 items-center justify-center transition-transform hover:scale-110 lg:h-8 lg:w-8"
         >
           <Star
-            className={`h-6 w-6 transition ${i <= (hovered || value) ? 'fill-amber-400 text-amber-400' : 'text-border'}`}
+            className={`h-6 w-6 transition ${i <= (hovered || value) ? 'fill-warning text-warning' : 'text-border'}`}
           />
         </button>
       ))}
@@ -121,7 +122,7 @@ export function ReviewForm({
     <form onSubmit={handleSubmit} className="mt-4 rounded-3xl border border-border/70 bg-card/80 p-6">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="font-semibold text-foreground">Review {universityName}</h3>
-        <button type="button" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground transition">
+        <button type="button" onClick={() => setOpen(false)} aria-label="Close review form" className="btn-icon -mr-2">
           <X className="h-5 w-5" />
         </button>
       </div>
@@ -135,7 +136,7 @@ export function ReviewForm({
               key={type}
               type="button"
               onClick={() => setForm((p) => ({ ...p, reviewerType: type }))}
-              className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+              className={`min-h-10 rounded-full border px-3 py-1.5 text-xs font-medium transition lg:min-h-0 ${
                 form.reviewerType === type
                   ? 'border-primary bg-primary/10 text-primary'
                   : 'border-border/70 text-muted-foreground hover:border-primary/30'
@@ -150,7 +151,7 @@ export function ReviewForm({
       {/* Star Ratings */}
       <div className="mb-4 space-y-3">
         {RATING_LABELS.map(({ key, label }) => (
-          <div key={key} className="flex items-center justify-between">
+          <div key={key} className="flex flex-wrap items-center justify-between gap-x-3">
             <span className="text-sm text-muted-foreground">{label}</span>
             <StarPicker value={form[key] as number} onChange={setRating(key)} />
           </div>

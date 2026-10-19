@@ -21,8 +21,12 @@
   --ring: 198 93% 47%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  --success: 142 71% 45%;
-  --warning: 38 92% 50%;
+  --success: 142 71% 36%;
+  --success-foreground: 0 0% 100%;
+  --warning: 32 95% 44%;
+  --warning-foreground: 0 0% 100%;
+  --info: 198 93% 40%;
+  --info-foreground: 0 0% 100%;
   --radius: 0.75rem;
 }
 
@@ -44,6 +48,12 @@
   --ring: 190 95% 52%;
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 98%;
+  --success: 152 69% 50%;
+  --success-foreground: 222 47% 7%;
+  --warning: 38 92% 58%;
+  --warning-foreground: 222 47% 7%;
+  --info: 190 95% 52%;
+  --info-foreground: 222 47% 7%;
 }
 
 /* ─── Base ─── */
@@ -227,14 +237,28 @@ h1, h2, h3, h4, h5, .font-display {
 
 /* ─── Component Classes ─── */
 @layer components {
+  /* Layout containers: header, footer and pages share one edge */
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-page;
+  }
+  .container-prose {
+    @apply mx-auto w-full max-w-3xl px-4 sm:px-6;
+  }
+  .container-form {
+    @apply mx-auto w-full max-w-md px-4;
+  }
+  /* Touch target: 40px tall on touch layouts, natural size on desktop */
+  .tap-target {
+    @apply inline-flex min-h-10 items-center lg:min-h-0;
+  }
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
+    @apply min-h-10 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-full border border-border/70 bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:border-primary/30;
+    @apply min-h-10 inline-flex items-center gap-2 rounded-full border border-border/70 bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:border-primary/30;
   }
   .btn-ghost {
-    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground;
+    @apply min-h-10 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground;
   }
   .input-field {
     @apply w-full rounded-2xl border border-border/70 bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition;
@@ -242,14 +266,46 @@ h1, h2, h3, h4, h5, .font-display {
   .section-label {
     @apply text-xs font-semibold uppercase tracking-widest text-primary;
   }
+  .btn-sm {
+    @apply min-h-10 px-4 py-2 text-xs;
+  }
+  .btn-icon {
+    @apply inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-muted-foreground transition hover:bg-muted hover:text-foreground;
+  }
+  .input-with-icon {
+    @apply pl-10;
+  }
+  .input-with-action {
+    @apply pr-11;
+  }
   .section-title {
-    @apply mt-3 text-3xl font-semibold tracking-tight text-foreground;
+    @apply mt-3 text-2xl sm:text-3xl font-semibold tracking-tight text-foreground;
   }
   .card-base {
     @apply rounded-3xl border border-border/70 bg-card/80 p-5 shadow-sm transition;
   }
   .card-interactive {
     @apply card-base hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow cursor-pointer;
+  }
+  .card-muted {
+    @apply rounded-3xl border border-border/60 bg-muted/40 p-4 sm:p-5;
+  }
+  /* Tables: scroll horizontally inside a rounded frame instead of clipping */
+  .table-wrap {
+    @apply w-full overflow-x-auto overscroll-x-contain rounded-3xl border border-border/70;
+  }
+  .table-sticky-col {
+    @apply sticky left-0 z-10 bg-muted;
+  }
+  /* Status notices built on semantic tokens */
+  .notice-success {
+    @apply rounded-3xl border border-success/30 bg-success/10 text-foreground;
+  }
+  .notice-warning {
+    @apply rounded-3xl border border-warning/30 bg-warning/10 text-foreground;
+  }
+  .notice-danger {
+    @apply rounded-3xl border border-destructive/30 bg-destructive/10 text-foreground;
   }
   .tag {
     @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium;

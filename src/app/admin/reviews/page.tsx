@@ -28,7 +28,7 @@ export default async function AdminReviewsPage() {
     : '—';
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="container-page py-10">
       <div className="mb-8">
         <Link href="/admin" className="mb-3 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition">
           <ArrowLeft className="h-4 w-4" /> Admin Dashboard

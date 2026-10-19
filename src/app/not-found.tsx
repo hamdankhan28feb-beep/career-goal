@@ -3,7 +3,7 @@ import { ArrowRight, Search } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-[calc(100vh-160px)] items-center justify-center px-4">
+    <div className="flex min-h-[calc(100svh-160px)] items-center justify-center px-4">
       <div className="max-w-lg text-center">
         <div className="mb-6 text-8xl font-black text-muted-foreground/20">404</div>
         <h1 className="text-3xl font-semibold tracking-tight text-foreground">Page not found</h1>

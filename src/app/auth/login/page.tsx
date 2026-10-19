@@ -74,7 +74,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-4 py-12">
+    <div className="flex min-h-[calc(100svh-80px)] items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="mb-8 flex justify-center">
@@ -119,9 +119,9 @@ export default function LoginPage() {
             <label className="mb-2 block text-sm font-medium">Password</label>
             <div className="relative">
               <input type={showPw ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••" className="input-field pr-10" />
+                placeholder="••••••••" className="input-field input-with-action" />
               <button type="button" onClick={() => setShowPw(!showPw)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition">
+                aria-label={showPw ? 'Hide password' : 'Show password'} className="btn-icon absolute right-1 top-1/2 -translate-y-1/2">
                 {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </button>
             </div>

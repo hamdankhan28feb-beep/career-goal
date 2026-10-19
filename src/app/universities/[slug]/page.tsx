@@ -140,7 +140,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
   const hasSourcedFees = !!u.profile?.sections.fees.some((f) => f.value && f.status !== 'unavailable');
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="container-page py-8">
 
       {/* ── Breadcrumb ── */}
       <nav className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
@@ -239,7 +239,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         <LegacyNotes enabled={hasProfile}>
         {/* 1. Overview */}
         <Section id="overview" title="University Overview" icon={Landmark}>
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-4">
               {u.overview.history ? (
                 <div>
@@ -351,8 +351,8 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         {/* 3. Programs */}
         {(!hasProfile || u.programs.length > 0) && <Section id="programs" title="Programs" icon={GraduationCap}>
           {u.programs.length > 0 ? (
-            <div className="overflow-hidden rounded-3xl border border-border/70">
-              <table className="w-full text-sm">
+            <div className="table-wrap" data-testid="programs-table-wrap">
+              <table className="w-full min-w-[30rem] text-sm">
                 <thead className="bg-muted/50">
                   <tr>
                     <th className="px-4 py-3 text-left text-xs font-semibold text-muted-foreground">Program</th>
@@ -391,7 +391,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         {/* 4. Admissions */}
         {(!hasProfile || !!u.admissions) && <Section id="admissions" title="Admission Information" icon={BookOpen}>
           {u.admissions ? (
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               <div className="rounded-3xl border border-border/70 bg-card/80 p-5">
                 <h3 className="mb-3 text-sm font-semibold">Admission Details</h3>
                 <InfoRow label="Admission Cycle" value={u.admissions.admission_cycle} />
@@ -445,7 +445,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         {/* 5. Entry Tests */}
         {(!hasProfile || u.entryTests.length > 0) && <Section id="entry-tests" title="Entry Test Information" icon={BookOpen}>
           {u.entryTests.length > 0 ? (
-            <div className="grid gap-4 lg:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2">
               {u.entryTests.map((t, i) => (
                 <div key={i} className="rounded-3xl border border-border/70 bg-card/80 p-5">
                   <div className="flex items-center justify-between mb-3">
@@ -535,7 +535,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
               ['Approx. total degree cost', fees.approx_total_degree_cost],
             ] as [string, number | null | undefined][]).filter((r): r is [string, number] => typeof r[1] === 'number' && r[1] > 0);
             return (
-              <div className="overflow-hidden rounded-3xl border border-border/70 bg-card/80" data-testid="legacy-fee-table">
+              <div className="table-wrap bg-card/80" data-testid="legacy-fee-table">
                 {rows.length > 0 && (
                   <table className="w-full text-sm">
                     <thead className="bg-muted/50">
@@ -596,7 +596,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         {/* 9. Student Life */}
         <Section id="student-life" title="Student Life" icon={Users}>
           {u.studentLife ? (
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               {u.studentLife.clubs && u.studentLife.clubs.length > 0 && (
                 <div className="rounded-3xl border border-border/70 bg-card/80 p-5">
                   <h3 className="mb-3 text-sm font-semibold">Clubs & Societies</h3>
@@ -637,7 +637,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
 
         {/* 10. Facilities (the sourced profile has its own Facilities section) */}
         {!hasProfile && <Section id="facilities" title="Facilities" icon={Building2}>
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             <div>
               {u.facilities.length > 0 ? (
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -700,7 +700,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         {/* 11. Faculty */}
         <Section id="faculty" title="Faculty & Academics" icon={Users}>
           {u.facultyAcademics ? (
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               <div className="rounded-3xl border border-border/70 bg-card/80 p-5">
                 <h3 className="mb-3 text-sm font-semibold">Faculty Statistics</h3>
                 <InfoRow label="Total Faculty" value={u.facultyAcademics.total_faculty_count ? String(u.facultyAcademics.total_faculty_count) : null} />
@@ -723,7 +723,7 @@ export default async function UniversityProfilePage({ params }: { params: Promis
         {/* 12. Career Outcomes */}
         <Section id="careers" title="Career Outcomes" icon={TrendingUp}>
           {u.placements || u.careerPaths.length > 0 ? (
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               {u.placements && (
                 <div className="rounded-3xl border border-border/70 bg-card/80 p-5">
                   <h3 className="mb-3 text-sm font-semibold">Placement Support</h3>

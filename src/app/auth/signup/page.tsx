@@ -51,7 +51,7 @@ export default function SignupPage() {
 
   if (success) {
     return (
-      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-4 py-12">
+      <div className="flex min-h-[calc(100svh-80px)] items-center justify-center px-4 py-12">
         <div className="w-full max-w-md text-center">
           <div className="flex justify-center mb-6">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/30">
@@ -70,7 +70,7 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="flex min-h-[calc(100vh-80px)] items-center justify-center px-4 py-12">
+    <div className="flex min-h-[calc(100svh-80px)] items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="mb-8 flex justify-center">
           <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-gradient-to-br from-sky-500 via-cyan-500 to-emerald-400 text-white shadow-glow-primary">
@@ -103,7 +103,7 @@ export default function SignupPage() {
             <div className="flex gap-2">
               {[{ v: 'student', l: '🎓 Student' }, { v: 'parent', l: '👨‍👩‍👦 Parent' }, { v: 'counselor', l: '🗣️ Counselor' }].map(({ v, l }) => (
                 <button key={v} type="button" onClick={() => setForm((p) => ({ ...p, role: v }))}
-                  className={`flex-1 rounded-xl border py-2.5 text-xs font-medium transition ${form.role === v ? 'border-primary bg-primary/10 text-primary' : 'border-border/70 text-muted-foreground hover:border-primary/30'}`}>
+                  className={`min-h-10 flex-1 rounded-xl border py-2.5 text-xs font-medium transition ${form.role === v ? 'border-primary bg-primary/10 text-primary' : 'border-border/70 text-muted-foreground hover:border-primary/30'}`}>
                   {l}
                 </button>
               ))}
@@ -112,8 +112,8 @@ export default function SignupPage() {
           <div>
             <label className="mb-2 block text-sm font-medium">Password *</label>
             <div className="relative">
-              <input type={showPw ? 'text' : 'password'} value={form.password} onChange={f('password')} placeholder="Min 12 characters" className="input-field pr-10" />
-              <button type="button" onClick={() => setShowPw(!showPw)} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
+              <input type={showPw ? 'text' : 'password'} value={form.password} onChange={f('password')} placeholder="Min 12 characters" className="input-field input-with-action" />
+              <button type="button" onClick={() => setShowPw(!showPw)} aria-label={showPw ? 'Hide password' : 'Show password'} className="btn-icon absolute right-1 top-1/2 -translate-y-1/2">
                 {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </button>
             </div>

@@ -46,7 +46,7 @@ export default function CompareFieldsPage() {
   const isSel = (f: FieldDefinition) => selected.some((s) => s.slug === f.slug);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container-page py-12">
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary mb-4">
           <BarChart2 className="h-4 w-4" /> Field comparison tool
@@ -62,7 +62,7 @@ export default function CompareFieldsPage() {
             {selected.map((f) => (
               <div key={f.slug} className="flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-sm text-primary">
                 <span>{f.icon} {f.name}</span>
-                <button onClick={() => toggle(f)}><X className="h-3.5 w-3.5 hover:text-red-500" /></button>
+                <button type="button" onClick={() => toggle(f)} aria-label={`Remove ${f.name}`} className="-my-2 flex h-10 w-10 items-center justify-center rounded-full transition hover:text-destructive lg:h-8 lg:w-8"><X className="h-3.5 w-3.5" /></button>
               </div>
             ))}
             {selected.length >= 2 && (
@@ -96,13 +96,13 @@ export default function CompareFieldsPage() {
             <h2 className="text-xl font-semibold">Field Comparison</h2>
             <button onClick={() => setComparing(false)} className="btn-ghost text-sm">← Back</button>
           </div>
-          <div className="overflow-x-auto rounded-3xl border border-border/70 shadow-sm">
+          <div className="table-wrap max-h-[75svh] overflow-y-auto shadow-sm" data-testid="compare-fields-table-wrap">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border/50">
-                  <th className="sticky left-0 bg-muted/80 backdrop-blur px-5 py-4 text-left text-xs font-semibold text-muted-foreground w-44">Metric</th>
+                  <th className="table-sticky-col top-0 z-30 w-28 px-3 py-4 text-left text-xs font-semibold text-muted-foreground sm:w-44 sm:px-5">Metric</th>
                   {selected.map((f) => (
-                    <th key={f.slug} className="px-5 py-4 text-left min-w-[180px]">
+                    <th key={f.slug} className="sticky top-0 z-20 min-w-[150px] bg-card px-3 py-4 text-left sm:min-w-[180px] sm:px-5">
                       <div className="flex items-center gap-2">
                         <span>{f.icon}</span>
                         <span className="font-semibold text-foreground">{f.name}</span>
@@ -114,9 +114,9 @@ export default function CompareFieldsPage() {
               <tbody className="divide-y divide-border/40">
                 {COMPARE_ROWS.map((row, i) => (
                   <tr key={row.key} className={`${i % 2 === 0 ? 'bg-card/40' : ''} hover:bg-muted/20`}>
-                    <td className="sticky left-0 bg-muted/60 backdrop-blur px-5 py-3.5 text-xs font-semibold text-muted-foreground">{row.label}</td>
+                    <td className="table-sticky-col px-3 py-3.5 text-xs font-semibold text-muted-foreground sm:px-5">{row.label}</td>
                     {selected.map((f) => (
-                      <td key={f.slug} className="px-5 py-3.5 text-sm text-foreground">{row.format(f)}</td>
+                      <td key={f.slug} className="px-3 py-3.5 text-sm text-foreground sm:px-5">{row.format(f)}</td>
                     ))}
                   </tr>
                 ))}

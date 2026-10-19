@@ -17,7 +17,7 @@ export default async function AdminScholarshipsPage() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="container-page py-10">
       <div className="mb-8">
         <Link href="/admin" className="mb-3 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition">
           <ArrowLeft className="h-4 w-4" /> Admin Dashboard
@@ -39,8 +39,8 @@ export default async function AdminScholarshipsPage() {
         })}
       </div>
 
-      <div className="rounded-3xl border border-border/70 bg-card/80 overflow-hidden shadow-sm">
-        <table className="w-full text-sm">
+      <div className="table-wrap bg-card/80 shadow-sm">
+        <table className="w-full min-w-[36rem] text-sm">
           <thead className="bg-muted/50">
             <tr>
               <th className="px-5 py-3.5 text-left text-xs font-semibold text-muted-foreground">Scholarship</th>

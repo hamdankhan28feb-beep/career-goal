@@ -1,11 +1,12 @@
-// Batch 1+2 profile page QA: desktop + iPhone 12, system Chrome. Usage: node scripts/qa-profiles.mjs
+// Batch 1+2+3 profile page QA: desktop + iPhone 12, system Chrome. Usage: node scripts/qa-profiles.mjs
 // Needs a running server (QA_BASE, default http://127.0.0.1:3000). Screenshots -> qa-profile-shots/ (gitignored).
 import { chromium, devices } from 'playwright';
 import fs from 'node:fs';
 
 const BASE = process.env.QA_BASE || 'http://127.0.0.1:3000';
 const OUT = 'qa-profile-shots';
-const SLUGS = ['fast-nuces-karachi', 'neduet-karachi', 'iba-karachi', 'habib-university', 'dha-suffa-university', 'iqra-university',
+const SLUGS = ['karachi-institute-of-economics-technology', 'hamdard-university', 'indus-university', 'ziauddin-university', 'shu', 'sindh-madresatul-islam-university',
+  'fast-nuces-karachi', 'neduet-karachi', 'iba-karachi', 'habib-university', 'dha-suffa-university', 'iqra-university',
   'szabist-karachi', 'bahria-karachi', 'uok-karachi', 'ssuet-karachi', 'maju-karachi', 'duet-karachi'];
 const SECTIONS = ['profile-overview', 'profile-programs', 'profile-admissions', 'profile-fees', 'profile-scholarships', 'profile-facilities', 'profile-sources'];
 fs.mkdirSync(OUT, { recursive: true });
@@ -19,7 +20,7 @@ const check = (name, ok, detail = '') => {
 
 const browser = await chromium.launch({ channel: process.env.QA_CHANNEL || 'chrome' });
 try {
-  // API: profiles present for all batch 1+2 universities
+  // API: profiles present for all batch 1+2+3 universities
   const ctxApi = await browser.newContext();
   const api = await (await ctxApi.request.get(`${BASE}/api/universities`)).json();
   for (const slug of SLUGS) {

@@ -85,7 +85,7 @@ function AnswerText({
               key={i}
               type="button"
               onClick={() => onOpen(c)}
-              className="mx-0.5 inline-flex -translate-y-0.5 items-center rounded-md border border-primary/40 bg-primary/10 px-1 text-[10px] font-semibold text-primary hover:bg-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="mx-0.5 inline-flex -translate-y-0.5 items-center rounded-md border border-primary/40 bg-primary/10 px-1 text-2xs font-semibold text-primary hover:bg-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label={`Source ${c.ref}: ${c.title}`}
             >
               {c.ref}
@@ -226,8 +226,8 @@ export default function CounselorPage() {
       </header>
 
       {mode === 'unconfigured' ? (
-        <div role="status" className="mb-6 flex gap-3 rounded-3xl border border-amber-500/30 bg-amber-500/10 p-5 text-sm">
-          <Settings className="mt-0.5 h-5 w-5 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden />
+        <div role="status" className="notice-warning mb-6 flex gap-3 p-5 text-sm">
+          <Settings className="mt-0.5 h-5 w-5 shrink-0 text-warning" aria-hidden />
           <div>
             <p className="font-medium text-foreground">The AI Counselor isn&rsquo;t set up on this server yet.</p>
             <p className="mt-1 text-muted-foreground">
@@ -239,13 +239,13 @@ export default function CounselorPage() {
           </div>
         </div>
       ) : mode === 'live' ? (
-        <div className="mb-6 flex items-center gap-2 rounded-3xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-xs text-emerald-800 dark:text-emerald-300">
+        <div className="notice-success mb-6 flex flex-wrap items-center gap-2 px-4 py-3 text-xs">
           <Sparkles className="h-4 w-4" aria-hidden />
           Live{provider ? ` (${provider})` : ''} · answers cite FuturePath research sources — tap a marker like{' '}
           <span className="rounded-md border border-primary/40 bg-primary/10 px-1 font-semibold text-primary">S1</span> to see it.
         </div>
       ) : mode === 'error' ? (
-        <div role="alert" className="mb-6 rounded-3xl border border-rose-500/30 bg-rose-500/10 p-4 text-sm">
+        <div role="alert" className="notice-danger mb-6 p-4 text-sm">
           Couldn&rsquo;t reach the counselor service. Please refresh the page.
         </div>
       ) : null}
@@ -253,7 +253,8 @@ export default function CounselorPage() {
       <section
         aria-label="Conversation"
         aria-live="polite"
-        className="min-h-[320px] space-y-4 rounded-3xl border border-border/70 bg-card/80 p-4 sm:p-6"
+        className="min-h-[240px] max-h-[60svh] space-y-4 overflow-y-auto overscroll-contain rounded-3xl border border-border/70 bg-card/80 p-4 [overflow-wrap:anywhere] sm:min-h-[320px] sm:p-6"
+        data-testid="counselor-conversation"
       >
         {messages.length === 0 ? (
           <div className="py-6 text-center text-sm text-muted-foreground">
@@ -276,7 +277,7 @@ export default function CounselorPage() {
               <div className="max-w-[85%] rounded-3xl rounded-bl-md border border-border/70 bg-background px-4 py-3">
                 <AnswerText text={m.content} citations={m.citations ?? []} onOpen={setDrawer} />
                 {m.uncited ? (
-                  <p className="mt-2 flex items-center gap-1.5 text-xs text-amber-700 dark:text-amber-400">
+                  <p className="mt-2 flex items-center gap-1.5 text-xs text-warning">
                     <AlertTriangle className="h-3.5 w-3.5" aria-hidden />
                     This answer did not cite a source — treat it as general guidance only.
                   </p>
@@ -305,8 +306,8 @@ export default function CounselorPage() {
               role="status"
               className={`flex gap-2 rounded-2xl border px-4 py-3 text-sm ${
                 m.noticeKind === 'unconfigured'
-                  ? 'border-amber-500/30 bg-amber-500/10'
-                  : 'border-rose-500/30 bg-rose-500/10'
+                  ? 'border-warning/30 bg-warning/10'
+                  : 'border-destructive/30 bg-destructive/10'
               }`}
             >
               <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
@@ -338,7 +339,8 @@ export default function CounselorPage() {
       </div>
 
       <form
-        className="mt-4 flex gap-2"
+        className="sticky bottom-0 z-20 -mx-4 mt-4 flex gap-2 border-t border-border/50 bg-background/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur sm:mx-0 sm:px-0"
+        data-testid="counselor-composer"
         onSubmit={(e) => {
           e.preventDefault();
           send(input);
@@ -385,7 +387,7 @@ export default function CounselorPage() {
               <div key={ex.q} className="rounded-3xl border border-dashed border-border p-4 text-sm">
                 <div className="font-medium text-foreground">Q: {ex.q}</div>
                 <div className="mt-1.5 text-muted-foreground">
-                  <span className="mr-1.5 rounded-full border border-border px-2 py-0.5 text-[10px] uppercase tracking-wide">
+                  <span className="mr-1.5 rounded-full border border-border px-2 py-0.5 text-2xs uppercase tracking-wide">
                     Example
                   </span>
                   {ex.a}

@@ -209,7 +209,7 @@ export default function PredictorClient({ universities }: { universities: Univer
           </div>
 
           {/* Summary stats */}
-          <div className="mb-6 grid gap-3 sm:grid-cols-4">
+          <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
             {(['High', 'Medium', 'Low', 'No benchmark'] as const).map((c) => {
               const count = results.filter((r) => r.chance === c).length;
               const { bg, color } = chanceConfig[c];

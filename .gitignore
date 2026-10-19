@@ -72,3 +72,4 @@ qa-ui-mobile.mjs
 
 # Local data backups
 *.bak-*
+qa-viewports/

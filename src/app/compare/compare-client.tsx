@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { SearchInput } from '@/components/search-input';
 import Link from 'next/link';
 import { X, BarChart2, ArrowRight, CheckCircle2, Search } from 'lucide-react';
 import { initialsSize, logoInitials, profileCompleteness } from '@/lib/display-utils';
@@ -56,7 +57,7 @@ export function CompareClient({ universities }: { universities: University[] }) 
   const isSelected = (u: University) => selected.some((s) => s.slug === u.slug);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container-page py-12">
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary mb-4">
           <BarChart2 className="h-4 w-4" /> Side-by-side comparison
@@ -69,19 +70,16 @@ export function CompareClient({ universities }: { universities: University[] }) 
         <>
           <div className="max-w-2xl">
             <label htmlFor="compare-search" className="mb-2 block text-sm font-medium">Find a university</label>
-            <div className="relative">
-              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
-              <input
-                id="compare-search"
-                type="text"
-                placeholder="Search universities..."
-                value={searchQ}
-                onChange={(e) => setSearchQ(e.target.value)}
-                className="input-field w-full pl-11"
-                autoComplete="off"
-                aria-controls="compare-results"
-              />
-            </div>
+            <SearchInput
+              id="compare-search"
+              type="text"
+              placeholder="Search universities..."
+              value={searchQ}
+              onValueChange={setSearchQ}
+              autoComplete="off"
+              aria-controls="compare-results"
+              clearable
+            />
             <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
               <span>Name, short name, city or a programme (e.g. &ldquo;Data Science&rdquo;).</span>
               <button type="button" onClick={() => setBrowseAll((v) => !v)} className="inline-flex min-h-10 items-center font-medium text-primary hover:underline lg:min-h-0">
@@ -91,7 +89,7 @@ export function CompareClient({ universities }: { universities: University[] }) 
           </div>
 
           {showList && (
-            <div id="compare-results" className="mt-5">
+            <div id="compare-results" className={`mt-5 ${selected.length > 0 ? 'pb-4' : ''}`}>
               {q !== '' && (
                 <div className="mb-2 text-xs text-muted-foreground">
                   {filtered.length === 0 ? 'No matches.' : `${filtered.length} match${filtered.length === 1 ? '' : 'es'}${!browseAll && filtered.length > visible.length ? `, showing first ${visible.length}` : ''}`}
@@ -129,7 +127,7 @@ export function CompareClient({ universities }: { universities: University[] }) 
 
           {/* Sticky compare bar */}
           {selected.length > 0 && (
-            <div className="sticky bottom-4 z-40 mt-8" data-testid="compare-bar">
+            <div className="sticky bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 mt-8 mb-4" data-testid="compare-bar">
               <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-primary/30 bg-background/95 p-3 shadow-glow backdrop-blur">
                 <span className="px-1 text-sm font-semibold">Compare ({selected.length}/{COMPARE_LIMIT})</span>
                 {selected.map((u) => (
@@ -159,11 +157,11 @@ export function CompareClient({ universities }: { universities: University[] }) 
             <h2 className="text-xl font-semibold">Side-by-Side Comparison</h2>
             <button onClick={() => setComparing(false)} className="btn-ghost text-sm">← Back</button>
           </div>
-          <div className="max-h-[75vh] overflow-auto rounded-3xl border border-border/70 shadow-sm" data-testid="compare-table-wrap">
+          <div className="table-wrap max-h-[75svh] overflow-y-auto shadow-sm" data-testid="compare-table-wrap">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border/50">
-                  <th className="sticky left-0 top-0 z-30 bg-muted px-3 sm:px-5 py-4 text-left text-xs font-semibold text-muted-foreground w-28 sm:w-44">Category</th>
+                  <th className="table-sticky-col top-0 z-30 px-3 sm:px-5 py-4 text-left text-xs font-semibold text-muted-foreground w-28 sm:w-44">Category</th>
                   {selected.map((u) => (
                     <th key={u.slug} className="sticky top-0 z-20 bg-card px-3 sm:px-5 py-4 text-left min-w-[150px] sm:min-w-[180px]">
                       <div className="font-semibold text-foreground">{u.shortName}</div>
@@ -175,7 +173,7 @@ export function CompareClient({ universities }: { universities: University[] }) 
               <tbody className="divide-y divide-border/40">
                 {COMPARISON_ROWS.map((row, i) => (
                   <tr key={row.key} className={`${i % 2 === 0 ? 'bg-card/40' : ''} hover:bg-muted/20 transition`}>
-                    <td className="sticky left-0 z-10 bg-muted lg:bg-muted/60 backdrop-blur px-3 sm:px-5 py-3.5 text-xs font-semibold text-muted-foreground">{row.label}</td>
+                    <td className="table-sticky-col px-3 sm:px-5 py-3.5 text-xs font-semibold text-muted-foreground">{row.label}</td>
                     {selected.map((u) => (
                       <td key={u.slug} className="px-3 sm:px-5 py-3.5 text-sm text-foreground">{row.format(u)}</td>
                     ))}
@@ -184,7 +182,7 @@ export function CompareClient({ universities }: { universities: University[] }) 
               </tbody>
             </table>
           </div>
-          <div className="mt-8 grid gap-5" style={{ gridTemplateColumns: `repeat(${selected.length}, 1fr)` }}>
+          <div className={`mt-8 grid gap-5 sm:grid-cols-2 ${selected.length >= 3 ? 'lg:grid-cols-3' : ''}`}>
             {selected.map((u) => (
               <div key={u.slug} className="rounded-3xl border border-border/70 bg-card/80 p-5">
                 <h3 className="mb-3 font-semibold text-sm">{u.shortName} — Key Strengths</h3>

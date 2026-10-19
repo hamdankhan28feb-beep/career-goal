@@ -35,6 +35,24 @@ const config: Config = {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))',
+        },
+        warning: {
+          DEFAULT: 'hsl(var(--warning))',
+          foreground: 'hsl(var(--warning-foreground))',
+        },
+        info: {
+          DEFAULT: 'hsl(var(--info))',
+          foreground: 'hsl(var(--info-foreground))',
+        },
+      },
+      fontSize: {
+        '2xs': ['0.6875rem', { lineHeight: '1rem' }],
+      },
+      maxWidth: {
+        page: '88rem',
       },
       borderRadius: {
         lg: '0.75rem',
@@ -55,6 +73,8 @@ const config: Config = {
         'hero-gradient': 'radial-gradient(circle at top, rgba(14,165,233,0.12), transparent 34%), radial-gradient(circle at 90% 10%, rgba(16,185,129,0.10), transparent 20%)',
       },
       keyframes: {
+        'marquee-left': { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
+        'marquee-right': { from: { transform: 'translateX(-50%)' }, to: { transform: 'translateX(0)' } },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-8px)' },
@@ -85,6 +105,8 @@ const config: Config = {
         },
       },
       animation: {
+        'marquee-left': 'marquee-left 60s linear infinite',
+        'marquee-right': 'marquee-right 70s linear infinite',
         float: 'float 5s ease-in-out infinite',
         'fade-up': 'fadeUp 0.5s ease forwards',
         'fade-in': 'fadeIn 0.4s ease forwards',

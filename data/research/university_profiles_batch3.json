@@ -1,0 +1,1399 @@
+{
+  "batch": 3,
+  "generated": "2026-10-19",
+  "selection_rationale": "Next Karachi universities in the 67-university seed with confirmed computing BS programmes: KIET (BS CS/AI/SE/Cyber, 2026-27 fees published), Hamdard (BS CS/AI/SE, 2026-27 fees), Salim Habib (BS CS/AI/SE/DS), SMIU (public, low-fee BS CS/SE/AI/DS), Ziauddin (BS CS/SE/DS) and Indus (BS CS/SE, Fall 2026 fees). Aga Khan skipped (no computing UG); Greenwich, Newports, JUW, BBSUL and PNEC deferred (thin or unverified computing data in seed).",
+  "status_legend": {
+    "verified": "Matches the cited official source on the checked date",
+    "partial": "Sourced but incomplete, unlabelled year/period, or older check",
+    "unavailable": "Not published / not found on official sources",
+    "needs_verification": "Exists in an official source but not yet extracted/confirmed"
+  },
+  "profiles": [
+    {
+      "research_id": "khi-karachi-institute-of-economics-technology",
+      "slug": "karachi-institute-of-economics-technology",
+      "official_name": "Karachi Institute of Economics and Technology (KIET)",
+      "profile_status": "partial",
+      "last_checked": "2026-10-19",
+      "field_counts": {
+        "sourced": 29,
+        "verified": 25,
+        "partial": 4,
+        "unavailable": 1,
+        "needs_verification": 2
+      },
+      "sources": [
+        {
+          "id": "S1",
+          "title": "KIET Fee Structure 2026-27",
+          "url": "https://kiet.edu.pk/fee-structure/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S2",
+          "title": "KIET Admissions - General Fee Structure (Detailed) 2026-27",
+          "url": "https://admissions.kiet.edu.pk/general-fee-structure/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S3",
+          "title": "KIET Admissions - Admission Process",
+          "url": "https://admissions.kiet.edu.pk/admission-process/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S4",
+          "title": "KIET Admissions - Admission Schedule",
+          "url": "https://admissions.kiet.edu.pk/admission-schedule/",
+          "checked": "2026-10-19",
+          "note": "Date table is filled by script (\"Checking live dates...\"); no dates in static page."
+        },
+        {
+          "id": "S5",
+          "title": "KIET Admissions - Scholarship & Fee Discount",
+          "url": "https://admissions.kiet.edu.pk/scholarship-fee-discount/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S6",
+          "title": "KIET CoCIS - BS Computer Science",
+          "url": "https://cocis.kiet.edu.pk/bs-computer-science/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S7",
+          "title": "KIET Facilities",
+          "url": "https://kiet.edu.pk/facilities/",
+          "checked": "2026-10-19",
+          "note": "Page text contains stray \"[citation:5]\" markers; treated as lower confidence."
+        },
+        {
+          "id": "S8",
+          "title": "KIET Programs",
+          "url": "https://kiet.edu.pk/programs/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S9",
+          "title": "KIET Students Transport Services",
+          "url": "https://kiet.edu.pk/services/students-transport-services/",
+          "checked": "2026-10-19",
+          "note": "Returned HTTP 404 on 2026-10-19."
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Karachi Institute of Economics and Technology (KIET)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Campuses",
+            "value": "Ahsanabad Campus (AS-II Sector-2, Ahsanabad Scheme 33, Super Highway); North Nazimabad Campus (F-103 & 103/1, Block-F, Allama Rasheed Turabi Road); Shahrah-e-Faisal Campus (28-D, Block-6, PECHS)",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Contact",
+            "value": "North Nazimabad (92-21) 36628381, 36679314; Shahrah-e-Faisal (92-21) 34546872, 34532182; Ahsanabad cell 0336-2508287",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Website",
+            "value": "https://kiet.edu.pk",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://admissions.kiet.edu.pk/",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private",
+            "status": "partial",
+            "note": "From FuturePath research record (HEC listing); not re-read on HEC on 2026-10-19."
+          },
+          {
+            "label": "Intakes",
+            "value": "Semester system with Spring and Fall intakes",
+            "status": "verified",
+            "source": "S4"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (4 years, 8 semesters, 137 credit hours)",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Offered (131 credit hours)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Offered (131 credit hours)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Cyber Security",
+            "value": "Offered (131 credit hours)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Not listed (BS Business Analytics and Enterprise Systems, 131 cr hr, is offered)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Other computing UG",
+            "value": "BS Computing & Information Sciences (72 cr hr), BS Computer Science 2.5 years (78 cr hr), BS/AD Enterprise Resource Planning",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS computing)",
+            "value": "Minimum 50% in Intermediate (Pre-Engineering / CS or equivalent); O/A-Level with IBCC equivalence; merit-based",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Admission test",
+            "value": "KIET Admission (Aptitude) Test, about 2 hours: MCQs + written/essay component covering English, mathematics/quantitative reasoning, IQ and general knowledge; panel interview for those who clear the test",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Selection",
+            "value": "Based on admission test performance and previous academic record",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Application processing fee",
+            "value": "PKR 3,000 (non-refundable)",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Documents",
+            "value": "CNIC/B-Form, academic transcripts and degrees, two passport-size photographs; originals verified at submission",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Provisional admission",
+            "value": "Available to result-awaited students on undertaking",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Next intake dates",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S4",
+            "note": "Schedule table loads dates dynamically; not readable from the official page on 2026-10-19."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition BS CS / AI / SE / Cyber Security",
+            "value": "PKR 8,860 per credit hour; PKR 132,900 per regular 15 cr hr semester; PKR 53,160 per 6 cr hr summer semester (2026-27)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admission fee (one-time)",
+            "value": "PKR 30,000",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Security deposit (refundable)",
+            "value": "PKR 20,000 (refundable on termination/completion)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Recurring charges",
+            "value": "Student societies PKR 1,500 per regular semester (morning) / PKR 1,200 (evening); IT charges PKR 1,500 and examination fee PKR 1,000 per semester; PKR 700 per semester research/journal copies",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Annual increase",
+            "value": "Estimated 10% annual raise in tuition (as stated by KIET)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Hostel / transport fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not published on the fee pages read."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Merit scholarship (entry)",
+            "value": "20% tuition discount for 75%-79% in Intermediate; 40% for 80% and above (first semester)",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Ongoing merit scholarships",
+            "value": "About 7% of students per semester; 20% to 85% tuition rebates",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Other aid",
+            "value": "Need-based support, Ahsanabad campus waiver, sibling discount, Sindh Endowment Fund (SEEF), Ihsan Trust interest-free loan",
+            "status": "partial",
+            "source": "S5",
+            "note": "Waiver percentages for Ahsanabad and sibling discounts are not stated in the page text."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Libraries",
+            "value": "Three general libraries plus an engineering library; 30,000+ books; book bank",
+            "status": "partial",
+            "source": "S7",
+            "note": "Facilities page carries \"[citation:5]\" artefacts."
+          },
+          {
+            "label": "Transport",
+            "value": "Coaches from city areas to campuses on a no-profit no-loss basis",
+            "status": "partial",
+            "source": "S7",
+            "note": "Dedicated transport page returned 404."
+          },
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S7",
+            "note": "Page mentions \"comfortable accommodations\" without hostel details."
+          }
+        ]
+      }
+    },
+    {
+      "research_id": "khi-hamdard",
+      "slug": "hamdard-university",
+      "official_name": "Hamdard University, Karachi",
+      "profile_status": "partial",
+      "last_checked": "2026-10-19",
+      "field_counts": {
+        "sourced": 22,
+        "verified": 20,
+        "partial": 2,
+        "unavailable": 3,
+        "needs_verification": 1
+      },
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Hamdard University - Programs Offered (FEST)",
+          "url": "https://www.hamdard.edu.pk/programs-offered-fest/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S2",
+          "title": "Hamdard University - Fee Structure 2026-27",
+          "url": "https://www.hamdard.edu.pk/fee-structure/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S3",
+          "title": "Hamdard University - Financial Assistance",
+          "url": "https://www.hamdard.edu.pk/financial-assistance/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S4",
+          "title": "Hamdard University - Contact",
+          "url": "https://www.hamdard.edu.pk/contact/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S5",
+          "title": "Hamdard University - Hostel Life",
+          "url": "https://www.hamdard.edu.pk/hostel-life/",
+          "checked": "2026-10-19",
+          "note": "Page has a heading only; no hostel details in text."
+        },
+        {
+          "id": "S6",
+          "title": "Hamdard University - Test & Interview Results (5 Sep 2026)",
+          "url": "https://www.hamdard.edu.pk/test-interview-results-5th-sep-2026/",
+          "checked": "2026-10-19",
+          "note": "Results content not rendered in static HTML."
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Hamdard University",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Main campus address",
+            "value": "Madinat al-Hikmah, Hakim Mohammed Said Road, Karachi",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Other sites",
+            "value": "City SITE (159-P, Block-3, PECHS, Kashmir Road); NN Block F SITE (North Nazimabad); North Dental SITE (Block L, North Nazimabad); Islamabad campus (Chak Shahzad)",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Contact",
+            "value": "Admissions (021) 111-102-030; admissions@hamdard.edu",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.hamdard.edu.pk",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://admission.hamdard.edu.pk",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Ownership / founding",
+            "value": "Private university established 1991 by Hakim Said (Hamdard Foundation)",
+            "status": "verified",
+            "source": "S4"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (Main Campus)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Offered (Main Campus)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Offered (Main Campus)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Not listed on the FEST programmes page",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Other computing UG",
+            "value": "Afternoon programmes at NN Block F site: BS Digital Forensics & Cyber Security, BS Digital Systems and Web Technology, BS Cloud Applications Development and Operations, BS Robotics and Intelligent Systems; BE Computer Systems",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Duration / credit hours (BS CS/AI/SE)",
+            "value": null,
+            "status": "unavailable",
+            "note": "Credit-hour figures on the programmes page are not clearly attached to these programmes."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS CS / AI / SE)",
+            "value": "At least 50% marks in Intermediate (HSSC) Pre-Engineering / Pre-Medical or equivalent",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Eligibility (afternoon computing BS at Block F)",
+            "value": "At least 45% in Intermediate (HSSC) or equivalent",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admission test",
+            "value": "Test and interview (results posted per test date, e.g. 25 Jul, 8 Aug, 23 Aug, 5 Sep 2026)",
+            "status": "partial",
+            "source": "S6",
+            "note": "Test format/syllabus not published in text read."
+          },
+          {
+            "label": "Application processing fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          }
+        ],
+        "fees": [
+          {
+            "label": "First-semester fee BS CS",
+            "value": "PKR 143,000 (admission 18,500 + tuition 102,000 + exam/other 22,500) (2026-27)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "First-semester fee BS AI",
+            "value": "PKR 143,000 (admission 18,500 + tuition 102,000 + exam/other 22,500) (2026-27)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "First-semester fee BS SE",
+            "value": "PKR 149,000 (admission 22,000 + tuition 102,000 + exam/other 25,000) (2026-27)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admission fee",
+            "value": "Non-refundable (included in first-semester totals above)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Hostel / transport fee",
+            "value": "Charged on actual basis depending on service availed",
+            "status": "partial",
+            "source": "S2",
+            "note": "No amounts published."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Merit scholarship",
+            "value": "Up to 70% (tuition) for 3.5 CGPA in semester system or 65% in annual system in the last semester/year, without failing any subject",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Other assistance",
+            "value": "Sibling 50% concession (one sibling, lowest tuition); hardship scholarship up to 50% of tuition; Qarz-e-Hasna loan; tuition-only coverage via Financial Assistance Committee and panel interview",
+            "status": "verified",
+            "source": "S3"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S5",
+            "note": "Hostel Life page exists but has no details in text."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not described on pages read."
+          }
+        ]
+      }
+    },
+    {
+      "research_id": "khi-indus",
+      "slug": "indus-university",
+      "official_name": "Indus University, Karachi",
+      "profile_status": "partial",
+      "last_checked": "2026-10-19",
+      "field_counts": {
+        "sourced": 20,
+        "verified": 18,
+        "partial": 2,
+        "unavailable": 3,
+        "needs_verification": 1
+      },
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Indus University - Admission Criteria",
+          "url": "https://www.indus.edu.pk/criteria.php",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S2",
+          "title": "Indus University - Fee Structure & Scholarship Policy (Fall 2026)",
+          "url": "https://www.indus.edu.pk/fee.php",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S3",
+          "title": "Indus University - Contact us",
+          "url": "https://www.indus.edu.pk/contact.php",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S4",
+          "title": "Indus University - Programmes Offered",
+          "url": "https://indus.edu.pk/course.php",
+          "checked": "2026-10-19"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Indus University",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Main campus address",
+            "value": "ST-2D, Block-17, Gulshan-e-Iqbal, adjacent to National Stadium, Karachi",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Other campuses",
+            "value": "North: ST-29/2, Sector 11-B, North Karachi",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Contact",
+            "value": "+92 21 111 400 300; 021 34801430-35; admission@indus.edu.pk",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.indus.edu.pk",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://www.indus.edu.pk/admission.php",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "HEC campus note",
+            "value": "HEC listing showed North Campus recognised w.e.f. 03-09-2024 to Fall 2025; later status not re-checked",
+            "status": "partial",
+            "note": "From FuturePath research record (2026-10-10)."
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science (BSCS)",
+            "value": "Offered (140 required credit hours; 15 cr hr in first semester)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Software Engineering (BSSE)",
+            "value": "Offered (140 required credit hours; 15 cr hr in first semester)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Not listed on Fall 2026 fee or criteria pages",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Not listed on Fall 2026 fee or criteria pages",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Other computing",
+            "value": "Pearson BTEC HND Computing; MS Computer Science",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BSCS / BSSE)",
+            "value": "Minimum 50% in HSSC Pre-Engineering, HSSC Pre-Medical with Additional Mathematics, or DAE (Intermediate / A-Level or equivalent)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admission test (BSCS / BSSE)",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S1",
+            "note": "No test line printed under BSCS/BSSE; other undergraduate programmes list an aptitude/entry test and interview."
+          },
+          {
+            "label": "Document verification fees",
+            "value": "Verification of eligibility document PKR 5,000; verification of documents PKR 3,500",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition BSCS / BSSE",
+            "value": "PKR 8,500 per credit hour (Fall 2026)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Registration fee",
+            "value": "PKR 9,500 per semester",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Degree fee",
+            "value": "PKR 25,000",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admission fee / security deposit",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not printed on the Fall 2026 fee page."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Entry merit scholarship",
+            "value": "Up to 100% tuition waiver for top-3 board position holders; up to 50% for 80%+ in Intermediate; up to 25% for 70%+; continuation requires semester GPA 3.75",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Other waivers",
+            "value": "Batch-topper merit (15%-25% of tuition), financial assistance (need-based), Hafiz-e-Quran 20%, sports up to 75%, early-payment up to 25% for first 20 confirmed students, sibling up to 20%",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not described on pages read."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not described on pages read."
+          },
+          {
+            "label": "Digital library",
+            "value": "Digital Library link on official site",
+            "status": "partial",
+            "source": "S3",
+            "note": "Details not extracted."
+          }
+        ]
+      }
+    },
+    {
+      "research_id": "khi-ziauddin",
+      "slug": "ziauddin-university",
+      "official_name": "Ziauddin University (Zia-ud-Din University), Karachi",
+      "profile_status": "partial",
+      "last_checked": "2026-10-19",
+      "field_counts": {
+        "sourced": 19,
+        "verified": 10,
+        "partial": 9,
+        "unavailable": 2,
+        "needs_verification": 1
+      },
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Ziauddin University - BS Computer Science",
+          "url": "https://zu.edu.pk/bs-computer-science/",
+          "checked": "2026-10-19",
+          "note": "Fee table has no academic-year label."
+        },
+        {
+          "id": "S2",
+          "title": "Ziauddin University - BS Software Engineering (CCET)",
+          "url": "https://zu.edu.pk/faculty-of-computing-and-information-sciences/college-of-computing-and-emerging-technologies/department-of-software-engineering/bs-software-engineering/",
+          "checked": "2026-10-19",
+          "note": "Fee table has no academic-year label."
+        },
+        {
+          "id": "S3",
+          "title": "Ziauddin University - BS Data Science",
+          "url": "https://zu.edu.pk/bs-data-science/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S4",
+          "title": "Ziauddin Admissions - All Programs list",
+          "url": "https://admission.zu.edu.pk/programs-list-table",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S5",
+          "title": "Ziauddin University - College of Computing and Emerging Technologies",
+          "url": "https://zu.edu.pk/faculty-of-computing-and-information-sciences/college-of-computing-and-emerging-technologies/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S6",
+          "title": "Ziauddin University - Undergraduate Programmes",
+          "url": "https://zu.edu.pk/undergraduate-programmes/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S7",
+          "title": "Ziauddin University Student Handbook (PDF)",
+          "url": "https://zu.edu.pk/wp-content/uploads/2025/12/HB%20-%20Updated.pdf",
+          "checked": "2026-10-19",
+          "note": "Read via search excerpt only."
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Ziauddin University",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Computing campus",
+            "value": "North Site (ZUFESTM), F-103, Block B, North Nazimabad, Karachi",
+            "status": "partial",
+            "source": "S2",
+            "note": "Address read from the older FESTM programme page variant."
+          },
+          {
+            "label": "Contact",
+            "value": "+92 21 35862937-9",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Website",
+            "value": "https://zu.edu.pk",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://admission.zu.edu.pk/",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Other campuses",
+            "value": "Karachi sites (Clifton, North Nazimabad, Link Road) and Sukkur campus",
+            "status": "partial",
+            "note": "From FuturePath research record and admissions list locations."
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (programme page, North Campus); not shown in the current admissions programme list",
+            "status": "partial",
+            "source": "S1",
+            "note": "Admissions list on 2026-10-19 showed BS SE and BS Data Science but not BS CS."
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Offered, NCEAC listed; 8 semesters (min 4, max 7 years)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Offered (NCEAC listed in admissions programme list)",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Not listed as a separate UG programme",
+            "status": "verified",
+            "source": "S6"
+          },
+          {
+            "label": "Other computing UG",
+            "value": "BS Cyber Security, BS Internet of Things (admission closed on list), BS Computer Networks & Security, B.Sc. Software Engineering Technology",
+            "status": "verified",
+            "source": "S6"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS CS / SE / DS)",
+            "value": "At least 50% in Intermediate (HSSC) with Mathematics or equivalent (IBCC-certified), or 50% pre-medical with 6 cr hr mathematics deficiency courses in first two semesters",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Admission test",
+            "value": "University general admission test (sample General test paper published); USAT etc. accepted where provisioned",
+            "status": "partial",
+            "source": "S7",
+            "note": "From handbook excerpt; test pattern not extracted."
+          },
+          {
+            "label": "Admission deadline (PG list)",
+            "value": "29-Oct-2026 shown for postgraduate programmes",
+            "status": "partial",
+            "source": "S4",
+            "note": "UG rows show Apply Now without a date."
+          }
+        ],
+        "fees": [
+          {
+            "label": "First-semester fee BS CS (North, morning)",
+            "value": "PKR 107,900: admission 10,000 + tuition 4,800 x 18 cr hr = 86,400 + exam 4,500 + other 2,000 + registration 5,000",
+            "status": "partial",
+            "source": "S1",
+            "note": "No academic year printed."
+          },
+          {
+            "label": "First-semester fee BS SE (North, morning)",
+            "value": "Tuition PKR 4,800 per cr hr x 18 = 86,400; admission 10,000; exam 4,500; other 2,000; registration 5,000",
+            "status": "partial",
+            "source": "S2",
+            "note": "No academic year printed. An older FESTM page variant shows PKR 4,500 x 16 = 72,000 (total 93,000)."
+          },
+          {
+            "label": "BS Data Science (North, evening)",
+            "value": "Admission PKR 10,000; tuition PKR 54,900 per semester; exam PKR 5,100",
+            "status": "partial",
+            "source": "S3",
+            "note": "Morning fee not shown; no year label."
+          },
+          {
+            "label": "Security deposit",
+            "value": "Nil / not charged (shown as \"—\" in fee tables)",
+            "status": "partial",
+            "source": "S1"
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships / financial aid",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S7",
+            "note": "No scholarship page found on site; handbook covers Finance Department but scholarship terms not extracted."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Computing labs",
+            "value": "Computing lab with 32 workstations, operating-system lab, final-year-project lab, dedicated lecture rooms",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          }
+        ]
+      }
+    },
+    {
+      "research_id": "khi-shu",
+      "slug": "shu",
+      "official_name": "Salim Habib University (formerly Barrett Hodgson University), Karachi",
+      "profile_status": "partial",
+      "last_checked": "2026-10-19",
+      "field_counts": {
+        "sourced": 26,
+        "verified": 20,
+        "partial": 6,
+        "unavailable": 2,
+        "needs_verification": 0
+      },
+      "sources": [
+        {
+          "id": "S1",
+          "title": "SHU - Tuition & Fees",
+          "url": "https://shu.edu.pk/admission/tution/",
+          "checked": "2026-10-19",
+          "note": "Fee table carries no academic-year label."
+        },
+        {
+          "id": "S2",
+          "title": "SHU - Admission Process",
+          "url": "https://shu.edu.pk/admission/admission-process/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S3",
+          "title": "SHU - Scholarships & Financial Aid",
+          "url": "https://shu.edu.pk/admission/scholarships-financial-aid/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S4",
+          "title": "SHU - BS Computer Science",
+          "url": "https://shu.edu.pk/FoIT/bs-computer-science/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S5",
+          "title": "SHU - BS Artificial Intelligence",
+          "url": "https://shu.edu.pk/FoIT/bs-artificial-intelligence/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S6",
+          "title": "SHU - Admissions Open Spring 2027 (news)",
+          "url": "https://shu.edu.pk/news/admissions-open-spring-2027/",
+          "checked": "2026-10-19"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Salim Habib University (formerly Barrett Hodgson University)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Main campus address",
+            "value": "NC-24, Deh Dih, Dr. Salim Habib Road, Korangi Creek, Karachi 74900",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Campus",
+            "value": "Ten-acre campus with a five-storey academic block, 40 labs and a library",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Contact",
+            "value": "Admissions 021-35122936",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://shu.edu.pk",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://admissions.shu.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Next intake",
+            "value": "Admissions open for Spring 2027",
+            "status": "verified",
+            "source": "S6"
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (Faculty of IT)",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Offered",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Offered",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Offered",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Other computing UG",
+            "value": "BS Cyber Security, BS Computer Network and Security, BS Robotics and Intelligent Systems, BS Economics with AI & Data Science, BS AI/DS/SE/Cyber Security Technology, ADPs in CS/SE/Data Science",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Duration",
+            "value": "Minimum 4 years (HEC maximum 7 years); minimum 2.0 CGPA to graduate",
+            "status": "verified",
+            "source": "S4"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS CS)",
+            "value": "Minimum 50% overall in FSc Pre-Engineering, Pre-Medical, General Science or DAE equivalent; IBCC equivalence for foreign systems; non-maths students take 6 cr hr maths deficiency courses",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Admission test",
+            "value": "SHU Aptitude Test (computer-based MCQs; quantitative, analytical, communication, reading, grammar) with at least 50% in each section, or SAT/GMAT/GRE exemption; interview before two faculty members; essay",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Merit weightage (UG)",
+            "value": "Aptitude test 50%, essay 10%, interview 10%, SSC 10%, HSC 20% (result-awaited: test 50%, interview 20%, essay 10%, SSC 20%)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Application processing fee",
+            "value": "PKR 2,000 (shown for MS/PhD applicants)",
+            "status": "partial",
+            "source": "S1",
+            "note": "UG application fee amount not printed; UG pays via APC voucher."
+          },
+          {
+            "label": "Test result validity",
+            "value": "SHU Aptitude Test results valid 18 months",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition BS CS",
+            "value": "PKR 146,400 per semester",
+            "status": "partial",
+            "source": "S1",
+            "note": "No academic year printed."
+          },
+          {
+            "label": "Tuition BS AI / BS SE",
+            "value": "PKR 133,100 per semester",
+            "status": "partial",
+            "source": "S1",
+            "note": "No academic year printed."
+          },
+          {
+            "label": "Tuition BS Data Science / Cyber Security",
+            "value": "PKR 121,000 per semester",
+            "status": "partial",
+            "source": "S1",
+            "note": "No academic year printed."
+          },
+          {
+            "label": "Other charges",
+            "value": "Admission fee PKR 25,000 (one-time); exam PKR 5,000, student activity PKR 5,000, lab PKR 10,000 per semester; security deposit PKR 10,000 (refundable)",
+            "status": "partial",
+            "source": "S1",
+            "note": "No academic year printed."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Merit scholarships",
+            "value": "Awarded on semester SGPA only (not at admission): 3.8+ = 100% tuition (Dr. Salim Habib Scholarship); 3.5-3.79 = 50% (Dr. Iram Afaq Scholarship)",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Sports scholarships",
+            "value": "District 40%, Karachi 50%, Provincial 65%, national medalists / international 100%",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Need-based aid",
+            "value": "Financial Assistance Application form published",
+            "status": "partial",
+            "source": "S3",
+            "note": "Criteria not detailed in text."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Labs",
+            "value": "GPU-enabled labs and 3D cameras for computer vision / IoT work",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          }
+        ]
+      }
+    },
+    {
+      "research_id": "khi-sindh-madresatul-islam-university",
+      "slug": "sindh-madresatul-islam-university",
+      "official_name": "Sindh Madressatul Islam University (SMIU), Karachi",
+      "profile_status": "partial",
+      "last_checked": "2026-10-19",
+      "field_counts": {
+        "sourced": 20,
+        "verified": 13,
+        "partial": 7,
+        "unavailable": 3,
+        "needs_verification": 2
+      },
+      "sources": [
+        {
+          "id": "S1",
+          "title": "SMIU - Fee Structure (w.e.f. Spring 2024)",
+          "url": "https://www.smiu.edu.pk/admissions/fee-structure",
+          "checked": "2026-10-19",
+          "note": "Labelled \"New fee structure (w.e.f. Spring 2024)\"; may have been revised since."
+        },
+        {
+          "id": "S2",
+          "title": "SMIU - Minimum Criteria and Seat Allocation (Admissions Spring 2025)",
+          "url": "https://www.smiu.edu.pk/admissions/minimum-criteria-and-seat-allocation",
+          "checked": "2026-10-19",
+          "note": "Labelled Spring 2025."
+        },
+        {
+          "id": "S3",
+          "title": "SMIU - Admissions Calendar Fall 2026",
+          "url": "https://www.smiu.edu.pk/admissions/",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S4",
+          "title": "SMIU - Scholarships",
+          "url": "https://www.smiu.edu.pk/students/scholarships",
+          "checked": "2026-10-19"
+        },
+        {
+          "id": "S5",
+          "title": "SMIU - Home",
+          "url": "https://smiu.edu.pk/",
+          "checked": "2026-10-19"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Sindh Madressatul Islam University",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Address",
+            "value": "Hasrat Mohani Road, Karachi-74000",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Contact",
+            "value": "(021) 111-11-1885",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.smiu.edu.pk",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://admission.smiu.edu.pk/",
+            "status": "verified",
+            "source": "S5"
+          },
+          {
+            "label": "Ownership",
+            "value": "Public (Sindh)",
+            "status": "partial",
+            "note": "From FuturePath research record (HEC listing)."
+          }
+        ],
+        "programs": [
+          {
+            "label": "BS Computer Science",
+            "value": "Offered (morning and evening)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Software Engineering",
+            "value": "Offered (morning and evening)",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "BS Artificial Intelligence",
+            "value": "Offered (morning; evening also listed)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "BS Data Science",
+            "value": "Offered",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Other computing UG",
+            "value": "BS Information Technology, BS Cyber Security, BS Mathematics",
+            "status": "verified",
+            "source": "S1"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility (BS computing)",
+            "value": "Intermediate with Science or equivalent; minimum BS CS 60%, BS SE 55%, BS AI / DS / Cyber Security / IT 50%",
+            "status": "partial",
+            "source": "S2",
+            "note": "Page labelled Admissions Spring 2025."
+          },
+          {
+            "label": "Admission test",
+            "value": "Admission test for undergraduate programmes (Fall 2026: 21-23 July 2026), followed by interviews (28-30 July 2026)",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Fall 2026 key dates",
+            "value": "Online registration 14 Jun - 15 Jul 2026; 1st merit list 7 Aug 2026; classes from 7 Sep 2026",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Next intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "Spring 2027 schedule not yet published on the admissions page."
+          }
+        ],
+        "fees": [
+          {
+            "label": "First-semester fee BS CS (morning)",
+            "value": "PKR 78,750 (admission 10,000, security 10,000, registration 1,500, lab/library 3,000, activity 2,500, exam 750/course, tuition 3,000/cr hr x 16)",
+            "status": "partial",
+            "source": "S1",
+            "note": "Fee structure w.e.f. Spring 2024."
+          },
+          {
+            "label": "First-semester fee BS SE (morning)",
+            "value": "PKR 85,500 (tuition 3,000/cr hr x 18)",
+            "status": "partial",
+            "source": "S1",
+            "note": "Fee structure w.e.f. Spring 2024."
+          },
+          {
+            "label": "First-semester fee BS AI",
+            "value": "PKR 67,050 (tuition 2,300/cr hr x 16)",
+            "status": "partial",
+            "source": "S1",
+            "note": "Fee structure w.e.f. Spring 2024."
+          },
+          {
+            "label": "First-semester fee BS Data Science",
+            "value": "PKR 67,550 (tuition 2,300/cr hr x 16)",
+            "status": "partial",
+            "source": "S1",
+            "note": "Fee structure w.e.f. Spring 2024."
+          },
+          {
+            "label": "Evening BS CS",
+            "value": "PKR 74,500 first semester",
+            "status": "partial",
+            "source": "S1",
+            "note": "Fee structure w.e.f. Spring 2024."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarship schemes",
+            "value": "HEC Need-Based, Zakat Need-cum-Merit 2025-26, Khairpur Need-cum-Merit 2025-26, SEEF, PBM, Ehsaas",
+            "status": "verified",
+            "source": "S4"
+          },
+          {
+            "label": "Amounts / criteria",
+            "value": null,
+            "status": "needs_verification",
+            "source": "S4",
+            "note": "Detailed in notices/forms (PDF); not extracted."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Facilities",
+            "value": null,
+            "status": "needs_verification",
+            "note": "\"Facilities at SMIU\" page linked from Students menu; not read."
+          },
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not found on pages read."
+          }
+        ]
+      }
+    }
+  ]
+}

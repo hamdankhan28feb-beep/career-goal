@@ -25,7 +25,7 @@ export default async function UniversityReviewPage({ params }: { params: Promise
     <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 lg:px-8">
       <Link
         href={`/universities/${slug}#reviews`}
-        className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition"
+        className="mb-6 inline-flex min-h-10 items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition"
       >
         <ArrowLeft className="h-4 w-4" /> Back to {university.shortName}
       </Link>

@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X, GraduationCap, ChevronDown, LogOut, Shield, User } from 'lucide-react';
 
 import { ThemeToggle } from '@/components/theme-toggle';
 import type { SessionUser } from '@/lib/auth';
+import { useScrollLock } from '@/lib/use-scroll-lock';
 
 const navItems = [
   { href: '/universities', label: 'Universities' },
@@ -64,7 +65,7 @@ function UserMenu({ user }: { user: SessionUser }) {
         className="flex items-center gap-2 rounded-full border border-border/60 py-1.5 pl-1.5 pr-3 transition hover:border-primary/40 hover:bg-muted"
         aria-label="User menu"
       >
-        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-emerald-400 text-[11px] font-bold text-white">
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-primary to-success text-2xs font-bold text-white">
           {initials}
         </span>
         <span className="max-w-[100px] truncate text-sm font-medium text-foreground">
@@ -146,13 +147,16 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
   const pathname = usePathname() ?? '';
   const isActive = (href: string) => pathname === href || (href !== '/' && pathname.startsWith(href + '/') && !(href === '/compare' && pathname.startsWith('/compare/fields')));
   const toolsActive = navItems.some((i) => i.children?.some((c) => isActive(c.href)));
+  const closeMobile = useCallback(() => setMobileOpen(false), []);
+  useScrollLock(mobileOpen, closeMobile);
+  useEffect(() => { setMobileOpen(false); }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <div className="container-page flex items-center justify-between py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 via-cyan-500 to-emerald-400 text-sm font-black text-white shadow-glow-primary transition group-hover:scale-105">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-cyan-500 to-success text-sm font-black text-white shadow-glow-primary transition group-hover:scale-105">
             <GraduationCap className="h-5 w-5" />
           </div>
           <div>
@@ -176,7 +180,7 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform ${toolsOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {toolsOpen && (
-                  <div className="absolute top-full mt-1 w-52 rounded-2xl border border-border/70 bg-card shadow-glow p-2 animate-slide-down">
+                  <div className="absolute left-0 top-full z-50 mt-1 w-52 rounded-2xl border border-border/70 bg-card shadow-glow p-2 animate-slide-down">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
@@ -220,6 +224,8 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 text-muted-foreground hover:bg-muted transition"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -228,8 +234,8 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="border-t border-border/50 bg-background/98 backdrop-blur-xl lg:hidden animate-slide-down">
-          <div className="mx-auto max-w-7xl space-y-1 px-4 py-4">
+        <div id="mobile-menu" data-testid="mobile-menu" className="max-h-[calc(100svh-4rem)] overflow-y-auto overscroll-contain border-t border-border/50 bg-background/98 backdrop-blur-xl lg:hidden animate-slide-down">
+          <div className="container-page space-y-1 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
             {navItems.map((item) =>
               item.children ? (
                 <div key={item.label}>
@@ -261,7 +267,7 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
             {user ? (
               <div className="mt-4 border-t border-border/50 pt-4 space-y-1">
                 <div className="flex items-center gap-2 px-3 py-2">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-emerald-400 text-[11px] font-bold text-white">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-primary to-success text-2xs font-bold text-white">
                     {user.name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase()}
                   </span>
                   <div className="min-w-0">

@@ -10,7 +10,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
   }, [error]);
 
   return (
-    <div className="flex min-h-[calc(100vh-160px)] items-center justify-center px-4">
+    <div className="flex min-h-[calc(100svh-160px)] items-center justify-center px-4">
       <div className="max-w-md text-center">
         <div className="mb-6 flex justify-center">
           <div className="flex h-20 w-20 items-center justify-center rounded-full bg-destructive/10 border border-destructive/20">

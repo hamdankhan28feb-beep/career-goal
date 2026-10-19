@@ -6,6 +6,7 @@ import { UniversityCard } from '@/components/university-card';
 import { getFields, getFeaturedUniversities, getUniversities } from '@/lib/data';
 import { researchStats } from '@/lib/research-meta';
 import { LiveStats } from '@/components/live-stats';
+import { UniversityLogoSlider } from '@/components/university-logo-slider';
 import { FreshnessLabel } from '@/components/freshness-label';
 import { initialsSize, logoInitials } from '@/lib/display-utils';
 
@@ -35,7 +36,8 @@ export default async function HomePage() {
   const freshest = [stats.checkedAt, latestCheck].filter(Boolean).sort().pop() ?? null;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
+    <div>
+    <div className="container-page pt-10">
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="lg:grid lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center lg:gap-12">
@@ -44,7 +46,7 @@ export default async function HomePage() {
             <Sparkles className="h-4 w-4" />
             AI-powered guidance for Pakistani students
           </div>
-          <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
             Discover Your{' '}
             <span className="gradient-text">Future</span>{' '}
             With Confidence
@@ -140,9 +142,14 @@ export default async function HomePage() {
           </aside>
         )}
       </section>
+    </div>
 
-      {/* ── Features Grid ─────────────────────────────────────────── */}
-      <section className="mt-24">
+      {/* University logo slider: full-bleed band directly below the hero */}
+      <UniversityLogoSlider />
+
+    <div className="container-page pb-20">
+      {/* Features Grid */}
+      <section className="mt-16 lg:mt-24">
         <div className="text-center">
           <div className="section-label">What We Offer</div>
           <h2 className="section-title">Everything a Pakistani student needs</h2>
@@ -180,7 +187,7 @@ export default async function HomePage() {
             View all <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {featuredUniversities.map((university) => (
             <UniversityCard key={university.slug} university={university} />
           ))}
@@ -225,7 +232,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── AI Counselor CTA ─────────────────────────────────────── */}
-      <section className="mt-24 overflow-hidden rounded-4xl bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 p-8 text-white lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
+      <section className="mt-16 overflow-hidden rounded-4xl bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 p-5 text-white sm:p-8 lg:mt-24 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-cyan-100">
             <Brain className="h-4 w-4" />
@@ -263,7 +270,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── Admission Predictor CTA ───────────────────────────────── */}
-      <section className="mt-12 grid gap-6 rounded-4xl border border-border/70 bg-card/80 p-8 shadow-sm lg:grid-cols-2">
+      <section className="mt-12 grid gap-6 rounded-4xl border border-border/70 bg-card/80 p-5 shadow-sm sm:p-8 md:grid-cols-2">
         <div>
           <div className="section-label">Admission Predictor</div>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight">Know your chances before you apply</h2>
@@ -288,6 +295,7 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+    </div>
     </div>
   );
 }

@@ -21,14 +21,14 @@ const SECTIONS: { key: keyof UniversityProfile['sections']; id: string; title: s
 
 /** Status is carried by the chip's coloured left border (plus an accessible label), not a separate badge. */
 const STATUS_BORDER: Record<ProfileFieldStatus, string> = {
-  verified: 'border-l-emerald-500',
-  partial: 'border-l-amber-500',
+  verified: 'border-l-success',
+  partial: 'border-l-warning',
   unavailable: 'border-l-slate-400/60',
   needs_verification: 'border-l-blue-500',
 };
 const STATUS_DOT: Record<ProfileFieldStatus, string> = {
-  verified: 'bg-emerald-500',
-  partial: 'bg-amber-500',
+  verified: 'bg-success',
+  partial: 'bg-warning',
   unavailable: 'bg-slate-400/60',
   needs_verification: 'bg-blue-500',
 };
@@ -39,7 +39,7 @@ function SourceChip({
   field, sourceId, title, onOpen,
 }: { field: ProfileField; sourceId: string | null; title: string; onOpen?: () => void }) {
   const label = PROFILE_STATUS_LABEL[field.status];
-  const cls = `inline-flex min-h-10 min-w-10 shrink-0 items-center justify-center gap-1 rounded-md border border-border/70 border-l-[3px] ${STATUS_BORDER[field.status]} bg-background/60 px-2 font-mono text-[11px] font-semibold text-muted-foreground transition hover:border-primary/60 hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:min-h-0 lg:min-w-0 lg:py-0.5`;
+  const cls = `inline-flex min-h-10 min-w-10 shrink-0 items-center justify-center gap-1 rounded-md border border-border/70 border-l-[3px] ${STATUS_BORDER[field.status]} bg-background/60 px-2 font-mono text-2xs font-semibold text-muted-foreground transition hover:border-primary/60 hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:min-h-0 lg:min-w-0 lg:py-0.5`;
   const status = (
     <span data-testid="profile-field-status" data-status={field.status} className="sr-only">
       {label}
@@ -135,7 +135,7 @@ export function UniversityProfileSections({ profile }: { profile: UniversityProf
                     <dd className="flex min-w-0 flex-1 items-start gap-3 [overflow-wrap:anywhere]">
                       <div className="min-w-0 flex-1">
                         <span className="text-sm font-semibold text-foreground sm:text-[15px]">{f.value}</span>
-                        {f.status === 'partial' && <span className="ml-2 text-[11px] font-medium text-amber-600 dark:text-amber-400">partial</span>}
+                        {f.status === 'partial' && <span className="ml-2 text-2xs font-medium text-warning">partial</span>}
                         {f.note && <span className="mt-1 block text-xs text-muted-foreground">{f.note}</span>}
                       </div>
                       {chipFor(f)}
@@ -145,7 +145,7 @@ export function UniversityProfileSections({ profile }: { profile: UniversityProf
               </div>
               {quiet.length > 0 && (
                 <div className={`bg-muted/20 px-4 py-2 sm:px-5 ${main.length ? 'border-t border-border/50' : ''}`} data-testid="profile-quiet-rows">
-                  <div className="pb-1 pt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground/80">
+                  <div className="pb-1 pt-1 text-2xs font-medium uppercase tracking-wider text-muted-foreground/80">
                     Not published officially / pending
                   </div>
                   {quiet.map((f, i) => (

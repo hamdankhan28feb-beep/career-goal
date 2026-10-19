@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useCallback } from 'react';
+import { SearchInput } from '@/components/search-input';
 import { Search, Filter, X, Loader2 } from 'lucide-react';
 import { UniversityCard } from '@/components/university-card';
 import type { University } from '@/lib/types';
@@ -51,7 +52,7 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
   const hasFilters = query || city !== 'All Cities' || type !== 'All Types';
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container-page py-12">
       {/* Header */}
       <div className="flex flex-col gap-4">
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
@@ -66,21 +67,15 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
 
       {/* Search & Filters */}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Search universities..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="input-field pl-10"
-          />
-          {query && (
-            <button onClick={() => setQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground">
-              <X className="h-4 w-4" />
-            </button>
-          )}
-        </div>
+        <SearchInput
+          wrapperClassName="flex-1"
+          type="text"
+          placeholder="Search universities..."
+          aria-label="Search universities"
+          value={query}
+          onValueChange={setQuery}
+          clearable
+        />
         <div className="flex items-center gap-3">
           <Filter className="h-4 w-4 text-muted-foreground" />
           <select

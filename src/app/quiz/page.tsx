@@ -164,7 +164,7 @@ export default function QuizPage() {
                 <div className="flex items-center gap-4">
                   <span className="text-4xl">{field.icon}</span>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className={`mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 ${r.band === 'Strong' ? 'pr-24 sm:pr-28' : ''}`}>
                       <h2 className="font-semibold text-foreground">{field.name}</h2>
                       <span className="text-xs text-muted-foreground">#{i + 1}</span>
                     </div>
