@@ -16,7 +16,7 @@ Done in the working tree, pending the phase commit:
 
 ## Phase 3 — university research
 
-Not started as new field checks beyond the ORIC report and the Iqra campus row already in the verification log. Official pages for FAST, NED, IBA, Habib, MAJU and Hamdard were opened on 2026-10-19 and still need to be written into the profile JSON with verification events.
+Official pages opened on 2026-10-19 were written into the profile JSON with verification events: FAST-NUCES (eligibility, schedule, fees, scholarships, FAQ, test pattern, Karachi homepage), NED (homepage, admissions index, academic programmes), IBA (homepage and programmes page), Habib (admissions page), MAJU (homepage and eligibility), Hamdard (homepage and FEST programmes). SZABIST and the Iqra site root timed out or 404'd and were not filled. Fees and deadlines that were not on an opened page stay withheld.
 
 ## Phase 4 — product pages
 

@@ -54,7 +54,7 @@
           ],
           "source_url": "https://iqra.edu.pk/academics-hub/faculty-of-arts-design-education-social-sciences/",
           "source_title": "Iqra University — Faculty of Arts, Design, Education & Social Sciences",
-          "note": "Conflicts with the HEC closure of the Bahria Town campus (08-08-2024). The site text was retrieved on 2026-10-19. It is not used as the primary campus list."
+          "note": "Conflicts with the HEC closure of the Bahria Town campus (08-08-2024). The site text was retrieved on 2026-10-19. It is not used as the primary campus list. On 2026-10-19 a fetch of https://www.iqra.edu.pk/ timed out, so the site root was not re-checked."
         },
         {
           "label": "Legacy bundled catalogue",
@@ -62,6 +62,60 @@
             "An older bundled campus list had no source URLs. Those names are not shown as a count."
           ],
           "note": "Unverified. No figure is displayed from data_v2.json."
+        }
+      ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "oric-category",
+      "primary": {
+        "status": "verified",
+        "label": "HEC ORIC annual evaluation FY2024-25",
+        "values": [
+          "W category, score 86. Research-office evaluation, not an overall university ranking."
+        ],
+        "source_url": "https://www.hec.gov.pk/english/services/universities/ORICs/Documents/Annual%20ORIC%20Validation%20Report%20FY%2024-25.pdf",
+        "source_title": "HEC Annual ORIC Self-Assessment Evaluation Report FY 2024-2025",
+        "last_verified_at": "2026-10-19"
+      },
+      "alternatives": [
+        {
+          "label": "NED homepage quality-assurance line",
+          "values": [
+            "QEC in 'W' category (95.33% Score in HEC ranking)"
+          ],
+          "source_url": "https://www.neduet.edu.pk/",
+          "source_title": "NED University homepage",
+          "last_verified_at": "2026-10-19",
+          "note": "Opened 2026-10-19. 95.33 is not the FY2024-25 ORIC score of 86. No single score is treated as the only value."
+        }
+      ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "oric-category",
+      "primary": {
+        "status": "verified",
+        "label": "HEC ORIC annual evaluation FY2024-25",
+        "values": [
+          "Y category, score 49.5. Research-office evaluation, not an overall university ranking. Not W."
+        ],
+        "source_url": "https://www.hec.gov.pk/english/services/universities/ORICs/Documents/Annual%20ORIC%20Validation%20Report%20FY%2024-25.pdf",
+        "source_title": "HEC Annual ORIC Self-Assessment Evaluation Report FY 2024-2025",
+        "last_verified_at": "2026-10-19"
+      },
+      "alternatives": [
+        {
+          "label": "MAJU homepage mark",
+          "values": [
+            "The homepage shows a \"w 4 Category\" mark."
+          ],
+          "source_url": "https://jinnah.edu/",
+          "source_title": "MAJU homepage",
+          "last_verified_at": "2026-10-19",
+          "note": "Opened 2026-10-19. This mark is not used as the ORIC category."
         }
       ]
     }

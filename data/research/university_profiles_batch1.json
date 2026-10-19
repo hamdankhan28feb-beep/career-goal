@@ -19,38 +19,44 @@
           "id": "S1",
           "title": "FAST-NUCES Karachi campus homepage",
           "url": "https://khi.nu.edu.pk/",
-          "checked": "2026-10-13",
-          "note": "Page also contains unrelated injected spam text; only campus/address facts were used."
+          "checked": "2026-10-19",
+          "note": "Page also contains unrelated injected spam text; only campus/address facts were used.",
+          "source_type": "official_university"
         },
         {
           "id": "S2",
           "title": "NU Eligibility Criteria (updated 10-Aug-2026)",
           "url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S3",
           "title": "NU Admission Schedule (Tentative 2026, updated 13-Oct-2026)",
           "url": "https://www.nu.edu.pk/Admissions/Schedule",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S4",
           "title": "NU Fee Structure (w.e.f. Fall 2026)",
           "url": "https://www.nu.edu.pk/Admissions/FeeStructure",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S5",
           "title": "NU Scholarships",
           "url": "https://www.nu.edu.pk/Admissions/Scholarship",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S6",
           "title": "NU Admissions FAQ",
           "url": "https://www.nu.edu.pk/Admissions/FAQ",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S7",
@@ -62,7 +68,8 @@
           "id": "S8",
           "title": "NU Test Pattern",
           "url": "https://www.nu.edu.pk/Admissions/TestPattern",
-          "checked": "2026-10-11"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -71,7 +78,7 @@
             "label": "Official name",
             "value": "National University of Computer & Emerging Sciences (FAST-NUCES)",
             "status": "verified",
-            "source": "S2"
+            "source": "S1"
           },
           {
             "label": "Overview",
@@ -114,6 +121,13 @@
             "value": "Listed on HEC university profiles; Karachi campus on HEC Recognized Campuses list (checked 2026-10-10/11).",
             "status": "verified",
             "source": "S7"
+          },
+          {
+            "label": "Karachi admissions contact",
+            "value": "FAQ: admissions.khi@nu.edu.pk and (021) 111-128-128. Karachi homepage: info@nu.edu.pk, main campus (+92-213) 410-0541-6, city campus (+92-213) 439 0941-5.",
+            "status": "partial",
+            "source": "S6",
+            "note": "Both pages were opened on 2026-10-19. They publish different numbers, so neither is shown as the only contact."
           }
         ],
         "programs": [
@@ -149,10 +163,10 @@
           },
           {
             "label": "Other UG at Karachi",
-            "value": "BS Electrical Engineering, BS Business Analytics, BS FinTech listed on Karachi homepage (2026-10-10); BBA/BS A&F listed university-wide.",
-            "status": "partial",
+            "value": "Karachi homepage lists BS (Electrical Engineering), BS (Business Analytics) and BS (Financial Technologies) as undergraduate programmes.",
+            "status": "verified",
             "source": "S1",
-            "note": "Karachi-specific availability of business programmes not re-confirmed on 2026-10-13."
+            "note": "BBA and BS Accounting & Finance appear on the university-wide eligibility page, not on the Karachi undergraduate list opened 2026-10-19."
           },
           {
             "label": "Duration",
@@ -182,10 +196,10 @@
           },
           {
             "label": "Test pattern (computing)",
-            "value": "Advanced Maths 50%, Analytical/IQ 20%, Essay 20%, English 10%; negative marking",
-            "status": "partial",
+            "value": "BS (CS/Engg.) column: Advanced Maths 50%, Basic Math 20%, Analytical Skills and IQ 20%, English 10%. Essay is not in that column. Negative marking; calculators are not allowed.",
+            "status": "verified",
             "source": "S8",
-            "note": "Checked 2026-10-11 only."
+            "note": "Re-read 2026-10-19. An earlier note that put Essay at 20% does not match the BS (CS/Engg.) column."
           },
           {
             "label": "Latest schedule (2026 intake, tentative)",
@@ -198,7 +212,7 @@
             "value": null,
             "status": "unavailable",
             "source": "S3",
-            "note": "Schedule page (updated 13-Oct-2026) still shows the 2026 tentative schedule."
+            "note": "Schedule page, updated 19-Oct-2026, still shows the 2026 tentative schedule. No Fall 2027 dates were on that page."
           },
           {
             "label": "Applicant (application) fee",
@@ -266,7 +280,7 @@
           },
           {
             "label": "External / alumni aid",
-            "value": "PM National ICT scholarships (Ignite), BEEF, PEEF, OSAF, FANA, Ihsan Trust, community scholarships",
+            "value": "The scholarship page names the Prime Minister's National ICT Scholarship (Ignite), Balochistan Education Endowment Fund, PEEF, Punjab Honhaar, HEC scholarships for MS and PhD students, OSAF, FANA, Ihsan Trust and community scholarships. It does not say which of these are open.",
             "status": "verified",
             "source": "S5"
           }
@@ -317,7 +331,8 @@
           "id": "S1",
           "title": "NED Undergraduate Admissions 2026 page",
           "url": "https://www.neduet.edu.pk/admission",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S2",
@@ -329,7 +344,8 @@
           "id": "S3",
           "title": "NED Academic Programmes",
           "url": "https://www.neduet.edu.pk/academic_programmes",
-          "checked": "2026-10-10"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S4",
@@ -372,6 +388,14 @@
           "title": "NED Department of Student Affairs",
           "url": "https://www.neduet.edu.pk/students_affairs",
           "checked": "2026-10-13"
+        },
+        {
+          "id": "S11",
+          "title": "NED University homepage",
+          "url": "https://www.neduet.edu.pk/",
+          "checked": "2026-10-19",
+          "source_type": "official_university",
+          "note": "The quality-assurance line says QEC W category 95.33%. That is not the FY2024-25 ORIC score. See field_conflicts.json."
         }
       ],
       "sections": {
@@ -380,20 +404,20 @@
             "label": "Official name",
             "value": "NED University of Engineering & Technology",
             "status": "verified",
-            "source": "S5"
+            "source": "S11"
           },
           {
             "label": "Overview",
-            "value": "Public engineering university in Karachi with Main, City and LEJ campuses; HEC-recognised sub-campus TIEST (Mithi, Tharparkar).",
-            "status": "partial",
-            "source": "S2",
-            "note": "Campus list from prospectus/notices; not a single official overview statement."
+            "value": "Established in March 1977 under an act of the Provincial Assembly of Sindh, after the NED Government Engineering College (set up in 1921) was upgraded.",
+            "status": "verified",
+            "source": "S11",
+            "note": "Homepage text. Campus names were not in this paragraph."
           },
           {
             "label": "Website",
             "value": "https://www.neduet.edu.pk/",
             "status": "verified",
-            "source": "S5"
+            "source": "S11"
           },
           {
             "label": "Admissions URL",
@@ -423,33 +447,36 @@
         "programs": [
           {
             "label": "BS Computer Science & IT",
-            "value": "Offered (Dept of CS&SE)",
+            "value": "Listed as a 4-year bachelor programme in Computer Science under Computer Science & Software Engineering.",
             "status": "verified",
             "source": "S3"
           },
           {
             "label": "BE/BS Software Engineering",
-            "value": "Offered (Dept of CS&SE)",
+            "value": "Listed as a 4-year bachelor programme in Software Engineering under Computer Science & Software Engineering.",
             "status": "verified",
             "source": "S3"
           },
           {
             "label": "Artificial Intelligence",
-            "value": "CS specialisation track (50 seats), allocated on university second-year merit - not direct first-year entry",
+            "value": "Listed as a 4-year bachelor programme in Artificial Intelligence on the academic programmes page. Seat numbers and whether entry is direct were not on that page.",
             "status": "verified",
-            "source": "S2"
+            "source": "S3",
+            "note": "An older prospectus claim of a 50-seat second-year track was not re-opened. It is not shown."
           },
           {
             "label": "Data Science",
-            "value": "CS specialisation track (50 seats), allocated on second-year merit",
+            "value": "Listed as a 4-year bachelor programme in Data Science on the academic programmes page. Seat numbers and whether entry is direct were not on that page.",
             "status": "verified",
-            "source": "S2"
+            "source": "S3",
+            "note": "An older prospectus claim of a 50-seat second-year track was not re-opened. It is not shown."
           },
           {
             "label": "Cyber Security / Gaming & Animation",
-            "value": "CS specialisation tracks (50 seats each)",
+            "value": "Listed as 4-year bachelor programmes (Cyber Security, and Gaming and Animation). Seat numbers were not on that page.",
             "status": "verified",
-            "source": "S2"
+            "source": "S3",
+            "note": "An older prospectus claim of 50 seats each was not re-opened. It is not shown."
           }
         ],
         "admissions": [
@@ -467,7 +494,7 @@
           },
           {
             "label": "Seat categories",
-            "value": "Regular (R-*) and self-finance (SF-1..SF-11) categories; Karachi-board and other-board call lists",
+            "value": "The 2026 admissions page lists regular categories (including R-1(a), R-1(g), R-6, R-9 and R-10(a)) and self-finance categories (including SF-1(a) and SF-11), with separate Karachi-board and other-board call lists.",
             "status": "verified",
             "source": "S1"
           },
@@ -483,7 +510,7 @@
             "value": null,
             "status": "unavailable",
             "source": "S1",
-            "note": "Not published as of 2026-10-13 (page still shows 2026 cycle)."
+            "note": "Not published on the admissions page opened 2026-10-19. That page still shows the 2026 cycle."
           }
         ],
         "fees": [
@@ -592,7 +619,8 @@
           "id": "S1",
           "title": "IBA Programs Offered",
           "url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_admissions"
         },
         {
           "id": "S2",
@@ -623,6 +651,13 @@
           "title": "HEC university profile",
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Institute-of-Business-Administration.aspx",
           "checked": "2026-10-11"
+        },
+        {
+          "id": "S9",
+          "title": "IBA Karachi homepage",
+          "url": "https://www.iba.edu.pk/",
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -644,11 +679,11 @@
             "label": "Website",
             "value": "https://www.iba.edu.pk/",
             "status": "verified",
-            "source": "S6"
+            "source": "S9"
           },
           {
             "label": "Admissions URL",
-            "value": "https://admissions.iba.edu.pk/",
+            "value": "https://admissions.iba.edu.pk/OfferedPrograms.php",
             "status": "verified",
             "source": "S2"
           },
@@ -674,19 +709,19 @@
         "programs": [
           {
             "label": "BS Computer Science",
-            "value": "Offered; 128 credit hours, 40 courses; main campus",
+            "value": "Listed as Bachelor of Science (Computer Science). The programmes table places it on the main campus. A single credit-hour figure was not separated from neighbouring columns on 2026-10-19.",
             "status": "verified",
             "source": "S1"
           },
           {
             "label": "BS Economics & Data Science",
-            "value": "Offered (BSEDS)",
+            "value": "Listed as BS Economics and Data Science.",
             "status": "verified",
             "source": "S1"
           },
           {
             "label": "BS Business Analytics",
-            "value": "Offered (SBS); main/city campus",
+            "value": "Listed. The campus cell covering the first undergraduate group, which includes Business Analytics, reads main/city.",
             "status": "verified",
             "source": "S1"
           },
@@ -724,7 +759,7 @@
           },
           {
             "label": "Admission test",
-            "value": "IBA Aptitude Test (English + Maths MCQs, SAT level), in person only; SAT/ACT exemption route (top SAT scorers only)",
+            "value": "Aptitude test with English and Mathematics MCQs. SAT exemption is described for top scorers only, with no minimum SAT score stated. ACT composite thresholds are published (29 for BBA, BS Accounting & Finance and BS Business Analytics; 28 for several other BS programmes).",
             "status": "verified",
             "source": "S1"
           },
@@ -860,7 +895,8 @@
           "id": "S1",
           "title": "Habib University Admissions 2027",
           "url": "https://habib.edu.pk/admissions/",
-          "checked": "2026-10-13"
+          "checked": "2026-10-19",
+          "source_type": "official_admissions"
         },
         {
           "id": "S2",
@@ -930,6 +966,12 @@
             "value": "Listed on HEC university profiles (sector Private).",
             "status": "verified",
             "source": "S5"
+          },
+          {
+            "label": "Phone",
+            "value": "+92 21 1110 42242",
+            "status": "verified",
+            "source": "S1"
           }
         ],
         "programs": [
@@ -1058,27 +1100,27 @@
         "scholarships": [
           {
             "label": "HU TOPS",
-            "value": "100% financial support for 4 years (national boards)",
+            "value": "100% financial support for the four-year undergraduate programme, for national examination board applicants.",
             "status": "verified",
-            "source": "S2"
+            "source": "S1"
           },
           {
             "label": "HU EOP",
-            "value": "Up to 80% financial support (national boards)",
+            "value": "Up to 80% financial support, for national examination board applicants.",
             "status": "verified",
-            "source": "S2"
+            "source": "S1"
           },
           {
             "label": "Habib YOHSIN Scholarship",
-            "value": "100% of tuition & lab/studio fees (international boards); CGPA 3.5 to retain",
+            "value": "100% of tuition and laboratory and/or studio fees, for international examination board applicants. The admissions page does not state a continuation CGPA.",
             "status": "verified",
-            "source": "S2"
+            "source": "S1"
           },
           {
             "label": "Habib Excellence / Merit",
-            "value": "60-80% / up to 50% of tuition & lab/studio fees; CGPA 3.0 / 2.75 to retain",
+            "value": "Excellence covers 60% to 80% of tuition and laboratory and/or studio fees. Merit covers up to 50%. The admissions page does not state continuation CGPAs.",
             "status": "verified",
-            "source": "S2"
+            "source": "S1"
           },
           {
             "label": "Need-based grants & loans",

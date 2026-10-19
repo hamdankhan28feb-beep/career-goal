@@ -20,6 +20,936 @@
       "checked_at": "2026-10-19",
       "checker": "scripts/record-verification.mjs",
       "notes": "Direct HTTP from this environment to hec.gov.pk timed out. The same official URL was retrieved via a search fetch on 2026-10-19 and the Iqra University, Karachi row was copied from that page. A second HEC page (Sindh/Iqra-University.aspx) was retrieved the same way and disagrees on the campus list; see field_conflicts.json."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Official name",
+      "source_url": "https://khi.nu.edu.pk/",
+      "source_title": "FAST-NUCES Karachi campus homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Overview",
+      "source_url": "https://khi.nu.edu.pk/",
+      "source_title": "FAST-NUCES Karachi campus homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Website",
+      "source_url": "https://khi.nu.edu.pk/",
+      "source_title": "FAST-NUCES Karachi campus homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Admissions URL",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Main campus address",
+      "source_url": "https://khi.nu.edu.pk/",
+      "source_title": "FAST-NUCES Karachi campus homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "City campus address",
+      "source_url": "https://khi.nu.edu.pk/",
+      "source_title": "FAST-NUCES Karachi campus homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "BS Artificial Intelligence",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "BS Computer Science",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "BS Data Science",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "BS Software Engineering",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "BS Cyber Security",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Other UG at Karachi",
+      "source_url": "https://khi.nu.edu.pk/",
+      "source_title": "FAST-NUCES Karachi campus homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Duration",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Eligibility (BS Computing)",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Merit formula (BS Computing)",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Admission test options",
+      "source_url": "https://www.nu.edu.pk/Admissions/EligibilityCriteria",
+      "source_title": "NU Eligibility Criteria (updated 10-Aug-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Test pattern (computing)",
+      "source_url": "https://www.nu.edu.pk/Admissions/TestPattern",
+      "source_title": "NU Test Pattern",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Latest schedule (2026 intake, tentative)",
+      "source_url": "https://www.nu.edu.pk/Admissions/Schedule",
+      "source_title": "NU Admission Schedule (Tentative 2026, updated 13-Oct-2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Applicant (application) fee",
+      "source_url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+      "source_title": "NU Fee Structure (w.e.f. Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Tuition (2026-27, BS)",
+      "source_url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+      "source_title": "NU Fee Structure (w.e.f. Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Admission fee (one-time)",
+      "source_url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+      "source_title": "NU Fee Structure (w.e.f. Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Security deposit (refundable)",
+      "source_url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+      "source_title": "NU Fee Structure (w.e.f. Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Student activities fund",
+      "source_url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+      "source_title": "NU Fee Structure (w.e.f. Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Merit scholarship",
+      "source_url": "https://www.nu.edu.pk/Admissions/Scholarship",
+      "source_title": "NU Scholarships",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Interest-free study loan",
+      "source_url": "https://www.nu.edu.pk/Admissions/Scholarship",
+      "source_title": "NU Scholarships",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Sindh Government Endowment Board",
+      "source_url": "https://www.nu.edu.pk/Admissions/Scholarship",
+      "source_title": "NU Scholarships",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "External / alumni aid",
+      "source_url": "https://www.nu.edu.pk/Admissions/Scholarship",
+      "source_title": "NU Scholarships",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Hostel",
+      "source_url": "https://www.nu.edu.pk/Admissions/FAQ",
+      "source_title": "NU Admissions FAQ",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Transport",
+      "source_url": "https://www.nu.edu.pk/Admissions/FAQ",
+      "source_title": "NU Admissions FAQ",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Campus hours / parking",
+      "source_url": "https://khi.nu.edu.pk/",
+      "source_title": "FAST-NUCES Karachi campus homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "Karachi admissions contact",
+      "source_url": "https://www.nu.edu.pk/Admissions/FAQ",
+      "source_title": "NU Admissions FAQ",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Karachi homepage contains unrelated injected text; that text was not used."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Official name",
+      "source_url": "https://www.neduet.edu.pk/",
+      "source_title": "NED University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Overview",
+      "source_url": "https://www.neduet.edu.pk/",
+      "source_title": "NED University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Website",
+      "source_url": "https://www.neduet.edu.pk/",
+      "source_title": "NED University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Admissions URL",
+      "source_url": "https://www.neduet.edu.pk/admission",
+      "source_title": "NED Undergraduate Admissions 2026 page",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "BS Computer Science & IT",
+      "source_url": "https://www.neduet.edu.pk/academic_programmes",
+      "source_title": "NED Academic Programmes",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "BE/BS Software Engineering",
+      "source_url": "https://www.neduet.edu.pk/academic_programmes",
+      "source_title": "NED Academic Programmes",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Artificial Intelligence",
+      "source_url": "https://www.neduet.edu.pk/academic_programmes",
+      "source_title": "NED Academic Programmes",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Data Science",
+      "source_url": "https://www.neduet.edu.pk/academic_programmes",
+      "source_title": "NED Academic Programmes",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Cyber Security / Gaming & Animation",
+      "source_url": "https://www.neduet.edu.pk/academic_programmes",
+      "source_title": "NED Academic Programmes",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Minimum HSC marks",
+      "source_url": "https://www.neduet.edu.pk/admission",
+      "source_title": "NED Undergraduate Admissions 2026 page",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Admission test",
+      "source_url": "https://www.neduet.edu.pk/admission",
+      "source_title": "NED Undergraduate Admissions 2026 page",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Seat categories",
+      "source_url": "https://www.neduet.edu.pk/admission",
+      "source_title": "NED Undergraduate Admissions 2026 page",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Hostel",
+      "source_url": "https://www.neduet.edu.pk/admission",
+      "source_title": "NED Undergraduate Admissions 2026 page",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "Website",
+      "source_url": "https://www.iba.edu.pk/",
+      "source_title": "IBA Karachi homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "Admissions URL",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "BS Computer Science",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "BS Economics & Data Science",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "BS Business Analytics",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "Other UG",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "BS AI / BS Software Engineering",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "Duration",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "Eligibility (BSCS / Math / EDS / EM)",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "Eligibility (BBA / BSAF / BSBA)",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "Admission test",
+      "source_url": "https://admissions.iba.edu.pk/OfferedPrograms.php",
+      "source_title": "IBA Programs Offered",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee schedule, deadline page and HEC profile were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Official name",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Overview",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Website",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Admissions URL",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Campus address",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Phone",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "BS Computer Science",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "BS Computer Engineering",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "BS Electrical Engineering",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "AHSS programmes",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "BS AI / Data Science / Software Engineering",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "General eligibility (Fall 2027)",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Process",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "HU TOPS",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "HU EOP",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Habib YOHSIN Scholarship",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "Habib Excellence / Merit",
+      "source_url": "https://habib.edu.pk/admissions/",
+      "source_title": "Habib University Admissions 2027",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Admissions page opened 2026-10-19. Tuition page and dated schedule pages were not re-opened, so those figures stay withheld."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "Official name",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "Website",
+      "source_url": "https://jinnah.edu/",
+      "source_title": "MAJU homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "Main campus address",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "Contact",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "BS Computer Science",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "BS Artificial Intelligence",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "BS Software Engineering",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "BS Cyber Security",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "Data Science",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "Eligibility (BS CS/SE/AI)",
+      "source_url": "https://jinnah.edu/eligibility-criteria/",
+      "source_title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and scholarship pages were not re-opened. Homepage W mark is not the ORIC category."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Official name",
+      "source_url": "https://www.hamdard.edu.pk/",
+      "source_title": "Hamdard University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Main campus address",
+      "source_url": "https://www.hamdard.edu.pk/",
+      "source_title": "Hamdard University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Other sites",
+      "source_url": "https://www.hamdard.edu.pk/",
+      "source_title": "Hamdard University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Contact",
+      "source_url": "https://www.hamdard.edu.pk/",
+      "source_title": "Hamdard University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Website",
+      "source_url": "https://www.hamdard.edu.pk/",
+      "source_title": "Hamdard University homepage",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "BS Computer Science",
+      "source_url": "https://www.hamdard.edu.pk/programs-offered-fest/",
+      "source_title": "Hamdard University - Programs Offered (FEST)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "BS Artificial Intelligence",
+      "source_url": "https://www.hamdard.edu.pk/programs-offered-fest/",
+      "source_title": "Hamdard University - Programs Offered (FEST)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "BS Software Engineering",
+      "source_url": "https://www.hamdard.edu.pk/programs-offered-fest/",
+      "source_title": "Hamdard University - Programs Offered (FEST)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "BS Data Science",
+      "source_url": "https://www.hamdard.edu.pk/programs-offered-fest/",
+      "source_title": "Hamdard University - Programs Offered (FEST)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Other computing UG",
+      "source_url": "https://www.hamdard.edu.pk/programs-offered-fest/",
+      "source_title": "Hamdard University - Programs Offered (FEST)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Duration / credit hours (BS CS/AI/SE)",
+      "source_url": "https://www.hamdard.edu.pk/programs-offered-fest/",
+      "source_title": "Hamdard University - Programs Offered (FEST)",
+      "checked_at": "2026-10-19",
+      "checker": "scripts/record-verification.mjs",
+      "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
     }
   ]
 }
