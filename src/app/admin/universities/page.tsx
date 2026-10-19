@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Building2, ArrowLeft, ExternalLink, ShieldCheck, Pencil, Trash2, X, Plus, Sparkles } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ShieldCheck, Pencil, Trash2, X, Plus, Sparkles } from 'lucide-react';
 import type { University } from '@/lib/types';
 import { Dialog } from '@/components/dialog';
 
@@ -25,36 +25,7 @@ export default function AdminUniversitiesPage() {
   const [formError, setFormError] = useState('');
   const [formLoading, setFormLoading] = useState(false);
 
-  useEffect(() => {
-    fetchUniversities();
-  }, []);
-
-  async function fetchUniversities() {
-    try {
-      const res = await fetch('/api/reviews'); // Safe to check admin
-      if (res.ok) {
-        // Fetch all universities
-        const uRes = await fetch('/api/counselor', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: 'list all universities' }),
-        });
-        // We can just call a direct fetch of public universities or mock-load them
-        const response = await fetch('/api/reviews'); // Admin check
-        if (response.ok) {
-          // Let's call Next.js API or get data from a simple fetch. Since we want live data:
-          // We can create a quick sub-route GET /api/universities that returns all. Let's make sure that's supported.
-          const ulistRes = await fetch('/api/universities/get-all'); // wait, let's look at GET in our /api/universities route.
-          // Wait! In our /api/universities/route.ts, we did not define a GET method. We should define one, or we can just fetch from the public page or a custom api!
-          // Actually, let's add a GET method to /api/universities/route.ts that returns all universities so we don't need a separate endpoint!
-        }
-      }
-    } catch {
-      // Fallback
-    }
-  }
-
-  // To make it simple and elegant, we can load the initial universities from a fetch endpoint.
+  // Load the university list from the public API.
   // Let's modify our /api/universities/route.ts to also support GET /api/universities so we can load them live!
   // Let's fetch the list of universities on client load.
   useEffect(() => {
@@ -115,7 +86,7 @@ export default function AdminUniversitiesPage() {
       } else {
         alert('Failed to delete university.');
       }
-    } catch (err) {
+    } catch {
       alert('Error deleting university.');
     }
   }
@@ -154,8 +125,6 @@ export default function AdminUniversitiesPage() {
           body: JSON.stringify({ ...payload, targetSlug: editingUni.slug }),
         });
         if (res.ok) {
-          const data = await res.json() as { university: any };
-          // reload page or update state
           window.location.reload();
         } else {
           const errData = await res.json() as { error?: string };
@@ -169,14 +138,13 @@ export default function AdminUniversitiesPage() {
           body: JSON.stringify(payload),
         });
         if (res.ok) {
-          const data = await res.json() as { university: any };
           window.location.reload();
         } else {
           const errData = await res.json() as { error?: string };
           setFormError(errData.error || 'Failed to create university.');
         }
       }
-    } catch (err) {
+    } catch {
       setFormError('Network error. Please try again.');
     } finally {
       setFormLoading(false);

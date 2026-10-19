@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
       total: page.total,
       limit: page.limit
     });
-  } catch (error: any) {
+  } catch {
     return NextResponse.json({ error: 'Failed to fetch universities.' }, { status: 500 });
   }
 }
@@ -110,8 +110,9 @@ export async function POST(req: NextRequest) {
     clearUniversitiesCache();
 
     return NextResponse.json({ success: true, university: newUniRow }, { status: 201 });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message || 'Failed to create university.' }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Failed to create university.';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
 
@@ -213,8 +214,9 @@ export async function PUT(req: NextRequest) {
 
     clearUniversitiesCache();
     return NextResponse.json({ success: true, university: updatedUniRow });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message || 'Failed to update university.' }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Failed to update university.';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
 
@@ -239,7 +241,8 @@ export async function DELETE(req: NextRequest) {
 
     clearUniversitiesCache();
     return NextResponse.json({ success: true, message: 'University deleted successfully.' });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message || 'Failed to delete university.' }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Failed to delete university.';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
