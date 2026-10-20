@@ -2,7 +2,8 @@ import rawUniversityData from '../../data_v2.json';
 import { query } from '@/lib/db';
 import { getFields } from '@/lib/fields-data';
 import { slugify } from '@/lib/slug';
-import { getBundledProfile } from '@/lib/university-profiles';
+import { getAllBundledProfiles, getBundledProfile } from '@/lib/university-profiles';
+import { researchUniversities } from '@/lib/research-meta';
 import { profileSearchText } from '@/lib/profile-utils';
 import { computeAggregate, computeChance, getBenchmark } from '@/lib/predictor';
 import { fetchAllFromDb, fetchPageFromDb } from '@/lib/university-query';
@@ -57,9 +58,35 @@ function getBundledUniversities(): University[] {
     return cachedBundledUniversities;
   }
 
-  const bundled = (rawUniversityData as { universities: RawUniversityV2[] }).universities.map(mapBundledUniversity);
+  const legacy = (rawUniversityData as { universities: RawUniversityV2[] }).universities.map(mapBundledUniversity);
+  // Profiles whose university has no legacy data_v2.json row (e.g. batch 3: KIET, SHU, SMIU)
+  // would otherwise be unreachable without a DB. List them from the profile + research row only;
+  // no legacy facts are invented for them.
+  const known = new Set(legacy.map((u) => u.slug));
+  const profileOnly = getAllBundledProfiles()
+    .filter((p) => !known.has(p.slug))
+    .map((p, i) => mapProfileOnlyUniversity(p, 100000 + i));
+  const bundled = [...legacy, ...profileOnly];
   cachedBundledUniversities = bundled;
   return bundled;
+}
+
+function mapProfileOnlyUniversity(p: NonNullable<ReturnType<typeof getBundledProfile>>, id: number): University {
+  const r = researchUniversities.find((x) => x.id === p.research_id);
+  const ownership = (r?.ownership || '').toLowerCase();
+  const raw = {
+    university_id: id,
+    basic_information: {
+      name: p.official_name,
+      slug: p.slug,
+      short_name: null,
+      city: r?.city || 'Karachi',
+      province: r?.province || 'Sindh',
+      // Only from the research row; never defaulted to 'Private' for these.
+      university_type: ownership === 'public' ? 'Public' : ownership === 'private' ? 'Private' : 'Unknown',
+    },
+  } as unknown as RawUniversityV2;
+  return mapBundledUniversity(raw);
 }
 
 function mapBundledUniversity(raw: RawUniversityV2): University {
