@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
     const tokens = await exchangeCodeForTokens(config, code);
     const profile = await fetchGoogleUserProfile(tokens.access_token);
 
-    if (!profile.email || profile.email_verified === false) {
+    if (!profile.email || profile.email_verified !== true) {
       return redirectToLogin(request, 'email_not_verified');
     }
 
@@ -69,7 +69,7 @@ export async function GET(request: NextRequest) {
     });
 
     const redirect =
-      sanitizeRedirectPath(stored.redirect) ?? (user.role === 'admin' ? '/admin' : '/');
+      sanitizeRedirectPath(stored.redirect) ?? (user.role === 'admin' ? '/admin' : '/dashboard');
 
     const response = NextResponse.redirect(new URL(redirect, request.url));
     response.cookies.set(SESSION_COOKIE, sessionToken, {

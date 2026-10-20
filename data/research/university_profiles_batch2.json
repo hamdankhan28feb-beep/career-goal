@@ -1039,8 +1039,9 @@
           "id": "S1",
           "title": "MAJU Eligibility Criteria (Programs Offered - Fall 2026)",
           "url": "https://jinnah.edu/eligibility-criteria/",
-          "checked": "2026-10-11",
-          "note": "Cloudflare blocked re-fetch on 2026-10-13."
+          "checked": "2026-10-19",
+          "note": "Cloudflare blocked re-fetch on 2026-10-13.",
+          "source_type": "official_admissions"
         },
         {
           "id": "S2",
@@ -1084,22 +1085,30 @@
           "title": "MAJU IPER 2024-25 (institutional report)",
           "url": "https://jinnah.edu/wp-content/uploads/2025/09/IPER-2024-25.pdf",
           "checked": "2026-10-14"
+        },
+        {
+          "id": "S9",
+          "title": "MAJU homepage",
+          "url": "https://jinnah.edu/",
+          "checked": "2026-10-19",
+          "source_type": "official_university",
+          "note": "The homepage shows a \"w 4 Category\" mark. The HEC ORIC FY2024-25 report places Muhammad Ali Jinnah University, Karachi in Y (49.5), not W. The homepage mark is not used as the category."
         }
       ],
       "sections": {
         "overview": [
           {
             "label": "Official name",
-            "value": "Muhammad Ali Jinnah University (HEC spelling); MAJU",
+            "value": "The eligibility page title says Muhammad Ali Jinnah University. The contact block on the same page says Mohammad Ali Jinnah University.",
             "status": "partial",
-            "source": "S5",
-            "note": "FuturePath uses 'Mohammad'."
+            "source": "S1",
+            "note": "Both spellings are on the official page opened 2026-10-19. The HEC profile page was not re-opened."
           },
           {
             "label": "Website",
             "value": "https://jinnah.edu/",
             "status": "verified",
-            "source": "S6"
+            "source": "S9"
           },
           {
             "label": "Admissions URL",
@@ -1117,52 +1126,55 @@
             "label": "Main campus address",
             "value": "MAJU Bus Stop, Main Shahrah-e-Faisal, 22-E, Block-6, PECHS, Karachi-75400",
             "status": "verified",
-            "source": "S6"
+            "source": "S1"
           },
           {
             "label": "Contact",
-            "value": "UAN 021-111-87-87-87; info@jinnah.edu; WhatsApp 0341-0003339",
+            "value": "UAN +92-21-111-87-87-87; info@jinnah.edu; +92-21-3431-1327.",
             "status": "verified",
-            "source": "S6"
+            "source": "S1",
+            "note": "Taken from the eligibility page contact block on 2026-10-19. An older WhatsApp number was not on that block and is not shown."
           }
         ],
         "programs": [
           {
             "label": "BS Computer Science",
-            "value": "Offered (Fall 2026)",
-            "status": "partial",
+            "value": "Offered for Fall 2026. Minimum 50% in Intermediate, DAE or A-Levels with Mathematics. Pre-medical applicants must pass 6 credit hours of Mathematics deficiency in the first two semesters.",
+            "status": "verified",
             "source": "S1"
           },
           {
             "label": "BS Artificial Intelligence",
-            "value": "Offered (Fall 2026)",
-            "status": "partial",
+            "value": "Offered for Fall 2026. Minimum 50% in Intermediate, DAE or A-Levels with Mathematics. Pre-medical applicants must pass 6 credit hours of Mathematics deficiency in the first two semesters.",
+            "status": "verified",
             "source": "S1"
           },
           {
             "label": "BS Software Engineering",
-            "value": "Offered in Spring semester only",
-            "status": "partial",
-            "source": "S1"
+            "value": "Listed under Fall 2026 undergraduate programmes. Minimum 50% in Intermediate, DAE or A-Levels with Mathematics, with the same pre-medical Mathematics deficiency note. The page does not say the programme is spring-only.",
+            "status": "verified",
+            "source": "S1",
+            "note": "Replaces an earlier \"Spring semester only\" line that this page does not support."
           },
           {
             "label": "BS Cyber Security",
-            "value": "Listed in fee structure",
-            "status": "partial",
-            "source": "S2"
+            "value": "Listed as BS Cyber Security, marked new programme, for Fall 2026. Minimum 50% in Intermediate, DAE or A-Levels with Mathematics.",
+            "status": "verified",
+            "source": "S1"
           },
           {
             "label": "Data Science",
-            "value": "Not offered at UG (MS level only)",
+            "value": "The Fall 2026 undergraduate table does not list BS Data Science. MS (Data Science) is listed on the same page.",
             "status": "partial",
-            "source": "S1"
+            "source": "S1",
+            "note": "The page does not contain a sentence that the bachelor programme is closed."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility (BS CS/SE/AI)",
             "value": "Minimum 50% in Intermediate / DAE / A-Levels with Mathematics; Pre-Medical must pass 6 cr hr Maths deficiency in first two semesters",
-            "status": "partial",
+            "status": "verified",
             "source": "S1"
           },
           {

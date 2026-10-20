@@ -167,7 +167,7 @@ export default function CounselorPage() {
             role: 'notice',
             noticeKind: 'unconfigured',
             content:
-              'No answer was generated: the AI Counselor is not configured on this server. Browse Universities and Scholarships for verified data, or ask the site owner to add an API key.',
+              'No answer was generated. The counselor is unavailable.',
           },
         ]);
         return;
@@ -216,12 +216,11 @@ export default function CounselorPage() {
     <div className="mx-auto flex max-w-4xl flex-col px-4 py-10 sm:px-6">
       <header className="mb-6">
         <div className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-3 py-1 text-xs text-muted-foreground">
-          <Bot className="h-3.5 w-3.5" aria-hidden /> AI Counselor
+          <Bot className="h-3.5 w-3.5" aria-hidden /> Unavailable / Beta
         </div>
-        <h1 className="mt-4 text-3xl font-semibold tracking-tight">Ask about universities, scholarships &amp; learning</h1>
+        <h1 className="mt-4 text-3xl font-semibold tracking-tight">AI Counselor</h1>
         <p className="mt-2 text-muted-foreground">
-          Answers are drawn from FuturePath&rsquo;s research dataset and cite their sources. Always confirm fees, deadlines
-          and merit on official websites.
+          Answers, when available, are not official advice. They may cite only records that have a source URL. Fees, deadlines and merit stay unstated when the sources do not contain them.
         </p>
       </header>
 
@@ -229,19 +228,16 @@ export default function CounselorPage() {
         <div role="status" className="notice-warning mb-6 flex gap-3 p-5 text-sm">
           <Settings className="mt-0.5 h-5 w-5 shrink-0 text-warning" aria-hidden />
           <div>
-            <p className="font-medium text-foreground">The AI Counselor isn&rsquo;t set up on this server yet.</p>
+            <p className="font-medium text-foreground">Unavailable</p>
             <p className="mt-1 text-muted-foreground">
-              No live answers can be generated, and we won&rsquo;t show made-up ones. To enable it, add{' '}
-              <code className="rounded bg-muted px-1">OPENAI_API_KEY</code> or{' '}
-              <code className="rounded bg-muted px-1">GEMINI_API_KEY</code> to <code className="rounded bg-muted px-1">.env.local</code>{' '}
-              and restart the server. Meanwhile, the Universities and Scholarships pages show verified data with sources.
+              The counselor cannot answer right now, and it will not invent one. University and scholarship pages remain available.
             </p>
           </div>
         </div>
       ) : mode === 'live' ? (
         <div className="notice-success mb-6 flex flex-wrap items-center gap-2 px-4 py-3 text-xs">
           <Sparkles className="h-4 w-4" aria-hidden />
-          Live{provider ? ` (${provider})` : ''} · answers cite FuturePath research sources — tap a marker like{' '}
+          Beta{provider ? ` (${provider})` : ''}. Not official advice. Tap a marker like{' '}
           <span className="rounded-md border border-primary/40 bg-primary/10 px-1 font-semibold text-primary">S1</span> to see it.
         </div>
       ) : mode === 'error' ? (
@@ -356,7 +352,7 @@ export default function CounselorPage() {
           disabled={disabled}
           maxLength={2000}
           placeholder={
-            mode === 'unconfigured' ? 'Counselor not configured on this server' : 'Ask about a university, scholarship or skill…'
+            mode === 'unconfigured' ? 'Unavailable' : 'Ask about a university or scholarship…'
           }
           className="input-field flex-1"
         />

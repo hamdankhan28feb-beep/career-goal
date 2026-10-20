@@ -81,6 +81,22 @@ function UserMenu({ user }: { user: SessionUser }) {
             <div className="truncate text-xs text-muted-foreground">{user.email}</div>
           </div>
 
+          <Link
+            href="/dashboard"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+          >
+            <User className="h-3.5 w-3.5" />
+            Dashboard
+          </Link>
+          <Link
+            href="/profile"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+          >
+            <User className="h-3.5 w-3.5" />
+            Profile
+          </Link>
           {user.role === 'admin' && (
             <Link
               href="/admin"
@@ -275,6 +291,20 @@ export function HeaderNav({ user }: { user?: SessionUser | null }) {
                     <div className="truncate text-xs text-muted-foreground">{user.email}</div>
                   </div>
                 </div>
+                <Link
+                  href="/dashboard"
+                  className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  href="/profile"
+                  className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Profile
+                </Link>
                 {user.role === 'admin' && (
                   <Link
                     href="/admin"

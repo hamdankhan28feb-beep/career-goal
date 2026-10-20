@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     const token = await createSessionToken(user);
     const response = NextResponse.json({
       user,
-      redirect: user.role === 'admin' ? '/admin' : '/',
+      redirect: user.role === 'admin' ? '/admin' : '/dashboard',
     });
 
     response.cookies.set(SESSION_COOKIE, token, {

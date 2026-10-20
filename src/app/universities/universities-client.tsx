@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { SearchInput } from '@/components/search-input';
-import { Search, Filter, X, Loader2 } from 'lucide-react';
+import { Filter, Loader2, Search } from 'lucide-react';
 import { UniversityCard } from '@/components/university-card';
 import type { University } from '@/lib/types';
 import { profileSearchText } from '@/lib/profile-utils';
@@ -12,22 +13,38 @@ const TYPES = ['All Types', 'Public', 'Private'];
 
 export function UniversitiesClient({ universities: initialUniversities }: { universities: University[] }) {
   const [universities, setUniversities] = useState(initialUniversities);
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
   const [city, setCity] = useState('All Cities');
   const [type, setType] = useState('All Types');
+  const [field, setField] = useState('');
   const [nextCursor, setNextCursor] = useState<string | null>(null);
   const [loadingMore, setLoadingMore] = useState(false);
   const [hasAttemptedLoad, setHasAttemptedLoad] = useState(false);
 
+  useEffect(() => {
+    const q = searchParams.get('q') ?? '';
+    const nextCity = searchParams.get('city');
+    const nextType = searchParams.get('type');
+    const nextField = searchParams.get('field') ?? '';
+    if (q) setQuery(q);
+    if (nextCity) setCity(nextCity);
+    if (nextType) setType(nextType);
+    setField(nextField);
+  }, [searchParams]);
+
   const filtered = useMemo(() => {
     const q = query.toLowerCase();
+    const fieldQ = field.toLowerCase().replace(/-/g, ' ');
     return universities.filter((u) => {
-      const matchQ = !q || u.name.toLowerCase().includes(q) || u.shortName.toLowerCase().includes(q) || u.city.toLowerCase().includes(q) || profileSearchText(u.profile).includes(q);
+      const blob = `${u.name} ${u.shortName} ${profileSearchText(u.profile)}`.toLowerCase();
+      const matchQ = !q || blob.includes(q) || u.city.toLowerCase().includes(q);
       const matchCity = city === 'All Cities' || u.city === city;
       const matchType = type === 'All Types' || u.universityType === type;
-      return matchQ && matchCity && matchType;
+      const matchField = !fieldQ || blob.includes(fieldQ) || u.programs.some((p) => (p.program_name || '').toLowerCase().includes(fieldQ));
+      return matchQ && matchCity && matchType && matchField;
     });
-  }, [universities, query, city, type]);
+  }, [universities, query, city, type, field]);
 
   const loadMore = useCallback(async () => {
     if (loadingMore) return;
@@ -57,11 +74,11 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
       <div className="flex flex-col gap-4">
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
           <Search className="h-4 w-4" />
-          Real data — verified from official university sources
+          Evidence labels, not a single verified badge
         </div>
         <h1 className="text-4xl font-semibold tracking-tight">University Explorer</h1>
         <p className="max-w-2xl text-muted-foreground">
-          Browse {universities.length} Pakistani universities with source-verified profiles. Filter by city, type, and more.
+          Browse {universities.length} loaded university records. A profile is not called detailed unless its fields have sources. Filter by city, type, or field.
         </p>
       </div>
 
@@ -137,7 +154,7 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
             {loadingMore ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Loading…
+                Please wait
               </>
             ) : hasAttemptedLoad && nextCursor === null ? (
               'All universities loaded'

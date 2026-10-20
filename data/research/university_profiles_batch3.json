@@ -311,7 +311,8 @@
           "id": "S1",
           "title": "Hamdard University - Programs Offered (FEST)",
           "url": "https://www.hamdard.edu.pk/programs-offered-fest/",
-          "checked": "2026-10-19"
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         },
         {
           "id": "S2",
@@ -344,6 +345,13 @@
           "url": "https://www.hamdard.edu.pk/test-interview-results-5th-sep-2026/",
           "checked": "2026-10-19",
           "note": "Results content not rendered in static HTML."
+        },
+        {
+          "id": "S0",
+          "title": "Hamdard University homepage",
+          "url": "https://www.hamdard.edu.pk/",
+          "checked": "2026-10-19",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -352,31 +360,31 @@
             "label": "Official name",
             "value": "Hamdard University",
             "status": "verified",
-            "source": "S4"
+            "source": "S0"
           },
           {
             "label": "Main campus address",
             "value": "Madinat al-Hikmah, Hakim Mohammed Said Road, Karachi",
             "status": "verified",
-            "source": "S4"
+            "source": "S0"
           },
           {
             "label": "Other sites",
             "value": "City SITE (159-P, Block-3, PECHS, Kashmir Road); NN Block F SITE (North Nazimabad); North Dental SITE (Block L, North Nazimabad); Islamabad campus (Chak Shahzad)",
             "status": "verified",
-            "source": "S4"
+            "source": "S0"
           },
           {
             "label": "Contact",
-            "value": "Admissions (021) 111-102-030; admissions@hamdard.edu",
+            "value": "Admissions (021) 111-102-030; admissions@hamdard.edu. Homepage also lists info@hamdard.edu.pk and main-campus WhatsApp (92) 331 1160109.",
             "status": "verified",
-            "source": "S4"
+            "source": "S0"
           },
           {
             "label": "Website",
             "value": "https://www.hamdard.edu.pk",
             "status": "verified",
-            "source": "S4"
+            "source": "S0"
           },
           {
             "label": "Admissions URL",
@@ -394,25 +402,25 @@
         "programs": [
           {
             "label": "BS Computer Science",
-            "value": "Offered (Main Campus)",
+            "value": "Main campus. 4 years, 132 credit hours, Fall intake. At least 50% in Intermediate (Pre-Engineering or Pre-Medical) or equivalent. NCEAC. Pre-medical students can apply.",
             "status": "verified",
             "source": "S1"
           },
           {
             "label": "BS Artificial Intelligence",
-            "value": "Offered (Main Campus)",
+            "value": "Main campus. 4 years, 132 credit hours, Fall intake. At least 50% in Intermediate (Pre-Engineering or Pre-Medical) or equivalent. NCEAC. Pre-medical students can apply.",
             "status": "verified",
             "source": "S1"
           },
           {
             "label": "BS Software Engineering",
-            "value": "Offered (Main Campus)",
+            "value": "Main campus. 4 years, 132 credit hours, Fall intake. At least 50% in Intermediate (Pre-Engineering or Pre-Medical) or equivalent. NCEAC. Pre-medical students can apply.",
             "status": "verified",
             "source": "S1"
           },
           {
             "label": "BS Data Science",
-            "value": "Not listed on the FEST programmes page",
+            "value": "Not listed on the FEST programmes page opened 2026-10-19.",
             "status": "verified",
             "source": "S1"
           },
@@ -424,9 +432,10 @@
           },
           {
             "label": "Duration / credit hours (BS CS/AI/SE)",
-            "value": null,
-            "status": "unavailable",
-            "note": "Credit-hour figures on the programmes page are not clearly attached to these programmes."
+            "value": "4 years and 132 credit hours for each of BS Computer Science, BS Software Engineering and BS Artificial Intelligence.",
+            "status": "verified",
+            "note": "Credit-hour figures on the programmes page are not clearly attached to these programmes.",
+            "source": "S1"
           }
         ],
         "admissions": [

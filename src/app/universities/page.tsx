@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { getUniversities } from '@/lib/data';
 import { UniversitiesClient } from './universities-client';
 
@@ -8,5 +10,9 @@ export const metadata = {
 
 export default async function UniversitiesPage() {
   const universities = await getUniversities();
-  return <UniversitiesClient universities={universities} />;
+  return (
+    <Suspense fallback={null}>
+      <UniversitiesClient universities={universities} />
+    </Suspense>
+  );
 }

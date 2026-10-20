@@ -1,11 +1,11 @@
-import rawUniversityData from '../../data_v2.json';
-import { query } from '@/lib/db';
+import rawUniversityData from '../../data_v2.json' with { type: 'json' };
 import { getFields } from '@/lib/fields-data';
 import { slugify } from '@/lib/slug';
 import { getAllBundledProfiles, getBundledProfile } from '@/lib/university-profiles';
 import { researchUniversities } from '@/lib/research-meta';
 import { profileSearchText } from '@/lib/profile-utils';
-import { computeAggregate, computeChance, getBenchmark } from '@/lib/predictor';
+import { chanceForUniversity, computeAggregate } from '@/lib/predictor';
+import { applyDisplayPolicy } from '@/lib/evidence';
 import { fetchAllFromDb, fetchPageFromDb } from '@/lib/university-query';
 import type { PaginatedResult } from '@/lib/pagination';
 import type {
@@ -13,25 +13,6 @@ import type {
   PredictorInput,
   PredictorResult,
   RawUniversityV2,
-  RawCampus,
-  RawProgram,
-  RawAccreditation,
-  RawEntryTest,
-  RawScholarship,
-  RawAcademicPolicy,
-  RawFacility,
-  RawCareerPath,
-  RawRanking,
-  RawReview,
-  RawFaq,
-  RawImportantLink,
-  RawAdmission,
-  RawFee,
-  RawFacultyAcademics,
-  RawStudentLife,
-  RawHostel,
-  RawTransport,
-  RawPlacement
 } from '@/lib/types';
 
 export { getFields } from '@/lib/fields-data';
@@ -60,13 +41,12 @@ function getBundledUniversities(): University[] {
 
   const legacy = (rawUniversityData as { universities: RawUniversityV2[] }).universities.map(mapBundledUniversity);
   // Profiles whose university has no legacy data_v2.json row (e.g. batch 3: KIET, SHU, SMIU)
-  // would otherwise be unreachable without a DB. List them from the profile + research row only;
-  // no legacy facts are invented for them.
+  // would otherwise be unreachable without a DB. List them from the profile + research row only.
   const known = new Set(legacy.map((u) => u.slug));
   const profileOnly = getAllBundledProfiles()
     .filter((p) => !known.has(p.slug))
     .map((p, i) => mapProfileOnlyUniversity(p, 100000 + i));
-  const bundled = [...legacy, ...profileOnly];
+  const bundled = [...legacy, ...profileOnly].map(applyDisplayPolicy);
   cachedBundledUniversities = bundled;
   return bundled;
 }
@@ -202,7 +182,7 @@ async function fetchUniversities(): Promise<University[]> {
   }
 
   try {
-    const result = await fetchAllFromDb();
+    const result = (await fetchAllFromDb()).map(applyDisplayPolicy);
     cachedUniversities = result;
     cacheTimestamp = now;
     return result;
@@ -227,7 +207,7 @@ export async function getUniversitiesPage(
   limit: number = 20
 ): Promise<PaginatedResult<University>> {
   if (!process.env.DATABASE_URL) {
-    const all = getBundledUniversities();
+    const all = getBundledUniversities().map(applyDisplayPolicy);
     const start = all.findIndex(u => u.id > cursor);
     const slice = start === -1 ? [] : all.slice(start, start + limit);
     const nextCursor = start + limit < all.length
@@ -237,7 +217,8 @@ export async function getUniversitiesPage(
   }
 
   try {
-    return await fetchPageFromDb(cursor, limit);
+    const page = await fetchPageFromDb(cursor, limit);
+    return { ...page, data: page.data.map(applyDisplayPolicy) };
   } catch (err) {
     console.error('Failed to fetch universities page:', err);
     return { data: [], nextCursor: null, total: 0, limit };
@@ -294,45 +275,24 @@ export function getFieldBySlug(slug: string) {
 // ─── Admission Predictor ──────────────────────────────────────────────────────
 
 export async function predictAdmissions(input: PredictorInput): Promise<PredictorResult[]> {
-  let universities = await filterUniversities({ city: input.city || undefined });
-
-  if (input.budgetPkr && input.budgetPkr > 0) {
-    universities = universities.filter((u) => {
-      const annualFee = u.fees?.semester_fee
-        ? u.fees.semester_fee * 2
-        : u.fees?.approx_total_degree_cost
-        ? u.fees.approx_total_degree_cost / 4
-        : 0;
-      return annualFee === 0 || annualFee <= input.budgetPkr;
-    });
-  }
+  const universities = await filterUniversities({ city: input.city || undefined });
 
   const combinedScore = computeAggregate(input.matricPct, input.interPct);
 
-  // Universities without a benchmark are skipped rather than scored against an
-  // invented default cutoff. Benchmarks are rough estimates, not official merit.
+  // Only a sourced closing aggregate (programme + year + URL + date) can produce a chance.
+  // Unsourced legacy fees are not used as a budget filter.
   return universities
     .flatMap((u): PredictorResult[] => {
-      const benchmark = getBenchmark(u.shortName);
-      const chance = computeChance(combinedScore, u.shortName);
-      if (benchmark === null || chance === null) return [];
-      const diff = combinedScore - benchmark;
-
-      let reason: string;
-      if (chance === 'High') {
-        reason = `Your aggregate (${combinedScore.toFixed(1)}%) is ${diff.toFixed(1)} points above our rough benchmark estimate (not an official cutoff).`;
-      } else if (chance === 'Medium') {
-        reason = `Your aggregate (${combinedScore.toFixed(1)}%) is near our rough benchmark estimate (not an official cutoff).`;
-      } else {
-        reason = `Your aggregate (${combinedScore.toFixed(1)}%) is ${Math.abs(diff).toFixed(1)} points below our rough benchmark estimate (not an official cutoff).`;
-      }
-
+      const hit = chanceForUniversity(combinedScore, u.slug);
+      if (!hit) return [];
+      const diff = combinedScore - hit.merit.closing_aggregate;
+      const reason = `${hit.merit.programme} (${hit.merit.academic_year}): your weighted marks are ${diff.toFixed(1)} points from a sourced closing aggregate. This is not an official cutoff. Source: ${hit.merit.source_url}`;
       return [{
         universitySlug: u.slug,
         universityName: u.name,
         universityType: u.universityType,
         city: u.city,
-        chance,
+        chance: hit.chance,
         score: combinedScore,
         reason,
       }];

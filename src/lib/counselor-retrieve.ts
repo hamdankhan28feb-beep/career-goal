@@ -123,11 +123,10 @@ function uniDoc(u: ResearchUniversity): Doc {
     u.programs_ds === 'yes' ? 'BS Data Science (programs_ds)' : null,
   ].filter(Boolean);
   const name = u.common_name || u.hec_name || u.id || 'University';
-  const status = (u.verification_status || '').toLowerCase() || null;
   const lines = [
     `University: ${name}${u.hec_name && u.hec_name !== name ? ` (HEC name: ${u.hec_name})` : ''}`,
     `City: ${u.city || 'unknown'}; Ownership (per HEC): ${u.ownership || 'unknown'}; HEC recognised: ${u.hec_recognised || 'unknown'}`,
-    `Row verification status: ${status || 'unknown'} (checked ${u.last_verified_at || 'unknown date'})`,
+    `Catalogue row only. Do not treat fees, deadlines or merit as verified unless a URL in this snippet states them. Stored verification_status is not a badge.`,
     `Computing programmes found on official pages: ${programs.length ? programs.join(', ') : 'none recorded'}`,
     u.entry_test_notes ? `Entry test notes: ${clip(u.entry_test_notes, 300)}` : null,
     u.eligibility_notes ? `Eligibility notes: ${clip(u.eligibility_notes, 300)}` : null,
@@ -140,8 +139,8 @@ function uniDoc(u: ResearchUniversity): Doc {
     title: name,
     publisher: u.hec_source_url ? 'Higher Education Commission (HEC) + university website' : 'University website',
     urls: [...splitUrls(u.admissions_url), ...splitUrls(u.hec_source_url)],
-    retrievedAt: u.last_verified_at || null,
-    status,
+    retrievedAt: null,
+    status: null,
     strong: [u.common_name, u.hec_name, u.id, u.city].join(' '),
     body: [
       u.ownership,
@@ -161,7 +160,7 @@ function scholarshipDoc(s: ResearchScholarship): Doc {
   const lines = [
     `Scholarship: ${s.name || s.id}`,
     `Provider: ${s.provider || 'unknown'} (${s.provider_type || 'type unknown'})`,
-    `Status: ${status.toUpperCase()}${status === 'active' ? '' : ' — not confirmed open; do not tell the user it is currently accepting applications'} (checked ${s.last_verified_at || 'unknown date'})`,
+    `Recorded status: ${status.toUpperCase()}${status === 'active' || status === 'open' ? '' : ' — do not say this scholarship is open'}.`,
     s.eligible_levels ? `Levels: ${clip(s.eligible_levels, 200)}` : null,
     s.eligible_locations ? `Locations: ${clip(s.eligible_locations, 200)}` : null,
     s.eligible_universities ? `Universities: ${clip(s.eligible_universities, 250)}` : null,
@@ -177,7 +176,7 @@ function scholarshipDoc(s: ResearchScholarship): Doc {
     title: s.name || s.id || 'Scholarship',
     publisher: s.provider || 'Unknown provider',
     urls: [...splitUrls(s.source_url), ...splitUrls(s.application_url)],
-    retrievedAt: s.last_verified_at || null,
+    retrievedAt: null,
     status,
     strong: [s.name, s.provider, s.provider_type, 'scholarship'].join(' '),
     body: [
@@ -210,8 +209,8 @@ function learningDoc(r: Record<string, string>): Doc {
     title: r.title || r.id || 'Learning resource',
     publisher: r.provider || 'Unknown provider',
     urls: splitUrls(r.url),
-    retrievedAt: r.last_verified_at || null,
-    status: r.last_verified_at ? 'url_checked' : null,
+    retrievedAt: null,
+    status: null,
     strong: [r.title, r.provider, r.skills_covered].join(' '),
     body: [r.difficulty, r.cost, r.certificate, r.prerequisites, 'learn course tutorial skill'].join(' '),
     snippet: lines.join('\n'),
@@ -229,9 +228,8 @@ const PROGRAMME_FIELDS: Array<{ key: string; label: string; words: string }> = [
 function programmeSummaryDocs(): Doc[] {
   return PROGRAMME_FIELDS.map(({ key, label, words }) => {
     const hits = researchUniversities.filter((u) => u[key] === 'yes');
-    const dates = hits.map((u) => u.last_verified_at).filter(Boolean).sort() as string[];
     const list = hits
-      .map((u) => `${u.common_name || u.hec_name || u.id} [row status: ${u.verification_status || 'unknown'}]`)
+      .map((u) => u.common_name || u.hec_name || u.id)
       .join('; ');
     return {
       kind: 'university' as const,
@@ -239,7 +237,7 @@ function programmeSummaryDocs(): Doc[] {
       title: `Karachi universities offering ${label} (FuturePath dataset summary)`,
       publisher: 'FuturePath research dataset (compiled from university websites + HEC)',
       urls: [],
-      retrievedAt: dates.length ? dates[dates.length - 1] : null,
+      retrievedAt: null,
       status: null,
       strong: `${words} ${label}`,
       body: 'programme program offer offering universities which list karachi university admission bs degree',
@@ -301,6 +299,7 @@ export function retrieveResearchSnippets(query: string, opts: RetrieveOptions = 
   const wantsLearning = /learn|course|tutorial|resource|roadmap|practice|skill/.test(lowerQuery);
 
   const scored = docs()
+    .filter((d) => d.urls.length > 0)
     .filter((d) => !opts.kinds || opts.kinds.includes(d.kind))
     .map((d) => {
       let score = 0;
@@ -315,7 +314,6 @@ export function retrieveResearchSnippets(query: string, opts: RetrieveOptions = 
       if (wantsScholarship && d.kind === 'scholarship') score *= 1.4;
       if (wantsLearning && d.kind === 'learning_resource') score *= 1.4;
       // prefer better-verified university rows on ties
-      if (d.kind === 'university' && d.status === 'verified') score *= 1.1;
       return { d, score };
     })
     .filter((x) => x.score >= minScore)

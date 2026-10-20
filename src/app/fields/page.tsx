@@ -3,23 +3,9 @@
 import { useState, useMemo } from 'react';
 import { SearchInput } from '@/components/search-input';
 import Link from 'next/link';
-import { Search, ArrowRight, Filter } from 'lucide-react';
+import { ArrowRight, Filter } from 'lucide-react';
 
 import { getFields, getFieldCategories } from '@/lib/fields-data';
-
-const DIFFICULTY_COLOR: Record<string, string> = {
-  Easy: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
-  Medium: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
-  Hard: 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
-  'Very Hard': 'bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20',
-};
-
-const DEMAND_COLOR: Record<string, string> = {
-  Low: 'bg-slate-500/10 text-slate-500',
-  Medium: 'bg-blue-500/10 text-blue-600 dark:text-blue-400',
-  High: 'bg-teal-500/10 text-teal-600 dark:text-teal-400',
-  'Very High': 'bg-primary/10 text-primary',
-};
 
 export default function FieldsPage() {
   const allFields = getFields();
@@ -45,7 +31,7 @@ export default function FieldsPage() {
         </div>
         <h1 className="mt-5 text-4xl font-semibold tracking-tight">Explore Academic Fields</h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Browse {allFields.length} fields with complete roadmaps, career paths, salary ranges, and higher education options.
+          Browse {allFields.length} fields. Salary, demand and difficulty are not available — no authority and year are on file. Discover suggested career and field matches.
         </p>
       </div>
 
@@ -94,8 +80,8 @@ export default function FieldsPage() {
             >
               <div className="flex items-start justify-between gap-2">
                 <span className="text-4xl">{field.icon}</span>
-                <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${DIFFICULTY_COLOR[field.difficultyLevel]}`}>
-                  {field.difficultyLevel}
+                <span className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-muted-foreground">
+                  Difficulty not available
                 </span>
               </div>
               <div className="mt-3 flex-1">
@@ -105,12 +91,10 @@ export default function FieldsPage() {
               </div>
               <div className="mt-4 space-y-2">
                 <div className="flex items-center justify-between gap-2">
-                  <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${DEMAND_COLOR[field.industryDemand]}`}>
-                    {field.industryDemand} demand
+                  <span className="rounded-full px-2.5 py-1 text-xs text-muted-foreground">
+                    Demand not available
                   </span>
-                  <span className="text-xs font-semibold text-foreground">
-                    {Math.round(field.salaryRange.min / 1000)}K–{Math.round(field.salaryRange.max / 1000)}K/mo
-                  </span>
+                  <span className="text-xs text-muted-foreground">Salary not available</span>
                 </div>
                 <div className="text-xs text-muted-foreground">{field.degreeDuration}</div>
               </div>

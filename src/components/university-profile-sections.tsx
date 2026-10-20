@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 
 import { SourceDrawer, type SourceCitation } from '@/components/source-drawer';
+import { profileHeadline } from '@/lib/evidence';
 import { PROFILE_STATUS_LABEL } from '@/lib/profile-utils';
 import type { ProfileField, ProfileFieldStatus, UniversityProfile } from '@/lib/types';
 
@@ -72,7 +73,7 @@ export function UniversityProfileSections({ profile }: { profile: UniversityProf
       ref: s.id,
       title: s.title,
       url: s.url,
-      retrievedAt: s.checked,
+      retrievedAt: f.status === 'verified' ? profile.last_checked || null : null,
       status: f.status === 'verified' || f.status === 'partial' ? f.status : null,
       excerpt: [`${f.label}: ${f.value ?? 'Not available'}`, f.note, s.note].filter(Boolean).join('\n'),
       kind: 'university-profile',
@@ -87,19 +88,17 @@ export function UniversityProfileSections({ profile }: { profile: UniversityProf
     return <SourceChip field={f} sourceId={cit?.ref ?? null} title={title} onOpen={cit ? () => setOpen(cit) : undefined} />;
   };
 
-  const checkedFor = (f: ProfileField) => (f.source && sourceById[f.source]?.checked) || profile.last_checked;
-
   const c = profile.field_counts;
 
   return (
-    <div className="space-y-12" data-testid="university-profile" data-profile-status={profile.profile_status}>
+    <div className="space-y-12" data-testid="university-profile" data-profile-status={profileHeadline(profile)}>
       <div className="rounded-3xl border border-border/70 bg-card/80 p-5 text-sm">
         <div className="flex flex-wrap items-center gap-2">
           <ShieldCheck className="h-4 w-4 text-primary" aria-hidden />
-          <span className="font-semibold">
-            {profile.profile_status === 'complete' ? 'Detailed profile' : 'Partial profile'}
+          <span className="font-semibold">{profileHeadline(profile)}</span>
+          <span className="text-muted-foreground">
+            {profile.last_checked ? `verification log ${profile.last_checked}` : 'no verification event on file for this profile'}
           </span>
-          <span className="text-muted-foreground">checked {profile.last_checked}</span>
         </div>
         <p className="mt-2 text-muted-foreground">
           {c.sourced} sourced fields ({c.verified} verified, {c.partial} partial) · {c.unavailable} unavailable ·{' '}
@@ -154,8 +153,8 @@ export function UniversityProfileSections({ profile }: { profile: UniversityProf
                       <dd className="flex min-w-0 flex-1 items-center justify-end gap-3 sm:justify-between">
                         <span className="hidden min-w-0 truncate italic sm:inline" title={f.note ?? undefined}>
                           {f.status === 'needs_verification'
-                            ? `In an official document, not yet extracted · checked ${checkedFor(f)}`
-                            : `Not published officially · checked ${checkedFor(f)}`}
+                            ? 'Needs review — figure withheld until a verification event is recorded'
+                            : 'Not available'}
                         </span>
                         <span className="italic sm:hidden">{f.status === 'needs_verification' ? 'Pending' : 'Not published'}</span>
                         {chipFor(f)}
@@ -184,7 +183,7 @@ export function UniversityProfileSections({ profile }: { profile: UniversityProf
                   <span className="mr-1 font-mono font-semibold text-primary">[{s.id}]</span>
                   {s.title}
                 </span>
-                <span className="shrink-0 text-xs text-muted-foreground">checked {s.checked}</span>
+                <span className="shrink-0 text-xs text-muted-foreground">source link</span>
               </div>
               <a
                 href={s.url}

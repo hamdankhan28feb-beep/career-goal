@@ -1,11 +1,12 @@
 // Unit checks for src/lib/predictor.ts (pure logic, no browser needed).
-// Run: node scripts/predictor-unit.mjs   (Node >= 22.18 / 24 strips TS types natively)
+// Run: node scripts/predictor-unit.mjs
 import assert from 'node:assert/strict';
 import {
-  BENCHMARK_AGGREGATES,
+  chanceForUniversity,
   computeAggregate,
   computeChance,
-  getBenchmark,
+  isUsableMerit,
+  meritAggregates,
   validateBudget,
   validatePercent,
 } from '../src/lib/predictor.ts';
@@ -13,7 +14,7 @@ import {
 let n = 0;
 const t = (name, fn) => { fn(); n++; console.log('PASS', name); };
 
-t('aggregate = 0.6*inter + 0.4*matric', () => {
+t('aggregate = 0.6*inter + 0.4*matric and is not an official cutoff', () => {
   assert.equal(computeAggregate(85, 80), 82);
   assert.equal(computeAggregate(0, 0), 0);
   assert.equal(computeAggregate(100, 100), 100);
@@ -42,19 +43,20 @@ t('budget optional, must be non-negative number', () => {
   assert.equal(validateBudget('abc').ok, false);
   assert.equal(validateBudget('-2').ok, false);
 });
-t('chance bands relative to benchmark (FAST Karachi = 82)', () => {
-  assert.equal(getBenchmark('FAST Karachi'), 82);
-  assert.equal(computeChance(92, 'FAST Karachi'), 'High');
-  assert.equal(computeChance(91.9, 'FAST Karachi'), 'Medium');
-  assert.equal(computeChance(82, 'FAST Karachi'), 'Medium');
-  assert.equal(computeChance(81.9, 'FAST Karachi'), 'Low');
+t('chance bands use a numeric benchmark only', () => {
+  assert.equal(computeChance(92, 82), 'High');
+  assert.equal(computeChance(91.9, 82), 'Medium');
+  assert.equal(computeChance(82, 82), 'Medium');
+  assert.equal(computeChance(81.9, 82), 'Low');
+  assert.equal(computeChance(99, null), null);
+  assert.equal(computeChance(99, Number.NaN), null);
 });
-t('no invented default cutoff for unknown universities', () => {
-  assert.equal(getBenchmark('Some Unlisted University'), null);
-  assert.equal(computeChance(99, 'Some Unlisted University'), null);
-  assert.equal(getBenchmark('toString'), null);
-});
-t('benchmarks are within 0..100', () => {
-  for (const v of Object.values(BENCHMARK_AGGREGATES)) assert.ok(v >= 0 && v <= 100);
+t('no house-estimate table and no chance without a sourced aggregate', () => {
+  assert.equal(meritAggregates().length, 0);
+  assert.equal(chanceForUniversity(99, 'fast-nuces-karachi'), null);
+  assert.equal(chanceForUniversity(99, 'neduet-karachi'), null);
+  assert.equal(chanceForUniversity(99, 'iba-karachi'), null);
+  assert.equal(isUsableMerit({ university_slug: 'x', programme: 'BS', academic_year: '2026', closing_aggregate: 80, source_url: '', last_verified_at: '2026-10-19' }), false);
+  assert.equal(isUsableMerit({ university_slug: 'x', programme: 'BS', academic_year: '2026', closing_aggregate: 80, source_url: 'https://example.edu/merit', last_verified_at: '' }), false);
 });
 console.log(`\n${n} predictor unit checks passed`);

@@ -26,11 +26,13 @@ export function initialsSize(initials: string, size: 'sm' | 'lg' = 'sm'): string
   return initials.length <= 3 ? 'text-sm' : initials.length <= 4 ? 'text-xs' : 'text-[10px]';
 }
 
-/** Share of profile fields that are sourced (verified + partial), from the profile's own field counts. */
+/** Share of profile fields that are sourced after the verification gate. Null when nothing is sourced. */
 export function profileCompleteness(p: UniversityProfile | null | undefined): number | null {
   if (!p) return null;
   const c = p.field_counts;
-  const total = c.verified + c.partial + c.unavailable + c.needs_verification;
+  const sourced = c.verified + c.partial;
+  if (sourced <= 0) return null;
+  const total = sourced + c.unavailable + c.needs_verification;
   if (!total) return null;
-  return Math.round(((c.verified + c.partial) / total) * 100);
+  return Math.round((sourced / total) * 100);
 }

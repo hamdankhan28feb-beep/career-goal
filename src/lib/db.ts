@@ -1,24 +1,32 @@
 import { Pool } from 'pg';
 
-const connectionString = process.env.DATABASE_URL;
+let pool: Pool | null = null;
 
-if (!connectionString && process.env.NODE_ENV === 'production') {
-  console.warn('Warning: DATABASE_URL is not set. Database connections may fail.');
+function databaseUrl(): string {
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) {
+    throw new Error(
+      'DATABASE_URL is not set. Refusing to open a database connection. Set DATABASE_URL before using the database, and rotate any database password that was previously stored in source control.',
+    );
+  }
+  return connectionString;
 }
 
-export const pool = new Pool({
-  connectionString: connectionString || 'postgresql://postgres:postgres@localhost:5434/career_goals',
-  max: 20,
-  idleTimeoutMillis: 30000,
-  // Generous connect timeout: on a cold start the pool opens many clients at
-  // once (getUniversities fires 20 parallel queries) and Windows auth/TLS
-  // handshakes can take several seconds. 2s caused spurious timeouts.
-  connectionTimeoutMillis: 10000,
-});
+function getPool(): Pool {
+  if (!pool) {
+    pool = new Pool({
+      connectionString: databaseUrl(),
+      max: 20,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 10000,
+    });
+  }
+  return pool;
+}
 
-export async function query(text: string, params?: any[]) {
+export async function query(text: string, params?: unknown[]) {
   const start = Date.now();
-  const res = await pool.query(text, params);
+  const res = await getPool().query(text, params);
   const duration = Date.now() - start;
   if (process.env.NODE_ENV !== 'production') {
     console.log('Executed query', { text, duration, rows: res.rowCount });

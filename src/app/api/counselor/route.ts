@@ -5,8 +5,6 @@ import {
   publicCitations,
   retrieveResearchSnippets,
 } from '@/lib/counselor-retrieve';
-import { researchStats } from '@/lib/research-meta';
-
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
@@ -30,10 +28,10 @@ function configuredProviders(): Array<'openai' | 'gemini'> {
 }
 
 function unconfigured() {
+  console.info('AI Counselor unavailable: no provider key is configured.');
   return NextResponse.json(
     {
-      error:
-        'The AI Counselor is not configured on this server. Set OPENAI_API_KEY or GEMINI_API_KEY in .env.local and restart the dev server.',
+      error: 'The AI Counselor is unavailable.',
       mode: 'unconfigured',
     },
     { status: 503 }
@@ -46,7 +44,7 @@ export async function GET() {
   return NextResponse.json({
     mode: providers.length ? 'live' : 'unconfigured',
     provider: providers[0] ?? null,
-    dataCheckedAt: researchStats().checkedAt,
+    availability: providers.length ? 'beta' : 'unavailable',
   });
 }
 
@@ -83,8 +81,10 @@ GROUNDING RULES (mandatory):
 5. Universities with row status "partial" or "unverified" have incomplete data — say so when relying on them. A verification status applies to the matched dataset row, not a guarantee about everything at that university.
 6. Be concise (under ~200 words unless asked), friendly, and practical. If the user writes in Roman Urdu, reply in Roman Urdu.
 7. End with a short "Sources:" line listing the markers you used.
+8. Say that the answer is not official advice. Never fabricate a citation, fee, deadline, merit figure or scholarship status.
+9. If a source has no URL, do not treat it as verified.
 
-SOURCES (FuturePath research dataset, data checked ${researchStats().checkedAt}):
+SOURCES:
 ${sources}`;
 }
 

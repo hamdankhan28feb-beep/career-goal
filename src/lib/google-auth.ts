@@ -15,6 +15,14 @@ export type GoogleOAuthConfig = {
  * `requestOrigin` is used to build a default redirect URI when
  * GOOGLE_REDIRECT_URI is not set explicitly.
  */
+export function isGoogleOAuthConfigured(requestOrigin?: string): boolean {
+  const clientId = process.env.GOOGLE_CLIENT_ID;
+  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
+  const redirectUri =
+    process.env.GOOGLE_REDIRECT_URI ?? (requestOrigin ? `${requestOrigin}/api/auth/google/callback` : '');
+  return Boolean(clientId && clientSecret && redirectUri);
+}
+
 export function getGoogleOAuthConfig(requestOrigin?: string): GoogleOAuthConfig {
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
