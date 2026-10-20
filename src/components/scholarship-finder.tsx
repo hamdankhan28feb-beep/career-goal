@@ -12,7 +12,6 @@ import {
   Filter,
   HelpCircle,
   Loader2,
-  Search,
   XCircle,
 } from 'lucide-react';
 
@@ -58,7 +57,7 @@ type ApiResponse = {
   error?: string;
 };
 
-type Status = 'active' | 'closed' | 'unknown';
+type Status = 'open' | 'upcoming' | 'closed' | 'unknown';
 
 const PROVIDER_TYPE_LABEL: Record<string, string> = {
   federal: 'Federal (HEC / Govt)',
@@ -70,8 +69,10 @@ const PROVIDER_TYPE_LABEL: Record<string, string> = {
 
 function normStatus(s?: string): Status {
   const v = (s || '').toLowerCase();
-  // Only an explicit "active" from the data counts as active — never inferred.
-  return v === 'active' ? 'active' : v === 'closed' ? 'closed' : 'unknown';
+  if (v === 'open' || v === 'active') return 'open';
+  if (v === 'upcoming') return 'upcoming';
+  if (v === 'closed') return 'closed';
+  return 'unknown';
 }
 
 function providerTypeOf(s: ApiScholarship, source: string): string {
@@ -90,11 +91,17 @@ function splitUrls(v?: string): string[] {
 
 function StatusBadge({ status }: { status: Status }) {
   const meta = {
-    active: {
-      label: 'Active',
+    open: {
+      label: 'Open',
       Icon: CheckCircle2,
       cls: 'border-success/30 bg-success/10 text-success',
-      title: 'An open application window was confirmed on the official source on the checked date.',
+      title: 'The record says the application window is open.',
+    },
+    upcoming: {
+      label: 'Upcoming',
+      Icon: CircleDashed,
+      cls: 'border-primary/30 bg-primary/10 text-primary',
+      title: 'The record says a window is upcoming.',
     },
     closed: {
       label: 'Closed',
@@ -151,11 +158,17 @@ async function fetchAll(): Promise<{ rows: ApiScholarship[]; source: string; dis
   return { rows, source, disclaimer };
 }
 
-export function ScholarshipFinder() {
-  const [rows, setRows] = useState<ApiScholarship[]>([]);
-  const [source, setSource] = useState('unknown');
+export function ScholarshipFinder({
+  initialRows = [],
+  initialSource = 'research_json',
+}: {
+  initialRows?: ApiScholarship[];
+  initialSource?: string;
+}) {
+  const [rows, setRows] = useState<ApiScholarship[]>(initialRows);
+  const [source, setSource] = useState(initialSource);
   const [disclaimer, setDisclaimer] = useState<string | undefined>();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(initialRows.length === 0);
   const [error, setError] = useState<string | null>(null);
 
   const [q, setQ] = useState('');
@@ -186,7 +199,7 @@ export function ScholarshipFinder() {
   }, []);
 
   const counts = useMemo(() => {
-    const c = { active: 0, closed: 0, unknown: 0 };
+    const c = { open: 0, upcoming: 0, closed: 0, unknown: 0 };
     rows.forEach((r) => {
       c[normStatus(r.status)]++;
     });
@@ -225,7 +238,7 @@ export function ScholarshipFinder() {
         return terms.every((t) => hay.includes(t));
       })
       .sort((a, b) => {
-        const order: Record<Status, number> = { active: 0, unknown: 1, closed: 2 };
+        const order: Record<Status, number> = { open: 0, upcoming: 1, unknown: 2, closed: 3 };
         return order[normStatus(a.status)] - order[normStatus(b.status)] || a.scholarship_name.localeCompare(b.scholarship_name);
       });
   }, [rows, q, statusFilter, providerFilter, typeFilter, source]);
@@ -255,12 +268,11 @@ export function ScholarshipFinder() {
         </div>
         <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Find scholarships you can actually check</h1>
         <p className="mt-3 max-w-3xl text-muted-foreground">
-          Every entry links to its official source. Statuses come from the source page on the date shown — we never mark a
-          scholarship &ldquo;Active&rdquo; unless an open, dated window was confirmed.
+          Search and filter the catalogue. A scholarship is marked open only when its record says so. Kind (merit, need, sports) is derived from the eligibility text, or shown as Unknown.
         </p>
       </header>
 
-      {!loading && !error && counts.active === 0 && rows.length > 0 ? (
+      {!loading && !error && counts.open === 0 && rows.length > 0 ? (
         <div
           role="status"
           className="notice-warning mb-6 flex gap-3 p-5 text-sm"
@@ -294,7 +306,8 @@ export function ScholarshipFinder() {
               className="input-field w-full"
             >
               <option value="all">All statuses</option>
-              <option value="active">Active ({counts.active})</option>
+              <option value="open">Open ({counts.open})</option>
+              <option value="upcoming">Upcoming ({counts.upcoming})</option>
               <option value="unknown">Unknown ({counts.unknown})</option>
               <option value="closed">Closed ({counts.closed})</option>
             </select>
@@ -325,7 +338,7 @@ export function ScholarshipFinder() {
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1.5">
             <Filter className="h-3.5 w-3.5" aria-hidden />
-            {loading ? 'Loading scholarships…' : `Showing ${filtered.length} of ${rows.length}`}
+            {loading ? 'Please wait' : `Showing ${filtered.length} of ${rows.length}`}
           </span>
           {!loading && source !== 'unknown' && (
             <span>
@@ -337,7 +350,7 @@ export function ScholarshipFinder() {
 
       {loading ? (
         <div className="grid gap-5 md:grid-cols-2" role="status" aria-busy="true" data-testid="scholarships-skeleton">
-          <span className="sr-only">Loading scholarships…</span>
+          <span className="sr-only">Please wait</span>
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="h-52 animate-pulse rounded-3xl border border-border/70 bg-card/60 p-6" aria-hidden>
               <div className="flex items-center gap-2">

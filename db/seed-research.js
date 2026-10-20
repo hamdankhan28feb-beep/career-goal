@@ -37,11 +37,9 @@ function ownershipToType(o) {
   return null;
 }
 
-function toDate(v) {
-  if (!v) return null;
-  const s = String(v).trim();
-  if (!/^\d{4}-\d{2}-\d{2}/.test(s)) return null;
-  return s.slice(0, 10);
+function toDate() {
+  // Hand-typed research dates are not verification events.
+  return null;
 }
 
 async function main() {
@@ -92,7 +90,7 @@ async function main() {
         'UPDATE universities SET verification_status = $2, last_verified_at = $3, research_id = $4, ownership_source = $5, university_type = COALESCE($6, university_type), updated_at = NOW() WHERE university_id = $1',
         [
           hit.university_id,
-          r.verification_status || null,
+          null,
           toDate(r.last_verified_at),
           r.id || null,
           r.ownership ? 'research_csv:' + String(r.ownership) : null,

@@ -4,50 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ArrowLeft, CheckCircle2, Brain, RotateCcw } from 'lucide-react';
 import { getFields } from '@/lib/fields-data';
-
-const QUIZ_QUESTIONS = [
-  // Math & Logic
-  { id: 'q1', category: 'Math & Logic', question: 'How much do you enjoy solving complex mathematical problems?', field_weights: { 'computer-science': 4, 'software-engineering': 4, 'artificial-intelligence': 5, 'data-science': 5, 'electrical-engineering': 5, 'civil-engineering': 4, 'bba': 2, 'accounting-finance': 3, 'mbbs': 2, 'pharmacy': 2, 'psychology': 2, 'architecture': 2, 'cyber-security': 3 } },
-  { id: 'q2', category: 'Math & Logic', question: 'How comfortable are you with statistics and probability?', field_weights: { 'computer-science': 3, 'software-engineering': 3, 'artificial-intelligence': 5, 'data-science': 5, 'electrical-engineering': 3, 'civil-engineering': 3, 'bba': 3, 'accounting-finance': 4, 'mbbs': 2, 'pharmacy': 2, 'psychology': 4, 'architecture': 2, 'cyber-security': 2 } },
-  { id: 'q3', category: 'Math & Logic', question: 'Do you enjoy logic puzzles and algorithm challenges?', field_weights: { 'computer-science': 5, 'software-engineering': 5, 'artificial-intelligence': 5, 'data-science': 4, 'electrical-engineering': 4, 'civil-engineering': 3, 'bba': 2, 'accounting-finance': 2, 'mbbs': 2, 'pharmacy': 2, 'psychology': 3, 'architecture': 2, 'cyber-security': 5 } },
-  // Programming
-  { id: 'q4', category: 'Programming', question: 'How much do you enjoy writing code and building software?', field_weights: { 'computer-science': 5, 'software-engineering': 5, 'artificial-intelligence': 5, 'data-science': 4, 'electrical-engineering': 3, 'civil-engineering': 1, 'bba': 1, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 1, 'architecture': 2, 'cyber-security': 5 } },
-  { id: 'q5', category: 'Programming', question: 'How interested are you in building websites or mobile apps?', field_weights: { 'computer-science': 5, 'software-engineering': 5, 'artificial-intelligence': 3, 'data-science': 3, 'electrical-engineering': 2, 'civil-engineering': 1, 'bba': 2, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 1, 'architecture': 3, 'cyber-security': 4 } },
-  { id: 'q6', category: 'Programming', question: 'Do you enjoy finding and fixing bugs in code or systems?', field_weights: { 'computer-science': 4, 'software-engineering': 5, 'artificial-intelligence': 3, 'data-science': 3, 'electrical-engineering': 3, 'civil-engineering': 2, 'bba': 1, 'accounting-finance': 2, 'mbbs': 2, 'pharmacy': 2, 'psychology': 2, 'architecture': 1, 'cyber-security': 5 } },
-  // Biology & Medicine
-  { id: 'q7', category: 'Biology & Medicine', question: 'How passionate are you about biology, human anatomy, or medicine?', field_weights: { 'computer-science': 1, 'software-engineering': 1, 'artificial-intelligence': 2, 'data-science': 2, 'electrical-engineering': 1, 'civil-engineering': 1, 'bba': 1, 'accounting-finance': 1, 'mbbs': 5, 'pharmacy': 5, 'psychology': 4, 'architecture': 1, 'cyber-security': 1 } },
-  { id: 'q8', category: 'Biology & Medicine', question: 'Do you want to directly help patients in a clinical setting?', field_weights: { 'computer-science': 1, 'software-engineering': 1, 'artificial-intelligence': 1, 'data-science': 1, 'electrical-engineering': 1, 'civil-engineering': 1, 'bba': 1, 'accounting-finance': 1, 'mbbs': 5, 'pharmacy': 4, 'psychology': 5, 'architecture': 1, 'cyber-security': 1 } },
-  { id: 'q9', category: 'Biology & Medicine', question: 'How interested are you in pharmaceutical sciences and drugs?', field_weights: { 'computer-science': 1, 'software-engineering': 1, 'artificial-intelligence': 1, 'data-science': 2, 'electrical-engineering': 1, 'civil-engineering': 1, 'bba': 2, 'accounting-finance': 1, 'mbbs': 4, 'pharmacy': 5, 'psychology': 2, 'architecture': 1, 'cyber-security': 1 } },
-  // Business
-  { id: 'q10', category: 'Business', question: 'How much do you enjoy leadership and managing teams?', field_weights: { 'computer-science': 2, 'software-engineering': 2, 'artificial-intelligence': 2, 'data-science': 2, 'electrical-engineering': 2, 'civil-engineering': 3, 'bba': 5, 'accounting-finance': 3, 'mbbs': 2, 'pharmacy': 2, 'psychology': 3, 'architecture': 3, 'cyber-security': 2 } },
-  { id: 'q11', category: 'Business', question: 'Are you interested in marketing, sales, or brand building?', field_weights: { 'computer-science': 1, 'software-engineering': 1, 'artificial-intelligence': 2, 'data-science': 3, 'electrical-engineering': 1, 'civil-engineering': 1, 'bba': 5, 'accounting-finance': 2, 'mbbs': 1, 'pharmacy': 2, 'psychology': 2, 'architecture': 2, 'cyber-security': 1 } },
-  { id: 'q12', category: 'Business', question: 'How interested are you in entrepreneurship and starting your own business?', field_weights: { 'computer-science': 3, 'software-engineering': 3, 'artificial-intelligence': 3, 'data-science': 3, 'electrical-engineering': 2, 'civil-engineering': 3, 'bba': 5, 'accounting-finance': 4, 'mbbs': 2, 'pharmacy': 3, 'psychology': 3, 'architecture': 4, 'cyber-security': 3 } },
-  // Creativity & Design
-  { id: 'q13', category: 'Creativity & Design', question: 'How much do you enjoy drawing, design, or visual art?', field_weights: { 'computer-science': 1, 'software-engineering': 1, 'artificial-intelligence': 1, 'data-science': 1, 'electrical-engineering': 1, 'civil-engineering': 2, 'bba': 2, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 2, 'architecture': 5, 'cyber-security': 1 } },
-  { id: 'q14', category: 'Creativity & Design', question: 'Are you interested in designing spaces, buildings, or environments?', field_weights: { 'computer-science': 1, 'software-engineering': 1, 'artificial-intelligence': 1, 'data-science': 1, 'electrical-engineering': 2, 'civil-engineering': 4, 'bba': 1, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 2, 'architecture': 5, 'cyber-security': 1 } },
-  { id: 'q15', category: 'Creativity & Design', question: 'Do you enjoy working on UI/UX or digital design projects?', field_weights: { 'computer-science': 4, 'software-engineering': 3, 'artificial-intelligence': 2, 'data-science': 2, 'electrical-engineering': 2, 'civil-engineering': 1, 'bba': 3, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 2, 'architecture': 5, 'cyber-security': 2 } },
-  // Communication & Social
-  { id: 'q16', category: 'Communication', question: 'How much do you enjoy communicating with and helping people?', field_weights: { 'computer-science': 2, 'software-engineering': 2, 'artificial-intelligence': 2, 'data-science': 2, 'electrical-engineering': 2, 'civil-engineering': 2, 'bba': 4, 'accounting-finance': 3, 'mbbs': 5, 'pharmacy': 4, 'psychology': 5, 'architecture': 3, 'cyber-security': 2 } },
-  { id: 'q17', category: 'Communication', question: 'Are you interested in understanding human behavior and emotions?', field_weights: { 'computer-science': 2, 'software-engineering': 1, 'artificial-intelligence': 3, 'data-science': 2, 'electrical-engineering': 1, 'civil-engineering': 1, 'bba': 3, 'accounting-finance': 2, 'mbbs': 3, 'pharmacy': 2, 'psychology': 5, 'architecture': 3, 'cyber-security': 2 } },
-  { id: 'q18', category: 'Communication', question: 'Do you enjoy public speaking and presenting ideas?', field_weights: { 'computer-science': 2, 'software-engineering': 2, 'artificial-intelligence': 2, 'data-science': 2, 'electrical-engineering': 2, 'civil-engineering': 3, 'bba': 5, 'accounting-finance': 3, 'mbbs': 3, 'pharmacy': 2, 'psychology': 4, 'architecture': 3, 'cyber-security': 2 } },
-  // Research
-  { id: 'q19', category: 'Research', question: 'How much do you enjoy conducting experiments and research?', field_weights: { 'computer-science': 3, 'software-engineering': 2, 'artificial-intelligence': 5, 'data-science': 5, 'electrical-engineering': 4, 'civil-engineering': 3, 'bba': 2, 'accounting-finance': 2, 'mbbs': 4, 'pharmacy': 4, 'psychology': 5, 'architecture': 3, 'cyber-security': 3 } },
-  { id: 'q20', category: 'Research', question: 'Are you interested in data analysis and finding patterns in data?', field_weights: { 'computer-science': 4, 'software-engineering': 3, 'artificial-intelligence': 5, 'data-science': 5, 'electrical-engineering': 3, 'civil-engineering': 2, 'bba': 3, 'accounting-finance': 4, 'mbbs': 3, 'pharmacy': 3, 'psychology': 4, 'architecture': 2, 'cyber-security': 3 } },
-  // Infrastructure
-  { id: 'q21', category: 'Infrastructure', question: 'How interested are you in building infrastructure like roads, bridges, dams?', field_weights: { 'computer-science': 1, 'software-engineering': 1, 'artificial-intelligence': 1, 'data-science': 1, 'electrical-engineering': 3, 'civil-engineering': 5, 'bba': 1, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 1, 'architecture': 4, 'cyber-security': 1 } },
-  { id: 'q22', category: 'Infrastructure', question: 'Do you enjoy working with electrical circuits and electronics?', field_weights: { 'computer-science': 3, 'software-engineering': 2, 'artificial-intelligence': 2, 'data-science': 1, 'electrical-engineering': 5, 'civil-engineering': 2, 'bba': 1, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 1, 'architecture': 1, 'cyber-security': 3 } },
-  // Security
-  { id: 'q23', category: 'Security', question: 'How interested are you in network security and ethical hacking?', field_weights: { 'computer-science': 4, 'software-engineering': 3, 'artificial-intelligence': 3, 'data-science': 2, 'electrical-engineering': 2, 'civil-engineering': 1, 'bba': 1, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 1, 'architecture': 1, 'cyber-security': 5 } },
-  { id: 'q24', category: 'Security', question: 'Do you enjoy protecting systems and investigating cyber threats?', field_weights: { 'computer-science': 3, 'software-engineering': 3, 'artificial-intelligence': 3, 'data-science': 2, 'electrical-engineering': 2, 'civil-engineering': 1, 'bba': 1, 'accounting-finance': 1, 'mbbs': 1, 'pharmacy': 1, 'psychology': 2, 'architecture': 1, 'cyber-security': 5 } },
-];
-
-const OPTIONS = [
-  { value: 0, label: 'Not at all' },
-  { value: 1, label: 'A little' },
-  { value: 2, label: 'Somewhat' },
-  { value: 3, label: 'Quite a bit' },
-  { value: 4, label: 'Very much' },
-];
+import { QUIZ_OPTIONS as OPTIONS, QUIZ_QUESTIONS, quizCategories } from '@/lib/quiz-questions';
 
 const RESULT_COLORS = ['from-primary to-cyan-500', 'from-purple-500 to-pink-500', 'from-emerald-500 to-teal-500', 'from-amber-500 to-orange-500', 'from-rose-500 to-red-400'];
 
@@ -100,6 +57,19 @@ function computeResults(answers: Answers): QuizOutcome {
   return { flat: false, results };
 }
 
+function explainMatch(slug: string, answers: Answers): string {
+  const byCat = new Map<string, number>();
+  for (const question of QUIZ_QUESTIONS) {
+    const ans = answers[question.id];
+    if (ans === undefined) continue;
+    const weight = question.field_weights[slug] ?? 0;
+    byCat.set(question.category, (byCat.get(question.category) ?? 0) + ans * weight);
+  }
+  const top = [...byCat.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2).map(([name]) => name);
+  if (!top.length) return 'Not enough answers to explain this suggestion.';
+  return `Suggested because your higher answers lined up with ${top.join(' and ')}. This is an interest match only. It is not a job guarantee.`;
+}
+
 export default function QuizPage() {
   const [started, setStarted] = useState(false);
   const [current, setCurrent] = useState(0);
@@ -142,7 +112,7 @@ export default function QuizPage() {
         <div className="text-center mb-10">
           <div className="text-5xl mb-4">🎉</div>
           <h1 className="text-3xl font-semibold tracking-tight">Your Career Match Results</h1>
-          <p className="mt-3 text-muted-foreground">Based on your {QUIZ_QUESTIONS.length} answers. Matches use relative interest bands (not scientific accuracy percentages).</p>
+          <p className="mt-3 text-muted-foreground">Based on your {QUIZ_QUESTIONS.length} answers across {quizCategories().length} categories. Matches are relative interest bands, not job guarantees and not admission decisions.</p>
         </div>
         <div className="space-y-4">
           {outcome.flat ? (
@@ -175,11 +145,12 @@ export default function QuizPage() {
                       />
                     </div>
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <span>{field.category} · {field.difficultyLevel}</span>
+                      <span>{field.category} · difficulty not available</span>
                       <span className="font-semibold text-foreground">{r.band} fit</span>
                     </div>
                   </div>
                 </div>
+                <p className="mt-3 text-sm text-muted-foreground">{explainMatch(r.slug, answers)}</p>
                 <div className="mt-3 flex items-center justify-between gap-3">
                   <p className="text-xs text-muted-foreground line-clamp-2">{field.overview.slice(0, 120)}…</p>
                   <Link href={`/fields/${field.slug}`} className="shrink-0 rounded-xl border border-primary/30 px-3 py-1.5 text-xs text-primary hover:bg-primary/5 transition">
@@ -208,12 +179,12 @@ export default function QuizPage() {
         <div className="text-7xl mb-6">🧠</div>
         <h1 className="text-4xl font-semibold tracking-tight">Career Counseling Quiz</h1>
         <p className="mt-4 text-lg text-muted-foreground leading-7">
-          Answer {QUIZ_QUESTIONS.length} questions across 8 categories to discover the academic fields that best match your interests, strengths, and personality.
+          Answer {QUIZ_QUESTIONS.length} questions across {quizCategories().length} categories. Discover suggested career and field matches. These are interest suggestions, not job offers or admission decisions.
         </p>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 text-left">
           {[
             { emoji: '⏱️', label: '~10 minutes', desc: 'Quick and focused' },
-            { emoji: '🎯', label: '8 categories', desc: 'Math, Coding, Biology, Business, Design, Communication, Research, Security' },
+            { emoji: '🎯', label: `${quizCategories().length} categories`, desc: quizCategories().join(', ') },
             { emoji: '📊', label: 'Top 5 fields', desc: 'Relative interest bands (Strong / Good / Possible)' },
             { emoji: '🔄', label: 'Retakeable', desc: 'Try as many times as you like' },
           ].map(({ emoji, label, desc }) => (

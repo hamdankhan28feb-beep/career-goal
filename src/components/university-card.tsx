@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Building2, GraduationCap, ShieldCheck, Award, MapPin, FileCheck2 } from 'lucide-react';
 import type { University } from '@/lib/types';
 import { VerificationBadge } from '@/components/verification-badge';
-import { verificationForName } from '@/lib/research-meta';
+import { profileHeadline, ratingsForSlug, universityBadge } from '@/lib/evidence';
 import { initialsSize, logoInitials, profileCompleteness } from '@/lib/display-utils';
 
 function DataBar({ pct }: { pct: number }) {
@@ -16,21 +16,15 @@ function DataBar({ pct }: { pct: number }) {
 
 export function UniversityCard({ university }: { university: University }) {
   const strengths = university.overview.majorStrengths.slice(0, 2);
-  const accred = university.accreditations[0];
-  const dbStatus = (university as { verification_status?: string }).verification_status;
-  const verifyStatus =
-    dbStatus === 'verified' ? 'verified' :
-    dbStatus === 'partial' ? 'approximate' :
-    dbStatus === 'unverified' ? 'unverified' :
-    verificationForName(university.name);
+  const oric = ratingsForSlug(university.slug).find((r) => r.label === 'ORIC category');
+  const verifyStatus = universityBadge(university.profile);
   const profile = university.profile;
   const profilePct = profileCompleteness(profile);
-  const pct = profilePct ?? university.dataCompleteness;
   const initials = logoInitials(university.shortName, university.name, university.city);
 
   // Only tiles backed by real data; nothing is shown as a placeholder "—".
   const stats = [
-    university.campuses.length > 0 && { icon: Building2, value: university.campuses.length, label: university.campuses.length === 1 ? 'Campus' : 'Campuses' },
+    typeof university.sourcedCampusCount === 'number' && university.sourcedCampusCount > 0 && { icon: Building2, value: university.sourcedCampusCount, label: university.sourcedCampusCount === 1 ? 'Campus' : 'Campuses' },
     university.programsCount > 0 && { icon: GraduationCap, value: university.programsCount, label: 'Programs' },
     university.scholarships.length > 0 && { icon: Award, value: university.scholarships.length, label: 'Scholarships' },
   ].filter(Boolean) as { icon: React.ElementType; value: number; label: string }[];
@@ -51,7 +45,7 @@ export function UniversityCard({ university }: { university: University }) {
                   data-testid="card-profile-chip"
                 >
                   <FileCheck2 className="h-3 w-3" aria-hidden />
-                  Detailed profile · {profile.field_counts.sourced} sourced
+                  {profileHeadline(profile)} · {profile.field_counts.sourced} sourced
                 </span>
               )}
             </div>
@@ -103,12 +97,10 @@ export function UniversityCard({ university }: { university: University }) {
         {/* Data completeness bar */}
         <div className="mt-4">
           <div className="mb-1 flex items-center justify-between text-xs text-muted-foreground">
-            <span title={profilePct !== null ? 'Share of detailed-profile fields that cite an official source' : undefined}>
-              {profilePct !== null ? 'Profile completeness (sourced fields)' : 'Profile completeness'}
-            </span>
-            <span>{pct}%</span>
+            <span>Sourced fields</span>
+            <span>{profilePct === null ? 'Not available' : `${profilePct}%`}</span>
           </div>
-          <DataBar pct={pct} />
+          {profilePct !== null && <DataBar pct={profilePct} />}
         </div>
       </div>
 
@@ -116,9 +108,9 @@ export function UniversityCard({ university }: { university: University }) {
       <div className="mt-auto border-t border-border/50 p-4">
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground">
-            {accred && <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-500" aria-hidden />}
+            {oric && <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />}
             <span className="truncate">
-              {accred ? (accred.type ?? accred.body) : university.hecStatus ?? (university.universityType === 'Public' ? 'Public University' : 'Private University')}
+              {oric ? `ORIC ${oric.value} · ${oric.year} · category` : 'ORIC category not on file'}
             </span>
           </div>
           <Link

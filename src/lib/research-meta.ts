@@ -1,6 +1,6 @@
-import universities from '../../data/research/universities_karachi.json';
-import scholarships from '../../data/research/scholarships.json';
-import learningResources from '../../data/research/learning_resources.json';
+import universities from '../../data/research/universities_karachi.json' with { type: 'json' };
+import scholarships from '../../data/research/scholarships.json' with { type: 'json' };
+import learningResources from '../../data/research/learning_resources.json' with { type: 'json' };
 
 export type ResearchUniversity = {
   id?: string;
@@ -35,21 +35,24 @@ export const researchScholarships = scholarships as ResearchScholarship[];
 export const researchLearningResources = learningResources as Array<Record<string, string>>;
 
 export function researchStats() {
-  const verified = researchUniversities.filter((u) => (u.verification_status || '').toLowerCase() === 'verified').length;
-  const partial = researchUniversities.filter((u) => (u.verification_status || '').toLowerCase() === 'partial').length;
-  const scholarshipsUnknown = researchScholarships.filter((s) => (s.status || '').toLowerCase() === 'unknown').length;
+  const scholarshipsUnknown = researchScholarships.filter((s) => {
+    const v = (s.status || '').toLowerCase();
+    return v !== 'active' && v !== 'open' && v !== 'closed' && v !== 'upcoming';
+  }).length;
   const scholarshipsClosed = researchScholarships.filter((s) => (s.status || '').toLowerCase() === 'closed').length;
-  const scholarshipsActive = researchScholarships.filter((s) => (s.status || '').toLowerCase() === 'active').length;
+  const scholarshipsActive = researchScholarships.filter((s) => {
+    const v = (s.status || '').toLowerCase();
+    return v === 'active' || v === 'open';
+  }).length;
+  const scholarshipsUpcoming = researchScholarships.filter((s) => (s.status || '').toLowerCase() === 'upcoming').length;
   return {
     universitiesTotal: researchUniversities.length,
-    universitiesVerified: verified,
-    universitiesPartial: partial,
     scholarshipsTotal: researchScholarships.length,
     scholarshipsActive,
+    scholarshipsUpcoming,
     scholarshipsClosed,
     scholarshipsUnknown,
     learningResourcesTotal: researchLearningResources.length,
-    checkedAt: '2026-10-11',
   };
 }
 
@@ -78,11 +81,4 @@ export function findResearchUniversity(name: string): ResearchUniversity | undef
   return best;
 }
 
-export function verificationForName(name: string): 'verified' | 'approximate' | 'unverified' | 'unavailable' {
-  const hit = findResearchUniversity(name);
-  const st = (hit?.verification_status || '').toLowerCase();
-  if (st === 'verified') return 'verified';
-  if (st === 'partial') return 'approximate';
-  if (st === 'unverified') return 'unverified';
-  return 'unavailable';
-}
+/** @deprecated Stored row status is not a badge. Use deriveUniversityStatus. */

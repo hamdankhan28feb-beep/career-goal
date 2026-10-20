@@ -9,10 +9,10 @@ import type { FieldDefinition } from '@/lib/types';
 const COMPARE_ROWS: { key: string; label: string; format: (f: FieldDefinition) => string }[] = [
   { key: 'category', label: 'Category', format: (f) => f.category },
   { key: 'duration', label: 'Duration', format: (f) => f.degreeDuration },
-  { key: 'difficulty', label: 'Difficulty', format: (f) => f.difficultyLevel },
-  { key: 'demand', label: 'Industry Demand', format: (f) => f.industryDemand },
-  { key: 'salary_min', label: 'Min Salary/Month', format: (f) => `PKR ${Math.round(f.salaryRange.min / 1000)}K` },
-  { key: 'salary_max', label: 'Max Salary/Month', format: (f) => `PKR ${Math.round(f.salaryRange.max / 1000)}K` },
+  { key: 'difficulty', label: 'Difficulty', format: () => 'Not available' },
+  { key: 'demand', label: 'Industry Demand', format: () => 'Not available' },
+  { key: 'salary_min', label: 'Min Salary/Month', format: () => 'Not available' },
+  { key: 'salary_max', label: 'Max Salary/Month', format: () => 'Not available' },
   { key: 'semesters', label: 'Semesters', format: (f) => String(f.roadmap.length) },
   { key: 'career_count', label: 'Career Paths', format: (f) => String(f.careerPaths.length) },
   { key: 'govt_jobs', label: 'Govt Jobs', format: (f) => String(f.governmentJobs.length) },
@@ -52,7 +52,7 @@ export default function CompareFieldsPage() {
           <BarChart2 className="h-4 w-4" /> Field comparison tool
         </div>
         <h1 className="text-4xl font-semibold tracking-tight">Compare Fields</h1>
-        <p className="mt-3 text-muted-foreground">Compare up to 3 fields side-by-side on salary, demand, difficulty, career paths, and more.</p>
+        <p className="mt-3 text-muted-foreground">Compare up to 3 fields. Salary, demand and difficulty are not available.</p>
       </div>
 
       {!comparing ? (

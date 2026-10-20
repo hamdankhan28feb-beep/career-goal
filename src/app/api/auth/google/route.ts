@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
   try {
     config = getGoogleOAuthConfig(new URL(request.url).origin);
   } catch {
+    console.info('Google sign-in is not configured on this server.');
     const loginUrl = new URL('/auth/login', request.url);
     loginUrl.searchParams.set('error', 'google_not_configured');
     return NextResponse.redirect(loginUrl);

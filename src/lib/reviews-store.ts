@@ -12,7 +12,25 @@ export type PendingReview = ReviewInput & {
 };
 
 // Map database row to PendingReview
-function mapRowToPendingReview(row: any): PendingReview {
+type ReviewRow = {
+  verified?: boolean;
+  is_active?: boolean;
+  review_id?: string | number;
+  slug?: string;
+  name?: string;
+  reviewer_type?: string;
+  rating_overall?: string | number;
+  rating_faculty?: string | number;
+  rating_facilities?: string | number;
+  rating_value_for_money?: string | number;
+  positive_experiences?: string;
+  common_complaints?: string;
+  pros?: string[];
+  cons?: string[];
+  created_at?: string | Date;
+};
+
+function mapRowToPendingReview(row: ReviewRow): PendingReview {
   let status: 'pending' | 'approved' | 'removed' = 'pending';
   if (row.verified) {
     status = 'approved';

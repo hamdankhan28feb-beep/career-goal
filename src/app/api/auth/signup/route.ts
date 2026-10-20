@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     // Public registration always creates a normal user. Never accept a client role.
     const user = await registerUser({ name, email, password, city });
     const token = await createSessionToken(user);
-    const response = NextResponse.json({ user, redirect: '/' }, { status: 201 });
+    const response = NextResponse.json({ user, redirect: '/dashboard' }, { status: 201 });
 
     response.cookies.set(SESSION_COOKIE, token, {
       httpOnly: true,

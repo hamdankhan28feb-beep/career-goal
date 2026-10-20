@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getUniversities } from '@/lib/data';
-import { Award, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
 export default async function AdminScholarshipsPage() {
   const universities = await getUniversities();

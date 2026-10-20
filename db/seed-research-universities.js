@@ -44,10 +44,9 @@ function ownershipToType(o) {
   return null;
 }
 
-function toDate(v) {
-  if (!v) return null;
-  const s = String(v).trim();
-  return /^\d{4}-\d{2}-\d{2}/.test(s) ? s.slice(0, 10) : null;
+function toDate() {
+  // Hand-typed research dates are not verification events.
+  return null;
 }
 
 function hecLabel(r) {
@@ -163,7 +162,7 @@ async function main() {
         [
           uni.university_id,
           r.id,
-          r.verification_status || null,
+          null,
           toDate(r.last_verified_at),
           r.ownership ? 'research:' + r.ownership : null,
           type,
@@ -211,7 +210,7 @@ async function main() {
         [
           uni.university_id,
           best.id,
-          best.verification_status || null,
+          null,
           toDate(best.last_verified_at),
           best.ownership ? 'research:' + best.ownership : null,
           type,
@@ -261,7 +260,7 @@ async function main() {
           [
             existing.rows[0].university_id,
             r.id,
-            r.verification_status || null,
+            null,
             toDate(r.last_verified_at),
             r.ownership ? 'research:' + r.ownership : null,
             type,
@@ -299,7 +298,7 @@ async function main() {
           hecLabel(r),
           type,
           sourceNote,
-          r.verification_status || null,
+          null,
           toDate(r.last_verified_at),
           r.id,
           r.ownership ? 'research:' + r.ownership : null,
