@@ -20,7 +20,13 @@ function loadConnectionString() {
   return null;
 }
 
-const PROFILE_FILES = ['university_profiles_batch1.json', 'university_profiles_batch2.json', 'university_profiles_batch3.json'];
+const PROFILE_FILES = [
+  'university_profiles_batch1.json',
+  'university_profiles_batch2.json',
+  'university_profiles_batch3.json',
+  'university_profiles_batch4.json',
+  'university_profiles_batch5.json',
+];
 
 function firstValue(fields, labels) {
   for (const l of labels) {
