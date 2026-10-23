@@ -72,11 +72,11 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
     <div className="container-page py-12">
       {/* Header */}
       <div className="flex flex-col gap-4">
-        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
-          <Search className="h-4 w-4" />
-          Evidence labels, not a single verified badge
+        <div className="flex max-w-full items-start gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
+          <Search className="mt-0.5 h-4 w-4 shrink-0" />
+          <span className="min-w-0">Evidence labels, not a single verified badge</span>
         </div>
-        <h1 className="text-4xl font-semibold tracking-tight">University Explorer</h1>
+        <h1 className="text-4xl font-semibold tracking-tight [overflow-wrap:anywhere]">University Explorer</h1>
         <p className="max-w-2xl text-muted-foreground">
           Browse {universities.length} loaded university records. A profile is not called detailed unless its fields have sources. Filter by city, type, or field.
         </p>
@@ -93,19 +93,19 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
           onValueChange={setQuery}
           clearable
         />
-        <div className="flex items-center gap-3">
-          <Filter className="h-4 w-4 text-muted-foreground" />
+        <div className="flex min-w-0 flex-wrap items-center gap-3">
+          <Filter className="h-4 w-4 shrink-0 text-muted-foreground" />
           <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="input-field w-auto"
+            className="input-field w-auto min-w-0 max-w-full"
           >
             {CITIES.map((c) => <option key={c}>{c}</option>)}
           </select>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="input-field w-auto"
+            className="input-field w-auto min-w-0 max-w-full"
           >
             {TYPES.map((t) => <option key={t}>{t}</option>)}
           </select>
@@ -127,7 +127,7 @@ export function UniversitiesClient({ universities: initialUniversities }: { univ
       </div>
 
       {filtered.length > 0 ? (
-        <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-6 grid gap-5 [grid-template-columns:minmax(0,1fr)] md:[grid-template-columns:repeat(2,minmax(0,1fr))] xl:[grid-template-columns:repeat(3,minmax(0,1fr))]">
           {filtered.map((university) => (
             <UniversityCard key={university.slug} university={university} />
           ))}

@@ -89,7 +89,10 @@ try {
   if (await cmp.count()) await cmp.click();
   await page.waitForTimeout(1000);
   const body = await page.locator('body').innerText();
-  check('compare shows Detailed Profile row', body.includes('Detailed Profile'));
+  check(
+    'compare shows Profile row',
+    /(?:Sourced profile|Partial profile|Profile needs review|Profile not yet verified) \(\d+ sourced/.test(body),
+  );
   check('compare shows sourced tuition', /12,000 per credit hour|31,500 per credit hour|780,000/.test(body));
   await page.screenshot({ path: `${OUT}/compare-desktop.png`, fullPage: true });
   results.push(`     screenshot ${OUT}/compare-desktop.png`);

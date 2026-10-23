@@ -30,7 +30,7 @@ export function UniversityCard({ university }: { university: University }) {
   ].filter(Boolean) as { icon: React.ElementType; value: number; label: string }[];
 
   return (
-    <article className="group flex h-full flex-col rounded-3xl border border-border/70 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow">
+    <article className="group flex h-full min-w-0 max-w-full flex-col overflow-hidden rounded-3xl border border-border/70 bg-card/80 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow">
       {/* Header */}
       <div className="p-5">
         <div className="flex items-start justify-between gap-4">
@@ -40,7 +40,7 @@ export function UniversityCard({ university }: { university: University }) {
               <span className="sr-only">Verification reflects matched research fields, not every fact on this profile.</span>
               {profile && (
                 <span
-                  className="inline-flex items-center gap-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-0.5 text-xs font-medium text-cyan-700 dark:text-cyan-300"
+                  className="inline-flex max-w-full flex-wrap items-center gap-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-0.5 text-xs font-medium text-cyan-700 dark:text-cyan-300"
                   title={`Detailed profile checked ${profile.last_checked}`}
                   data-testid="card-profile-chip"
                 >
@@ -109,7 +109,7 @@ export function UniversityCard({ university }: { university: University }) {
         <div className="flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground">
             {oric && <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />}
-            <span className="truncate">
+            <span className="min-w-0 truncate">
               {oric ? `ORIC ${oric.value} · ${oric.year} · category` : 'ORIC category not on file'}
             </span>
           </div>

@@ -1,0 +1,2530 @@
+{
+  "batch": 4,
+  "generated": "2026-10-23",
+  "selection_rationale": "Universities with no prior profile whose official site or HEC profile was opened on 2026-10-23 and yielded at least a homepage fact, plus COMSATS where the site did not load. Fees are copied only from a visible table.",
+  "status_legend": {
+    "verified": "Matches the cited official source on the checked date",
+    "partial": "Sourced but incomplete, unlabelled year/period, or older-year figure",
+    "unavailable": "Not published or not found on the official sources that were opened",
+    "needs_verification": "A name or link is carried from the existing catalogue and was not re-confirmed on an official page"
+  },
+  "profiles": [
+    {
+      "research_id": "khi-iobm",
+      "slug": "iobm-karachi",
+      "official_name": "Institute of Business Management",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Institute-of-Business-Management.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "IoBM homepage, fee structure, undergraduate requirements, scholarships and admissions home",
+          "url": "https://iobm.edu.pk/fee-structure/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Institute of Business Management",
+            "status": "verified",
+            "note": "Page title: Fee Structure – Institute of Business Management.",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://iobm.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://iobm.edu.pk/admissions-home/",
+            "status": "verified",
+            "note": "Opened 2026-10-23.",
+            "source": "S2"
+          },
+          {
+            "label": "Main campus address",
+            "value": "Korangi Creek, Karachi-75190, Sindh, Pakistan",
+            "status": "verified",
+            "note": "Printed in the page header and footer.",
+            "source": "S2"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 4/27/1998. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": "021-111-002-004; info@iobm.edu.pk; admissions@iobm.edu.pk",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": "IoBM's College of Computer Science & Information Systems lists undergraduate BS Data Science, BS Computer Science, BS Software Engineering and BS Computer Engineering. MS Artificial Intelligence is listed; a BS Artificial Intelligence link was not in that undergraduate list.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "College of Computer Science & Information Systems undergraduate list: BS Data Science, BS Computer Science, BS Software Engineering, BS Computer Engineering, BS Mathematics and Economics, BS Statistics & Business Analytics, BS Mathematics and Computational Finance, BS Actuarial Science and Risk Management, BS Technology Management. Other colleges list BBA and further BS programmes.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": "For BS Computer Science, BS Data Science, BS Computer Engineering and BS Software Engineering, the undergraduate requirements page says students who studied Mathematics at HSSC are eligible regardless of subject combination, and Pre-Medical students must complete two additional Mathematics courses (6 credit hours) in the first year. A separate paragraph states that an HSC/A-level or IBCC equivalent with at least 55% marks (or 2C in A-Levels) and Mathematics is the basic eligibility for the programmes that paragraph refers to.",
+            "status": "verified",
+            "note": "The page has more than one eligibility block. Both sentences above are on https://iobm.edu.pk/undergraduate-requirements/.",
+            "source": "S2"
+          },
+          {
+            "label": "Admission test",
+            "value": "Success in the IoBM aptitude test and a panel interview. The page also describes an SAT-1 exemption from the aptitude test.",
+            "status": "verified",
+            "note": "SAT-1 score thresholds were not copied because the exemption paragraph in the extract did not include the numeric cutoff.",
+            "source": "S2"
+          },
+          {
+            "label": "Application fee",
+            "value": "An aptitude test fee of Rs. 3,000/- to collect the admit card.",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "Admissions home was opened. A dated intake deadline was not in the extracted text. The admission-schedule URL was not opened."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": "Visible bachelor table (no academic-year label; marked subject to change): registration fee 10,000.00; tuition per course 29,400.00; per credit hour 9,800.00; full-load tuition 176,400.00; total fee per semester 186,400.00. Additional lab charges for BS Computer Science and BS Software Engineering: Rs. 58,800.00. One-time admission fee Rs. 50,000, non-refundable and non-transferable. Sindh Sales Tax 3% on total annual fee exceeding Rs. 500,000, effective 1 July 2024, under Tariff Heading 9857.0000.",
+            "status": "partial",
+            "note": "A second bachelor table (per credit hour 8,910.00 and lab charges Rs. 44,160.00) sits in an Elementor container with elementor-hidden-desktop, tablet, mobile and widescreen. Those figures were not used.",
+            "source": "S2"
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": "Merit scholarships of 50% of tuition, renewed the next semester subject to the stated GPA criteria. Sports scholarships of 50% of tuition after HoD Sports endorsement. A CSR scheme admits less privileged students from districts of Sindh with a 100% fee waiver including free transportation, once a year for the Spring semester. TCF alumni are offered a 100% fee waiver including free transportation under an MoU.",
+            "status": "verified",
+            "note": "Amounts for Lucky Cement and Mitsubishi Corporation scholarships were not stated on the page.",
+            "source": "S2"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not stated on the fee, requirements, scholarship or admissions-home pages opened 2026-10-23."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Free transportation is stated only as part of the CSR and TCF scholarship waivers, not as a general campus transport fee or route list."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 14,
+        "verified": 13,
+        "partial": 1,
+        "unavailable": 3,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-aga-khan-university",
+      "slug": "aga-khan-university",
+      "official_name": "Aga Khan University",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Aga-Khan-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "AKU admissions",
+          "url": "https://www.aku.edu/admissions/Pages/home.aspx",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Aga Khan University",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.aku.edu/",
+            "status": "verified",
+            "note": "Admissions URL opened and the homepage host redirected to https://www.aku.edu/Pages/home.aspx.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://www.aku.edu/admissions/Pages/home.aspx",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.aku.edu/ and https://www.aku.edu/admissions/Pages/home.aspx opened (HTTP 200)."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Pakistan",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Pakistan. Established since (printed as): 3/2/1983. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.aku.edu/ and https://www.aku.edu/admissions/Pages/home.aspx opened (HTTP 200)."
+          },
+          {
+            "label": "Overview",
+            "value": "Admissions page: admission to any academic programme at Aga Khan University is entirely based on merit. Selection processes vary by programme. Common criteria named: fluency in English, prior academic performance, critical reasoning, attitude and leadership potential. The Registrar's Office serves all campuses.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": null,
+            "status": "unavailable",
+            "note": "The general admissions page does not list Karachi undergraduate degree titles."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": "Programme-specific criteria were not on the general admissions page. The page names fluency in English, prior academic performance, critical reasoning, attitude and leadership potential as common criteria.",
+            "status": "partial",
+            "source": "S2"
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not stated on the general admissions page."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not stated on the general admissions page."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "The page says to check timelines. No date was on the page."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure on the admissions page."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": "The admissions page says generous financial assistance is part of how a diverse group of students can attend. No scheme name, percentage or income threshold was on that page.",
+            "status": "partial",
+            "source": "S2"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.aku.edu/ and https://www.aku.edu/admissions/Pages/home.aspx opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.aku.edu/ and https://www.aku.edu/admissions/Pages/home.aspx opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 8,
+        "verified": 6,
+        "partial": 2,
+        "unavailable": 9,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-baqai-medical-university",
+      "slug": "baqai-medical-university",
+      "official_name": "Baqai Medical University",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Baqai-Medical-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Baqai Medical University homepage",
+          "url": "https://www.baqai.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Baqai Medical University",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.baqai.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": "51, Deh Tor, Gadap Road, Near Toll Plaza, Super Highway, P.O. Box 2407, Karachi",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 5/26/1996. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "Homepage groups programmes as Pharm-D, DPT, Nursing, Medical Lab, Bioinformatics & Software, and Medical.",
+            "status": "partial",
+            "note": "Group labels on the homepage, not a full prospectus list.",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure in the extract."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.baqai.edu.pk/ opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 6,
+        "verified": 5,
+        "partial": 1,
+        "unavailable": 11,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-dadabhoy-institute-of-higher-education",
+      "slug": "dadabhoy-institute-of-higher-education",
+      "official_name": "Dadabhoy Institute of Higher Education (DIHE)",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Dadabhoy-Institute-of-Higher-Education.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "DIHE homepage",
+          "url": "https://www.dadabhoy.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Dadabhoy Institute of Higher Education (DIHE)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.dadabhoy.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": "Hill Park, Karachi-75460, Pakistan",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 1/12/2004. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": null,
+            "status": "unavailable",
+            "note": "No degree titles were in the extracted homepage text."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure in the extract."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": "Homepage names need-based and merit-based scholarships. No percentage or income threshold was in the extract.",
+            "status": "partial",
+            "note": "A 'special offer' line was not copied.",
+            "source": "S2"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.dadabhoy.edu.pk/ opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 6,
+        "verified": 5,
+        "partial": 1,
+        "unavailable": 11,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-federal-urdu-university-of-arts-sciences-technolog",
+      "slug": "federal-urdu-university-of-arts-sciences-technolog",
+      "official_name": "Federal Urdu University of Arts, Sciences & Technology",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Federal-Urdu-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "FUUAST Karachi site",
+          "url": "https://fuuast.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Federal Urdu University of Arts, Sciences & Technology",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://fuuast.edu.pk/",
+            "status": "verified",
+            "note": "This host shows a Karachi address. HEC's profile lists city Islamabad and http://www.fuuastisb.edu.pk/.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://fuuast.edu.pk/",
+            "status": "partial",
+            "note": "Navigation includes Admission Morning 2027, Admission Evening 2027 and Admission 2026. Those linked pages were not opened.",
+            "source": "S2"
+          },
+          {
+            "label": "Main campus address",
+            "value": "MSC Block, Block 9, Gulshan-e-Iqbal, Karachi – 75300, Pakistan",
+            "status": "verified",
+            "note": "Address on https://fuuast.edu.pk/. This is the Karachi site, not the Islamabad address on the HEC profile.",
+            "source": "S2"
+          },
+          {
+            "label": "Ownership",
+            "value": "Public, chartered by Government of Pakistan",
+            "status": "verified",
+            "note": "HEC city on this profile is Islamabad, which is the university record's city, not proof of a Karachi street address.",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Pakistan. Established since (printed as): 11/13/2002. HEC city: Islamabad.",
+            "status": "verified",
+            "note": " HEC city Islamabad is the city on the university profile, not a Karachi campus address.",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": "(0092-21) 99244141-44",
+            "status": "verified",
+            "note": "The email on the page was obfuscated and was not copied.",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://fuuast.edu.pk/ opened (HTTP 200) and gives a Karachi address. HEC also lists http://www.fuuastisb.edu.pk/ (Islamabad), which opened as FUUAST Islamabad."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "The homepage navigation names a Computer Science department among science departments. Degree titles and Karachi-only availability were not stated in the extract.",
+            "status": "partial",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://fuuast.edu.pk/ opened (HTTP 200) and gives a Karachi address. HEC also lists http://www.fuuastisb.edu.pk/ (Islamabad), which opened as FUUAST Islamabad."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://fuuast.edu.pk/ opened (HTTP 200) and gives a Karachi address. HEC also lists http://www.fuuastisb.edu.pk/ (Islamabad), which opened as FUUAST Islamabad."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://fuuast.edu.pk/ opened (HTTP 200) and gives a Karachi address. HEC also lists http://www.fuuastisb.edu.pk/ (Islamabad), which opened as FUUAST Islamabad."
+          },
+          {
+            "label": "Intake dates",
+            "value": "Navigation labels include Admission Morning 2027 and Admission Evening 2027. Deadlines on those pages were not opened.",
+            "status": "partial",
+            "source": "S2"
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "Morning Fee Structure and Evening Fee Structure are navigation links. They were not opened."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": "Named in the homepage navigation, without amounts: Sindh Education Endowment Scholarship (SEEF), Ehsaas Undergraduate Scholarship Program, HEC Need-Based Scholarship, Prime Minister Fee Reimbursement Program, Bait Ul Mall, AL Kausar scholarship, Tabeer Scholarship.",
+            "status": "partial",
+            "note": "Names only. Open/closed status and amounts were not on the homepage.",
+            "source": "S2"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://fuuast.edu.pk/ opened (HTTP 200) and gives a Karachi address. HEC also lists http://www.fuuastisb.edu.pk/ (Islamabad), which opened as FUUAST Islamabad."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://fuuast.edu.pk/ opened (HTTP 200) and gives a Karachi address. HEC also lists http://www.fuuastisb.edu.pk/ (Islamabad), which opened as FUUAST Islamabad."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 10,
+        "verified": 6,
+        "partial": 4,
+        "unavailable": 7,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-greenwich-university",
+      "slug": "greenwich-university",
+      "official_name": "Greenwich University",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Greenwich-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Greenwich University homepage",
+          "url": "https://www.greenwich.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Greenwich University",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.greenwich.edu.pk/",
+            "status": "verified",
+            "note": "HEC prints http://www.greenwichuniversity.edu.pk/, which failed to connect. This host opened.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 2/3/1998. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Overview",
+            "value": "Homepage line: Greenwich University · Karachi · Est 1987. Another line: Our History · 1987 & the 1998 Act. HEC prints Established Since 2/3/1998. The two dates were not merged.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": null,
+            "status": "unavailable",
+            "note": "The homepage slogan names AI, cyber security, data science and software engineering. It does not list degree titles. Eligibility Criteria was linked and not opened."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure on the homepage."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.greenwichuniversity.edu.pk/ failed to connect. https://www.greenwich.edu.pk/ opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 5,
+        "verified": 5,
+        "partial": 0,
+        "unavailable": 12,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-ilma",
+      "slug": "ilma",
+      "official_name": "ILMA University (formerly IBT)",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/ILMA.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "ILMA University homepage",
+          "url": "https://ilmauniversity.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "ILMA University (formerly IBT)",
+            "status": "verified",
+            "note": "Homepage says ILMA University - Formerly IBT. HEC still prints http://www.ibt.edu.pk.",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://ilmauniversity.edu.pk/",
+            "status": "verified",
+            "note": "HEC URL http://www.ibt.edu.pk timed out on 2026-10-23.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": "Main Ibrahim Haydri Road, Korangi Creek, Karachi. Also printed: B-31, Block 1, Gulshan-e-Iqbal, Karachi.",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 10/11/2003. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": "info@ilmauniversity.edu.pk",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "Homepage navigation names ADP-CS, ADP-AI, BS-AI, ADP-SE and Bachelor of Science (Software Engineering), plus MS (CS), MS (Software Engineering) and PhD (CS).",
+            "status": "verified",
+            "note": "These are link labels on the homepage, not a prospectus extract of credit hours.",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not on the homepage text."
+          },
+          {
+            "label": "Admission test",
+            "value": "The homepage links Exemptions from the ILMA Aptitude Test.",
+            "status": "partial",
+            "note": "The exemption page was not opened, so the test pattern and the exemption rule were not copied.",
+            "source": "S2"
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure was on the homepage text."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not stated on the homepage text."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": "The homepage links an ILMA Hostel Services Registration Form.",
+            "status": "partial",
+            "note": "The form was not opened. No hostel fee or capacity was on the homepage.",
+            "source": "S2"
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 9,
+        "verified": 7,
+        "partial": 2,
+        "unavailable": 8,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-kasbit",
+      "slug": "kasbit",
+      "official_name": "KASB Institute of Technology",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/KASB-Institute-of-Technology.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "KASB Institute of Technology homepage",
+          "url": "https://kasbit.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "KASB Institute of Technology",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "http://www.kasbit.edu.pk",
+            "status": "verified",
+            "note": "Opened as https://kasbit.edu.pk/.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://kasbit.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 6/28/2001. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://kasbit.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Overview",
+            "value": "Homepage mission line: Promoting excellence in education through holistic, transformative and innovative learning to develop entrepreneurial innovators, responsible leaders and change masters.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "Homepage names an Associate Degree in Computer Science and Computer Science and Information Systems. A full BS list was not in the extract.",
+            "status": "partial",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://kasbit.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://kasbit.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://kasbit.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Intake dates",
+            "value": "Homepage line: Entry test will be held on 21st September 2024.",
+            "status": "partial",
+            "note": "Older date printed on the page. Checked 2026-10-23, so this is not a current window.",
+            "source": "S2"
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee table on the homepage extract."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": "Homepage line: 75% and above 25% Scholarship.",
+            "status": "partial",
+            "note": "No year, programme or whether 25% is of tuition. Copied as printed.",
+            "source": "S2"
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://kasbit.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://kasbit.edu.pk/ opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 8,
+        "verified": 5,
+        "partial": 3,
+        "unavailable": 9,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-karachi-metropolitan-university-karachi",
+      "slug": "karachi-metropolitan-university-karachi",
+      "official_name": "Karachi Metropolitan University",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC profile, Karachi Metropolitan University, Karachi",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-Metropolitan-University,-Karachi.aspx",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S2",
+          "title": "Karachi Metropolitan University homepage",
+          "url": "https://thekmu.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Karachi Metropolitan University",
+            "status": "verified",
+            "note": "Homepage title. HEC page title matches. HEC City field says Abbottabad and was not used.",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://thekmu.edu.pk/",
+            "status": "verified",
+            "note": "This is the URL printed on the HEC profile.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": "Block M, North Nazimabad Town, Karachi",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Ownership",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Sindh. Established since: blank on the page. City field printed as Abbottabad, which conflicts with the page title and the university homepage, so it was not used as the campus city.",
+            "status": "verified",
+            "note": "HEC profile opened 2026-10-23. Established Since did not match a date, so it was left blank rather than guessed.",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": "UAN 111-111-568; 03312228568",
+            "status": "verified",
+            "note": "The email was obfuscated on the page and was not copied.",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": "Homepage: faculties include Business Administration, Computer Sciences and Emerging Technologies, Nursing, Physical Therapy, Bio-Medical Engineering, and Pharmacy. Navigation also names Karachi Medical & Dental College (MBBS, BDS), College of Nursing, College of Pharmacy and DPT.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "Named on the homepage navigation: MBBS, BDS, DPT (Doctor of Physical Therapy), plus faculties of Computer Sciences and Emerging Technologies, Nursing, Pharmacy and Bio-Medical Engineering. A BS Computer Science title was not in the extract.",
+            "status": "partial",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure in the extract."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://thekmu.edu.pk/ opened (HTTP 200), title Karachi Metropolitan University."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 7,
+        "verified": 6,
+        "partial": 1,
+        "unavailable": 10,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-ksbl",
+      "slug": "ksbl",
+      "official_name": "Karachi School of Business & Leadership (KSBL)",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-School-of-Business--Leadership.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "KSBL homepage",
+          "url": "https://www.ksbl.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Karachi School of Business & Leadership (KSBL)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.ksbl.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "No street address was in the extracted homepage text."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 3/11/2013. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "No phone or email was in the extracted homepage text. HEC phone on the parsed profile was truncated."
+          },
+          {
+            "label": "Overview",
+            "value": "Homepage vision line: To cultivate leadership grounded in character, guided by conscience, and strengthened by competence for sustainable, entrepreneurial, and global progress.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "Homepage names BS Management & Entrepreneurship and BS Artificial Intelligence.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.ksbl.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.ksbl.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.ksbl.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.ksbl.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure on the homepage."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "A Financial Support & Scholarships link is on the homepage. The linked page was not opened."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.ksbl.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.ksbl.edu.pk/ opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 6,
+        "verified": 6,
+        "partial": 0,
+        "unavailable": 11,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-malir-university-of-science-technology-karachi",
+      "slug": "malir-university-of-science-technology-karachi",
+      "official_name": "Malir University of Science & Technology, Karachi",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Malir-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Malir University homepage",
+          "url": "https://www.maliruniversity.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Malir University of Science & Technology, Karachi",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.maliruniversity.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 4/29/2022. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          },
+          {
+            "label": "Overview",
+            "value": "Homepage: Malir University of Science and Technology's vision is to provide quality education and innovative research opportunities to students.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": null,
+            "status": "unavailable",
+            "note": "A Program Specific Eligibility heading was present. The criteria and degree titles were not in the extract."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure in the extract."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.maliruniversity.edu.pk/ opened (HTTP 200). No degree list or fees in the extracted text."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 5,
+        "verified": 5,
+        "partial": 0,
+        "unavailable": 12,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-national-university-of-modern-languages-karachi-ca",
+      "slug": "national-university-of-modern-languages-karachi-ca",
+      "official_name": "National University of Modern Languages (NUML)",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/National-University-of-Modern-Languages.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "NUML homepage",
+          "url": "https://www.numl.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "National University of Modern Languages (NUML)",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.numl.edu.pk/",
+            "status": "verified",
+            "note": "HEC city for this profile is Islamabad.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "HEC city is Islamabad. A Karachi campus street address was not on the homepage extract."
+          },
+          {
+            "label": "Ownership",
+            "value": "Public, chartered by Government of Pakistan",
+            "status": "verified",
+            "note": "HEC city on this profile is Islamabad, which is the university record's city, not proof of a Karachi street address.",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Pakistan. Established since (printed as): 5/29/2000. HEC city: Islamabad.",
+            "status": "verified",
+            "note": " HEC city Islamabad is the city on the university profile, not a Karachi campus address.",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "The homepage names a Department of Computer Science and a Department of Software Engineering. It does not say which programmes are offered at the Karachi campus.",
+            "status": "partial",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No Karachi fee figure on the homepage."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.numl.edu.pk/ opened (HTTP 200). It does not separate Karachi-campus programmes."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 5,
+        "verified": 4,
+        "partial": 1,
+        "unavailable": 12,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-newports",
+      "slug": "newports",
+      "official_name": "Newport Institute of Communications & Economics",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Newport-Institute-of-Communications--Economics.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Newports Institute homepage",
+          "url": "https://www.newports.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Newport Institute of Communications & Economics",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "http://www.newports.edu.pk/",
+            "status": "verified",
+            "note": "Opened as https://www.newports.edu.pk/.",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 5/30/2002. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Overview",
+            "value": "Homepage: Newports Institute of Communications & Economics, recognized by the Higher Education Commission of Pakistan and chartered by the Government of Sindh.",
+            "status": "verified",
+            "note": "A separate homepage claim of being amongst the top 10 universities in Karachi was not copied; it is not an HEC ranking.",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "Department of Computer Science navigation: Bachelor of Science in Computer Science; Bachelors in Software Engineering; Associate Degree in Computer Science.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure on the homepage."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "The homepage has a SCHOLARSHIP/FINANCIAL ASSISTANCE label. Criteria and amounts were not on the extracted homepage text."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.newports.edu.pk/ opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 6,
+        "verified": 6,
+        "partial": 0,
+        "unavailable": 11,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-sohail-university-karachi",
+      "slug": "sohail-university-karachi",
+      "official_name": "Sohail University, Karachi",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sohail-University,-Karachi.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Sohail University homepage",
+          "url": "https://www.sohailuniversity.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "Sohail University, Karachi",
+            "status": "verified",
+            "note": "HEC profile name.",
+            "source": "S1"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.sohailuniversity.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.sohailuniversity.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 5/9/2018. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": "UAN 111-123-789; Korangi 021-34922321-2; Shaheed-e-Millat 021-34935008 and 021-34935009; admissions@sohailuniversity.edu.pk",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.sohailuniversity.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": null,
+            "status": "unavailable",
+            "note": "Jinnah College of Nursing is named. A full undergraduate list was not in the extract."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.sohailuniversity.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Admission test",
+            "value": "The homepage posts Undergraduate Admission Test results and programme offering for Spring 2026, for tests and interviews conducted from 10 December 2025 to 20 April 2026, and a GAT (General) result for MBA covering 11 February 2026 to 20 April 2026.",
+            "status": "partial",
+            "note": "These are past result notices as of 2026-10-23, not an open deadline.",
+            "source": "S2"
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.sohailuniversity.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "No future application deadline was in the extract. Spring 2026 result notices are recorded under Admission test."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure in the extract. A line says examination-fee submission is being enforced, without an amount."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.sohailuniversity.edu.pk/ opened (HTTP 200)."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.sohailuniversity.edu.pk/ opened (HTTP 200)."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.sohailuniversity.edu.pk/ opened (HTTP 200)."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 6,
+        "verified": 5,
+        "partial": 1,
+        "unavailable": 11,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "khi-uit-university-karachi",
+      "slug": "uit-university-karachi",
+      "official_name": "UIT University",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/UIT%20University,%20Karachi.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "UIT University fee structure",
+          "url": "https://www.uitu.edu.pk/fee-structure/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "UIT University admissions",
+          "url": "https://uitu.edu.pk/admissions/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "UIT University",
+            "status": "verified",
+            "note": "Footer: © 2026 UIT University. HEC name: UIT University, Karachi.",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.uitu.edu.pk/",
+            "status": "verified",
+            "note": "HEC prints https://www.uitu.edu.pk. The fee page on that host opened.",
+            "source": "S1"
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://uitu.edu.pk/admissions/",
+            "status": "verified",
+            "source": "S3"
+          },
+          {
+            "label": "Main campus address",
+            "value": "ST-13, Block 7, Gulshan-e-Iqbal, Abul Hasan Isphahani Road, Off Main University Road, Karachi – 75300",
+            "status": "verified",
+            "note": "Footer on the fee structure page.",
+            "source": "S2"
+          },
+          {
+            "label": "Ownership",
+            "value": "Private, chartered by Government of Sindh",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "HEC recognition",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 5/28/2018. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S1"
+          },
+          {
+            "label": "Contact",
+            "value": "info@uitu.edu.pk; 0333-0399113",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.uitu.edu.pk/ and /fee-structure/ and /admissions/ opened (HTTP 200)."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": "Undergraduate table and navigation: BS (Computer Science), BS (Software Engineering), BS (Artificial Intelligence), BS (Data Science), BS (Cyber Security). The same pages also name BE programmes and BBA.",
+            "status": "verified",
+            "source": "S2"
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "Admissions page opened. Eligibility text was not in the extracted lines."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "A sample-test link is in the navigation. The test pattern was not opened."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "The undergraduate fee table does not show a separate application fee. The MS table shows an application fee of 3000 for MS Computer Science; that figure was not applied to undergraduate programmes."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "No dated intake window was in the extracted admissions text."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": "Undergraduate table (no academic year in the table header): for BS Computer Science, BS Software Engineering, BS Artificial Intelligence, BS Data Science and BS Cyber Security — admission fee 25,000; security deposit 15,000; semester charges 9,000; tuition 11,960 per credit hour; 1st semester 15 credit hours; 1st semester tuition 179,400; semester fee at the time of admission 228,400. The page says fees are subject to change and may vary with credit hours.",
+            "status": "partial",
+            "note": "Partial because the table itself is not labelled with an academic year. The page footer says © 2026.",
+            "source": "S2"
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "A Scholarship item is in the navigation. The scholarship page was not opened, so no criteria or amounts were copied."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not stated on the fee structure or admissions pages opened 2026-10-23."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not stated on the fee structure or admissions pages opened 2026-10-23."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 9,
+        "verified": 8,
+        "partial": 1,
+        "unavailable": 8,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "v2-pieas-islamabad",
+      "slug": "pieas-islamabad",
+      "official_name": "PIEAS",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [
+        {
+          "id": "S2",
+          "title": "PIEAS homepage",
+          "url": "https://www.pieas.edu.pk/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": "PIEAS",
+            "status": "verified",
+            "note": "Homepage title is PIEAS. A guessed HEC profile URL returned HTTP 404, so the expanded legal name was not re-confirmed on this pass.",
+            "source": "S2"
+          },
+          {
+            "label": "Website",
+            "value": "https://www.pieas.edu.pk/",
+            "status": "verified",
+            "source": "S2"
+          },
+          {
+            "label": "Admissions URL",
+            "value": null,
+            "status": "unavailable",
+            "note": "No admissions page was opened on 2026-10-23."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract. A data_v2 street line was not copied."
+          },
+          {
+            "label": "Ownership",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not on the homepage extract, and the HEC profile URL 404'd."
+          },
+          {
+            "label": "HEC recognition",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Pakistan-Institute-of-Engineering-and-Applied-Sciences-(PIEAS).aspx returned HTTP 404."
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "No university programme or fee page was opened on 2026-10-23 beyond the HEC profile, or the fetch did not return usable text."
+          },
+          {
+            "label": "Overview",
+            "value": "The homepage names Karachi Institute of Power Engineering and National Institute of Lasers & Optronics among linked institutes. It does not list a Karachi undergraduate fee or admission date.",
+            "status": "verified",
+            "note": "Guessed HEC URLs for PIEAS returned HTTP 404, so sector and charter were not copied from data_v2.",
+            "source": "S2"
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": null,
+            "status": "unavailable",
+            "note": "No undergraduate degree list was in the homepage extract."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "No fee figure in the homepage extract."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not in the homepage extract."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 3,
+        "verified": 3,
+        "partial": 0,
+        "unavailable": 14,
+        "needs_verification": 0
+      }
+    },
+    {
+      "research_id": "v2-comsats-university",
+      "slug": "comsats-university",
+      "official_name": "COMSATS University",
+      "profile_status": "partial",
+      "last_checked": "2026-10-23",
+      "sources": [],
+      "sections": {
+        "overview": [
+          {
+            "label": "Official name",
+            "value": null,
+            "status": "unavailable",
+            "note": "https://www.comsats.edu.pk/ timed out and guessed HEC profile URLs returned HTTP 404, so the name was not re-confirmed. The existing bundled record is still labelled COMSATS University."
+          },
+          {
+            "label": "Website",
+            "value": "https://comsats.edu.pk/",
+            "status": "unavailable",
+            "note": "Fetch timed out on 2026-10-23."
+          },
+          {
+            "label": "Admissions URL",
+            "value": "https://admissions.comsats.edu.pk/",
+            "status": "unavailable",
+            "note": "Returned HTTP 403 Access Denied."
+          },
+          {
+            "label": "Main campus address",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not fetched."
+          },
+          {
+            "label": "Ownership",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not confirmed. A data_v2 charter line was not copied."
+          },
+          {
+            "label": "HEC recognition",
+            "value": null,
+            "status": "unavailable",
+            "note": "Guessed HEC URLs for COMSATS University Islamabad and COMSATS Institute of Information Technology returned HTTP 404."
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not fetched."
+          },
+          {
+            "label": "Overview",
+            "value": null,
+            "status": "unavailable",
+            "note": "Homepage timed out."
+          }
+        ],
+        "programs": [
+          {
+            "label": "UG programmes",
+            "value": null,
+            "status": "unavailable",
+            "note": "Homepage timed out."
+          }
+        ],
+        "admissions": [
+          {
+            "label": "Eligibility",
+            "value": null,
+            "status": "unavailable",
+            "note": "Admissions host returned HTTP 403."
+          },
+          {
+            "label": "Admission test",
+            "value": null,
+            "status": "unavailable",
+            "note": "Admissions host returned HTTP 403."
+          },
+          {
+            "label": "Application fee",
+            "value": null,
+            "status": "unavailable",
+            "note": "Admissions host returned HTTP 403."
+          },
+          {
+            "label": "Intake dates",
+            "value": null,
+            "status": "unavailable",
+            "note": "Admissions host returned HTTP 403."
+          }
+        ],
+        "fees": [
+          {
+            "label": "Tuition",
+            "value": null,
+            "status": "unavailable",
+            "note": "Fee page was not fetched because the homepage timed out."
+          }
+        ],
+        "scholarships": [
+          {
+            "label": "Scholarships",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not fetched."
+          }
+        ],
+        "facilities": [
+          {
+            "label": "Hostel",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not fetched."
+          },
+          {
+            "label": "Transport",
+            "value": null,
+            "status": "unavailable",
+            "note": "Not fetched."
+          }
+        ]
+      },
+      "field_counts": {
+        "sourced": 0,
+        "verified": 0,
+        "partial": 0,
+        "unavailable": 17,
+        "needs_verification": 0
+      }
+    }
+  ]
+}

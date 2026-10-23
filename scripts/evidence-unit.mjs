@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { researchStats } from '../src/lib/research-meta.ts';
 import { COMPARISON_ROWS } from '../src/lib/compare-rows.ts';
 import { QUIZ_QUESTIONS, quizCategories } from '../src/lib/quiz-questions.ts';
-import { countBundledProfiles } from '../src/lib/university-profiles.ts';
+import { countBundledProfiles, getAllBundledProfiles } from '../src/lib/university-profiles.ts';
 import universities from '../data/research/universities_karachi.json' with { type: 'json' };
 import {
   campusCountLabel,
@@ -68,7 +68,9 @@ t('catalogue counts come from the records', () => {
   assert.equal(QUIZ_QUESTIONS.length, 24);
   assert.equal(quizCategories().length, 9);
   assert.equal(COMPARISON_ROWS.length, 20);
-  assert.equal(countBundledProfiles(), 18);
+  assert.equal(countBundledProfiles(), 67);
+  const ids = new Set(getAllBundledProfiles().map((p) => p.research_id));
+  for (const uni of universities) assert.ok(ids.has(uni.id), uni.id);
 });
 t('missing campus counts are Not available', () => {
   for (const value of [null, undefined, 0, -1, Number.NaN]) {

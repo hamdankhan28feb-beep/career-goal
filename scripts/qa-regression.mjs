@@ -137,10 +137,10 @@ async function suiteQuiz(browser) {
 // ── Admission predictor ─────────────────────────────────────────────────────
 async function predictorCase(page, { matric, inter, budget = '' }) {
   await gotoReady(page, '/predictor');
-  await page.getByLabel(/Matric Percentage/).fill(matric);
-  await page.getByLabel(/Intermediate Percentage/).fill(inter);
-  await page.getByLabel(/Annual Budget/).fill(budget);
-  await page.getByRole('button', { name: /Predict My Chances/ }).click();
+  await page.getByLabel(/matric percentage/i).fill(matric);
+  await page.getByLabel(/intermediate percentage/i).fill(inter);
+  await page.getByLabel(/annual budget/i).fill(budget);
+  await page.getByRole('button', { name: /Check sourced aggregates/i }).click();
   await page.waitForTimeout(300);
   const rows = page.getByTestId('predictor-row');
   const count = async (badge) => rows.filter({ hasText: badge }).count();
@@ -162,22 +162,23 @@ async function suitePredictor(browser) {
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   try {
     let r = await predictorCase(page, { matric: '85', inter: '80' });
-    check(r.aggregate === '82.0', 'predictor valid 85/80: aggregate = 0.6*80 + 0.4*85 = 82.0', `got ${r.aggregate}`);
-    check(r.resultsVisible && r.rows > 0, 'predictor valid: results rendered', `rows=${r.rows} H/M/L/none=${r.high}/${r.medium}/${r.low}/${r.none}`);
+    check(r.resultsVisible && r.rows > 0, 'predictor valid 85/80: results rendered', `rows=${r.rows}`);
     check(r.alerts.length === 0, 'predictor valid: no validation errors', r.alerts.join(' | '));
-    check(/not a guarantee/i.test(r.text) && /not official/i.test(r.text), 'predictor copy: disclaims guarantee and official cutoffs');
+    check(/insufficient verified data/i.test(r.text), 'predictor valid: no sourced aggregate, so insufficient verified data');
+    check(/not an official cutoff/i.test(r.text), 'predictor copy: disclaims official cutoffs');
     check(!/guaranteed admission|100% chance|AI-powered merit/i.test(r.text), 'predictor copy: no guaranteed/AI-merit claims');
+    check(r.high === 0 && r.medium === 0 && r.low === 0, 'predictor valid: no High/Medium/Low without a sourced aggregate');
 
     r = await predictorCase(page, { matric: '0', inter: '0' });
-    check(r.aggregate === '0.0' && r.resultsVisible, 'predictor boundary 0/0: accepted, aggregate 0.0', `agg=${r.aggregate}`);
-    check(r.high === 0 && r.medium === 0, 'predictor boundary 0/0: no High/Medium', `H/M/L/none=${r.high}/${r.medium}/${r.low}/${r.none}`);
+    check(r.resultsVisible && r.rows > 0, 'predictor boundary 0/0: accepted', `rows=${r.rows}`);
+    check(r.high === 0 && r.medium === 0 && r.low === 0, 'predictor boundary 0/0: no chance labels');
 
     r = await predictorCase(page, { matric: '100', inter: '100' });
-    check(r.aggregate === '100.0' && r.resultsVisible, 'predictor boundary 100/100: accepted, aggregate 100.0', `agg=${r.aggregate}`);
-    check(r.low === 0, 'predictor boundary 100/100: no Low', `H/M/L/none=${r.high}/${r.medium}/${r.low}/${r.none}`);
+    check(r.resultsVisible && r.rows > 0, 'predictor boundary 100/100: accepted', `rows=${r.rows}`);
+    check(r.low === 0 && r.high === 0, 'predictor boundary 100/100: no Low or High without a sourced aggregate');
 
     r = await predictorCase(page, { matric: '99.9', inter: '0.1' });
-    check(r.resultsVisible && r.aggregate === '40.0', 'predictor decimals 99.9/0.1: accepted, aggregate 40.0', `agg=${r.aggregate}`);
+    check(r.resultsVisible && r.alerts.length === 0, 'predictor decimals 99.9/0.1: accepted', r.alerts.join(' | '));
 
     r = await predictorCase(page, { matric: '85', inter: '' });
     check(!r.resultsVisible && r.alerts.some((a) => /Intermediate percentage is required/.test(a)), 'predictor missing inter: blocked with message', r.alerts.join(' | '));
@@ -237,11 +238,11 @@ async function suitePages(browser) {
     }, null, { timeout: 30000 }).catch(() => {});
     const opts = await select.locator('option').allInnerTexts();
     const n = (re) => Number((opts.find((o) => re.test(o)) || '').match(/\((\d+)\)/)?.[1] ?? NaN);
-    const counts = { active: n(/^Active/), unknown: n(/^Unknown/), closed: n(/^Closed/) };
-    check(counts.active === 0, 'scholarships: Active count is 0 (no unverified "open" claims)', opts.join(' | '));
+    const counts = { open: n(/^Open/), upcoming: n(/^Upcoming/), unknown: n(/^Unknown/), closed: n(/^Closed/) };
+    check(counts.open === 0 && counts.upcoming === 0, 'scholarships: Open and Upcoming counts are 0', opts.join(' | '));
     check(counts.unknown + counts.closed > 0, 'scholarships: Unknown/Closed counts populated', JSON.stringify(counts));
     const badgeCounts = () => page.evaluate(() => {
-      const c = { Active: 0, Unknown: 0, Closed: 0 };
+      const c = { Open: 0, Upcoming: 0, Unknown: 0, Closed: 0 };
       // StatusBadge renders <span title="...">{icon}{label}</span>
       document.querySelectorAll('main span[title]').forEach((el) => {
         const t = el.textContent.trim();
@@ -249,7 +250,7 @@ async function suitePages(browser) {
       });
       return c;
     });
-    for (const status of ['active', 'unknown', 'closed']) {
+    for (const status of ['open', 'upcoming', 'unknown', 'closed']) {
       await select.selectOption(status);
       await page.waitForTimeout(400);
       const b = await badgeCounts();
@@ -283,7 +284,7 @@ async function suiteMobile(browser) {
     check(ok, 'mobile: tapping Scholarship Finder card navigates', page.url());
     await gotoReady(page, '/');
     await page.getByRole('button', { name: 'Toggle menu' }).click();
-    await page.getByRole('link', { name: 'Scholarships', exact: true }).click();
+    await page.getByTestId('mobile-menu').getByRole('link', { name: 'Scholarships', exact: true }).click();
     ok = true;
     try { await page.waitForURL((u) => new URL(u).pathname === '/scholarships', { timeout: NAV_TIMEOUT }); } catch { ok = false; }
     check(ok, 'mobile: menu → Scholarships navigates', page.url());
