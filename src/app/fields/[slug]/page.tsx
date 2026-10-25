@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const field = getFieldBySlug(slug);
-  if (!field) return { title: 'Field Not Found' };
+  if (!field) notFound();
   return {
     title: `${field.name} — Field Guide`,
     description: `Complete guide to ${field.name}: career paths, salary ranges, roadmap, and universities offering this field in Pakistan.`,

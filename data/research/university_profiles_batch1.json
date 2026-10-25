@@ -128,6 +128,13 @@
             "status": "partial",
             "source": "S6",
             "note": "Both pages were opened on 2026-10-19. They publish different numbers, so neither is shown as the only contact."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Pakistan. Established since (printed as): 7/1/2000. HEC city: Islamabad. HEC city Islamabad is the university profile city, not a Karachi street address.",
+            "status": "verified",
+            "source": "S7",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -313,9 +320,9 @@
         ]
       },
       "field_counts": {
-        "sourced": 32,
-        "verified": 30,
-        "partial": 2,
+        "sourced": 34,
+        "verified": 33,
+        "partial": 1,
         "unavailable": 4,
         "needs_verification": 0
       }
@@ -442,6 +449,13 @@
             "value": "Listed on HEC university profiles (sector Public).",
             "status": "verified",
             "source": "S5"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Sindh. Established since (printed as): 5/30/1977. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S5",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -597,13 +611,20 @@
             "label": "Hostel fee",
             "value": null,
             "status": "unavailable"
+          },
+          {
+            "label": "Hostel notices (2026)",
+            "value": "The undergraduate admissions index links Online Hostel Accommodation (Batch 2026) and Notice for Hostel Accommodation.",
+            "status": "verified",
+            "source": "S1",
+            "note": "The index does not state a hostel fee. Those notice pages were not opened."
           }
         ]
       },
       "field_counts": {
-        "sourced": 26,
-        "verified": 23,
-        "partial": 3,
+        "sourced": 28,
+        "verified": 26,
+        "partial": 2,
         "unavailable": 2,
         "needs_verification": 2
       }
@@ -704,6 +725,13 @@
             "value": "Listed on HEC university profiles (sector Public).",
             "status": "verified",
             "source": "S6"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Sindh. Established since (printed as): 8/17/1994. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S6",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -877,8 +905,8 @@
         ]
       },
       "field_counts": {
-        "sourced": 31,
-        "verified": 28,
+        "sourced": 32,
+        "verified": 29,
         "partial": 3,
         "unavailable": 2,
         "needs_verification": 0
@@ -972,6 +1000,13 @@
             "value": "+92 21 1110 42242",
             "status": "verified",
             "source": "S1"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 10/8/2012. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S5",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -1151,8 +1186,8 @@
         ]
       },
       "field_counts": {
-        "sourced": 29,
-        "verified": 29,
+        "sourced": 31,
+        "verified": 31,
         "partial": 0,
         "unavailable": 4,
         "needs_verification": 1
@@ -1257,6 +1292,13 @@
             "value": "Main campus listed on HEC profiles. DCK campus HEC approval window (to 31-Dec-2025) not re-confirmed.",
             "status": "partial",
             "source": "S7"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 5/27/2002. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S7",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -1424,8 +1466,8 @@
         ]
       },
       "field_counts": {
-        "sourced": 32,
-        "verified": 23,
+        "sourced": 33,
+        "verified": 24,
         "partial": 9,
         "unavailable": 1,
         "needs_verification": 0
@@ -1496,6 +1538,13 @@
             "value": "Listed on HEC university profiles (sector Private).",
             "status": "verified",
             "source": "S2"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 6/21/2000. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S2",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -1581,6 +1630,13 @@
             "value": "Spring (Mar-Jun) admissions start Nov; Summer (Jul-Sep) start Apr; Fall (Oct-Feb) start Aug; rolling deadlines",
             "status": "verified",
             "source": "S1"
+          },
+          {
+            "label": "Application processing fee",
+            "value": "Processing fees 1000 (non-refundable). Pay online via the portal or at campus.",
+            "status": "verified",
+            "source": "S1",
+            "note": "Copied as printed. The sentence does not say PKR."
           }
         ],
         "fees": [
@@ -1588,7 +1644,7 @@
             "label": "Tuition (Karachi)",
             "value": null,
             "status": "unavailable",
-            "note": "Karachi fee schedule not published on iqra.edu.pk (checked 2026-10-14). Islamabad campus publishes Fall 2026 BS CS 1st-sem PKR 177,020 (iuisl.iqra.edu.pk/fee-structure/) — different campus, NOT used. Aggregator figures conflict, not used."
+            "note": "Karachi fee schedule not published on iqra.edu.pk (checked 2026-10-14). Islamabad campus publishes Fall 2026 BS CS 1st-sem PKR 177,020 (iuisl.iqra.edu.pk/fee-structure/) — different campus, NOT used. Aggregator figures conflict, not used. Re-checked 2026-10-23: the admission hub opened but a Karachi tuition table was not on that page."
           },
           {
             "label": "Refund policy",
@@ -1638,8 +1694,10 @@
         "facilities": [
           {
             "label": "Hostel",
-            "value": null,
-            "status": "unavailable"
+            "value": "For international students, the admission hub says arrival is coordinated with the Director Administration for arranging hostel accommodation, and staff arrange meet-and-greet and commute to the hostel.",
+            "status": "partial",
+            "source": "S1",
+            "note": "No Karachi hostel fee, and no statement that local students are housed, was on that page."
           },
           {
             "label": "Transport",
@@ -1655,10 +1713,10 @@
         ]
       },
       "field_counts": {
-        "sourced": 24,
-        "verified": 22,
-        "partial": 2,
-        "unavailable": 6,
+        "sourced": 27,
+        "verified": 24,
+        "partial": 3,
+        "unavailable": 5,
         "needs_verification": 1
       }
     }

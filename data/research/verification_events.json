@@ -950,6 +950,896 @@
       "checked_at": "2026-10-19",
       "checker": "scripts/record-verification.mjs",
       "notes": "Official page opened 2026-10-19. Fee and admissions-portal pages were not re-opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iobm-karachi",
+      "field_key": "S2",
+      "source_url": "https://iobm.edu.pk/fee-structure/",
+      "source_title": "IoBM homepage, fee structure, undergraduate requirements, scholarships and admissions home",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iobm-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Institute-of-Business-Management.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "adam-institute-of-social-management-science-aisms",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Adam-Institute-of-Social-&-Management-Science-(AISMS),-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "aga-khan-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Aga-Khan-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "aga-khan-university",
+      "field_key": "S2",
+      "source_url": "https://www.aku.edu/admissions/Pages/home.aspx",
+      "source_title": "AKU admissions",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Air-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "al-ghazali-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Al-Ghazali%20University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "al-kawthar-university-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Al-Kawthar-University,-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "baqai-medical-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Baqai-Medical-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "baqai-medical-university",
+      "field_key": "S2",
+      "source_url": "https://www.baqai.edu.pk/",
+      "source_title": "Baqai Medical University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "benazir-bhutto-shaheed-university-lyari",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Benazir-Bhutto-Shaheed-University-Lyari.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "commecs-institute-of-business-emerging-sciences",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Commecs-Institute-of-Business--Emerging-Sciences.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "dow-university-of-health-sciences",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/DOW-University-of-Health-Sciences.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "dadabhoy-institute-of-higher-education",
+      "field_key": "S2",
+      "source_url": "https://www.dadabhoy.edu.pk/",
+      "source_title": "DIHE homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "dadabhoy-institute-of-higher-education",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Dadabhoy-Institute-of-Higher-Education.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "denning-institute-of-technology-and-entrepreneursh",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Denning-Institute-of-Technology-and-Entrepreneurship,-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "emaan-institute-of-management-sciences-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Eman-Institute-of-Management-and-Sciences-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "federal-urdu-university-of-arts-sciences-technolog",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Federal-Urdu-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "federal-urdu-university-of-arts-sciences-technolog",
+      "field_key": "S2",
+      "source_url": "https://fuuast.edu.pk/",
+      "source_title": "FUUAST Karachi site",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "greenwich-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Greenwich-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "greenwich-university",
+      "field_key": "S2",
+      "source_url": "https://www.greenwich.edu.pk/",
+      "source_title": "Greenwich University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hands-institute-of-development-studies-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Hands-Institute-of--Development-Studies,-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "S2",
+      "source_url": "https://ilmauniversity.edu.pk/",
+      "source_title": "ILMA University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/ILMA.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Indus-Valley-School-of-Art-and-Architecture.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "institute-of-space-technology-karachi-campus",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Institute-of-Space-Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "isra-university-karachi-campus",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Isra-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-sindh-medical-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Jinnah-Sindh-Medical-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Jinnah-University-for-Women.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "kasbit",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/KASB-Institute-of-Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "kasbit",
+      "field_key": "S2",
+      "source_url": "https://kasbit.edu.pk/",
+      "source_title": "KASB Institute of Technology homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "karachi-institute-of-technology-and-entrepreneursh",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-Institute-of-Technology-and-Entrepreneurship.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "karachi-metropolitan-university-karachi",
+      "field_key": "S2",
+      "source_url": "https://thekmu.edu.pk/",
+      "source_title": "Karachi Metropolitan University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "karachi-metropolitan-university-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-Metropolitan-University,-Karachi.aspx",
+      "source_title": "HEC profile, Karachi Metropolitan University, Karachi",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ksbl",
+      "field_key": "S2",
+      "source_url": "https://www.ksbl.edu.pk/",
+      "source_title": "KSBL homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ksbl",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-School-of-Business--Leadership.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "malir-university-of-science-technology-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Malir-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "malir-university-of-science-technology-karachi",
+      "field_key": "S2",
+      "source_url": "https://www.maliruniversity.edu.pk/",
+      "source_title": "Malir University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "metropolitan-university-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Metropolitan-University-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "millennium-institute-of-technology-and-entrepreneu",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/MITE.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "national-textile-university-karachi-campus",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Punjab/National-Textile-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "national-university-of-modern-languages-karachi-ca",
+      "field_key": "S2",
+      "source_url": "https://www.numl.edu.pk/",
+      "source_title": "NUML homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "national-university-of-modern-languages-karachi-ca",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/National-University-of-Modern-Languages.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "newports",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Newport-Institute-of-Communications--Economics.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "newports",
+      "field_key": "S2",
+      "source_url": "https://www.newports.edu.pk/",
+      "source_title": "Newports Institute homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "paf-air-war-college-institute-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/PAF%20Air-War-College-Institute,-Karachi-.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "pakistan-naval-academy",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Pakistan-Naval-Academy.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "preston-institute-of-management-science-technology",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Preston-Institute-of-Management,-Science-and-Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "preston-university-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Preston-University,%20Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "saifee-burhani-university-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Saifee-Burhani-University,-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "shaheed-benazir-bhutto-city-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Shaheed-Benazir-Bhutto-City-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "shaheed-benazir-bhutto-dewan-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Shaheed-Benazir-Bhutto-Dewan-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "shaheed-zulfiqar-ali-bhutto-university-of-law",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Shaheed-Zulfiqar-Ali-Bhutto-University-of-Law.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-management-technology",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Institute-of-Management-and-Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-medical-sciences",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Institute-of-Medical-Sciences.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sohail-university-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sohail-University,-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sohail-university-karachi",
+      "field_key": "S2",
+      "source_url": "https://www.sohailuniversity.edu.pk/",
+      "source_title": "Sohail University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Textile-Institute-of-Pakistan.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/The-Nazeer-Hussain-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "uit-university-karachi",
+      "field_key": "S2",
+      "source_url": "https://www.uitu.edu.pk/fee-structure/",
+      "source_title": "UIT University fee structure",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "uit-university-karachi",
+      "field_key": "S1",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/UIT%20University,%20Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "uit-university-karachi",
+      "field_key": "S3",
+      "source_url": "https://uitu.edu.pk/admissions/",
+      "source_title": "UIT University admissions",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "pieas-islamabad",
+      "field_key": "S2",
+      "source_url": "https://www.pieas.edu.pk/",
+      "source_title": "PIEAS homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Official page opened 2026-10-23. Fields citing this source id use this event."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "fast-nuces-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/National-University-of-Computer-and-Emerging-Sciences.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/NED-University-of-Engineering--Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "neduet-karachi",
+      "field_key": "Hostel notices (2026)",
+      "source_url": "https://www.neduet.edu.pk/admission",
+      "source_title": "NED undergraduate admissions 2026",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Admissions index opened 2026-10-23. The NED homepage returned HTTP 502."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iba-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Institute-of-Business-Administration.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "habib-university",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Habib-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "dha-suffa-university",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/DHA-Suffa-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iqra-university",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Iqra-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iqra-university",
+      "field_key": "Application processing fee",
+      "source_url": "https://iqra.edu.pk/admission-hub/",
+      "source_title": "Iqra University admission hub",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Admission hub opened 2026-10-23. iqra.edu.pk returned HTTP 200."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "iqra-university",
+      "field_key": "Hostel",
+      "source_url": "https://iqra.edu.pk/admission-hub/",
+      "source_title": "Iqra University admission hub",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Hostel sentence is limited to the international-student arrival steps."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "szabist-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Shaheed-Zulfikar-Ali-Bhutto-Institute-of-Science--Technology-(SZABIST).aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "szabist-karachi",
+      "field_key": "Fall 2026 admission schedule",
+      "source_url": "https://szabist.edu.pk/admission-schedule/",
+      "source_title": "SZABIST admission schedule",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Schedule page opened 2026-10-23 after confirming the TLS leaf is *.szabist.edu.pk."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "szabist-karachi",
+      "field_key": "SZABIST-funded scholarship criteria",
+      "source_url": "https://szabist.edu.pk/szabist-funded-scholarships/",
+      "source_title": "SZABIST-funded scholarships",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Scholarship criteria page opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "bahria-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Bahria-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "uok-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/University-of-Karachi.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "uok-karachi",
+      "field_key": "Admissions page title",
+      "source_url": "https://www.uok.edu.pk/admissions/",
+      "source_title": "University of Karachi admissions",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Admissions page opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ssuet-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sir-Syed-University-of-Engineering--Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "maju-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Muhammad-Ali-Jinnah-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "duet-karachi",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Dawood-University-of-Engineering--Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "karachi-institute-of-economics-technology",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-Institute-of-Economics--Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Hamdard-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "hamdard-university",
+      "field_key": "Accommodation",
+      "source_url": "https://www.hamdard.edu.pk/",
+      "source_title": "Hamdard University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Homepage opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-university",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Indus-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ziauddin-university",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Zia-ud-Din-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "shu",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Barrett-Hodgson-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-madresatul-islam-university",
+      "field_key": "HEC profile (checked 2026-10-23)",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Madresatul-Islam-University.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "HEC profile re-opened 2026-10-23."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "karachi-metropolitan-university-karachi",
+      "field_key": "city",
+      "source_url": "https://thekmu.edu.pk/",
+      "source_title": "Karachi Metropolitan University homepage",
+      "checked_at": "2026-10-23",
+      "checker": "profile-coverage-2026-10-23",
+      "notes": "Homepage address used. HEC city field Abbottabad recorded as a conflict."
     }
   ]
 }

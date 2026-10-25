@@ -167,7 +167,7 @@ export default function CounselorPage() {
             role: 'notice',
             noticeKind: 'unconfigured',
             content:
-              'No answer was generated. The counselor is unavailable.',
+              'The AI Counselor is not configured. Add GEMINI_API_KEY or OPENAI_API_KEY on the server. No answer was generated.',
           },
         ]);
         return;
@@ -228,9 +228,9 @@ export default function CounselorPage() {
         <div role="status" className="notice-warning mb-6 flex gap-3 p-5 text-sm">
           <Settings className="mt-0.5 h-5 w-5 shrink-0 text-warning" aria-hidden />
           <div>
-            <p className="font-medium text-foreground">Unavailable</p>
+            <p className="font-medium text-foreground">Not configured</p>
             <p className="mt-1 text-muted-foreground">
-              The counselor cannot answer right now, and it will not invent one. University and scholarship pages remain available.
+              The AI Counselor needs <span className="font-medium text-foreground">GEMINI_API_KEY</span> (a free key from Google AI Studio) or <span className="font-medium text-foreground">OPENAI_API_KEY</span> on the server. Until one of those is set, it will not invent an answer. University and scholarship pages remain available.
             </p>
           </div>
         </div>

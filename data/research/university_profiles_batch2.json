@@ -54,6 +54,20 @@
           "url": "https://szabist.edu.pk/fee-structure/",
           "checked": "2026-10-14",
           "note": "Via search index 2026-10-14; direct fetch timed out."
+        },
+        {
+          "id": "SZ23",
+          "title": "SZABIST admission schedule (Fall 2026)",
+          "url": "https://szabist.edu.pk/admission-schedule/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
+        },
+        {
+          "id": "SZ23B",
+          "title": "SZABIST-funded scholarships",
+          "url": "https://szabist.edu.pk/szabist-funded-scholarships/",
+          "checked": "2026-10-23",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -107,6 +121,13 @@
             "status": "partial",
             "source": "S5",
             "note": "Checked 2026-10-11."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 10/25/1995. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S5",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -195,7 +216,14 @@
             "value": null,
             "status": "unavailable",
             "source": "S4",
-            "note": "admission-schedule page returned HTTP 500 on 2026-10-14; Spring 2027 Karachi dates not published in reachable sources."
+            "note": "The schedule page that returned HTTP 500 on 2026-10-14 opened on 2026-10-23. Dates are in Fall 2026 admission schedule."
+          },
+          {
+            "label": "Fall 2026 admission schedule",
+            "value": "Fall 2026, all programmes, Round 2: admissions start Monday 1 June 2026; form submission deadline Wednesday 22 July 2026; test dates Monday–Thursday 27–30 July 2026; test result Monday 3 August 2026; interviews Thursday 6 August–Monday 10 August 2026; merit list Wednesday 12 August 2026; fee submission deadline Thursday 27 August 2026; orientation Thursday 10–Saturday 12 September 2026; classes commence Monday 14 September 2026. Round 1 on the same page: admissions start 12 January 2026 through fee deadline 10 March 2026. Checked 2026-10-23, after the listed Round 2 commencement. No later intake was on the page.",
+            "status": "verified",
+            "source": "SZ23",
+            "note": "TLS leaf CN=*.szabist.edu.pk (RapidSSL), valid 2026-09-09 to 2027-03-26. The local trust store was missing the intermediate, so the chain did not verify; the leaf name was checked before the page was read."
           }
         ],
         "fees": [
@@ -272,6 +300,12 @@
             "status": "partial",
             "source": "S6",
             "note": "Detailed criteria from Larkana campus page (lrk.szabist.edu.pk/scholarships-and-awards/) — may differ for Karachi."
+          },
+          {
+            "label": "SZABIST-funded scholarship criteria",
+            "value": "Merit-Based Scholarship: semester GPA at least 3.70 on a full-course load, from the second semester, not for extra/repeat courses or for subsidized/external programmes (except BABS), EMBA, MS, PhD or transfer students. Talent-Based Scholarship: top-three placement in a recognised zonal, regional, national or international competition. Sindh Police Shaheed Scholarship: children of on-duty Shaheed Sindh Police personnel, any internal degree, maximum two children per academic programme. ERFA Department, Room 5, 153 Campus, +92 21 35823433 ext. 371 and 374, erfa@szabist.edu.pk.",
+            "status": "verified",
+            "source": "SZ23B"
           }
         ],
         "facilities": [
@@ -287,19 +321,19 @@
             "value": null,
             "status": "unavailable",
             "source": "S6",
-            "note": "Karachi pages list no hostel; Larkana campus publishes hostel fee (annual PKR 120,000) — different campus, not used."
+            "note": "Contact page opened 2026-10-23 lists Karachi (99 and 100 Clifton), Islamabad, Larkana, Hyderabad and Dubai. No Karachi hostel fee."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "Not stated on pages read."
+            "note": "Not stated on the fee, schedule, scholarship or contact pages opened 2026-10-23."
           }
         ]
       },
       "field_counts": {
-        "sourced": 31,
-        "verified": 21,
+        "sourced": 34,
+        "verified": 24,
         "partial": 10,
         "unavailable": 5,
         "needs_verification": 0
@@ -420,6 +454,13 @@
             "value": "Health Sciences Karachi Campus; Institute of Professional Psychology Karachi (same address)",
             "status": "verified",
             "source": "S1"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Pakistan. Established since (printed as): 2/7/2000. HEC city: Islamabad. HEC city Islamabad is the university profile city, not a Karachi street address.",
+            "status": "verified",
+            "source": "S3",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -569,8 +610,8 @@
         ]
       },
       "field_counts": {
-        "sourced": 27,
-        "verified": 22,
+        "sourced": 28,
+        "verified": 23,
         "partial": 5,
         "unavailable": 3,
         "needs_verification": 0
@@ -679,6 +720,13 @@
             "status": "partial",
             "source": "S1",
             "note": "Conflicting counts on official pages."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Sindh. Established since (printed as): 12/28/1972. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S4",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -746,6 +794,13 @@
             "value": "BSCS 77.91%, BSSE 77.18%, BSAI 77.36% (min test score 50), dated 02-11-2025.",
             "status": "verified",
             "source": "S5"
+          },
+          {
+            "label": "Admissions page title",
+            "value": "The admissions page title is Admissions 2027. It links a sample test paper, test-based admission instructions and test paper structure. Address on the page: University Road, Karachi-75270. Email: registrar@uok.edu.pk.",
+            "status": "verified",
+            "source": "S1",
+            "note": "The same page says both 20 research institutes and 27 research institutes, and both 1,279 acres. Those counts were not copied."
           }
         ],
         "fees": [
@@ -807,8 +862,8 @@
         ]
       },
       "field_counts": {
-        "sourced": 23,
-        "verified": 15,
+        "sourced": 25,
+        "verified": 17,
         "partial": 8,
         "unavailable": 2,
         "needs_verification": 1
@@ -884,6 +939,13 @@
             "status": "partial",
             "source": "S4",
             "note": "Checked 2026-10-10."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 10/25/1995. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S4",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -1021,8 +1083,8 @@
         ]
       },
       "field_counts": {
-        "sourced": 21,
-        "verified": 17,
+        "sourced": 22,
+        "verified": 18,
         "partial": 4,
         "unavailable": 4,
         "needs_verification": 1
@@ -1134,6 +1196,13 @@
             "status": "verified",
             "source": "S1",
             "note": "Taken from the eligibility page contact block on 2026-10-19. An older WhatsApp number was not on that block and is not shown."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 5/18/2000. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S5",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -1248,9 +1317,9 @@
         ]
       },
       "field_counts": {
-        "sourced": 19,
-        "verified": 4,
-        "partial": 15,
+        "sourced": 20,
+        "verified": 10,
+        "partial": 10,
         "unavailable": 3,
         "needs_verification": 0
       }
@@ -1338,6 +1407,13 @@
             "status": "partial",
             "source": "S5",
             "note": "Checked 2026-10-10."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Pakistan. Established since (printed as): 10/31/2007. HEC city: Karachi.",
+            "status": "verified",
+            "source": "S5",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -1466,8 +1542,8 @@
         ]
       },
       "field_counts": {
-        "sourced": 22,
-        "verified": 16,
+        "sourced": 23,
+        "verified": 17,
         "partial": 6,
         "unavailable": 2,
         "needs_verification": 1

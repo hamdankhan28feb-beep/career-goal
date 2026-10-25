@@ -118,6 +118,38 @@
           "note": "Opened 2026-10-19. This mark is not used as the ORIC category."
         }
       ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "karachi-metropolitan-university-karachi",
+      "field_key": "city",
+      "primary": {
+        "status": "verified",
+        "label": "University homepage",
+        "values": [
+          "Block M, North Nazimabad Town, Karachi",
+          "Homepage title: Karachi Metropolitan University"
+        ],
+        "source_url": "https://thekmu.edu.pk/",
+        "source_title": "Karachi Metropolitan University homepage",
+        "last_verified_at": "2026-10-23",
+        "note": "Used as the campus address."
+      },
+      "alternatives": [
+        {
+          "label": "HEC university profile city field",
+          "values": [
+            "City: Abbottabad",
+            "Province: Sindh",
+            "Established Since: blank",
+            "Page title: Karachi Metropolitan University, Karachi"
+          ],
+          "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-Metropolitan-University,-Karachi.aspx",
+          "source_title": "HEC profile, Karachi Metropolitan University, Karachi",
+          "last_verified_at": "2026-10-23",
+          "note": "The City field disagrees with the page title and with the university homepage. It was not copied into the address."
+        }
+      ]
     }
   ]
 }

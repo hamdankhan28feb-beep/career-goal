@@ -9,11 +9,12 @@
     "lint": "next lint",
     "db:seed": "node db/seed.js",
     "db:seed:profiles": "node db/seed-university-profiles.js",
+    "db:setup": "node db/setup.js",
     "qa:regression": "node scripts/qa-regression.mjs",
     "test:predictor": "node --import ./scripts/register-test-hooks.mjs scripts/predictor-unit.mjs",
     "test:evidence": "node --import ./scripts/register-test-hooks.mjs scripts/evidence-unit.mjs",
     "test:api": "node --import ./scripts/register-test-hooks.mjs scripts/api-validation.mjs",
-    "test": "node --import ./scripts/register-test-hooks.mjs scripts/predictor-unit.mjs && node --import ./scripts/register-test-hooks.mjs scripts/evidence-unit.mjs && node --import ./scripts/register-test-hooks.mjs scripts/api-validation.mjs"
+    "test": "node --import ./scripts/register-test-hooks.mjs scripts/predictor-unit.mjs && node --import ./scripts/register-test-hooks.mjs scripts/evidence-unit.mjs && node --import ./scripts/register-test-hooks.mjs scripts/api-validation.mjs && node --import ./scripts/register-test-hooks.mjs scripts/counselor-unit.mjs"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",

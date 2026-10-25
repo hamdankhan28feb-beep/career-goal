@@ -46,9 +46,9 @@ export default async function HomePage() {
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="lg:grid lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center lg:gap-12">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
-            <Sparkles className="h-4 w-4" />
-            Evidence-labelled guidance for Pakistani students
+          <div className="flex max-w-full items-start gap-2 rounded-full border border-primary/20 bg-primary/8 px-4 py-2 text-sm text-primary">
+            <Sparkles className="mt-0.5 h-4 w-4 shrink-0" />
+            <span className="min-w-0">Evidence-labelled guidance for Pakistani students</span>
           </div>
           <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             A growing university and career guide for Pakistan, starting with Karachi.
@@ -185,7 +185,7 @@ export default async function HomePage() {
             View all <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-5 [grid-template-columns:minmax(0,1fr)] md:[grid-template-columns:repeat(2,minmax(0,1fr))] lg:[grid-template-columns:repeat(3,minmax(0,1fr))]">
           {featuredUniversities.map((university) => (
             <UniversityCard key={university.slug} university={university} />
           ))}

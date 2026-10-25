@@ -16,8 +16,8 @@
       "profile_status": "partial",
       "last_checked": "2026-10-19",
       "field_counts": {
-        "sourced": 29,
-        "verified": 25,
+        "sourced": 30,
+        "verified": 26,
         "partial": 4,
         "unavailable": 1,
         "needs_verification": 2
@@ -79,6 +79,13 @@
           "url": "https://kiet.edu.pk/services/students-transport-services/",
           "checked": "2026-10-19",
           "note": "Returned HTTP 404 on 2026-10-19."
+        },
+        {
+          "id": "HEC23",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Karachi-Institute-of-Economics--Technology.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
         }
       ],
       "sections": {
@@ -124,6 +131,13 @@
             "value": "Semester system with Spring and Fall intakes",
             "status": "verified",
             "source": "S4"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 5/24/2001. HEC city: Karachi.",
+            "status": "verified",
+            "source": "HEC23",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -300,10 +314,10 @@
       "profile_status": "partial",
       "last_checked": "2026-10-19",
       "field_counts": {
-        "sourced": 22,
-        "verified": 20,
-        "partial": 2,
-        "unavailable": 3,
+        "sourced": 25,
+        "verified": 22,
+        "partial": 3,
+        "unavailable": 2,
         "needs_verification": 1
       },
       "sources": [
@@ -352,6 +366,13 @@
           "url": "https://www.hamdard.edu.pk/",
           "checked": "2026-10-19",
           "source_type": "official_university"
+        },
+        {
+          "id": "HEC23",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Hamdard-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
         }
       ],
       "sections": {
@@ -397,6 +418,13 @@
             "value": "Private university established 1991 by Hakim Said (Hamdard Foundation)",
             "status": "verified",
             "source": "S4"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 2/22/1992. HEC city: Karachi.",
+            "status": "verified",
+            "source": "HEC23",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -525,6 +553,13 @@
             "value": null,
             "status": "unavailable",
             "note": "Not described on pages read."
+          },
+          {
+            "label": "Accommodation",
+            "value": "Homepage: if you are planning to study away from home, we can provide accommodation in Hamdard University. Karachi sites named on the same page include Madinat al-Hikmah, Hakim Mohammed Said Road; North Nazimabad Block F; and a North Dental site in North Nazimabad.",
+            "status": "partial",
+            "source": "S0",
+            "note": "No hostel fee or capacity was on the homepage. The older Hostel Life note is unchanged."
           }
         ]
       }
@@ -536,8 +571,8 @@
       "profile_status": "partial",
       "last_checked": "2026-10-19",
       "field_counts": {
-        "sourced": 20,
-        "verified": 18,
+        "sourced": 21,
+        "verified": 19,
         "partial": 2,
         "unavailable": 3,
         "needs_verification": 1
@@ -566,6 +601,13 @@
           "title": "Indus University - Programmes Offered",
           "url": "https://indus.edu.pk/course.php",
           "checked": "2026-10-19"
+        },
+        {
+          "id": "HEC23",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Indus-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
         }
       ],
       "sections": {
@@ -611,6 +653,13 @@
             "value": "HEC listing showed North Campus recognised w.e.f. 03-09-2024 to Fall 2025; later status not re-checked",
             "status": "partial",
             "note": "From FuturePath research record (2026-10-10)."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 10/20/2004. HEC city: Karachi.",
+            "status": "verified",
+            "source": "HEC23",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -736,8 +785,8 @@
       "profile_status": "partial",
       "last_checked": "2026-10-19",
       "field_counts": {
-        "sourced": 19,
-        "verified": 10,
+        "sourced": 20,
+        "verified": 11,
         "partial": 9,
         "unavailable": 2,
         "needs_verification": 1
@@ -787,6 +836,13 @@
           "url": "https://zu.edu.pk/wp-content/uploads/2025/12/HB%20-%20Updated.pdf",
           "checked": "2026-10-19",
           "note": "Read via search excerpt only."
+        },
+        {
+          "id": "HEC23",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Zia-ud-Din-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
         }
       ],
       "sections": {
@@ -827,6 +883,13 @@
             "value": "Karachi sites (Clifton, North Nazimabad, Link Road) and Sukkur campus",
             "status": "partial",
             "note": "From FuturePath research record and admissions list locations."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 12/13/2005. HEC city: Karachi.",
+            "status": "verified",
+            "source": "HEC23",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -951,8 +1014,8 @@
       "profile_status": "partial",
       "last_checked": "2026-10-19",
       "field_counts": {
-        "sourced": 26,
-        "verified": 20,
+        "sourced": 27,
+        "verified": 21,
         "partial": 6,
         "unavailable": 2,
         "needs_verification": 0
@@ -994,6 +1057,13 @@
           "title": "SHU - Admissions Open Spring 2027 (news)",
           "url": "https://shu.edu.pk/news/admissions-open-spring-2027/",
           "checked": "2026-10-19"
+        },
+        {
+          "id": "HEC23",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Barrett-Hodgson-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
         }
       ],
       "sections": {
@@ -1039,6 +1109,13 @@
             "value": "Admissions open for Spring 2027",
             "status": "verified",
             "source": "S6"
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Private. Chartered by: Government of Sindh. Established since (printed as): 8/25/2015. HEC city: Karachi.",
+            "status": "verified",
+            "source": "HEC23",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
@@ -1192,8 +1269,8 @@
       "profile_status": "partial",
       "last_checked": "2026-10-19",
       "field_counts": {
-        "sourced": 20,
-        "verified": 13,
+        "sourced": 21,
+        "verified": 14,
         "partial": 7,
         "unavailable": 3,
         "needs_verification": 2
@@ -1230,6 +1307,13 @@
           "title": "SMIU - Home",
           "url": "https://smiu.edu.pk/",
           "checked": "2026-10-19"
+        },
+        {
+          "id": "HEC23",
+          "title": "HEC university profile",
+          "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Madresatul-Islam-University.aspx",
+          "checked": "2026-10-23",
+          "source_type": "hec"
         }
       ],
       "sections": {
@@ -1269,6 +1353,13 @@
             "value": "Public (Sindh)",
             "status": "partial",
             "note": "From FuturePath research record (HEC listing)."
+          },
+          {
+            "label": "HEC profile (checked 2026-10-23)",
+            "value": "Recognised: Yes. Sector: Public. Chartered by: Government of Sindh. Established since (printed as): 12/22/2011. HEC city: Karachi.",
+            "status": "verified",
+            "source": "HEC23",
+            "note": "Re-opened the HEC profile on 2026-10-23. Does not replace older HEC notes."
           }
         ],
         "programs": [
