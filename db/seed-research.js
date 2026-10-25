@@ -85,6 +85,19 @@ async function main() {
         unmatched += 1;
         continue;
       }
+      if (r.id) {
+        const clash = await client.query(
+          'SELECT 1 FROM universities WHERE research_id = $1 AND university_id <> $2',
+          [r.id, hit.university_id]
+        );
+        // A research id already linked to another row is left alone. The strict
+        // sync (seed-research-universities.js) owns those links. Skipping avoids
+        // a unique-index failure on a second setup run.
+        if (clash.rowCount) {
+          unmatched += 1;
+          continue;
+        }
+      }
       const type = ownershipToType(r.ownership);
       await client.query(
         'UPDATE universities SET verification_status = $2, last_verified_at = $3, research_id = $4, ownership_source = $5, university_type = COALESCE($6, university_type), updated_at = NOW() WHERE university_id = $1',

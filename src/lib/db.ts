@@ -2,8 +2,16 @@ import { Pool } from 'pg';
 
 let pool: Pool | null = null;
 
+/** Runtime env lookup. A direct `process.env.NAME` read is inlined at build time. */
+export function configuredDatabaseUrl(): string | null {
+  const value = process.env['DATABASE_URL'];
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  return trimmed.length ? trimmed : null;
+}
+
 function databaseUrl(): string {
-  const connectionString = process.env.DATABASE_URL;
+  const connectionString = configuredDatabaseUrl();
   if (!connectionString) {
     throw new Error(
       'DATABASE_URL is not set. Refusing to open a database connection. Set DATABASE_URL before using the database, and rotate any database password that was previously stored in source control.',

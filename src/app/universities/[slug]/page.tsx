@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const university = await getUniversityBySlug(slug);
-  if (!university) return { title: 'University Not Found' };
+  if (!university) notFound();
   return {
     title: university.name,
     description: `Explore ${university.name} — programs, admissions, fees, scholarships, and campus life. Source-verified data on FuturePath.`,

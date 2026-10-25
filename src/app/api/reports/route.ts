@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { query } from '@/lib/db';
+import { configuredDatabaseUrl, query } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rate-limit';
 
 export async function POST(req: NextRequest) {
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Email is not usable.' }, { status: 400 });
   }
 
-  if (!process.env.DATABASE_URL) {
+  if (!configuredDatabaseUrl()) {
     return NextResponse.json(
       { error: 'Reports cannot be saved on this server yet. The form is here so the correction path exists once a database is configured.' },
       { status: 503 },

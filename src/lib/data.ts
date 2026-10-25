@@ -7,6 +7,7 @@ import { profileSearchText } from '@/lib/profile-utils';
 import { chanceForUniversity, computeAggregate } from '@/lib/predictor';
 import { applyDisplayPolicy } from '@/lib/evidence';
 import { fetchAllFromDb, fetchPageFromDb } from '@/lib/university-query';
+import { configuredDatabaseUrl } from '@/lib/db';
 import type { PaginatedResult } from '@/lib/pagination';
 import type {
   University,
@@ -174,7 +175,7 @@ export function getUniversities(): Promise<University[]> {
 
 async function fetchUniversities(): Promise<University[]> {
   const now = Date.now();
-  if (!process.env.DATABASE_URL) {
+  if (!configuredDatabaseUrl()) {
     const bundled = getBundledUniversities();
     cachedUniversities = bundled;
     cacheTimestamp = now;
@@ -206,7 +207,7 @@ export async function getUniversitiesPage(
   cursor: number = 0,
   limit: number = 20
 ): Promise<PaginatedResult<University>> {
-  if (!process.env.DATABASE_URL) {
+  if (!configuredDatabaseUrl()) {
     const all = getBundledUniversities().map(applyDisplayPolicy);
     const start = all.findIndex(u => u.id > cursor);
     const slice = start === -1 ? [] : all.slice(start, start + limit);

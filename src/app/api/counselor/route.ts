@@ -13,17 +13,34 @@ type ChatMessage = { role: ChatRole; content: string };
 
 const MAX_TURNS = 8;
 const MAX_CHARS = 2000;
+const DEFAULT_OPENAI_MODEL = 'gpt-4o-mini';
+// gemini-2.0-flash shut down on 2026-06-01. This id is on the free Gemini API tier
+// and is the model Google points new projects at (checked 2026-10-25).
+const DEFAULT_GEMINI_MODEL = 'gemini-3.5-flash-lite';
 
-// Model names are configurable; defaults can be overridden in .env.local without code changes.
-const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini';
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.0-flash';
+/** Runtime lookup. Direct `process.env.NAME` reads are inlined at build time. */
+function envValue(name: string): string | undefined {
+  const value = process.env[name];
+  if (typeof value !== 'string') return undefined;
+  const trimmed = value.trim();
+  return trimmed.length ? trimmed : undefined;
+}
+
+function openAiModel(): string {
+  return envValue('OPENAI_MODEL') || DEFAULT_OPENAI_MODEL;
+}
+
+function geminiModel(): string {
+  return envValue('GEMINI_MODEL') || DEFAULT_GEMINI_MODEL;
+}
 
 function configuredProviders(): Array<'openai' | 'gemini'> {
   const list: Array<'openai' | 'gemini'> = [];
-  if (process.env.OPENAI_API_KEY) list.push('openai');
-  if (process.env.GEMINI_API_KEY) list.push('gemini');
-  const preferred = (process.env.COUNSELOR_PROVIDER || '').toLowerCase();
+  if (envValue('OPENAI_API_KEY')) list.push('openai');
+  if (envValue('GEMINI_API_KEY')) list.push('gemini');
+  const preferred = (envValue('COUNSELOR_PROVIDER') || '').toLowerCase();
   if (preferred === 'gemini' && list.length === 2) list.reverse();
+  if (preferred === 'openai' && list.length === 2 && list[0] !== 'openai') list.reverse();
   return list;
 }
 
@@ -31,7 +48,8 @@ function unconfigured() {
   console.info('AI Counselor unavailable: no provider key is configured.');
   return NextResponse.json(
     {
-      error: 'The AI Counselor is unavailable.',
+      error:
+        'The AI Counselor is not configured. Set GEMINI_API_KEY (a free key from Google AI Studio) or OPENAI_API_KEY on the server, then redeploy. No answer was generated.',
       mode: 'unconfigured',
     },
     { status: 503 }
@@ -101,10 +119,10 @@ async function callOpenAI(system: string, messages: ChatMessage[]): Promise<stri
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      Authorization: `Bearer ${envValue('OPENAI_API_KEY')}`,
     },
     body: JSON.stringify({
-      model: OPENAI_MODEL,
+      model: openAiModel(),
       temperature: 0.2,
       max_tokens: 700,
       messages: [{ role: 'system', content: system }, ...messages],
@@ -121,35 +139,51 @@ async function callOpenAI(system: string, messages: ChatMessage[]): Promise<stri
   return text;
 }
 
+function geminiContents(messages: ChatMessage[]): Array<{ role: 'user' | 'model'; parts: Array<{ text: string }> }> {
+  const contents: Array<{ role: 'user' | 'model'; parts: Array<{ text: string }> }> = [];
+  for (const message of messages) {
+    const role = message.role === 'assistant' ? 'model' : 'user';
+    const previous = contents[contents.length - 1];
+    if (previous && previous.role === role) {
+      previous.parts[0].text = `${previous.parts[0].text}\n${message.content}`;
+    } else {
+      contents.push({ role, parts: [{ text: message.content }] });
+    }
+  }
+  return contents;
+}
+
 async function callGemini(system: string, messages: ChatMessage[]): Promise<string> {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(
-    GEMINI_MODEL
-  )}:generateContent`;
+  const model = geminiModel();
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
   const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-goog-api-key': process.env.GEMINI_API_KEY as string,
+      'x-goog-api-key': envValue('GEMINI_API_KEY') as string,
     },
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: system }] },
-      contents: messages.map((m) => ({
-        role: m.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text: m.content }],
-      })),
-      generationConfig: { temperature: 0.2, maxOutputTokens: 700 },
+      contents: geminiContents(messages),
+      generationConfig: { temperature: 0.2, maxOutputTokens: 2048 },
     }),
     signal: AbortSignal.timeout(45_000),
   });
   if (!res.ok) {
     const detail = await res.text().catch(() => '');
-    throw new UpstreamError(`Gemini ${res.status}: ${detail.slice(0, 300)}`, res.status);
+    const status = res.status === 404 ? 502 : res.status;
+    const hint =
+      res.status === 404
+        ? ` Gemini model "${model}" was not found. Set GEMINI_MODEL to a current free model such as ${DEFAULT_GEMINI_MODEL}.`
+        : '';
+    throw new UpstreamError(`Gemini ${res.status}: ${detail.slice(0, 300)}${hint}`, status);
   }
   const data = (await res.json()) as {
-    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+    candidates?: Array<{ content?: { parts?: Array<{ text?: string; thought?: boolean }> }; finishReason?: string }>;
   };
   const text = data.candidates?.[0]?.content?.parts
-    ?.map((p) => p.text ?? '')
+    ?.filter((part) => !part.thought)
+    .map((part) => part.text ?? '')
     .join('')
     .trim();
   if (!text) throw new UpstreamError('Gemini returned an empty answer', 502);
@@ -209,15 +243,18 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const status = lastError instanceof UpstreamError && lastError.status === 429 ? 429 : 502;
+  const status = lastError instanceof UpstreamError && (lastError.status === 429 || lastError.status === 400) ? lastError.status : 502;
+  const detail = lastError instanceof UpstreamError ? lastError.message : '';
+  const modelMissing = /was not found/.test(detail);
   return NextResponse.json(
     {
-      error:
-        status === 429
-          ? 'The AI provider is rate-limiting requests. Please try again in a minute.'
+      error: modelMissing
+        ? detail
+        : status === 429
+          ? 'The AI provider is rate-limiting requests. Please try again in a minute. No answer was generated.'
           : 'The AI provider could not answer right now. No answer was generated.',
       mode: 'error',
     },
-    { status }
+    { status: modelMissing ? 502 : status }
   );
 }

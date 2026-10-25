@@ -293,7 +293,40 @@ async function suiteMobile(browser) {
   }
 }
 
-const SUITES = { nav: suiteNav, quiz: suiteQuiz, predictor: suitePredictor, pages: suitePages, mobile: suiteMobile };
+// ── HTTP status: unknown routes are real 404s, known slugs stay 200 ────────
+const KNOWN_UNIVERSITY_SLUGS = [
+  'fast-nuces-karachi',
+  'karachi-institute-of-economics-technology',
+  'shu',
+  'sindh-madresatul-islam-university',
+  'iobm-karachi',
+];
+
+async function httpStatus(path) {
+  const res = await fetch(BASE + path, { redirect: 'manual' });
+  return res.status;
+}
+
+async function suiteStatus() {
+  const missing = [
+    ['/universities/this-does-not-exist', 'unknown university slug'],
+    ['/universities/this-does-not-exist/reviews', 'unknown university reviews'],
+    ['/fields/this-field-does-not-exist', 'unknown field slug'],
+    ['/this-route-does-not-exist', 'unknown route'],
+  ];
+  for (const [path, label] of missing) {
+    const status = await httpStatus(path);
+    check(status === 404, `status ${label} is 404`, `${path} -> ${status}`);
+  }
+  for (const slug of KNOWN_UNIVERSITY_SLUGS) {
+    const status = await httpStatus(`/universities/${slug}`);
+    check(status === 200, `status known university ${slug} is 200`, String(status));
+  }
+  const home = await httpStatus('/');
+  check(home === 200, 'status home is 200', String(home));
+}
+
+const SUITES = { nav: suiteNav, quiz: suiteQuiz, predictor: suitePredictor, pages: suitePages, mobile: suiteMobile, status: suiteStatus };
 const wanted = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(SUITES);
 
 const browser = await chromium.launch({ headless: !process.env.QA_HEADED, channel: process.env.QA_CHANNEL || 'chrome' });
