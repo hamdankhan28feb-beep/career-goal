@@ -912,7 +912,7 @@
       "slug": "ilma",
       "official_name": "ILMA University (formerly IBT)",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -926,6 +926,27 @@
           "title": "ILMA University homepage",
           "url": "https://ilmauniversity.edu.pk/",
           "checked": "2026-10-23",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "ILMA University (formerly IBT) — admissionoffice",
+          "url": "https://ilmauniversity.edu.pk/admissionoffice",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "ILMA University (formerly IBT) — tuitionfee",
+          "url": "https://ilmauniversity.edu.pk/tuitionfee",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S5",
+          "title": "ILMA University (formerly IBT) — scholarship",
+          "url": "https://ilmauniversity.edu.pk/scholarship",
+          "checked": "2026-10-26",
           "source_type": "official_university"
         }
       ],
@@ -949,13 +970,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://ilmauniversity.edu.pk/admissionoffice. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
             "value": "Main Ibrahim Haydri Road, Korangi Creek, Karachi. Also printed: B-31, Block 1, Gulshan-e-Iqbal, Karachi.",
             "status": "verified",
-            "source": "S2"
+            "source": "S2",
+            "note": "Rechecked 2026-10-26. The stored wording was kept because it already names the same addresses. Quote: Main Ibrahim Haydri Road, Korangi Creek, Karachi"
           },
           {
             "label": "Ownership",
@@ -987,7 +1009,7 @@
             "label": "UG programmes",
             "value": "Homepage navigation names ADP-CS, ADP-AI, BS-AI, ADP-SE and Bachelor of Science (Software Engineering), plus MS (CS), MS (Software Engineering) and PhD (CS).",
             "status": "verified",
-            "note": "These are link labels on the homepage, not a prospectus extract of credit hours.",
+            "note": "A 2026-10-26 source gives a different value for this field. It was recorded in field_conflicts and was not copied over this verified value. These are link labels on the homepage, not a prospectus extract of credit hours.",
             "source": "S2"
           }
         ],
@@ -996,65 +1018,67 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "Not on the homepage text."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ilmauniversity.edu.pk. Not on the homepage text."
           },
           {
             "label": "Admission test",
-            "value": "The homepage links Exemptions from the ILMA Aptitude Test.",
+            "value": "ILMA Aptitude Test (exemptions available)",
             "status": "partial",
-            "note": "The exemption page was not opened, so the test pattern and the exemption rule were not copied.",
-            "source": "S2"
+            "source": "S3",
+            "note": "Checked 2026-10-26. The admission office page says ILMA conducts a standardized aptitude test and that exemptions exist. The exemption rules and the paper pattern were not copied. Earlier note kept: The exemption page was not opened, so the test pattern and the exemption rule were not copied."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ilmauniversity.edu.pk. HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ilmauniversity.edu.pk. HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "No fee figure was on the homepage text."
+            "value": "Rs 16,500 per course (monthly instalments); e.g. BS-CS/SE/IT 132 Cr.Hrs total Rs 746,000; admission fee Rs 20,000 (year not labelled)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The fee page has no academic year label. Figures are per course, with one programme total shown as an example. Earlier check: No fee figure was on the homepage text."
           }
         ],
         "scholarships": [
           {
             "label": "Scholarships",
-            "value": null,
-            "status": "unavailable",
-            "note": "Not stated on the homepage text."
+            "value": "Merit scholarships 10%–100%",
+            "status": "partial",
+            "source": "S5",
+            "note": "Checked 2026-10-26. The scholarship page says merit scholarships range from 10% to 100%. The conditions for each band were not copied. Earlier check: Not stated on the homepage text."
           }
         ],
         "facilities": [
           {
             "label": "Hostel",
-            "value": "The homepage links an ILMA Hostel Services Registration Form.",
+            "value": "Hostel services exist (registration form); fee not stated",
             "status": "partial",
-            "note": "The form was not opened. No hostel fee or capacity was on the homepage.",
-            "source": "S2"
+            "source": "S2",
+            "note": "Checked 2026-10-26. The homepage links an ILMA Hostel Services Registration Form. The form was not opened and no hostel fee was stated. Earlier note kept: The form was not opened. No hostel fee or capacity was on the homepage."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ilmauniversity.edu.pk. HEC URL http://www.ibt.edu.pk timed out. https://ilmauniversity.edu.pk/ opened (HTTP 200) and says Formerly IBT."
           }
         ]
       },
       "field_counts": {
-        "sourced": 9,
+        "sourced": 11,
         "verified": 7,
-        "partial": 2,
-        "unavailable": 8,
+        "partial": 4,
+        "unavailable": 6,
         "needs_verification": 0
       }
     },
@@ -2400,33 +2424,43 @@
       "slug": "comsats-university",
       "official_name": "COMSATS University",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
-      "sources": [],
+      "last_checked": "2026-10-26",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "COMSATS University — campuses",
+          "url": "https://www.comsats.edu.pk/campuses.aspx",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        }
+      ],
       "sections": {
         "overview": [
           {
             "label": "Official name",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.comsats.edu.pk/ timed out and guessed HEC profile URLs returned HTTP 404, so the name was not re-confirmed. The existing bundled record is still labelled COMSATS University."
+            "note": "The campuses page opened on 2026-10-26. This pass did not copy a replacement official-name string. https://www.comsats.edu.pk/ timed out and guessed HEC profile URLs returned HTTP 404, so the name was not re-confirmed. The existing bundled record is still labelled COMSATS University."
           },
           {
             "label": "Website",
-            "value": "https://comsats.edu.pk/",
-            "status": "unavailable",
-            "note": "Fetch timed out on 2026-10-23."
+            "value": "https://www.comsats.edu.pk",
+            "status": "verified",
+            "note": "Checked 2026-10-26. A page on this host opened and was quoted. Earlier check: Fetch timed out on 2026-10-23.",
+            "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": "https://admissions.comsats.edu.pk/",
             "status": "unavailable",
-            "note": "Returned HTTP 403 Access Denied."
+            "note": "Checked 2026-10-26. No admissions page was quoted on this pass. Returned HTTP 403 Access Denied."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "Not fetched."
+            "value": "No Karachi campus",
+            "status": "verified",
+            "source": "S1",
+            "note": "Checked 2026-10-26. The campus list opened on this date names Islamabad (main), Abbottabad, Attock, Lahore, Sahiwal, Vehari, Wah and Virtual. None is in Karachi. The university record was kept. Earlier check: Not fetched."
           },
           {
             "label": "Ownership",
@@ -2450,7 +2484,7 @@
             "label": "Overview",
             "value": null,
             "status": "unavailable",
-            "note": "Homepage timed out."
+            "note": "Checked 2026-10-26 on https://www.comsats.edu.pk/campuses.aspx. Listed campuses: Islamabad (main), Abbottabad, Attock, Lahore, Sahiwal, Vehari, Wah and Virtual. None is in Karachi. No Karachi overview was copied. The university record was kept. Homepage timed out."
           }
         ],
         "programs": [
@@ -2458,7 +2492,7 @@
             "label": "UG programmes",
             "value": null,
             "status": "unavailable",
-            "note": "Homepage timed out."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Homepage timed out."
           }
         ],
         "admissions": [
@@ -2466,25 +2500,25 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "Admissions host returned HTTP 403."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Admissions host returned HTTP 403."
           },
           {
             "label": "Admission test",
             "value": null,
             "status": "unavailable",
-            "note": "Admissions host returned HTTP 403."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Admissions host returned HTTP 403."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "Admissions host returned HTTP 403."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Admissions host returned HTTP 403."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "Admissions host returned HTTP 403."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Admissions host returned HTTP 403."
           }
         ],
         "fees": [
@@ -2492,7 +2526,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "Fee page was not fetched because the homepage timed out."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Fee page was not fetched because the homepage timed out."
           }
         ],
         "scholarships": [
@@ -2500,7 +2534,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "Not fetched."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Not fetched."
           }
         ],
         "facilities": [
@@ -2508,21 +2542,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "Not fetched."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Not fetched."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "Not fetched."
+            "note": "Checked 2026-10-26: Not applicable: no Karachi campus. URLs checked: https://www.comsats.edu.pk, https://admissions.comsats.edu.pk. Not fetched."
           }
         ]
       },
       "field_counts": {
-        "sourced": 0,
-        "verified": 0,
+        "sourced": 2,
+        "verified": 2,
         "partial": 0,
-        "unavailable": 17,
+        "unavailable": 15,
         "needs_verification": 0
       }
     }
