@@ -1840,6 +1840,936 @@
       "checked_at": "2026-10-23",
       "checker": "profile-coverage-2026-10-23",
       "notes": "Homepage address used. HEC city field Abbottabad recorded as a conflict."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "comsats-university",
+      "field_key": "Main campus address",
+      "source_url": "https://www.comsats.edu.pk/campuses.aspx",
+      "source_title": "COMSATS University — campuses",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Eight Beautiful Campuses ... Abbottabad Campus, Attock Campus, Islamabad Campus, Lahore Campus, Sahiwal Campus, Vehari Campus, Wah Campus"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "comsats-university",
+      "field_key": "Website",
+      "source_url": "https://www.comsats.edu.pk/campuses.aspx",
+      "source_title": "COMSATS University — campuses",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Eight Beautiful Campuses ... Abbottabad Campus, Attock Campus, Islamabad Campus, Lahore Campus, Sahiwal Campus, Vehari Campus, Wah Campus. Website recorded as https://www.comsats.edu.pk because this page on that host opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Main campus address",
+      "source_url": "https://khi.au.edu.pk/",
+      "source_title": "Air University homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Air University Kharchi Campus, PAF Airmen Academy, Korangi Creek Karachi, Pakistan"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "UG programmes",
+      "source_url": "https://khi.au.edu.pk/Pages/Admission/fees_financial.aspx",
+      "source_title": "Air University — fees financial",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Fee Structure Fall 2026 ... Faculty of Computing & Artificial Intelligence | BS Computer Science ..."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Eligibility",
+      "source_url": "https://khi.au.edu.pk/Pages/Admission/eligibility_criteria.aspx",
+      "source_title": "Air University — eligibility criteria",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Intermediate (Part I and II) examination with Physics, Chemistry & Mathematics ... Applicant must have scored ≥60% marks."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Admission test",
+      "source_url": "https://khi.au.edu.pk/Pages/Admission/prepare_adm_test.aspx",
+      "source_title": "Air University — prepare adm test",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: AU-CBT COMPOSITION ... EXEMPTION CRITERIA ... Minimum 50 score is required for exemption"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Application fee",
+      "source_url": "https://khi.au.edu.pk/Pages/Admission/fees_financial.aspx",
+      "source_title": "Air University — fees financial",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Admission Application Processing Charges | 2,500 | Non-Refundable"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Intake dates",
+      "source_url": "https://www.au.edu.pk/",
+      "source_title": "Air University homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Admissions for Fall 2026 are now open at the Karachi Campus."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Tuition",
+      "source_url": "https://khi.au.edu.pk/Pages/Admission/fees_financial.aspx",
+      "source_title": "Air University — fees financial",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Fee Structure Fall 2026 ... BS Computer Science 9,150 16 146,400"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Scholarships",
+      "source_url": "https://khi.au.edu.pk/Pages/Admission/Scholarship.aspx",
+      "source_title": "Air University — Scholarship",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: NEED & MERIT BASED FINANCIAL AID SCHEMES In every Fall semester, AU invites applications from fresh entrants"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "Main campus address",
+      "source_url": "https://www.juw.edu.pk/contact-us/",
+      "source_title": "Jinnah University for Women — contact us",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Address: 5-C Nazimabad, Karachi-74600, Pakistan"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "UG programmes",
+      "source_url": "https://www.juw.edu.pk/announcement-for-admission-test-2027/",
+      "source_title": "Jinnah University for Women — announcement for admission test 2027",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: ADMISSION TEST SCHEDULE FOR EACH FACULTY"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "Eligibility",
+      "source_url": "https://www.juw.edu.pk/admission-policy-and-procedure/",
+      "source_title": "Jinnah University for Women — admission policy and procedure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: obtaining less than 45 percent marks in the pre-requisite examination is not eligible"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "Admission test",
+      "source_url": "https://www.juw.edu.pk/announcement-for-admission-test-2027/",
+      "source_title": "Jinnah University for Women — announcement for admission test 2027",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: 1st Aptitude Test for the Session 2027 will be held on: Friday, 23rd October 2026"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "Application fee",
+      "source_url": "https://www.juw.edu.pk/admission-process/",
+      "source_title": "Jinnah University for Women — admission process",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Pay admission processing fee (Rs.2,500/-)"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "Intake dates",
+      "source_url": "https://www.juw.edu.pk/announcement-for-admission-test-2027/",
+      "source_title": "Jinnah University for Women — announcement for admission test 2027",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: List of Qualified Candidates for Interviews 26th October 2026 Monday"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "jinnah-university-for-women",
+      "field_key": "Transport",
+      "source_url": "https://www.juw.edu.pk/campus-facilities/transport-bank/",
+      "source_title": "Jinnah University for Women — transport bank",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: public transport is available at door step. Private van service for different part of the city is also available."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "benazir-bhutto-shaheed-university-lyari",
+      "field_key": "Main campus address",
+      "source_url": "https://bbsul.edu.pk/",
+      "source_title": "Benazir Bhutto Shaheed University Lyari homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Benazir Bhutto Shaheed University, Faqeer Muhammad Durra Khan Road, Near Cheel Chowk, Lyari Karachi Sindh Pakistan."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "benazir-bhutto-shaheed-university-lyari",
+      "field_key": "UG programmes",
+      "source_url": "https://bbsul.edu.pk/Admissions/FeeStructure",
+      "source_title": "Benazir Bhutto Shaheed University Lyari — FeeStructure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Below is the Admission 2026 fee structure for each department and program with shifts."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "benazir-bhutto-shaheed-university-lyari",
+      "field_key": "Eligibility",
+      "source_url": "https://bbsul.edu.pk/admission/eligibility",
+      "source_title": "Benazir Bhutto Shaheed University Lyari — eligibility",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Candidates applying for admission with less than 45% in their last examination, or who have failed, are not eligible to apply online."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "benazir-bhutto-shaheed-university-lyari",
+      "field_key": "Admission test",
+      "source_url": "https://cms.bbsul.edu.pk/admission/apply/login/",
+      "source_title": "Benazir Bhutto Shaheed University Lyari — login",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Apply online, check eligibility, take the admission test, and track merit and voucher status"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "benazir-bhutto-shaheed-university-lyari",
+      "field_key": "Intake dates",
+      "source_url": "https://bbsul.edu.pk/admission/eligibility",
+      "source_title": "Benazir Bhutto Shaheed University Lyari — eligibility",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: ADMISSIONS 2026"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "benazir-bhutto-shaheed-university-lyari",
+      "field_key": "Tuition",
+      "source_url": "https://bbsul.edu.pk/Admissions/FeeStructure",
+      "source_title": "Benazir Bhutto Shaheed University Lyari — FeeStructure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: BS Computer Science Morning 42,800 PKR 31,000 PKR"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Main campus address",
+      "source_url": "https://indusvalley.edu.pk/contact-us/",
+      "source_title": "Indus Valley School of Art & Architecture — contact us",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: ST-33 Scheme 5, Block 2 Clifton Karachi, 75600"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "UG programmes",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: offers Undergraduate Degrees in Architecture, Interior Design, Communication Design, Textile Design, Fashion Design and Fine Art"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Eligibility",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Intermediate qualifications with minimum C grade (50% marks)."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Admission test",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: This is based on 70% admission test marks and 30% interview marks."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Application fee",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: The Admission Processing fee for the online application is Rs. 10,000/-"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Intake dates",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Admissions for IVS undergraduate programmes are announced in the third week of June. The last date to submit the application form is around the end of July each year."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Tuition",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: *The above fee structure is for the academic year 2026-27."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Scholarships",
+      "source_url": "https://indusvalley.edu.pk/financial-assistance-scholarship/",
+      "source_title": "Indus Valley School of Art & Architecture — financial assistance scholarship",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: The interest-free loan is provided to cover up to 75% of the tuition fee."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Hostel",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: IVS does not have any hostel facility of its own."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "indus-valley-school-of-art-architecture",
+      "field_key": "Transport",
+      "source_url": "https://indusvalley.edu.pk/admission-undergraduate/",
+      "source_title": "Indus Valley School of Art & Architecture — admission undergraduate",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: IVS does not have a formal transport arrangement for its students."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "pakistan-naval-academy",
+      "field_key": "Admission test",
+      "source_url": "https://www.joinpaknavy.gov.pk/",
+      "source_title": "Pakistan Naval Academy homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Test Pattern Practice Test"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "pakistan-naval-academy",
+      "field_key": "Intake dates",
+      "source_url": "https://www.joinpaknavy.gov.pk/",
+      "source_title": "Pakistan Naval Academy homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Tentative schedule of Pakistan Navy upcoming registrations (Civilian: October/ November 2026, PNCT: September/ October 2026 ..."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "al-kawthar-university-karachi",
+      "field_key": "Main campus address",
+      "source_url": "https://alkawthar.edu.pk/contact/",
+      "source_title": "Al-Kawthar University, Karachi — contact",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Al-Kawthar University, ST-9, Block 7, Gulshan-e-Iqbal, Main University Road, Opposite Safari Park, Karachi"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "al-kawthar-university-karachi",
+      "field_key": "UG programmes",
+      "source_url": "https://alkawthar.edu.pk/academic-programs/",
+      "source_title": "Al-Kawthar University, Karachi — academic programs",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Academic Programs ... BS Computer Science ... BS Nursing ..."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "al-kawthar-university-karachi",
+      "field_key": "Transport",
+      "source_url": "https://alkawthar.edu.pk/",
+      "source_title": "Al-Kawthar University, Karachi homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Safe and Convenient Transport"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "denning-institute-of-technology-and-entrepreneursh",
+      "field_key": "Main campus address",
+      "source_url": "https://denning.edu.pk/contact-us/",
+      "source_title": "Denning Institute of Technology and Entrepreneurship, Karachi — contact us",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: 33-F, Jaffer Street, Shahrah-e-Faisal Rd, Block-6 Karachi."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "denning-institute-of-technology-and-entrepreneursh",
+      "field_key": "UG programmes",
+      "source_url": "https://denning.edu.pk/admissions/",
+      "source_title": "Denning Institute of Technology and Entrepreneurship, Karachi — admissions",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: 4-Year National Degree Programs; BS Data Science & Business Analytics; BS Computer Science; Bachelor of Laws (LLB Hons)"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "denning-institute-of-technology-and-entrepreneursh",
+      "field_key": "Admission test",
+      "source_url": "https://denning.edu.pk/admissions/",
+      "source_title": "Denning Institute of Technology and Entrepreneurship, Karachi — admissions",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: It’s a one hour and thirty minutes test divided into 4 sections"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "denning-institute-of-technology-and-entrepreneursh",
+      "field_key": "Scholarships",
+      "source_url": "https://denning.edu.pk/dite-ihsan-trust-scholarship",
+      "source_title": "Denning Institute of Technology and Entrepreneurship, Karachi — dite ihsan trust scholarship",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Support is awarded strictly on a Need-cum-Merit basis."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "isra-university-karachi-campus",
+      "field_key": "Main campus address",
+      "source_url": "https://isra.edu.pk/contact",
+      "source_title": "Isra University — contact",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Karachi Sub-Campus Old Thana Gadap Town, Malir, Karachi, Pakistan"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "isra-university-karachi-campus",
+      "field_key": "UG programmes",
+      "source_url": "https://israuniversity.edu.pk/karachi-campus-introduction/",
+      "source_title": "Isra University — karachi campus introduction",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Karachi Campus also has a department in the middle of the city as Isra Institute of Rehabilitation Sciences."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "isra-university-karachi-campus",
+      "field_key": "Admission test",
+      "source_url": "https://isra.edu.pk/admissions",
+      "source_title": "Isra University — admissions",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Test Guide (IUAT)"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "isra-university-karachi-campus",
+      "field_key": "Intake dates",
+      "source_url": "https://isra.edu.pk/admissions",
+      "source_title": "Isra University — admissions",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Claim Your Seat for Fall 2026"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "isra-university-karachi-campus",
+      "field_key": "Scholarships",
+      "source_url": "https://apply.isra.edu.pk/scholarship",
+      "source_title": "Isra University — scholarship",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Chancellor’s Scholars (100%) ... Minimum 85% score"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "metropolitan-university-karachi",
+      "field_key": "Main campus address",
+      "source_url": "https://muk.edu.pk/wp-content/uploads/2026/02/Updated-fees-.pdf",
+      "source_title": "Metropolitan University Karachi — Updated fees",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Sector 34-A, KDA Scheme-33, Main University Road, Malir Cantt. Karachi, Pakistan-75070."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "metropolitan-university-karachi",
+      "field_key": "UG programmes",
+      "source_url": "https://muk.edu.pk/wp-content/uploads/2026/02/Updated-fees-.pdf",
+      "source_title": "Metropolitan University Karachi — Updated fees",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: BBA (04 YEARS) ... LLB (05 YEARS) DPT (05 YEARS) GENERIC BSN (4 YEARS)"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "metropolitan-university-karachi",
+      "field_key": "Eligibility",
+      "source_url": "https://muk.edu.pk/eligibility-criteria/",
+      "source_title": "Metropolitan University Karachi — eligibility criteria",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: B.B.A(4 Years) HSC O/A Level 45 %"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "metropolitan-university-karachi",
+      "field_key": "Admission test",
+      "source_url": "https://muk.edu.pk/admission-requirements/",
+      "source_title": "Metropolitan University Karachi — admission requirements",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: All applicants must go through the entry test and interview process"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "metropolitan-university-karachi",
+      "field_key": "Tuition",
+      "source_url": "https://muk.edu.pk/wp-content/uploads/2026/02/Updated-fees-.pdf",
+      "source_title": "Metropolitan University Karachi — Updated fees",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: semester fees for all disciplines have been revised, effective from Spring 2026"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "national-textile-university-karachi-campus",
+      "field_key": "Intake dates",
+      "source_url": "https://admissions.ntu.edu.pk/",
+      "source_title": "National Textile University homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Karachi Campus Admission Closes in: Loading..."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-medical-sciences",
+      "field_key": "UG programmes",
+      "source_url": "https://sims.siut.edu.pk/pdf/Policies,%20procedures,%20and%20guidelines%20for%20students.pdf",
+      "source_title": "Sindh Institute of Medical Sciences — Policies procedures and guidelines for students",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Programs currently offered are: a. Anesthesia and Critical Care Sciences ..."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-medical-sciences",
+      "field_key": "Eligibility",
+      "source_url": "https://sims.siut.edu.pk/pdf/Policies,%20procedures,%20and%20guidelines%20for%20students.pdf",
+      "source_title": "Sindh Institute of Medical Sciences — Policies procedures and guidelines for students",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: The minimum academic requirement for admission into the program is Higher Secondary School Certification (HSC) or equivalent, with biology, chemistry, and physics"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-medical-sciences",
+      "field_key": "Admission test",
+      "source_url": "https://sims.siut.edu.pk/pdf/Policies,%20procedures,%20and%20guidelines%20for%20students.pdf",
+      "source_title": "Sindh Institute of Medical Sciences — Policies procedures and guidelines for students",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Applicants who meet the minimum requirement must take an entrance test conducted by SIMS-Karachi ... Entrance Test 50%"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-medical-sciences",
+      "field_key": "Application fee",
+      "source_url": "https://sims.siut.edu.pk/admission/",
+      "source_title": "Sindh Institute of Medical Sciences — admission",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: The form submission process is completely free of cost."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-medical-sciences",
+      "field_key": "Intake dates",
+      "source_url": "https://sims.siut.edu.pk/pdf/Policies,%20procedures,%20and%20guidelines%20for%20students.pdf",
+      "source_title": "Sindh Institute of Medical Sciences — Policies procedures and guidelines for students",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: The academic year at SIMS-Karachi starts in February and concludes in December."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Main campus address",
+      "source_url": "https://tip.edu.pk/",
+      "source_title": "Textile Institute of Pakistan homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: EZ/1/P-8, Eastern Zone, Bin Qasim Karachi -Pakistan."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "UG programmes",
+      "source_url": "https://tip.edu.pk/",
+      "source_title": "Textile Institute of Pakistan homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: BS Sustainable Textile Science BS Textile Design Technology BS Textile Science"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Eligibility",
+      "source_url": "https://tip.edu.pk/admission-criteria/",
+      "source_title": "Textile Institute of Pakistan — admission criteria",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: All Other Programs: Minimum 50% marks in Intermediate from any discipline."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Admission test",
+      "source_url": "https://tip.edu.pk/admission-criteria/",
+      "source_title": "Textile Institute of Pakistan — admission criteria",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Merit Criteria: Intermediate/GCE A Level (20%) + Entry Test Marks (50%) + Interview (30%)"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Application fee",
+      "source_url": "https://tip.edu.pk/fee-structure/",
+      "source_title": "Textile Institute of Pakistan — fee structure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: The Fee structure below is for Year 2023-2024 ... Application Fee (non refundable) Rs. 2,000/-"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Intake dates",
+      "source_url": "https://tip.edu.pk/admission-criteria/",
+      "source_title": "Textile Institute of Pakistan — admission criteria",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Dec 16th 2026 Application deadline Dec 19th 2026 Test Date"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Tuition",
+      "source_url": "https://tip.edu.pk/fee-structure/",
+      "source_title": "Textile Institute of Pakistan — fee structure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: The Fee structure below is for Year 2023-2024. It is under review ... Tuition Fee* Rs. 11,000/- per credit hour"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Scholarships",
+      "source_url": "https://tip.edu.pk/scholarships-and-financial-aid/",
+      "source_title": "Textile Institute of Pakistan — scholarships and financial aid",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: offering a robust portfolio of scholarships, interest-free loans, and Shariah compliant support"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Hostel",
+      "source_url": "https://tip.edu.pk/fee-structure/",
+      "source_title": "Textile Institute of Pakistan — fee structure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Hostel Fee (Separate Room) 80,000 Hostel Fee (Sharing Room) 65,000"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "textile-institute-of-pakistan",
+      "field_key": "Transport",
+      "source_url": "https://tip.edu.pk/fee-structure/",
+      "source_title": "Textile Institute of Pakistan — fee structure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Transport (from city)** Rs. 85,000/- per student"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "Main campus address",
+      "source_url": "https://ilmauniversity.edu.pk/",
+      "source_title": "ILMA University (formerly IBT) homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Main Ibrahim Haydri Road, Korangi Creek, Karachi. Stored value kept."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "Admission test",
+      "source_url": "https://ilmauniversity.edu.pk/admissionoffice",
+      "source_title": "ILMA University (formerly IBT) — admissionoffice",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: ILMA University conducts a standardized aptitude test"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "Tuition",
+      "source_url": "https://ilmauniversity.edu.pk/tuitionfee",
+      "source_title": "ILMA University (formerly IBT) — tuitionfee",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Rs. 16,500 x 44 ... Total Program Cost Rs. 746,000"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "Scholarships",
+      "source_url": "https://ilmauniversity.edu.pk/scholarship",
+      "source_title": "ILMA University (formerly IBT) — scholarship",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Scholarships ranging from 10% to 100% are awarded."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "Hostel",
+      "source_url": "https://ilmauniversity.edu.pk/",
+      "source_title": "ILMA University (formerly IBT) homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: ILMA Hostel Services Registration Form"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-sindh-institute-of-physical-medicine-and-rehab",
+      "field_key": "Main campus address",
+      "source_url": "https://sipmr.edu.pk/",
+      "source_title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Sindh Institute of Physical Medicine and Rehabilitation, Opposite SIUT, Near Mujahid Masjid, Chand Bibi Road, South Karachi, Sindh - 74200"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-sindh-institute-of-physical-medicine-and-rehab",
+      "field_key": "UG programmes",
+      "source_url": "https://sipmr.edu.pk/admissions-2025-26/",
+      "source_title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — admissions 2025 26",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: DOCTOR OF PHYSICAL THERAPY (DPT) BS IN OCCUPATIONAL THERAPY (BSOT) BS IN PROSTHETICS & ORTHOTICS (BSPO) BS IN AUDIOLOGY & SPEECH LANGUAGE THERAPY"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-sindh-institute-of-physical-medicine-and-rehab",
+      "field_key": "Eligibility",
+      "source_url": "https://sipmr.edu.pk/dphys-dpt-program/",
+      "source_title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — dphys dpt program",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Candidate must be intermediate science, pre-medical with minimum 60% marks"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-sindh-institute-of-physical-medicine-and-rehab",
+      "field_key": "Admission test",
+      "source_url": "https://sipmr.edu.pk/wp-content/uploads/2025/11/Prospectus-of-SIPMR-2026.pdf",
+      "source_title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — Prospectus of SIPMR 2026",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Weightage: 10% Matric, 30% Intermediate, 40% Entrance test and 20% Interview"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-sindh-institute-of-physical-medicine-and-rehab",
+      "field_key": "Application fee",
+      "source_url": "https://sipmr.edu.pk/admissions-2025-26/",
+      "source_title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — admissions 2025 26",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: APPLICATION FEE: 2000 Rupees (NON-REFUNDABLE)"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-sindh-institute-of-physical-medicine-and-rehab",
+      "field_key": "Tuition",
+      "source_url": "https://sipmr.edu.pk/wp-content/uploads/2025/11/Prospectus-of-SIPMR-2026.pdf",
+      "source_title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — Prospectus of SIPMR 2026",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: DPT (Doctor of Physical Rs. 50,000/- Rs. 132,000/- Rs. 182,000/- Rs. 270,000/-"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-sindh-institute-of-physical-medicine-and-rehab",
+      "field_key": "Website",
+      "source_url": "https://sipmr.edu.pk/",
+      "source_title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Sindh Institute of Physical Medicine and Rehabilitation, Opposite SIUT, Near Mujahid Masjid, Chand Bibi Road, South Karachi, Sindh - 74200. Website recorded as https://sipmr.edu.pk because this page on that host opened."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "saifee-burhani-university-karachi",
+      "field_key": "Main campus address",
+      "source_url": "https://sbu.edu.pk/contact-us/",
+      "source_title": "Saifee Burhani University, Karachi — contact us",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Plot No, ST-3 Allama Rasheed Turabi Rd, Block G North Nazimabad Town, Karachi, Sindh 74700, Pakistan"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "saifee-burhani-university-karachi",
+      "field_key": "UG programmes",
+      "source_url": "https://sbu.edu.pk/",
+      "source_title": "Saifee Burhani University, Karachi homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: DPT | BSCS | BEd | BBA"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "Main campus address",
+      "source_url": "https://nhu.edu.pk/contact/",
+      "source_title": "The Nazeer Hussain University — contact",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: ST-2 Block-4 Federal B Area Near Karimabad Karachi"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "UG programmes",
+      "source_url": "https://nhu.edu.pk/fee-structure/",
+      "source_title": "The Nazeer Hussain University — fee structure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: NHU Fee Structure Program Wise Bachelor of Architecture ..."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "Eligibility",
+      "source_url": "https://nhu.edu.pk/eligibility-criteria/",
+      "source_title": "The Nazeer Hussain University — eligibility criteria",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: HSSC/ A-Levels/ or equivalent with at least 60% marks. At least 50% in NHU Entrance Test and Interview."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "Admission test",
+      "source_url": "https://nhu.edu.pk/eligibility-criteria/",
+      "source_title": "The Nazeer Hussain University — eligibility criteria",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: At least 50% in NHU Entrance Test and Interview."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "Intake dates",
+      "source_url": "https://nhu.edu.pk/admission-details/",
+      "source_title": "The Nazeer Hussain University — admission details",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Admissions Open for Fall 2026."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "Tuition",
+      "source_url": "https://nhu.edu.pk/fee-structure/",
+      "source_title": "The Nazeer Hussain University — fee structure",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: BS Computer Science/Software Engineering/Artificial Intelligence ... Tuition Fee (Per Semester) Rs. 82,950/-"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "Scholarships",
+      "source_url": "https://nhu.edu.pk/scholarship-nhu/",
+      "source_title": "The Nazeer Hussain University — scholarship nhu",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Students achieving 4 GPA will be offered a scholarship of 60% of the tuition fee for that semester."
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "the-nazeer-hussain-university",
+      "field_key": "Transport",
+      "source_url": "https://nhu.edu.pk/transportation/",
+      "source_title": "The Nazeer Hussain University — transportation",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: University has approved transportation facility for its students"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-management-technology",
+      "field_key": "Main campus address",
+      "source_url": "https://simat.edu.pk/",
+      "source_title": "Sindh Institute of Management & Technology homepage",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Plot No:29 , Sector 16, Korangi Industrial Area, Karachi, Pakistan"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-management-technology",
+      "field_key": "UG programmes",
+      "source_url": "https://simat.edu.pk/index.php/admission/",
+      "source_title": "Sindh Institute of Management & Technology — admission",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: BBA (4 years) BS (Computer Science) (4 Years) BS (Technology)"
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-management-technology",
+      "field_key": "Intake dates",
+      "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Institute-of-Management-and-Technology.aspx",
+      "source_title": "HEC university profile",
+      "checked_at": "2026-10-26",
+      "checker": "karachi-site-retry-2026-10-26",
+      "notes": "Checked 2026-10-26. Quote: Admissions stopped from April 01,2026"
     }
   ]
 }

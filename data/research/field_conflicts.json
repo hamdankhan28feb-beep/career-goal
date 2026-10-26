@@ -150,6 +150,174 @@
           "note": "The City field disagrees with the page title and with the university homepage. It was not copied into the address."
         }
       ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "air-university-karachi-campus",
+      "field_key": "Website",
+      "primary": {
+        "status": "verified",
+        "label": "Stored verified website kept",
+        "values": [
+          "http://www.au.edu.pk/"
+        ],
+        "source_url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Air-University.aspx",
+        "source_title": "HEC university profile",
+        "last_verified_at": "2026-10-23",
+        "note": "Not replaced."
+      },
+      "alternatives": [
+        {
+          "label": "Site opened or identified on 2026-10-26",
+          "values": [
+            "https://khi.au.edu.pk"
+          ],
+          "source_url": "https://khi.au.edu.pk/",
+          "source_title": "Air University homepage",
+          "last_verified_at": "2026-10-26",
+          "note": "Karachi campus site is khi.au.edu.pk. kc.au.edu.pk is the Kharian campus and was not used. Quote: Air University Kharchi Campus, PAF Airmen Academy, Korangi Creek Karachi, Pakistan"
+        }
+      ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "pakistan-naval-academy",
+      "field_key": "Website",
+      "primary": {
+        "status": "verified",
+        "label": "Stored verified website kept",
+        "values": [
+          "http://www.paknavy.gov.pk"
+        ],
+        "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Pakistan-Naval-Academy.aspx",
+        "source_title": "HEC university profile",
+        "last_verified_at": "2026-10-23",
+        "note": "Not replaced."
+      },
+      "alternatives": [
+        {
+          "label": "Site opened or identified on 2026-10-26",
+          "values": [
+            "https://www.joinpaknavy.gov.pk"
+          ],
+          "source_url": "https://www.joinpaknavy.gov.pk/",
+          "source_title": "Pakistan Naval Academy homepage",
+          "last_verified_at": "2026-10-26",
+          "note": "PN Cadet induction pages opened on joinpaknavy.gov.pk. The HEC site paknavy.gov.pk was not replaced. The PN Cadet FAQ was not fetched. Quote: Test Pattern Practice Test"
+        }
+      ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "al-kawthar-university-karachi",
+      "field_key": "Website",
+      "primary": {
+        "status": "verified",
+        "label": "Stored verified website kept",
+        "values": [
+          "https://www.alkawthar.pk/"
+        ],
+        "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Al-Kawthar-University,-Karachi.aspx",
+        "source_title": "HEC university profile",
+        "last_verified_at": "2026-10-23",
+        "note": "Not replaced."
+      },
+      "alternatives": [
+        {
+          "label": "Site opened or identified on 2026-10-26",
+          "values": [
+            "https://alkawthar.edu.pk"
+          ],
+          "source_url": "https://alkawthar.edu.pk/contact/",
+          "source_title": "Al-Kawthar University, Karachi — contact",
+          "last_verified_at": "2026-10-26",
+          "note": "Pages opened on alkawthar.edu.pk. The HEC site alkawthar.pk was not replaced. Tuition, eligibility and undergraduate admissions URLs were identified and not fetched. Quote: Al-Kawthar University, ST-9, Block 7, Gulshan-e-Iqbal, Main University Road, Opposite Safari Park, Karachi"
+        }
+      ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "metropolitan-university-karachi",
+      "field_key": "Website",
+      "primary": {
+        "status": "verified",
+        "label": "Stored verified website kept",
+        "values": [
+          "http://www.metropolitanuniversity.pk/"
+        ],
+        "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Metropolitan-University-Karachi.aspx",
+        "source_title": "HEC university profile",
+        "last_verified_at": "2026-10-23",
+        "note": "Not replaced."
+      },
+      "alternatives": [
+        {
+          "label": "Site opened or identified on 2026-10-26",
+          "values": [
+            "https://muk.edu.pk"
+          ],
+          "source_url": "https://muk.edu.pk/wp-content/uploads/2026/02/Updated-fees-.pdf",
+          "source_title": "Metropolitan University Karachi — Updated fees",
+          "last_verified_at": "2026-10-26",
+          "note": "Fee, programme and admissions pages opened on muk.edu.pk. The HEC site metropolitanuniversity.pk was not replaced. Quote: Sector 34-A, KDA Scheme-33, Main University Road, Malir Cantt. Karachi, Pakistan-75070."
+        }
+      ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "sindh-institute-of-medical-sciences",
+      "field_key": "Website",
+      "primary": {
+        "status": "verified",
+        "label": "Stored verified website kept",
+        "values": [
+          "http://www.siut.org"
+        ],
+        "source_url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Institute-of-Medical-Sciences.aspx",
+        "source_title": "HEC university profile",
+        "last_verified_at": "2026-10-23",
+        "note": "Not replaced."
+      },
+      "alternatives": [
+        {
+          "label": "Site opened or identified on 2026-10-26",
+          "values": [
+            "https://sims.siut.edu.pk"
+          ],
+          "source_url": "https://sims.siut.edu.pk/pdf/Policies,%20procedures,%20and%20guidelines%20for%20students.pdf",
+          "source_title": "Sindh Institute of Medical Sciences — Policies procedures and guidelines for students",
+          "last_verified_at": "2026-10-26",
+          "note": "SIMS pages opened on sims.siut.edu.pk. sims.edu.pk is a different institute and was not used. The HEC site siut.org was not replaced. Quote: Programs currently offered are: a. Anesthesia and Critical Care Sciences ..."
+        }
+      ]
+    },
+    {
+      "entity_type": "university",
+      "entity_id": "ilma",
+      "field_key": "UG programmes",
+      "primary": {
+        "status": "verified",
+        "label": "Stored verified value kept",
+        "values": [
+          "Homepage navigation names ADP-CS, ADP-AI, BS-AI, ADP-SE and Bachelor of Science (Software Engineering), plus MS (CS), MS (Software Engineering) and PhD (CS)."
+        ],
+        "source_url": "https://ilmauniversity.edu.pk/",
+        "source_title": "ILMA University homepage",
+        "last_verified_at": "2026-10-23",
+        "note": "Not replaced. The later source is listed as an alternative."
+      },
+      "alternatives": [
+        {
+          "label": "2026-10-26 retry (partial)",
+          "values": [
+            "BBA, BS Islamic Finance, BS Digital Marketing, BS Accounting & Finance, BS AI, BS Cyber Security, BS Data Science, BS CS, BS SE, BS IT, BS Animation & VFX, BS Media Science, BS Fashion Design"
+          ],
+          "source_url": "https://ilmauniversity.edu.pk/tuitionfee",
+          "source_title": "ILMA University (formerly IBT) — tuitionfee",
+          "last_verified_at": "2026-10-26",
+          "note": "Quote: BS-CS*/BS-SE*/BS-IT*/BS-AV*/BS-MDS*/BS-FD* 132 Cr. Hrs."
+        }
+      ]
     }
   ]
 }

@@ -155,7 +155,7 @@
       "slug": "air-university-karachi-campus",
       "official_name": "Air University",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -163,6 +163,48 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Islamabad/Air-University.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Air University homepage",
+          "url": "https://khi.au.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Air University — fees financial",
+          "url": "https://khi.au.edu.pk/Pages/Admission/fees_financial.aspx",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Air University — eligibility criteria",
+          "url": "https://khi.au.edu.pk/Pages/Admission/eligibility_criteria.aspx",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S5",
+          "title": "Air University — prepare adm test",
+          "url": "https://khi.au.edu.pk/Pages/Admission/prepare_adm_test.aspx",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S6",
+          "title": "Air University homepage",
+          "url": "https://www.au.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S7",
+          "title": "Air University — Scholarship",
+          "url": "https://khi.au.edu.pk/Pages/Admission/Scholarship.aspx",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -178,20 +220,21 @@
             "label": "Website",
             "value": "http://www.au.edu.pk/",
             "status": "verified",
-            "note": "URL printed on the HEC profile. https://www.au.edu.pk/ returned Cloudflare HTTP 403.",
+            "note": "Checked 2026-10-26. A different host (https://khi.au.edu.pk) is recorded in field_conflicts. This verified URL was not replaced. URL printed on the HEC profile. https://www.au.edu.pk/ returned Cloudflare HTTP 403.",
             "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://khi.au.edu.pk/Pages/Admission/eligibility_criteria.aspx, https://khi.au.edu.pk/Pages/Admission/prepare_adm_test.aspx, https://khi.au.edu.pk/Pages/Admission/fees_financial.aspx, https://www.au.edu.pk/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC lists the university city as Islamabad. A Karachi street address was not on that profile. https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Air University Karachi Campus, PAF Airmen Academy, Korangi Creek Karachi, Pakistan",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: HEC lists the university city as Islamabad. A Karachi street address was not on that profile. https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Ownership",
@@ -223,51 +266,58 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "BS Computer Science, BS Data Science, BS Artificial Intelligence, BS Cyber Security, BS Cyber Forensics & Security, BS Cyber Psychology, BE Electrical Engineering, BE Mechatronics Engineering, BE Software Engineering, BE Avionics Engineering, BS Accounting & Finance, BBA (Hons), BS Aviation Management, BS Financial Technologies, BS Statistics and Data Analytical Sciences, BS English, BS Psychology, BS International Relations",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Engineering: Intermediate (Pre-Eng or ICS combination) with ≥60% marks; other programs per eligibility page",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Engineering minimum is quoted. Other programmes are only described as being on the eligibility page. Earlier check: https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "AU-CBT (English, Analytical, Quantitative, Subject); NAT/entrance-test exemptions; merit non-engg 15% SSC/35% HSSC/50% test",
+            "status": "partial",
+            "source": "S5",
+            "note": "Checked 2026-10-26. The page gives the AU-CBT sections, an exemption rule and one non-engineering merit split. A full pattern for every programme was not copied. Earlier check: https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Application fee",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Rs. 2,500 (non-refundable)",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Admissions for Fall 2026 open at Karachi Campus (specific Karachi dates not in text)",
+            "status": "partial",
+            "source": "S6",
+            "note": "Checked 2026-10-26. The main site says Fall 2026 admissions are open at the Karachi Campus. The Karachi admission schedule page body was empty, so no Karachi dates were copied. Earlier check: https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Fall 2026 intake: e.g. BS CS Rs 9,150/cr.hr (Rs 146,400 1st semester); BBA Rs 7,650/cr.hr (Rs 130,050); BE Electrical Rs 8,050/cr.hr (Rs 136,850); BS English Rs 5,900/cr.hr (Rs 106,200); plus admission fee Rs 20,000",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "scholarships": [
           {
             "label": "Scholarships",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Need & merit based financial aid schemes (applications invited each Fall); see page",
+            "status": "partial",
+            "source": "S7",
+            "note": "Checked 2026-10-26. The page invites need and merit applications each Fall. Award amounts were not in the fetched text. Earlier check: https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "facilities": [
@@ -275,21 +325,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://khi.au.edu.pk. https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.au.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://khi.au.edu.pk. https://www.au.edu.pk/ returned Cloudflare HTTP 403."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 12,
+        "verified": 8,
+        "partial": 4,
+        "unavailable": 5,
         "needs_verification": 0
       }
     },
@@ -439,7 +489,7 @@
       "slug": "al-kawthar-university-karachi",
       "official_name": "Al-Kawthar University, Karachi",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -447,6 +497,27 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Al-Kawthar-University,-Karachi.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Al-Kawthar University, Karachi — contact",
+          "url": "https://alkawthar.edu.pk/contact/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Al-Kawthar University, Karachi — academic programs",
+          "url": "https://alkawthar.edu.pk/academic-programs/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Al-Kawthar University, Karachi homepage",
+          "url": "https://alkawthar.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -462,20 +533,21 @@
             "label": "Website",
             "value": "https://www.alkawthar.pk/",
             "status": "verified",
-            "note": "URL printed on the HEC profile. https://www.alkawthar.pk/ timed out.",
+            "note": "Checked 2026-10-26. A different host (https://alkawthar.edu.pk) is recorded in field_conflicts. This verified URL was not replaced. URL printed on the HEC profile. https://www.alkawthar.pk/ timed out.",
             "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. No admissions page was quoted on this pass. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "value": "ST-9, Block 7, Gulshan-e-Iqbal, Main University Road, Opposite Safari Park, Karachi",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: https://www.alkawthar.pk/ timed out."
           },
           {
             "label": "Ownership",
@@ -505,9 +577,10 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "value": "BS Computer Science, BS IT, BS Data Science, BS AI, BS Software Engineering, BS Cyber Security, BS Nursing, Post RN BS Nursing, BS MIT, BS MLT, BS Islamic Banking & Finance, BS Islamic Studies with IT, BS English, BS Education (B.Ed Hons), BS Media Studies, BS Psychology, BS Social Sciences, BS Accounting & Finance (+ CMW diploma, paramedical courses)",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.alkawthar.pk/ timed out."
           }
         ],
         "admissions": [
@@ -515,25 +588,25 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://alkawthar.edu.pk. Tuition-fees, eligibility and UG admissions pages identified (/tuition-fees/, /eligibility-criteria/, /undergraduate-admissions/) but not fetched — PC went offline. https://www.alkawthar.pk/ timed out."
           },
           {
             "label": "Admission test",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://alkawthar.edu.pk. Tuition-fees, eligibility and UG admissions pages identified (/tuition-fees/, /eligibility-criteria/, /undergraduate-admissions/) but not fetched — PC went offline. https://www.alkawthar.pk/ timed out."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://alkawthar.edu.pk. Tuition-fees, eligibility and UG admissions pages identified (/tuition-fees/, /eligibility-criteria/, /undergraduate-admissions/) but not fetched — PC went offline. https://www.alkawthar.pk/ timed out."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://alkawthar.edu.pk. Tuition-fees, eligibility and UG admissions pages identified (/tuition-fees/, /eligibility-criteria/, /undergraduate-admissions/) but not fetched — PC went offline. https://www.alkawthar.pk/ timed out."
           }
         ],
         "fees": [
@@ -541,7 +614,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://alkawthar.edu.pk. Tuition-fees, eligibility and UG admissions pages identified (/tuition-fees/, /eligibility-criteria/, /undergraduate-admissions/) but not fetched — PC went offline. https://www.alkawthar.pk/ timed out."
           }
         ],
         "scholarships": [
@@ -549,7 +622,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://alkawthar.edu.pk. Tuition-fees, eligibility and UG admissions pages identified (/tuition-fees/, /eligibility-criteria/, /undergraduate-admissions/) but not fetched — PC went offline. https://www.alkawthar.pk/ timed out."
           }
         ],
         "facilities": [
@@ -557,21 +630,22 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://alkawthar.edu.pk. Tuition-fees, eligibility and UG admissions pages identified (/tuition-fees/, /eligibility-criteria/, /undergraduate-admissions/) but not fetched — PC went offline. https://www.alkawthar.pk/ timed out."
           },
           {
             "label": "Transport",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.alkawthar.pk/ timed out."
+            "value": "Transport mentioned (no details)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Transport is mentioned on the homepage. Routes and charges were not in the fetched text. Earlier check: https://www.alkawthar.pk/ timed out."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 7,
+        "verified": 6,
+        "partial": 1,
+        "unavailable": 10,
         "needs_verification": 0
       }
     },
@@ -580,7 +654,7 @@
       "slug": "benazir-bhutto-shaheed-university-lyari",
       "official_name": "Benazir Bhutto Shaheed University Lyari",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -588,6 +662,34 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Benazir-Bhutto-Shaheed-University-Lyari.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Benazir Bhutto Shaheed University Lyari homepage",
+          "url": "https://bbsul.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Benazir Bhutto Shaheed University Lyari — FeeStructure",
+          "url": "https://bbsul.edu.pk/Admissions/FeeStructure",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Benazir Bhutto Shaheed University Lyari — eligibility",
+          "url": "https://bbsul.edu.pk/admission/eligibility",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S5",
+          "title": "Benazir Bhutto Shaheed University Lyari — login",
+          "url": "https://cms.bbsul.edu.pk/admission/apply/login/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -610,13 +712,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://bbsul.edu.pk/admission/eligibility, https://cms.bbsul.edu.pk/admission/apply/login/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Faqeer Muhammad Durra Khan Road, Near Cheel Chowk, Lyari Karachi",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Ownership",
@@ -646,43 +749,48 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "BS CS, BS AI, BS IT, Pharm-D, DPT, BBA, BS Entrepreneurship, BS Commerce, BS Accounting & Finance, BS English, BS Education, B.Ed (Hons), BS International Relations, BS Islamic Studies, BS Sport Sciences, BS Media Science, BS Public Administration",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Min 45% in last exam; e.g. Pharm-D 60% HSC Pre-Med; BBA/BS CS/IT/AI/A&F 50%; BS Commerce/English/Education 45%; morning applicants passed not before 2023",
+            "status": "verified",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Earlier check: https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Admission test via online portal (pattern page 404)",
+            "status": "partial",
+            "source": "S5",
+            "note": "Checked 2026-10-26. Applicants use the online portal. The entry test pattern page returned HTTP 404, so the pattern was not copied. Earlier check: https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://bbsul.edu.pk. https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Admissions 2026 (no dates in fetched text)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The eligibility page is for admissions 2026. No calendar dates were in the fetched text. Earlier check: https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Admission 2026: e.g. BS CS Morning 1st sem 42,800 PKR / 2nd sem 31,000; BBA Morning 48,800/37,000; Pharm-D 80,800/69,000; BS English 36,800/25,000",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "scholarships": [
@@ -690,7 +798,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://bbsul.edu.pk. https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "facilities": [
@@ -698,21 +806,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://bbsul.edu.pk. https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://bbsul.edu.pk. https://www.bbsul.edu.pk/ returned Cloudflare HTTP 403."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 10,
+        "verified": 8,
+        "partial": 2,
+        "unavailable": 7,
         "needs_verification": 0
       }
     },
@@ -1003,7 +1111,7 @@
       "slug": "denning-institute-of-technology-and-entrepreneursh",
       "official_name": "Denning Institute of Technology and Entrepreneurship, Karachi",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -1011,6 +1119,27 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Denning-Institute-of-Technology-and-Entrepreneurship,-Karachi.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Denning Institute of Technology and Entrepreneurship, Karachi — contact us",
+          "url": "https://denning.edu.pk/contact-us/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Denning Institute of Technology and Entrepreneurship, Karachi — admissions",
+          "url": "https://denning.edu.pk/admissions/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Denning Institute of Technology and Entrepreneurship, Karachi — dite ihsan trust scholarship",
+          "url": "https://denning.edu.pk/dite-ihsan-trust-scholarship",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -1033,13 +1162,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://denning.edu.pk/admissions/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "value": "Karachi campuses: 33-F Jaffer Street, Shahrah-e-Faisal Rd, Block-6 (PECHS); Plot E6, Block-F North Nazimabad; D-120 Block 4 Clifton; Plot 3 & 3A, Sector 47, Creek Rd, Korangi Creek; Plot 432 Jinnah Ave, Bahria Town Karachi",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: https://denning.edu.pk/dite/ timed out."
           },
           {
             "label": "Ownership",
@@ -1069,9 +1199,10 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "value": "National 4-year: BS Data Science & Business Analytics, BS Computer Science, BBA, LLB (Hons); international (University of London / Greenwich) programmes",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://denning.edu.pk/dite/ timed out."
           }
         ],
         "admissions": [
@@ -1079,25 +1210,26 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://denning.edu.pk. https://denning.edu.pk/dite/ timed out."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "value": "DITE admission test, 1h30m, 4 sections (MCQ + short answer), then interview",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://denning.edu.pk/dite/ timed out."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://denning.edu.pk. https://denning.edu.pk/dite/ timed out."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://denning.edu.pk. https://denning.edu.pk/dite/ timed out."
           }
         ],
         "fees": [
@@ -1105,15 +1237,16 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://denning.edu.pk. https://denning.edu.pk/dite/ timed out."
           }
         ],
         "scholarships": [
           {
             "label": "Scholarships",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "value": "DITE Ihsan Trust scholarship – need-cum-merit tuition support",
+            "status": "verified",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Earlier check: https://denning.edu.pk/dite/ timed out."
           }
         ],
         "facilities": [
@@ -1121,21 +1254,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://denning.edu.pk. https://denning.edu.pk/dite/ timed out."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://denning.edu.pk/dite/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://denning.edu.pk. https://denning.edu.pk/dite/ timed out."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
+        "sourced": 8,
+        "verified": 8,
         "partial": 0,
-        "unavailable": 13,
+        "unavailable": 9,
         "needs_verification": 0
       }
     },
@@ -1426,7 +1559,7 @@
       "slug": "indus-valley-school-of-art-architecture",
       "official_name": "Indus Valley School of Art & Architecture",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -1434,6 +1567,27 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Indus-Valley-School-of-Art-and-Architecture.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Indus Valley School of Art & Architecture — contact us",
+          "url": "https://indusvalley.edu.pk/contact-us/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Indus Valley School of Art & Architecture — admission undergraduate",
+          "url": "https://indusvalley.edu.pk/admission-undergraduate/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Indus Valley School of Art & Architecture — financial assistance scholarship",
+          "url": "https://indusvalley.edu.pk/financial-assistance-scholarship/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -1456,13 +1610,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://indusvalley.edu.pk/admission-undergraduate/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "ST-33 Scheme 5, Block 2 Clifton Karachi, 75600",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           },
           {
             "label": "Ownership",
@@ -1492,73 +1647,82 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "Architecture, Interior Design, Communication Design, Textile Design, Fashion Design, Fine Art (via Foundation Programme)",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "Intermediate with minimum C grade (50%) or equivalent (IBCC)",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "In-person admission test + interview; merit 70% test, 30% interview",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           },
           {
             "label": "Application fee",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "Rs. 10,000 (non-refundable)",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "Admissions announced third week of June; last date around end of July each year (no fixed 2026 dates)",
+            "status": "partial",
+            "source": "S3",
+            "note": "Checked 2026-10-26. The page describes the usual announcement window (third week of June, last date around the end of July). No fixed 2026 dates were printed. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "2026-27: Rs 21,400 per credit hour; Rs 385,200 per semester (18 CH); admission fee Rs 75,000; security deposit Rs 50,000",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           }
         ],
         "scholarships": [
           {
             "label": "Scholarships",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "Interest-free loans up to 75% tuition; scholarships up to 75% (100% in certain cases)",
+            "status": "verified",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           }
         ],
         "facilities": [
           {
             "label": "Hostel",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "No hostel",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           },
           {
             "label": "Transport",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
+            "value": "No formal transport",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.indusvalley.edu.pk/ returned HTTP 403 on the second fetch."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 14,
+        "verified": 13,
+        "partial": 1,
+        "unavailable": 3,
         "needs_verification": 0
       }
     },
@@ -1710,7 +1874,7 @@
       "slug": "isra-university-karachi-campus",
       "official_name": "Isra University",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -1718,6 +1882,34 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Isra-University.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Isra University — contact",
+          "url": "https://isra.edu.pk/contact",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Isra University — karachi campus introduction",
+          "url": "https://israuniversity.edu.pk/karachi-campus-introduction/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Isra University — admissions",
+          "url": "https://isra.edu.pk/admissions",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S5",
+          "title": "Isra University — scholarship",
+          "url": "https://apply.isra.edu.pk/scholarship",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -1740,13 +1932,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://isra.edu.pk/admissions. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC lists the university city as Hyderabad. A Karachi street address was not on that profile. http://www.isra.edu.pk timed out."
+            "value": "Old Thana Gadap Town, Malir, Karachi",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: HEC lists the university city as Hyderabad. A Karachi street address was not on that profile. http://www.isra.edu.pk timed out."
           },
           {
             "label": "Ownership",
@@ -1778,9 +1971,10 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "value": "Karachi campus houses Isra School of Optometry, Isra Postgraduate Institute of Ophthalmology, Al-Tibri Medical College, Isra Institute of Rehabilitation Sciences (no full programme list)",
+            "status": "partial",
+            "source": "S3",
+            "note": "Checked 2026-10-26. The Karachi campus introduction names Isra School of Optometry, Isra Postgraduate Institute of Ophthalmology, Al-Tibri Medical College and Isra Institute of Rehabilitation Sciences. A full undergraduate programme list was not on that page. Earlier check: http://www.isra.edu.pk timed out."
           }
         ],
         "admissions": [
@@ -1788,25 +1982,27 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://isra.edu.pk. http://www.isra.edu.pk timed out."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "value": "Isra University Admission Test (IUAT)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The admissions page names the Isra University Admission Test. The paper pattern was not copied. Earlier check: http://www.isra.edu.pk timed out."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://isra.edu.pk. http://www.isra.edu.pk timed out."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "value": "Admissions Fall 2026 (no dates in text)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The admissions page says Fall 2026. No calendar dates were in the fetched text. Earlier check: http://www.isra.edu.pk timed out."
           }
         ],
         "fees": [
@@ -1814,15 +2010,16 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://isra.edu.pk. http://www.isra.edu.pk timed out."
           }
         ],
         "scholarships": [
           {
             "label": "Scholarships",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "value": "Tuition waivers 100%/50%/25% based on IUAT score and HSSC grades (e.g. Chancellor's Scholars 100%: min 85% score)",
+            "status": "partial",
+            "source": "S5",
+            "note": "Checked 2026-10-26. The scholarship page gives tuition-waiver bands tied to the IUAT score and HSSC grades, including a 100% Chancellor's Scholars band at a minimum 85% score. A full scheme was not copied. Earlier check: http://www.isra.edu.pk timed out."
           }
         ],
         "facilities": [
@@ -1830,21 +2027,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://isra.edu.pk. http://www.isra.edu.pk timed out."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.isra.edu.pk timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://isra.edu.pk. http://www.isra.edu.pk timed out."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 9,
+        "verified": 5,
+        "partial": 4,
+        "unavailable": 8,
         "needs_verification": 0
       }
     },
@@ -1994,7 +2191,7 @@
       "slug": "jinnah-university-for-women",
       "official_name": "Jinnah University for Women",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -2002,6 +2199,41 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Jinnah-University-for-Women.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Jinnah University for Women — contact us",
+          "url": "https://www.juw.edu.pk/contact-us/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Jinnah University for Women — announcement for admission test 2027",
+          "url": "https://www.juw.edu.pk/announcement-for-admission-test-2027/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Jinnah University for Women — admission policy and procedure",
+          "url": "https://www.juw.edu.pk/admission-policy-and-procedure/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S5",
+          "title": "Jinnah University for Women — admission process",
+          "url": "https://www.juw.edu.pk/admission-process/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S6",
+          "title": "Jinnah University for Women — transport bank",
+          "url": "https://www.juw.edu.pk/campus-facilities/transport-bank/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -2024,13 +2256,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://www.juw.edu.pk/admission-policy-and-procedure/, https://www.juw.edu.pk/announcement-for-admission-test-2027/, https://www.juw.edu.pk/admission-process/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "5-C Nazimabad, Karachi-74600, Pakistan",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Ownership",
@@ -2060,35 +2293,40 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Business Administration (FinTech, Business Analytics, Project Management, AI in Digital Marketing), Commerce (Islamic Banking & Finance, Accounting & Finance, Digital Marketing), Visual Studies (Fashion, Textile, Graphic Design, Fine Arts), English, Psychology, Islamic Learning, International Relations, Education, Media Studies, Economics, Economics & Finance, Pharm-D, DPT, Biotechnology, Biochemistry, Molecular Biology, Biology, Chemistry, Microbiology, Computer Science, Software Engineering, Data Science, Cyber Security, Artificial Intelligence, Zoology, Food Science & Technology, Human Nutrition & Dietetics, Mathematics",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Not eligible if 3rd division or <45% in pre-requisite exam; admission on academic score + entry test + interview",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The policy states the ineligibility rule and that admission uses an academic score, an entry test and an interview. Programme-by-programme prerequisites were not copied. Earlier check: https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Aptitude test (GMAT format) + interview; 1st Aptitude Test for Session 2027 on Friday 23 Oct 2026",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Application fee",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Rs. 2,500 admission processing fee",
+            "status": "partial",
+            "source": "S5",
+            "note": "Checked 2026-10-26. The admissions process page calls this an admission processing fee. Earlier check: https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "Fall 2026 interviews 16 May 2026; Session 2027: test 23 Oct 2026, qualified list 26 Oct 2026",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "fees": [
@@ -2096,7 +2334,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: fee-structure page has no fee content. URLs checked: https://www.juw.edu.pk/fee-structure/, https://www.juw.edu.pk/resource/uploads/2026/10/JUW_Prospectus_2027_webpublish_v2_1.pdf (not fetched). Fee-structure page empty; JUW Prospectus 2027 PDF link found but not fetched (PC went offline). https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "scholarships": [
@@ -2104,7 +2342,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.juw.edu.pk. Fee-structure page empty; JUW Prospectus 2027 PDF link found but not fetched (PC went offline). https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           }
         ],
         "facilities": [
@@ -2112,21 +2350,22 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.juw.edu.pk. Fee-structure page empty; JUW Prospectus 2027 PDF link found but not fetched (PC went offline). https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           },
           {
             "label": "Transport",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
+            "value": "No university transport stated; public transport at doorstep, private vans available",
+            "status": "verified",
+            "source": "S6",
+            "note": "Checked 2026-10-26. Earlier check: https://www.juw.edu.pk/ returned Cloudflare HTTP 403."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 11,
+        "verified": 9,
+        "partial": 2,
+        "unavailable": 6,
         "needs_verification": 0
       }
     },
@@ -2276,7 +2515,7 @@
       "slug": "metropolitan-university-karachi",
       "official_name": "Metropolitan University Karachi",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -2284,6 +2523,27 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Metropolitan-University-Karachi.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Metropolitan University Karachi — Updated fees",
+          "url": "https://muk.edu.pk/wp-content/uploads/2026/02/Updated-fees-.pdf",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Metropolitan University Karachi — eligibility criteria",
+          "url": "https://muk.edu.pk/eligibility-criteria/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Metropolitan University Karachi — admission requirements",
+          "url": "https://muk.edu.pk/admission-requirements/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -2299,20 +2559,21 @@
             "label": "Website",
             "value": "http://www.metropolitanuniversity.pk/",
             "status": "verified",
-            "note": "URL printed on the HEC profile. http://www.metropolitanuniversity.pk/ timed out.",
+            "note": "Checked 2026-10-26. A different host (https://muk.edu.pk) is recorded in field_conflicts. This verified URL was not replaced. URL printed on the HEC profile. http://www.metropolitanuniversity.pk/ timed out.",
             "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://muk.edu.pk/eligibility-criteria/, https://muk.edu.pk/admission-requirements/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "value": "Sector 34-A, KDA Scheme-33, Main University Road, Malir Cantt, Karachi-75070",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: http://www.metropolitanuniversity.pk/ timed out."
           },
           {
             "label": "Ownership",
@@ -2342,43 +2603,47 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "value": "BBA, BS Education, BS Commerce, BS Islamic, LLB (5y), DPT (5y), Generic BSN (4y), Post RN (2y); ADBA/ADE/ADC/ADI",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: http://www.metropolitanuniversity.pk/ timed out."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "value": "HSC/O-A Level: BS Islamic Studies 40%, BBA 45%, BS Commerce 40%, BS Education 40%",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: http://www.metropolitanuniversity.pk/ timed out."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "value": "Entry test + interview (Quantitative, Analytical, English)",
+            "status": "verified",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Earlier check: http://www.metropolitanuniversity.pk/ timed out."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://muk.edu.pk. http://www.metropolitanuniversity.pk/ timed out."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://muk.edu.pk. http://www.metropolitanuniversity.pk/ timed out."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "value": "Semester fees effective Spring 2026: BBA 50,000; BS EDU 40,000; BS COM 40,000; BS Islamic 40,000; LLB 80,000; DPT 60,000; Generic BSN 90,000; Post RN 70,000; enrollment 10,000; exam 5,000",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: http://www.metropolitanuniversity.pk/ timed out."
           }
         ],
         "scholarships": [
@@ -2386,7 +2651,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://muk.edu.pk. http://www.metropolitanuniversity.pk/ timed out."
           }
         ],
         "facilities": [
@@ -2394,21 +2659,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://muk.edu.pk. http://www.metropolitanuniversity.pk/ timed out."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.metropolitanuniversity.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://muk.edu.pk. http://www.metropolitanuniversity.pk/ timed out."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
+        "sourced": 9,
+        "verified": 9,
         "partial": 0,
-        "unavailable": 13,
+        "unavailable": 8,
         "needs_verification": 0
       }
     },
@@ -2558,7 +2823,7 @@
       "slug": "national-textile-university-karachi-campus",
       "official_name": "National Textile University",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -2566,6 +2831,13 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Punjab/National-Textile-University.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "National Textile University homepage",
+          "url": "https://admissions.ntu.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -2588,13 +2860,13 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://admissions.ntu.edu.pk/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
             "value": null,
             "status": "unavailable",
-            "note": "HEC lists the university city as Faisalabad. A Karachi street address was not on that profile. https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. HEC lists the university city as Faisalabad. A Karachi street address was not on that profile. https://www.ntu.edu.pk/ timed out."
           },
           {
             "label": "Ownership",
@@ -2628,7 +2900,7 @@
             "label": "UG programmes",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           }
         ],
         "admissions": [
@@ -2636,25 +2908,26 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           },
           {
             "label": "Admission test",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "value": "Admissions-2026; Karachi Campus admission countdown shown (dates load via JS)",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The admissions site shows Admissions-2026 and a Karachi Campus countdown. Dates that load only through JavaScript were not copied. The Karachi campus page https://ntu.edu.pk/kc/ was not fetched. Earlier check: https://www.ntu.edu.pk/ timed out."
           }
         ],
         "fees": [
@@ -2662,7 +2935,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           }
         ],
         "scholarships": [
@@ -2670,7 +2943,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           }
         ],
         "facilities": [
@@ -2678,21 +2951,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.ntu.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://ntu.edu.pk. NTU main is Faisalabad; homepage links a Karachi Campus at https://ntu.edu.pk/kc/ which was not fetched (PC went offline). contact-us.php first failed with curl exit 35 (TLS error), later 200. https://www.ntu.edu.pk/ timed out."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
+        "sourced": 5,
         "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "partial": 1,
+        "unavailable": 12,
         "needs_verification": 0
       }
     },
@@ -2701,7 +2974,7 @@
       "slug": "paf-air-war-college-institute-karachi",
       "official_name": "PAF Air War College Institute, Karachi",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -2724,20 +2997,20 @@
             "label": "Website",
             "value": "https://awci.edu.pk/",
             "status": "verified",
-            "note": "URL printed on the HEC profile. https://awci.edu.pk/ timed out.",
+            "note": "Checked 2026-10-26: https://awci.edu.pk and https://www.awci.edu.pk timed out (curl exit 28). http://awci.edu.pk redirects to https and then times out. No page text was copied. URL printed on the HEC profile. https://awci.edu.pk/ timed out.",
             "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. No admissions page was quoted on this pass. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           },
           {
             "label": "Ownership",
@@ -2769,7 +3042,7 @@
             "label": "UG programmes",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           }
         ],
         "admissions": [
@@ -2777,25 +3050,25 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           },
           {
             "label": "Admission test",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           }
         ],
         "fees": [
@@ -2803,7 +3076,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           }
         ],
         "scholarships": [
@@ -2811,7 +3084,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           }
         ],
         "facilities": [
@@ -2819,13 +3092,13 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://awci.edu.pk/ timed out."
+            "note": "Checked 2026-10-26: curl exit 28 timeout. URLs checked: https://awci.edu.pk, https://www.awci.edu.pk, http://awci.edu.pk. SITE FAILED from PC: https://awci.edu.pk and https://www.awci.edu.pk -> curl exit 28 (timeout 25-40s); http://awci.edu.pk redirects 301 to https://awci.edu.pk:443/ then times out. No data. https://awci.edu.pk/ timed out."
           }
         ]
       },
@@ -2842,7 +3115,7 @@
       "slug": "pakistan-naval-academy",
       "official_name": "Pakistan Naval Academy",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -2850,6 +3123,13 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Pakistan-Naval-Academy.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Pakistan Naval Academy homepage",
+          "url": "https://www.joinpaknavy.gov.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_admissions"
         }
       ],
       "sections": {
@@ -2865,20 +3145,20 @@
             "label": "Website",
             "value": "http://www.paknavy.gov.pk",
             "status": "verified",
-            "note": "URL printed on the HEC profile. http://www.paknavy.gov.pk returned Cloudflare HTTP 403.",
+            "note": "Checked 2026-10-26. A different host (https://www.joinpaknavy.gov.pk) is recorded in field_conflicts. This verified URL was not replaced. URL printed on the HEC profile. http://www.paknavy.gov.pk returned Cloudflare HTTP 403.",
             "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://www.joinpaknavy.gov.pk/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           },
           {
             "label": "Ownership",
@@ -2910,7 +3190,7 @@
             "label": "UG programmes",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           }
         ],
         "admissions": [
@@ -2918,25 +3198,27 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "value": "Entrance test (Test Pattern / Practice Test pages exist; details not fetched)",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Entry is via PN Cadet induction on joinpaknavy.gov.pk. Test pattern and practice-test pages were not fetched. This is not a fee-charging university admission. Earlier check: http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "value": "Tentative PNCT registration September/October 2026; 'Recruitment formalities of PNCT B-2026 are in progress'",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The page gives a tentative September/October 2026 registration window and says PNCT B-2026 formalities are in progress. The PN Cadet FAQ was not fetched. Earlier check: http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           }
         ],
         "fees": [
@@ -2944,7 +3226,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           }
         ],
         "scholarships": [
@@ -2952,7 +3234,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           }
         ],
         "facilities": [
@@ -2960,21 +3242,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://www.joinpaknavy.gov.pk. Entry to PNA is via PN Cadet induction on joinpaknavy.gov.pk. PN Cadet FAQ page not fetched (PC went offline). Not a fee-charging university admission. http://www.paknavy.gov.pk returned Cloudflare HTTP 403."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
+        "sourced": 6,
         "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "partial": 2,
+        "unavailable": 11,
         "needs_verification": 0
       }
     },
@@ -3265,7 +3547,7 @@
       "slug": "saifee-burhani-university-karachi",
       "official_name": "Saifee Burhani University, Karachi",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -3273,6 +3555,20 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Saifee-Burhani-University,-Karachi.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Saifee Burhani University, Karachi — contact us",
+          "url": "https://sbu.edu.pk/contact-us/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Saifee Burhani University, Karachi homepage",
+          "url": "https://sbu.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -3295,13 +3591,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. No admissions page was quoted on this pass. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "Plot No, ST-3 Allama Rasheed Turabi Rd, Block G North Nazimabad Town, Karachi 74700",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Ownership",
@@ -3331,9 +3628,10 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "DPT, BSCS, BEd, BBA; BS Medical Lab Technology; BS Radiology and Imaging Technology",
+            "status": "partial",
+            "source": "S3",
+            "note": "Checked 2026-10-26. These titles are on the homepage. Programme fee pages were identified and not fetched, so the list stays partial. Earlier check: https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "admissions": [
@@ -3341,25 +3639,25 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Admission test",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "fees": [
@@ -3367,7 +3665,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "scholarships": [
@@ -3375,7 +3673,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "facilities": [
@@ -3383,21 +3681,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sbu.edu.pk. Program fee pages (/admissions/bscs/fee-structure/ etc.) identified but not fetched (PC went offline). Fee PNG fetched was for a non-degree Early Childhood Education programme. https://www.sbu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 6,
+        "verified": 5,
+        "partial": 1,
+        "unavailable": 11,
         "needs_verification": 0
       }
     },
@@ -3829,7 +4127,7 @@
       "slug": "sindh-institute-of-management-technology",
       "official_name": "Sindh Institute of Management & Technology",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -3837,6 +4135,20 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Institute-of-Management-and-Technology.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Sindh Institute of Management & Technology homepage",
+          "url": "https://simat.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Sindh Institute of Management & Technology — admission",
+          "url": "https://simat.edu.pk/index.php/admission/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -3852,20 +4164,21 @@
             "label": "Website",
             "value": "http://www.simat.edu.pk",
             "status": "verified",
-            "note": "URL printed on the HEC profile. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured.",
+            "note": "Checked 2026-10-26: pages on simat.edu.pk opened. simt.edu.pk does not resolve (curl exit 6). This HEC URL was kept. URL printed on the HEC profile. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured.",
             "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Institute-of-Management-and-Technology.aspx. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "value": "Plot No:29, Sector 16, Korangi Industrial Area, Karachi (HEC lists ST-25, Block 14, Gulistan-e-Johar)",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The site quote is Plot No. 29, Sector 16, Korangi Industrial Area. The collected value also records an HEC street (ST-25, Block 14, Gulistan-e-Johar) that this extract did not quote on its own, so neither street was dropped and the field stays partial. Earlier check: https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           },
           {
             "label": "Ownership",
@@ -3895,9 +4208,10 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "value": "BBA (4 years), BS Computer Science (4 years), BS (Technology)",
+            "status": "partial",
+            "source": "S3",
+            "note": "Checked 2026-10-26. The admissions page names BBA, BS Computer Science and BS (Technology). Eligibility detail was not on the fetched text. Earlier check: https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           }
         ],
         "admissions": [
@@ -3905,25 +4219,26 @@
             "label": "Eligibility",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://simat.edu.pk. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           },
           {
             "label": "Admission test",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://simat.edu.pk. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://simat.edu.pk. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "value": "Admissions stopped from April 01, 2026 (HEC)",
+            "status": "verified",
+            "source": "S1",
+            "note": "Checked 2026-10-26. HEC prints that admissions stopped from April 01, 2026. simt.edu.pk does not resolve; the institute site that opened is simat.edu.pk. Earlier check: https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           }
         ],
         "fees": [
@@ -3931,7 +4246,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://simat.edu.pk. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           }
         ],
         "scholarships": [
@@ -3939,7 +4254,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://simat.edu.pk. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           }
         ],
         "facilities": [
@@ -3947,21 +4262,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://simat.edu.pk. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://simat.edu.pk. https://www.simat.edu.pk/ returned HTTP 406 to the text extract; an earlier fetch was HTTP 200 but no fee table was captured."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 7,
+        "verified": 5,
+        "partial": 2,
+        "unavailable": 10,
         "needs_verification": 0
       }
     },
@@ -3970,7 +4285,7 @@
       "slug": "sindh-institute-of-medical-sciences",
       "official_name": "Sindh Institute of Medical Sciences",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -3978,6 +4293,20 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Sindh-Institute-of-Medical-Sciences.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Sindh Institute of Medical Sciences — Policies procedures and guidelines for students",
+          "url": "https://sims.siut.edu.pk/pdf/Policies,%20procedures,%20and%20guidelines%20for%20students.pdf",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Sindh Institute of Medical Sciences — admission",
+          "url": "https://sims.siut.edu.pk/admission/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -3993,20 +4322,20 @@
             "label": "Website",
             "value": "http://www.siut.org",
             "status": "verified",
-            "note": "URL printed on the HEC profile. https://www.siut.org/ timed out.",
+            "note": "Checked 2026-10-26. A different host (https://sims.siut.edu.pk) is recorded in field_conflicts. This verified URL was not replaced. URL printed on the HEC profile. https://www.siut.org/ timed out.",
             "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://sims.siut.edu.pk/pdf/Policies,%20procedures,%20and%20guidelines%20for%20students.pdf, https://sims.siut.edu.pk/admission/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sims.siut.edu.pk. https://www.siut.org/ timed out."
           },
           {
             "label": "Ownership",
@@ -4036,35 +4365,40 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "value": "BS Medical Technology in: Anesthesia & Critical Care Sciences, Clinical Laboratory Sciences, Diagnostic Radiology, Dialysis & Critical Care Sciences, Nuclear Medicine & Radiotherapy, Operation Theater Sciences, Respiratory Therapy & Critical Care Sciences",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The student policies PDF lists these BS Medical Technology pathways. It was not a current prospectus, so the list stays partial. Earlier check: https://www.siut.org/ timed out."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "value": "HSC or equivalent with biology, chemistry and physics",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The student policies PDF requires HSC or equivalent with biology, chemistry and physics. A percentage threshold was not in the fetched text. Earlier check: https://www.siut.org/ timed out."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "value": "SIMS entrance test (50% weight in merit)",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The student policies PDF gives the entrance test a 50% merit weight. The paper pattern was not copied. Earlier check: https://www.siut.org/ timed out."
           },
           {
             "label": "Application fee",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "value": "Free online form submission",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.siut.org/ timed out."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "value": "Academic year Feb–Dec; admissions announced Nov/Dec of preceding year (no 2026 dates)",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The student policies PDF says the academic year runs February to December and that admissions are announced in November/December of the preceding year. No 2026 calendar dates were printed. Earlier check: https://www.siut.org/ timed out."
           }
         ],
         "fees": [
@@ -4072,7 +4406,7 @@
             "label": "Tuition",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sims.siut.edu.pk. https://www.siut.org/ timed out."
           }
         ],
         "scholarships": [
@@ -4080,7 +4414,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sims.siut.edu.pk. https://www.siut.org/ timed out."
           }
         ],
         "facilities": [
@@ -4088,21 +4422,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sims.siut.edu.pk. https://www.siut.org/ timed out."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.siut.org/ timed out."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sims.siut.edu.pk. https://www.siut.org/ timed out."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 9,
+        "verified": 5,
+        "partial": 4,
+        "unavailable": 8,
         "needs_verification": 0
       }
     },
@@ -4111,7 +4445,7 @@
       "slug": "textile-institute-of-pakistan",
       "official_name": "Textile Institute of Pakistan",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -4119,6 +4453,34 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/Textile-Institute-of-Pakistan.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "Textile Institute of Pakistan homepage",
+          "url": "https://tip.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "Textile Institute of Pakistan — admission criteria",
+          "url": "https://tip.edu.pk/admission-criteria/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "Textile Institute of Pakistan — fee structure",
+          "url": "https://tip.edu.pk/fee-structure/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S5",
+          "title": "Textile Institute of Pakistan — scholarships and financial aid",
+          "url": "https://tip.edu.pk/scholarships-and-financial-aid/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -4141,13 +4503,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://tip.edu.pk/admission-criteria/, https://tip.edu.pk/fee-structure/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "EZ/1/P-8, Eastern Zone, Bin Qasim Karachi (campus); city office 24/D, Street 24, Block 6, PECHS, Karachi",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The homepage prints both the Bin Qasim campus and the PECHS city office. Earlier check: https://www.tip.edu.pk/ timed out."
           },
           {
             "label": "Ownership",
@@ -4177,73 +4540,82 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "BS Sustainable Textile Science, BS Textile Design Technology, BS Textile Science (others may exist)",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Three BS titles are on the homepage. The page does not say the list is complete. Earlier check: https://www.tip.edu.pk/ timed out."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "BS Sustainable Textile Science: min 45% Intermediate; all other programs: min 50% Intermediate",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.tip.edu.pk/ timed out."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "Entry test; merit = Intermediate 20% + Test 50% + Interview 30%",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.tip.edu.pk/ timed out."
           },
           {
             "label": "Application fee",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "Rs. 2,000 (2023-2024 structure)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The fee-structure page labels this figure 2023-2024. Earlier check: https://www.tip.edu.pk/ timed out."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "Application deadline 16 Dec 2026; test 19 Dec 2026; result 20 Dec 2026 (page also lists Orientation 19 January 2026)",
+            "status": "partial",
+            "source": "S3",
+            "note": "Checked 2026-10-26. The criteria page prints an application deadline of 16 Dec 2026 and also an orientation date of 19 January 2026. Both lines were kept. Earlier check: https://www.tip.edu.pk/ timed out."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "Rs. 11,000 per credit hour (2023-2024, under review)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The fee-structure page labels Rs. 11,000 per credit hour as 2023-2024 and under review. Earlier check: https://www.tip.edu.pk/ timed out."
           }
         ],
         "scholarships": [
           {
             "label": "Scholarships",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "Scholarships, interest-free loans and Shariah-compliant support (e.g. KJA 2003 Memorial Scholarship)",
+            "status": "verified",
+            "source": "S5",
+            "note": "Checked 2026-10-26. Earlier check: https://www.tip.edu.pk/ timed out."
           }
         ],
         "facilities": [
           {
             "label": "Hostel",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "On-campus boys' and girls' hostels; fee Rs 80,000 (separate room) / Rs 65,000 (sharing) (2023-2024)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. On-campus boys' and girls' hostels are listed. The fee is from the 2023-2024 structure. Earlier check: https://www.tip.edu.pk/ timed out."
           },
           {
             "label": "Transport",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.tip.edu.pk/ timed out."
+            "value": "AC coasters/buses; Rs 85,000 per student from city, Rs 28,000 from Hadeed (2023-2024, tentative)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The fee-structure page gives 2023-2024 transport charges and marks them tentative. Earlier check: https://www.tip.edu.pk/ timed out."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 14,
+        "verified": 7,
+        "partial": 7,
+        "unavailable": 3,
         "needs_verification": 0
       }
     },
@@ -4252,7 +4624,7 @@
       "slug": "the-nazeer-hussain-university",
       "official_name": "The Nazeer Hussain University",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
+      "last_checked": "2026-10-26",
       "sources": [
         {
           "id": "S1",
@@ -4260,6 +4632,48 @@
           "url": "https://www.hec.gov.pk/english/universities/Pages/Sindh/The-Nazeer-Hussain-University.aspx",
           "checked": "2026-10-23",
           "source_type": "hec"
+        },
+        {
+          "id": "S2",
+          "title": "The Nazeer Hussain University — contact",
+          "url": "https://nhu.edu.pk/contact/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "The Nazeer Hussain University — fee structure",
+          "url": "https://nhu.edu.pk/fee-structure/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "The Nazeer Hussain University — eligibility criteria",
+          "url": "https://nhu.edu.pk/eligibility-criteria/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S5",
+          "title": "The Nazeer Hussain University — admission details",
+          "url": "https://nhu.edu.pk/admission-details/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S6",
+          "title": "The Nazeer Hussain University — scholarship nhu",
+          "url": "https://nhu.edu.pk/scholarship-nhu/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S7",
+          "title": "The Nazeer Hussain University — transportation",
+          "url": "https://nhu.edu.pk/transportation/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
         }
       ],
       "sections": {
@@ -4282,13 +4696,14 @@
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://nhu.edu.pk/eligibility-criteria/, https://nhu.edu.pk/admission-details/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "ST-2 Block-4 Federal B Area, Near Karimabad, Karachi",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Ownership",
@@ -4318,51 +4733,57 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "B.Arch, Bachelor of Graphic Design, BE Mechanical/Electrical, BS CS/SE/AI, BE Technology programs, BBA, Pharm-D, DPT, ADP (Physical Therapy, CS, Business Management)",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "HSSC/A-Level: B.Arch 50%, Graphic Design 45%, BE 60%; plus ≥50% in NHU entrance test & interview",
+            "status": "verified",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "NHU entrance test + interview (min 50%)",
+            "status": "verified",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Application fee",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://nhu.edu.pk. https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Intake dates",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "Admissions open for Fall 2026 (no dates)",
+            "status": "partial",
+            "source": "S5",
+            "note": "Checked 2026-10-26. The admissions page says Fall 2026 is open. No calendar dates were in the fetched text. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "Per semester: B.Arch Rs 136,500; BE Mech/Elec Rs 99,225; BS CS/SE/AI Rs 82,950; Graphic Design Rs 79,275; admission Rs 20,000 (year not labelled)",
+            "status": "partial",
+            "source": "S3",
+            "note": "Checked 2026-10-26. The fee page has no academic year label. Per-semester examples were copied; it is not a full fee table. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "scholarships": [
           {
             "label": "Scholarships",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "Need-based; merit: 60% (GPA 4.0), 40% (3.75–3.99), 20% (3.5–3.74)",
+            "status": "verified",
+            "source": "S6",
+            "note": "Checked 2026-10-26. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ],
         "facilities": [
@@ -4370,21 +4791,22 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://nhu.edu.pk. https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           },
           {
             "label": "Transport",
-            "value": null,
-            "status": "unavailable",
-            "note": "https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
+            "value": "Transport available at 'advantageous charges' (amount not stated)",
+            "status": "partial",
+            "source": "S7",
+            "note": "Checked 2026-10-26. The transport page says transport is available at advantageous charges. No amount was stated. Earlier check: https://www.nhu.edu.pk/ returned HTTP 406 to the text extract after an earlier HTTP 200. No fee table was captured."
           }
         ]
       },
       "field_counts": {
-        "sourced": 4,
-        "verified": 4,
-        "partial": 0,
-        "unavailable": 13,
+        "sourced": 12,
+        "verified": 9,
+        "partial": 3,
+        "unavailable": 5,
         "needs_verification": 0
       }
     },
@@ -4393,8 +4815,37 @@
       "slug": "the-sindh-institute-of-physical-medicine-and-rehab",
       "official_name": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi",
       "profile_status": "partial",
-      "last_checked": "2026-10-23",
-      "sources": [],
+      "last_checked": "2026-10-26",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi homepage",
+          "url": "https://sipmr.edu.pk/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S2",
+          "title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — admissions 2025 26",
+          "url": "https://sipmr.edu.pk/admissions-2025-26/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S3",
+          "title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — dphys dpt program",
+          "url": "https://sipmr.edu.pk/dphys-dpt-program/",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        },
+        {
+          "id": "S4",
+          "title": "The Sindh Institute of Physical Medicine and Rehabilitation, Karachi — Prospectus of SIPMR 2026",
+          "url": "https://sipmr.edu.pk/wp-content/uploads/2025/11/Prospectus-of-SIPMR-2026.pdf",
+          "checked": "2026-10-26",
+          "source_type": "official_university"
+        }
+      ],
       "sections": {
         "overview": [
           {
@@ -4405,21 +4856,23 @@
           },
           {
             "label": "Website",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "value": "https://sipmr.edu.pk",
+            "status": "verified",
+            "note": "Checked 2026-10-26. A page on this host opened and was quoted. Earlier check: HEC profile URL returned HTTP 401. No website was printed on a page this environment could read.",
+            "source": "S1"
           },
           {
             "label": "Admissions URL",
             "value": null,
             "status": "unavailable",
-            "note": "No admissions page was opened on 2026-10-23."
+            "note": "Checked 2026-10-26. Admissions-related pages opened: https://sipmr.edu.pk/dphys-dpt-program/, https://sipmr.edu.pk/wp-content/uploads/2025/11/Prospectus-of-SIPMR-2026.pdf, https://sipmr.edu.pk/admissions-2025-26/. No single admissions URL was copied as the only value. No admissions page was opened on 2026-10-23."
           },
           {
             "label": "Main campus address",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "value": "Opposite SIUT, Near Mujahid Masjid, Chand Bibi Road, South Karachi - 74200 (KDA Campus: Al Hilal CHS)",
+            "status": "verified",
+            "source": "S1",
+            "note": "Checked 2026-10-26. Earlier check: HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           },
           {
             "label": "Ownership",
@@ -4449,43 +4902,48 @@
         "programs": [
           {
             "label": "UG programmes",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "value": "DPT, BS Occupational Therapy, BS Prosthetics & Orthotics, BS Audiology & Speech Language Therapy",
+            "status": "verified",
+            "source": "S2",
+            "note": "Checked 2026-10-26. Earlier check: HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           }
         ],
         "admissions": [
           {
             "label": "Eligibility",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "value": "Intermediate Science (Pre-Medical) min 60% (DPT)",
+            "status": "verified",
+            "source": "S3",
+            "note": "Checked 2026-10-26. Earlier check: HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           },
           {
             "label": "Admission test",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "value": "Entry test + interview; weightage 10% Matric, 30% Inter, 40% test, 20% interview (BS-ASLT)",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. The 2026 prospectus gives the BS-ASLT weightage (10% Matric, 30% Intermediate, 40% test, 20% interview). That split was not printed as the rule for every programme. Earlier check: HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           },
           {
             "label": "Application fee",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "value": "Rs. 2,000 (non-refundable), Session 2025-26",
+            "status": "partial",
+            "source": "S2",
+            "note": "Checked 2026-10-26. The admissions page labels Rs. 2,000 as Session 2025-26. Earlier check: HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           },
           {
             "label": "Intake dates",
             "value": null,
             "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sipmr.edu.pk. HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           }
         ],
         "fees": [
           {
             "label": "Tuition",
-            "value": null,
-            "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "value": "DPT: admission Rs 50,000; tuition Rs 132,000/yr open merit, Rs 270,000/yr self-finance; BSOT/BSPO/BS-ASLT: admission Rs 45,000, tuition Rs 129,647/yr",
+            "status": "partial",
+            "source": "S4",
+            "note": "Checked 2026-10-26. Figures are from the prospectus labelled 2026. The latest undergraduate admissions page is Session 2025-26. Earlier check: HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           }
         ],
         "scholarships": [
@@ -4493,7 +4951,7 @@
             "label": "Scholarships",
             "value": null,
             "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sipmr.edu.pk. HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           }
         ],
         "facilities": [
@@ -4501,21 +4959,21 @@
             "label": "Hostel",
             "value": null,
             "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sipmr.edu.pk. HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           },
           {
             "label": "Transport",
             "value": null,
             "status": "unavailable",
-            "note": "HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
+            "note": "Checked 2026-10-26: not found on pages fetched. URLs checked: https://sipmr.edu.pk. HEC profile URL returned HTTP 401. No website was printed on a page this environment could read."
           }
         ]
       },
       "field_counts": {
-        "sourced": 0,
-        "verified": 0,
-        "partial": 0,
-        "unavailable": 17,
+        "sourced": 7,
+        "verified": 4,
+        "partial": 3,
+        "unavailable": 10,
         "needs_verification": 0
       }
     }
